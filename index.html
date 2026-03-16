@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>꿈해몽 로또 - 꿈이 알려주는 행운의 번호</title>
-<meta name="description" content="어젯밤 꿈을 입력하면 AI가 해몽해드리고, 꿈에 맞는 행운의 로또 번호 5세트를 추천해드립니다.">
+<title>꿈해몽 - 꿈이 알려주는 행운의 번호</title>
+<meta name="description" content="어젯밤 꿈을 입력하면 AI가 해몽해드리고, 꿈에 맞는 행운의 행운 번호 5세트를 추천해드립니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -413,7 +413,7 @@
     font-weight: 600;
   }
 
-  /* 로또 섹션 */
+  /* 행운 번호 섹션 */
   .lotto-section {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(201,168,76,0.2);
@@ -555,7 +555,7 @@
   <!-- 헤더 -->
   <header>
     <span class="logo-icon">🌙</span>
-    <div class="logo-title">꿈해몽 로또</div>
+    <div class="logo-title">꿈해몽 행운</div>
     <div class="logo-sub">꿈이 알려주는 행운의 번호</div>
   </header>
 
@@ -607,7 +607,7 @@
       <div class="step-item" id="step1"><div class="step-dot"></div> 꿈의 키워드 분석 중...</div>
       <div class="step-item" id="step2"><div class="step-dot"></div> 해몽 데이터 조회 중...</div>
       <div class="step-item" id="step3"><div class="step-dot"></div> 행운의 기운 계산 중...</div>
-      <div class="step-item" id="step4"><div class="step-dot"></div> 로또 번호 추출 중...</div>
+      <div class="step-item" id="step4"><div class="step-dot"></div> 행운 번호 추출 중...</div>
     </div>
   </div>
 
@@ -623,12 +623,12 @@
       <div class="haemong-advice" id="haemongAdvice"></div>
     </div>
 
-    <!-- 로또 번호 -->
+    <!-- 행운 번호 -->
     <div class="lotto-section fade-in" style="animation-delay:0.2s">
       <div class="lotto-header">
         <div>
           <div class="lotto-title">🎰 행운의 번호 5세트</div>
-          <div class="lotto-subtitle">이번 주 로또에 도전해보세요</div>
+          <div class="lotto-subtitle">이번 주 행운을 잡아보세요</div>
         </div>
       </div>
       <div class="lotto-sets" id="lottoSets"></div>
@@ -644,9 +644,9 @@
   </div>
 
   <footer>
-    꿈해몽 로또는 재미와 흥미를 위한 서비스입니다<br>
-    로또 번호는 무작위로 생성되며 당첨을 보장하지 않습니다<br>
-    © 2025 꿈해몽 로또
+    꿈해몽 행운는 재미와 흥미를 위한 서비스입니다<br>
+    행운 번호는 무작위로 생성되며 행운을 보장하지 않습니다<br>
+    © 2025 꿈해몽 행운
   </footer>
 </div>
 
@@ -660,14 +660,14 @@ const dreamDB = {
     luck: '⭐⭐⭐⭐⭐ 대길몽',
     luckScore: 5,
     text: '돼지는 재물과 풍요의 상징입니다. 돼지꿈은 예로부터 큰 행운과 재물이 들어오는 최고의 길몽으로 여겨져 왔습니다. 특히 살찐 돼지나 돼지 떼가 나타나면 큰 횡재를 암시하며, 돼지가 집 안으로 들어오는 꿈은 가정에 큰 행운이 찾아온다는 의미입니다.',
-    advice: '<strong>오늘의 조언:</strong> 재물운이 최고조에 달한 날입니다. 중요한 결정이나 투자를 고려하고 계셨다면 지금이 좋은 시기일 수 있습니다. 복권 구매도 고려해보세요.'
+    advice: '<strong>오늘의 조언:</strong> 재물운이 최고조에 달한 날입니다. 중요한 결정이나 투자를 고려하고 계셨다면 지금이 좋은 시기일 수 있습니다. 행운권 구매도 고려해보세요.'
   },
   똥: {
     keyword: '똥 꿈',
     luck: '⭐⭐⭐⭐⭐ 대길몽',
     luckScore: 5,
-    text: '똥꿈은 의외로 최고의 길몽입니다. 더러운 것을 먹거나 만지거나 밟는 꿈은 큰 재물이 들어온다는 강력한 신호입니다. 특히 황금 똥이 나타나는 꿈은 복권 당첨이나 큰 돈이 들어오는 전조로 해석됩니다.',
-    advice: '<strong>오늘의 조언:</strong> 예상치 못한 곳에서 금전적 행운이 찾아올 수 있습니다. 오늘만큼은 복권 한 장 도전해보시는 게 어떨까요?'
+    text: '똥꿈은 의외로 최고의 길몽입니다. 더러운 것을 먹거나 만지거나 밟는 꿈은 큰 재물이 들어온다는 강력한 신호입니다. 특히 황금 똥이 나타나는 꿈은 행운권 큰 행운이나 돈이 들어오는 전조로 해석됩니다.',
+    advice: '<strong>오늘의 조언:</strong> 예상치 못한 곳에서 금전적 행운이 찾아올 수 있습니다. 오늘만큼은 행운권 한 장 도전해보시는 게 어떨까요?'
   },
   뱀: {
     keyword: '뱀 꿈',
@@ -737,7 +737,7 @@ function analyzeDream(text) {
 }
 
 // ─────────────────────────────────────────
-// 로또 번호 생성 (꿈 기반 시드)
+// 행운 번호 생성 (꿈 기반 시드)
 // ─────────────────────────────────────────
 function generateLotto(dreamText, luckScore) {
   const sets = [];
@@ -763,7 +763,7 @@ function generateLotto(dreamText, luckScore) {
 }
 
 // ─────────────────────────────────────────
-// 번호 색상 (실제 로또 규칙)
+// 번호 색상 (실제 행운 번호 규칙)
 // ─────────────────────────────────────────
 function getBallClass(n) {
   if (n <= 10) return 'r1';
@@ -827,7 +827,7 @@ function showResult(dreamText) {
   document.getElementById('haemongText').textContent = reading.text;
   document.getElementById('haemongAdvice').innerHTML = reading.advice;
 
-  // 로또 번호 채우기
+  // 행운 번호 채우기
   const container = document.getElementById('lottoSets');
   container.innerHTML = '';
   const labels = ['A세트', 'B세트', 'C세트', 'D세트', 'E세트'];
