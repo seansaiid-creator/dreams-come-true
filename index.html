@@ -3,15 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>꿈해몽 행운 - 꿈이 알려주는 행운의 번호</title>
-<meta name="description" content="어젯밤 꿈을 입력하면 해몽해드리고, 꿈에 맞는 행운의 번호 5세트를 추천해드립니다. 돼지꿈, 뱀꿈, 똥꿈 등 다양한 꿈 해몽 서비스.">
-<meta name="keywords" content="꿈해몽, 해몽, 꿈풀이, 행운번호, 돼지꿈, 뱀꿈, 똥꿈, 길몽, 흉몽">
+
+<!-- ★ SEO 핵심 메타태그 -->
+<title>꿈해몽 행운 - 꿈이 알려주는 행운의 번호 | 돼지꿈 뱀꿈 똥꿈 해몽</title>
+<meta name="description" content="어젯밤 꿈을 입력하면 전통 해몽으로 꿈의 의미를 풀어드리고, 꿈의 기운에 맞는 행운의 번호 5세트를 추천해드립니다. 돼지꿈, 뱀꿈, 똥꿈, 용꿈 등 33가지 꿈 해몽 무료 서비스.">
+<meta name="keywords" content="꿈해몽, 해몽, 꿈풀이, 행운번호, 돼지꿈해몽, 뱀꿈해몽, 똥꿈해몽, 용꿈해몽, 호랑이꿈, 길몽, 흉몽, 대길몽, 꿈해석, 오늘의운세">
+<meta name="author" content="꿈해몽 행운">
+<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0D0A1A">
-<meta property="og:title" content="꿈해몽 행운 - 꿈이 알려주는 행운의 번호">
-<meta property="og:description" content="어젯밤 꿈을 입력하면 해몽해드리고, 꿈에 맞는 행운의 번호 5세트를 추천해드립니다.">
+<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/">
+
+<!-- ★ Google Search Console 소유권 확인 -->
+<meta name="google-site-verification" content="Mh56q-_VUPEPcyYz_cU3XBqcKlt_4Oko0K9wU4pYpwk" />
+
+<!-- ★ OG 태그 (카카오톡/SNS 공유 시 미리보기) -->
 <meta property="og:type" content="website">
-<meta name="google-site-verification" content="Mh56q-_VUPEPcyYz_cU3XBqcKlt_4Oko0K9wU4pYpwk" />
-<meta name="google-site-verification" content="Mh56q-_VUPEPcyYz_cU3XBqcKlt_4Oko0K9wU4pYpwk" />
+<meta property="og:title" content="꿈해몽 행운 - 꿈이 알려주는 행운의 번호">
+<meta property="og:description" content="어젯밤 꿈을 입력하면 해몽해드리고, 꿈의 기운에 맞는 행운의 번호 5세트를 추천해드립니다.">
+<meta property="og:url" content="https://dreams-come-true-ten.vercel.app/">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="꿈해몽 행운">
+
+<!-- ★ 트위터 카드 -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="꿈해몽 행운 - 꿈이 알려주는 행운의 번호">
+<meta name="twitter:description" content="어젯밤 꿈을 입력하면 해몽해드리고, 꿈의 기운에 맞는 행운의 번호 5세트를 추천해드립니다.">
+
+<!-- ★ 구조화 데이터 (JSON-LD) — 구글 검색 결과 풍부하게 표시 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "꿈해몽 행운",
+  "url": "https://dreams-come-true-ten.vercel.app/",
+  "description": "어젯밤 꿈을 입력하면 전통 해몽으로 꿈의 의미를 풀어드리고, 꿈의 기운에 맞는 행운의 번호 5세트를 추천해드립니다.",
+  "applicationCategory": "EntertainmentApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "inLanguage": "ko",
+  "keywords": "꿈해몽, 해몽, 행운번호, 돼지꿈, 뱀꿈, 똥꿈"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -43,6 +80,7 @@
     color: var(--text);
     font-family: 'Pretendard', sans-serif;
     min-height: 100vh;
+    min-height: 100dvh;
   }
 
   body::before {
@@ -135,15 +173,12 @@
     padding: 0 16px 80px;
   }
 
-  /* ════════════════════════════════════
-     히어로 섹션 — 둥둥 떠다니는 번호 공
-  ════════════════════════════════════ */
+  /* ── 히어로 ── */
   .hero {
     text-align: center;
     padding: 32px 0 0;
   }
 
-  /* 공들이 떠다니는 무대 */
   .balls-stage {
     position: relative;
     height: 130px;
@@ -167,7 +202,6 @@
       0 6px 20px rgba(0,0,0,0.4);
   }
 
-  /* 각 공마다 다른 위치 & 애니메이션 */
   .hero-ball:nth-child(1)  { left: 6%;  top: 20px; animation: floatBall1 3.2s ease-in-out infinite; }
   .hero-ball:nth-child(2)  { left: 20%; top: 60px; animation: floatBall2 2.8s ease-in-out infinite 0.3s; }
   .hero-ball:nth-child(3)  { left: 34%; top: 15px; animation: floatBall3 3.5s ease-in-out infinite 0.6s; }
@@ -192,7 +226,6 @@
     50%       { transform: translateY(-10px) rotate(12deg); }
   }
 
-  /* 공 색상 */
   .hb-r1 { background: radial-gradient(circle at 35% 35%, #FF7070, #C0392B); color: white; }
   .hb-r2 { background: radial-gradient(circle at 35% 35%, #FFB347, #E07020); color: white; }
   .hb-r3 { background: radial-gradient(circle at 35% 35%, #FFE066, #C8A020); color: #333; }
@@ -200,9 +233,7 @@
   .hb-r5 { background: radial-gradient(circle at 35% 35%, #80B0FF, #1A5AAA); color: white; }
 
   /* ── 로고 ── */
-  .logo-area {
-    margin-bottom: 8px;
-  }
+  .logo-area { margin-bottom: 8px; }
 
   .logo-title {
     font-family: 'Nanum Myeongjo', serif;
@@ -220,15 +251,13 @@
     letter-spacing: 2px;
   }
 
-  /* ── 서비스 흐름 한눈에 보기 ── */
+  /* ── 흐름 바 ── */
   .flow-bar {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
     margin: 18px 0 24px;
-    font-size: 13px;
-    color: var(--text-muted);
   }
 
   .flow-item {
@@ -238,23 +267,11 @@
     gap: 4px;
   }
 
-  .flow-icon {
-    font-size: 22px;
-  }
+  .flow-icon { font-size: 22px; }
+  .flow-label { font-size: 11px; color: var(--text-muted); }
+  .flow-arrow { color: var(--gold); font-size: 16px; margin-bottom: 16px; opacity: 0.7; }
 
-  .flow-label {
-    font-size: 11px;
-    color: var(--text-muted);
-  }
-
-  .flow-arrow {
-    color: var(--gold);
-    font-size: 16px;
-    margin-bottom: 16px;
-    opacity: 0.7;
-  }
-
-  /* ── 샘플 번호 미리보기 ── */
+  /* ── 샘플 미리보기 ── */
   .preview-section {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(201,168,76,0.15);
@@ -265,7 +282,6 @@
     overflow: hidden;
   }
 
-  /* 흐릿한 오버레이 */
   .preview-section::after {
     content: '';
     position: absolute;
@@ -312,10 +328,7 @@
     flex-shrink: 0;
   }
 
-  .preview-balls {
-    display: flex;
-    gap: 6px;
-  }
+  .preview-balls { display: flex; gap: 6px; }
 
   .preview-ball {
     width: 34px;
@@ -329,7 +342,6 @@
     box-shadow: inset 0 -3px 6px rgba(0,0,0,0.3);
   }
 
-  /* 잠금 오버레이 텍스트 */
   .preview-unlock {
     position: absolute;
     bottom: 0;
@@ -352,25 +364,31 @@
     color: var(--text-muted);
   }
 
-  /* ── 구분선 ── */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 24px 0;
+  /* ── 스크롤 힌트 ── */
+  .scroll-hint {
+    text-align: center;
+    margin: 8px 0 24px;
+    animation: bounce 2s ease-in-out infinite;
   }
 
-  .divider-line {
-    flex: 1;
-    height: 1px;
-    background: rgba(201,168,76,0.15);
-  }
-
-  .divider-text {
-    font-size: 12px;
+  .scroll-hint-text {
+    font-size: 11px;
     color: var(--text-muted);
-    white-space: nowrap;
     letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .scroll-hint-arrow {
+    font-size: 18px;
+    color: var(--gold);
+    opacity: 0.6;
+    display: block;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(6px); }
   }
 
   /* ── 입력 섹션 ── */
@@ -409,14 +427,8 @@
     -webkit-appearance: none;
   }
 
-  .dream-input:focus {
-    border-color: rgba(201,168,76,0.5);
-  }
-
-  .dream-input::placeholder {
-    color: var(--text-muted);
-    font-size: 14px;
-  }
+  .dream-input:focus { border-color: rgba(201,168,76,0.5); }
+  .dream-input::placeholder { color: var(--text-muted); font-size: 14px; }
 
   .tags {
     display: flex;
@@ -465,10 +477,8 @@
     -webkit-appearance: none;
   }
 
-  .cta-btn:active {
-    transform: scale(0.98);
-    opacity: 0.9;
-  }
+  .cta-btn:active { transform: scale(0.98); opacity: 0.9; }
+  .cta-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
   /* ── 로딩 공통 ── */
   .loading-wrap {
@@ -522,7 +532,7 @@
 
   @keyframes pulse-orb {
     0%, 100% { transform: scale(0.9); opacity: 0.8; }
-    50%       { transform: scale(1.1); opacity: 1;   }
+    50%       { transform: scale(1.1); opacity: 1; }
   }
 
   .loading-title {
@@ -554,16 +564,8 @@
     margin-bottom: 20px;
   }
 
-  .ad-label {
-    font-size: 10px;
-    color: rgba(255,255,255,0.2);
-    letter-spacing: 1px;
-  }
-
-  .ad-placeholder {
-    font-size: 12px;
-    color: rgba(255,255,255,0.12);
-  }
+  .ad-label { font-size: 10px; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
+  .ad-placeholder { font-size: 12px; color: rgba(255,255,255,0.12); }
 
   /* ── 로딩 스텝 ── */
   .loading-steps { text-align: left; margin-top: 16px; }
@@ -663,10 +665,7 @@
     line-height: 1.7;
   }
 
-  .haemong-advice strong {
-    color: var(--gold);
-    font-weight: 600;
-  }
+  .haemong-advice strong { color: var(--gold); font-weight: 600; }
 
   /* ── 행운 번호 ── */
   #lucky-section { display: none; }
@@ -692,17 +691,9 @@
     margin-bottom: 18px;
   }
 
-  .lotto-sets {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
+  .lotto-sets { display: flex; flex-direction: column; gap: 14px; }
 
-  .lotto-set {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  .lotto-set { display: flex; align-items: center; gap: 8px; }
 
   .set-label {
     font-size: 11px;
@@ -731,14 +722,11 @@
     transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  .ball.show {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
+  .ball.show { opacity: 1; transform: scale(1) rotate(0deg); }
 
   .ball.r1 { background: radial-gradient(circle at 35% 35%, #FF7070, #C0392B); color: white; }
   .ball.r2 { background: radial-gradient(circle at 35% 35%, #FFB347, #E07020); color: white; }
-  .ball.r3 { background: radial-gradient(circle at 35% 35%, #FFE066, #C8A020); color: #333;  }
+  .ball.r3 { background: radial-gradient(circle at 35% 35%, #FFE066, #C8A020); color: #333; }
   .ball.r4 { background: radial-gradient(circle at 35% 35%, #90D090, #2E8B57); color: white; }
   .ball.r5 { background: radial-gradient(circle at 35% 35%, #80B0FF, #1A5AAA); color: white; }
 
@@ -775,37 +763,7 @@
     transition: all 0.2s;
   }
 
-  .retry-btn:active {
-    background: rgba(201,168,76,0.08);
-    transform: scale(0.98);
-  }
-
-  /* ── 스크롤 힌트 ── */
-  .scroll-hint {
-    text-align: center;
-    margin: 8px 0 24px;
-    animation: bounce 2s ease-in-out infinite;
-  }
-
-  .scroll-hint-text {
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  .scroll-hint-arrow {
-    font-size: 18px;
-    color: var(--gold);
-    opacity: 0.6;
-    display: block;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(6px); }
-  }
+  .retry-btn:active { background: rgba(201,168,76,0.08); transform: scale(0.98); }
 
   /* ── 애니메이션 ── */
   .fade-in {
@@ -814,7 +772,7 @@
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0);    }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   /* ── 푸터 ── */
@@ -852,7 +810,7 @@
 
 <div class="container">
 
-  <!-- ══ 히어로 — 둥둥 떠다니는 번호 공 ══ -->
+  <!-- ══ 히어로 ══ -->
   <div class="hero">
     <div class="balls-stage">
       <div class="hero-ball hb-r1">7</div>
@@ -872,7 +830,6 @@
       <div class="logo-sub">꿈이 알려주는 행운의 번호</div>
     </div>
 
-    <!-- 서비스 흐름 한눈에 -->
     <div class="flow-bar">
       <div class="flow-item">
         <span class="flow-icon">🌙</span>
@@ -891,12 +848,10 @@
     </div>
   </div>
 
-  <!-- ══ 샘플 번호 미리보기 ══ -->
+  <!-- ══ 샘플 미리보기 ══ -->
   <div class="preview-section" id="preview-section">
     <div class="preview-label">✨ 오늘의 행운 번호 미리보기</div>
-    <div class="preview-sets" id="previewSets">
-      <!-- JS로 채움 -->
-    </div>
+    <div class="preview-sets" id="previewSets"></div>
     <div class="preview-unlock">
       <div class="preview-unlock-text">🌙 꿈을 입력하면 나만의 번호를 받을 수 있어요</div>
       <div class="preview-unlock-sub">아래에 어젯밤 꿈을 입력해보세요</div>
@@ -937,7 +892,7 @@
     ✨ 꿈 해몽하기
   </button>
 
-  <!-- ══ STEP 2 : 해몽 로딩 (광고 포함) ══ -->
+  <!-- ══ STEP 2 : 해몽 로딩 (광고) ══ -->
   <div class="loading-wrap" id="loading-section">
     <div class="loading-orb">
       <div class="orb-ring"></div>
@@ -947,8 +902,6 @@
     </div>
     <div class="loading-title">꿈의 기운을 읽는 중...</div>
     <div class="loading-sub">잠시만 기다려 주세요</div>
-
-    <!-- ★ 광고 영역 1 -->
     <div class="ad-box">
       <div class="ad-label">ADVERTISEMENT</div>
       <div class="ad-placeholder">광고 영역 (320×100)</div>
@@ -960,7 +913,6 @@
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       -->
     </div>
-
     <div class="loading-steps">
       <div class="step-item" id="step1"><div class="step-dot"></div> 꿈의 키워드 분석 중...</div>
       <div class="step-item" id="step2"><div class="step-dot"></div> 해몽 데이터 조회 중...</div>
@@ -978,13 +930,12 @@
       <div class="haemong-text"    id="haemongText"></div>
       <div class="haemong-advice"  id="haemongAdvice"></div>
     </div>
-
     <button class="cta-btn fade-in" style="animation-delay:0.3s" onclick="startLucky()">
       🎰 행운 번호 받기
     </button>
   </div>
 
-  <!-- ══ STEP 4 : 번호 로딩 (광고 포함) ══ -->
+  <!-- ══ STEP 4 : 번호 로딩 (광고) ══ -->
   <div class="loading-wrap" id="lucky-loading">
     <div class="loading-orb">
       <div class="orb-ring"></div>
@@ -994,8 +945,6 @@
     </div>
     <div class="loading-title">행운의 번호 추출 중...</div>
     <div class="loading-sub">꿈의 기운으로 번호를 고르고 있어요</div>
-
-    <!-- ★ 광고 영역 2 -->
     <div class="ad-box">
       <div class="ad-label">ADVERTISEMENT</div>
       <div class="ad-placeholder">광고 영역 (320×100)</div>
@@ -1016,8 +965,6 @@
       <div class="lotto-subtitle">오늘의 행운을 함께 잡아보세요</div>
       <div class="lotto-sets" id="lottoSets"></div>
     </div>
-
-    <!-- ★ 광고 영역 3 -->
     <div class="bottom-ad">
       <div class="ad-label">ADVERTISEMENT</div>
       <div class="ad-placeholder">광고 영역 (320×50)</div>
@@ -1029,7 +976,6 @@
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       -->
     </div>
-
     <button class="retry-btn" onclick="resetApp()">🔄 다른 꿈 해몽하기</button>
   </div>
 
@@ -1218,7 +1164,6 @@ const defaultDream = {
   advice: '<strong>오늘의 조언:</strong> 직감이 강해지는 날입니다. 중요한 결정에서 마음의 소리를 믿어보시기 바랍니다.'
 };
 
-/* ─── 키워드 매핑 ─── */
 const keywordMap = {
   '이가':'이빨','이빨':'이빨','치아':'이빨',
   '죽었':'죽음','죽는':'죽음','사망':'죽음',
@@ -1254,7 +1199,6 @@ const keywordMap = {
   '산':'산','등산':'산'
 };
 
-/* ─── 꿈 분석 ─── */
 function analyzeDream(text) {
   for (const [kw, key] of Object.entries(keywordMap)) {
     if (text.includes(kw)) return dreamDB[key] || defaultDream;
@@ -1262,7 +1206,6 @@ function analyzeDream(text) {
   return defaultDream;
 }
 
-/* ─── 번호 생성 ─── */
 function generateLucky(dreamText) {
   const sets = [];
   let seed = dreamText.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
@@ -1287,30 +1230,25 @@ function getBallClass(n) {
   return 'r5';
 }
 
-/* ─── 샘플 미리보기 생성 ─── */
 function buildPreview() {
   const sampleSets = [
-    [3, 12, 24, 33, 40, 45],
-    [7, 15, 22, 28, 37, 42],
-    [1, 11, 19, 27, 34, 43],
-    [5, 14, 21, 30, 38, 44],
-    [9, 16, 25, 32, 39, 41]
+    [3,12,24,33,40,45],
+    [7,15,22,28,37,42],
+    [1,11,19,27,34,43],
+    [5,14,21,30,38,44],
+    [9,16,25,32,39,41]
   ];
-  const labels = ['A세트', 'B세트', 'C세트', 'D세트', 'E세트'];
+  const labels = ['A세트','B세트','C세트','D세트','E세트'];
   const container = document.getElementById('previewSets');
   container.innerHTML = '';
-
   sampleSets.forEach((set, i) => {
     const row = document.createElement('div');
     row.className = 'preview-set';
-
     const lbl = document.createElement('div');
     lbl.className = 'preview-set-label';
     lbl.textContent = labels[i];
-
     const balls = document.createElement('div');
     balls.className = 'preview-balls';
-
     set.forEach(n => {
       const b = document.createElement('div');
       b.className = `preview-ball ball ${getBallClass(n)}`;
@@ -1319,7 +1257,6 @@ function buildPreview() {
       b.textContent = n;
       balls.appendChild(b);
     });
-
     row.appendChild(lbl);
     row.appendChild(balls);
     container.appendChild(row);
@@ -1330,15 +1267,12 @@ function setDream(text) {
   document.getElementById('dreamInput').value = text;
 }
 
-/* ─── STEP 1→2 해몽 시작 ─── */
 function startReading() {
   const dreamText = document.getElementById('dreamInput').value.trim();
   if (!dreamText) { alert('꿈 내용을 입력해주세요 🌙'); return; }
-
   window._dreamText = dreamText;
   window._reading   = analyzeDream(dreamText);
 
-  // 히어로/미리보기/입력 숨기기
   document.getElementById('preview-section').style.display = 'none';
   document.getElementById('scrollHint').style.display      = 'none';
   document.getElementById('input-section').style.display   = 'none';
@@ -1346,35 +1280,31 @@ function startReading() {
   document.getElementById('loading-section').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const steps  = ['step1', 'step2', 'step3', 'step4'];
-  const delays = [400, 1200, 2200, 3400];
+  const steps  = ['step1','step2','step3','step4'];
+  const delays = [400,1200,2200,3400];
   steps.forEach((id, idx) => {
     setTimeout(() => {
       document.getElementById(id).classList.add('show');
-      if (idx > 0) document.getElementById(steps[idx - 1]).classList.add('done');
+      if (idx > 0) document.getElementById(steps[idx-1]).classList.add('done');
     }, delays[idx]);
   });
-
   setTimeout(() => {
     document.getElementById('step4').classList.add('done');
     showHaemong();
   }, 5000);
 }
 
-/* ─── STEP 3 해몽 결과 ─── */
 function showHaemong() {
   const r = window._reading;
   document.getElementById('haemongKeyword').textContent = r.keyword;
   document.getElementById('haemongLuck').innerHTML      = r.luck;
   document.getElementById('haemongText').textContent    = r.text;
   document.getElementById('haemongAdvice').innerHTML    = r.advice;
-
   document.getElementById('loading-section').style.display = 'none';
   document.getElementById('haemong-section').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ─── STEP 4 행운 번호 로딩 ─── */
 function startLucky() {
   document.getElementById('haemong-section').style.display = 'none';
   document.getElementById('lucky-loading').style.display   = 'block';
@@ -1382,14 +1312,12 @@ function startLucky() {
   setTimeout(showLuckyNumbers, 5000);
 }
 
-/* ─── STEP 5 번호 팡팡 등장 ─── */
 function showLuckyNumbers() {
   const sets      = generateLucky(window._dreamText);
-  const labels    = ['A세트', 'B세트', 'C세트', 'D세트', 'E세트'];
+  const labels    = ['A세트','B세트','C세트','D세트','E세트'];
   const container = document.getElementById('lottoSets');
   container.innerHTML = '';
   const allBalls = [];
-
   sets.forEach((set, i) => {
     const row      = document.createElement('div');
     row.className  = 'lotto-set';
@@ -1409,17 +1337,14 @@ function showLuckyNumbers() {
     row.appendChild(ballWrap);
     container.appendChild(row);
   });
-
   document.getElementById('lucky-loading').style.display = 'none';
   document.getElementById('lucky-section').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
-
   allBalls.forEach((ball, idx) => {
     setTimeout(() => ball.classList.add('show'), idx * 180);
   });
 }
 
-/* ─── 초기화 ─── */
 function resetApp() {
   document.getElementById('dreamInput').value = '';
   document.getElementById('preview-section').style.display = 'block';
@@ -1431,14 +1356,13 @@ function resetApp() {
   document.getElementById('lucky-loading').style.display   = 'none';
   document.getElementById('loading-section').style.display = 'none';
   ['step1','step2','step3','step4'].forEach(id => {
-    document.getElementById(id).classList.remove('show', 'done');
+    document.getElementById(id).classList.remove('show','done');
   });
   window._dreamText = '';
   window._reading   = null;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ─── 별빛 생성 ─── */
 (function createStars() {
   const container = document.getElementById('stars');
   for (let i = 0; i < 60; i++) {
@@ -1455,7 +1379,6 @@ function resetApp() {
   }
 })();
 
-/* ─── 샘플 미리보기 초기 렌더 ─── */
 buildPreview();
 </script>
 </body>
