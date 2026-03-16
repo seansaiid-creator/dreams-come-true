@@ -75,6 +75,55 @@
     to   { opacity: 0.8; transform: scale(1.2); }
   }
 
+  /* ── 네비게이션 ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13,10,26,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 0 16px;
+  }
+
+  .nav-inner {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+
+  .nav-logo {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-link.active {
+    color: var(--gold);
+    background: rgba(201,168,76,0.1);
+  }
+
   /* ── 레이아웃 ── */
   .container {
     position: relative;
@@ -88,7 +137,7 @@
   /* ── 헤더 ── */
   header {
     text-align: center;
-    padding: 36px 0 28px;
+    padding: 28px 0 24px;
   }
 
   .logo-icon {
@@ -465,12 +514,9 @@
     letter-spacing: 1px;
   }
 
-  .balls {
-    display: flex;
-    gap: 6px;
-  }
+  .balls { display: flex; gap: 6px; }
 
-  /* 번호 공 — 처음엔 숨겨져 있다가 .show 클래스가 붙으면 팡 등장 */
+  /* 번호 공 — .show 클래스가 붙으면 팡 등장 */
   .ball {
     width: 38px;
     height: 38px;
@@ -568,6 +614,17 @@
 <!-- 별빛 배경 -->
 <div class="stars" id="stars"></div>
 
+<!-- ══ 네비게이션 ══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">🌙 꿈해몽 행운</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">해몽하기</a>
+      <a href="about.html" class="nav-link">소개</a>
+    </div>
+  </div>
+</nav>
+
 <div class="container">
 
   <!-- ══ 헤더 ══ -->
@@ -616,7 +673,7 @@
     <div class="loading-title">꿈의 기운을 읽는 중...</div>
     <div class="loading-sub">잠시만 기다려 주세요</div>
 
-    <!-- ★ 광고 영역 1 — AdSense 승인 후 주석 해제 후 코드 교체 -->
+    <!-- ★ 광고 영역 1 — AdSense 승인 후 주석 해제 -->
     <div class="ad-box">
       <div class="ad-label">ADVERTISEMENT</div>
       <div class="ad-placeholder">광고 영역 (320×100)</div>
@@ -945,7 +1002,7 @@ const dreamDB = {
   }
 };
 
-/* 기본 해몽 (키워드가 없을 때) */
+/* 기본 해몽 */
 const defaultDream = {
   keyword: '특별한 꿈',
   luck: '⭐⭐⭐ 중길몽',
@@ -958,38 +1015,38 @@ const defaultDream = {
    키워드 → DB 매핑
 ═══════════════════════════════════════════ */
 const keywordMap = {
-  '이가':     '이빨', '이빨':    '이빨', '치아':     '이빨',
-  '죽었':     '죽음', '죽는':    '죽음', '사망':     '죽음',
-  '황금':     '금',   '금괴':    '금',   '금반지':   '금',   '금을': '금',
-  '임신':     '아기', '출산':    '아기', '아기':     '아기', '애기': '아기',
-  '조상':     '조상', '할아버지':'조상', '할머니':   '조상', '돌아가신':'조상',
-  '다이아':   '보석', '보석':    '보석', '반지':     '보석', '목걸이':'보석',
-  '지폐':     '돈',   '돈다발':  '돈',   '지갑':     '돈',
-  '태양':     '태양', '해가':    '태양', '일출':     '태양',
-  '무지개':   '무지개',
-  '잔치':     '음식', '밥상':    '음식', '먹는':     '음식',
-  '여행':     '여행', '해외':    '여행',
-  '눈이':     '눈',   '눈밭':    '눈',   '설경':     '눈',
-  '빗속':     '비',   '비가':    '비',   '소나기':   '비',
-  '숲속':     '나무', '나무':    '나무', '숲':       '나무',
-  '꽃밭':     '꽃',   '꽃이':    '꽃',   '장미':     '꽃',
-  '별이':     '별',   '유성':    '별',   '별똥':     '별',
-  '달이':     '달',   '보름달':  '달',   '달빛':     '달',
-  '학교':     '학교', '시험':    '학교', '공부':     '학교',
-  '집이':     '집',   '건물':    '집',   '아파트':   '집',
-  '말이':     '말',   '백마':    '말',   '경마':     '말',
-  '소가':     '소',   '황소':    '소',   '암소':     '소',
-  '물고기':   '물고기','잉어':   '물고기','낚시':    '물고기',
-  '결혼':     '결혼', '웨딩':    '결혼',
-  '용이':     '용',   '황룡':    '용',   '청룡':     '용',
-  '호랑이':   '호랑이','범이':   '호랑이',
-  '하늘':     '하늘', '날아':    '하늘', '비행':     '하늘',
-  '물에':     '물',   '바다':    '물',   '강':       '물',
-  '불이':     '불',   '화재':    '불',   '불꽃':     '불',
-  '뱀이':     '뱀',   '구렁이':  '뱀',
-  '돼지':     '돼지',
-  '똥':       '똥',   '대변':    '똥',   '화장실':   '똥',
-  '산':       '산',   '등산':    '산'
+  '이가':      '이빨', '이빨':    '이빨', '치아':     '이빨',
+  '죽었':      '죽음', '죽는':    '죽음', '사망':     '죽음',
+  '황금':      '금',   '금괴':    '금',   '금반지':   '금',   '금을': '금',
+  '임신':      '아기', '출산':    '아기', '아기':     '아기', '애기': '아기',
+  '조상':      '조상', '할아버지':'조상', '할머니':   '조상', '돌아가신': '조상',
+  '다이아':    '보석', '보석':    '보석', '반지':     '보석', '목걸이': '보석',
+  '지폐':      '돈',   '돈다발':  '돈',   '지갑':     '돈',
+  '태양':      '태양', '해가':    '태양', '일출':     '태양',
+  '무지개':    '무지개',
+  '잔치':      '음식', '밥상':    '음식', '먹는':     '음식',
+  '여행':      '여행', '해외':    '여행',
+  '눈이':      '눈',   '눈밭':    '눈',   '설경':     '눈',
+  '빗속':      '비',   '비가':    '비',   '소나기':   '비',
+  '숲속':      '나무', '나무':    '나무', '숲':       '나무',
+  '꽃밭':      '꽃',   '꽃이':    '꽃',   '장미':     '꽃',
+  '별이':      '별',   '유성':    '별',   '별똥':     '별',
+  '달이':      '달',   '보름달':  '달',   '달빛':     '달',
+  '학교':      '학교', '시험':    '학교', '공부':     '학교',
+  '집이':      '집',   '건물':    '집',   '아파트':   '집',
+  '말이':      '말',   '백마':    '말',   '경마':     '말',
+  '소가':      '소',   '황소':    '소',   '암소':     '소',
+  '물고기':    '물고기','잉어':   '물고기','낚시':    '물고기',
+  '결혼':      '결혼', '웨딩':    '결혼',
+  '용이':      '용',   '황룡':    '용',   '청룡':     '용',
+  '호랑이':    '호랑이','범이':   '호랑이',
+  '하늘':      '하늘', '날아':    '하늘', '비행':     '하늘',
+  '물에':      '물',   '바다':    '물',   '강':       '물',
+  '불이':      '불',   '화재':    '불',   '불꽃':     '불',
+  '뱀이':      '뱀',   '구렁이':  '뱀',
+  '돼지':      '돼지',
+  '똥':        '똥',   '대변':    '똥',   '화장실':   '똥',
+  '산':        '산',   '등산':    '산'
 };
 
 /* ═══════════════════════════════════════════
@@ -1109,26 +1166,26 @@ function startLucky() {
    STEP 5  번호 하나씩 팡팡 등장
 ═══════════════════════════════════════════ */
 function showLuckyNumbers() {
-  const sets   = generateLucky(window._dreamText);
-  const labels = ['A세트', 'B세트', 'C세트', 'D세트', 'E세트'];
+  const sets      = generateLucky(window._dreamText);
+  const labels    = ['A세트', 'B세트', 'C세트', 'D세트', 'E세트'];
   const container = document.getElementById('lottoSets');
   container.innerHTML = '';
 
   const allBalls = [];
 
   sets.forEach((set, i) => {
-    const row  = document.createElement('div');
-    row.className = 'lotto-set';
+    const row      = document.createElement('div');
+    row.className  = 'lotto-set';
 
-    const lbl  = document.createElement('div');
-    lbl.className   = 'set-label';
-    lbl.textContent = labels[i];
+    const lbl         = document.createElement('div');
+    lbl.className     = 'set-label';
+    lbl.textContent   = labels[i];
 
-    const ballWrap = document.createElement('div');
+    const ballWrap    = document.createElement('div');
     ballWrap.className = 'balls';
 
     set.forEach(n => {
-      const b = document.createElement('div');
+      const b       = document.createElement('div');
       b.className   = `ball ${getBallClass(n)}`;
       b.textContent = n;
       ballWrap.appendChild(b);
@@ -1151,7 +1208,7 @@ function showLuckyNumbers() {
 }
 
 /* ═══════════════════════════════════════════
-   초기화 (다른 꿈 해몽하기)
+   초기화
 ═══════════════════════════════════════════ */
 function resetApp() {
   document.getElementById('dreamInput').value = '';
@@ -1178,9 +1235,9 @@ function resetApp() {
 (function createStars() {
   const container = document.getElementById('stars');
   for (let i = 0; i < 60; i++) {
-    const star = document.createElement('div');
+    const star    = document.createElement('div');
     star.className = 'star';
-    const size = Math.random() * 2 + 1;
+    const size    = Math.random() * 2 + 1;
     star.style.cssText = `
       width: ${size}px;
       height: ${size}px;
