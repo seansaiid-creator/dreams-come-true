@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dreams-come-true-ten.vercel.app/sitemap.xml
