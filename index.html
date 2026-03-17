@@ -976,21 +976,10 @@
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       -->
     </div>
-    <!-- 면책 문구 -->
-    <div style="
-      margin: 12px 0 0;
-      padding: 12px 16px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 10px;
-      font-size: 11px;
-      color: rgba(255,255,255,0.25);
-      line-height: 1.7;
-      text-align: center;
-    ">
+    <div style="margin:12px 0 0;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:10px;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.7;text-align:center;">
       본 번호는 재미 목적으로 무작위 생성된 숫자이며,<br>
       복권 행운을 보장하지 않습니다. 오락 목적의 서비스입니다.
     </div>
-
     <button class="retry-btn" onclick="resetApp()">🔄 다른 꿈 해몽하기</button>
   </div>
 
@@ -1221,18 +1210,95 @@ function analyzeDream(text) {
   return defaultDream;
 }
 
-function generateLucky(dreamText) {
-  const sets = [];
-  let seed = dreamText.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+/* ═══════════════════════════════════════════
+   행운 번호 생성 — 복합 로직
+   ① 해몽 점수(luckScore)로 번호대 가중치 조정
+   ② 꿈 키워드별 대표 번호 1~2개 고정 포함
+   ③ 역대 인기 번호 가중치 풀 반영
+═══════════════════════════════════════════ */
+function generateLucky(dreamText, luckScore) {
+
+  /* ── ① 역대 인기 번호 풀 (출현 빈도 높은 번호에 가중치) ── */
+  const popularNums = [1,2,3,4,6,7,10,11,13,14,17,18,
+                       27,33,34,38,40,41,42,43,44,45];
+
+  /* ── ② 꿈 키워드별 대표 번호 ── */
+  const dreamSignNums = {
+    '돼지':[1,7,28],  '똥':[3,13,33],   '뱀':[6,16,26],
+    '용':[9,19,29],   '황금':[8,18,38], '금':[8,18,38],
+    '호랑이':[12,22,42],'불':[5,15,35], '물':[4,14,34],
+    '하늘':[2,22,44], '이빨':[11,21,31],'말':[7,17,37],
+    '소':[10,20,40],  '물고기':[6,26,36],'새':[2,12,32],
+    '태양':[1,11,41], '달':[24,34,44],  '별':[13,23,43],
+    '꽃':[3,23,33],   '산':[9,29,39],   '비':[4,24,44],
+    '눈':[2,22,42],   '무지개':[7,14,28,35,42,1],
+    '보석':[18,28,38],'돈':[10,20,30],  '집':[15,25,35],
+    '아기':[1,11,21], '조상':[3,33,43], '결혼':[5,15,25],
+    '토끼':[4,14,34], '곰':[8,28,38],   '거북':[9,19,29],
+    '고래':[7,17,27], '학':[1,21,41],   '봉황':[5,25,45],
+  };
+
+  /* ── ③ luckScore별 번호대 가중치 ── */
+  // luckScore 5(대길) → 높은 번호(26~45) 비중 ↑
+  // luckScore 4(길)   → 중간(16~35) 비중 ↑
+  // luckScore 3(중)   → 전체 균등
+  // luckScore 2(주의) → 낮은 번호(1~20) 비중 ↑
+  function getWeightedPool(score) {
+    const low  = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    const mid  = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35];
+    const high = [26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
+    const all  = Array.from({length:45},(_,i)=>i+1);
+
+    if (score >= 5) return [...high, ...high, ...popularNums, ...all];
+    if (score === 4) return [...mid, ...mid, ...popularNums, ...all];
+    if (score === 2) return [...low, ...low, ...popularNums, ...all];
+    return [...popularNums, ...popularNums, ...all];
+  }
+
+  /* ── 시드 기반 랜덤 함수 ── */
+  let seed = dreamText.split('').reduce((a,c)=>a+c.charCodeAt(0),0);
   seed += Date.now() % 10000;
-  function sr(s) { s = (s * 9301 + 49297) % 233280; return s / 233280; }
+  function sr(s) { s=(s*9301+49297)%233280; return s/233280; }
+  function nextInt(max) {
+    seed = Math.floor(sr(seed + seed % 97)*233280);
+    return Math.floor(sr(seed) * max);
+  }
+
+  /* ── 키워드 대표 번호 추출 ── */
+  function getSignNums(text) {
+    for (const [kw, nums] of Object.entries(dreamSignNums)) {
+      if (text.includes(kw)) return nums.slice(0,2);
+    }
+    return [];
+  }
+
+  const signNums  = getSignNums(dreamText);
+  const pool      = getWeightedPool(luckScore || 3);
+  const sets      = [];
+
   for (let i = 0; i < 5; i++) {
     const nums = new Set();
-    while (nums.size < 6) {
-      seed = Math.floor(sr(seed + i * 1000 + nums.size * 100) * 233280);
-      nums.add(Math.floor(sr(seed) * 45) + 1);
+
+    /* 대표 번호 1~2개 먼저 포함 (세트마다 다르게) */
+    if (signNums.length > 0) {
+      const pick = signNums[i % signNums.length];
+      if (pick >= 1 && pick <= 45) nums.add(pick);
     }
-    sets.push([...nums].sort((a, b) => a - b));
+
+    /* 나머지는 가중치 풀에서 뽑기 */
+    let attempts = 0;
+    while (nums.size < 6 && attempts < 300) {
+      const n = pool[nextInt(pool.length)];
+      if (n >= 1 && n <= 45) nums.add(n);
+      attempts++;
+    }
+
+    /* 혹시 부족하면 순수 랜덤으로 채우기 */
+    while (nums.size < 6) {
+      nums.add(Math.floor(Math.random() * 45) + 1);
+    }
+
+    sets.push([...nums].sort((a,b)=>a-b));
   }
   return sets;
 }
@@ -1328,7 +1394,7 @@ function startLucky() {
 }
 
 function showLuckyNumbers() {
-  const sets      = generateLucky(window._dreamText);
+  const sets      = generateLucky(window._dreamText, window._reading.luckScore);
   const labels    = ['A세트','B세트','C세트','D세트','E세트'];
   const container = document.getElementById('lottoSets');
   container.innerHTML = '';
