@@ -189,37 +189,38 @@
 
   .balls-stage {
     position: relative;
-    height: 130px;
-    margin-bottom: 8px;
-    overflow: visible;
+    height: 65px;
+    margin-bottom: 4px;
+    overflow: hidden;
   }
 
   .hero-ball {
     position: absolute;
-    width: 46px;
-    height: 46px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
+    opacity: 0.45;
     box-shadow:
       inset 0 -4px 8px rgba(0,0,0,0.35),
       inset 0 3px 6px rgba(255,255,255,0.25),
       0 6px 20px rgba(0,0,0,0.4);
   }
 
-  .hero-ball:nth-child(1)  { left: 6%;  top: 20px; animation: floatBall1 3.2s ease-in-out infinite; }
-  .hero-ball:nth-child(2)  { left: 20%; top: 60px; animation: floatBall2 2.8s ease-in-out infinite 0.3s; }
-  .hero-ball:nth-child(3)  { left: 34%; top: 15px; animation: floatBall3 3.5s ease-in-out infinite 0.6s; }
-  .hero-ball:nth-child(4)  { left: 48%; top: 55px; animation: floatBall1 2.6s ease-in-out infinite 0.2s; }
-  .hero-ball:nth-child(5)  { left: 62%; top: 10px; animation: floatBall2 3.0s ease-in-out infinite 0.8s; }
-  .hero-ball:nth-child(6)  { left: 76%; top: 50px; animation: floatBall3 2.9s ease-in-out infinite 0.4s; }
-  .hero-ball:nth-child(7)  { left: 88%; top: 18px; animation: floatBall1 3.3s ease-in-out infinite 1.0s; }
-  .hero-ball:nth-child(8)  { left: 13%; top: 90px; animation: floatBall2 2.7s ease-in-out infinite 0.5s; }
-  .hero-ball:nth-child(9)  { left: 42%; top: 88px; animation: floatBall3 3.1s ease-in-out infinite 0.9s; }
-  .hero-ball:nth-child(10) { left: 70%; top: 85px; animation: floatBall1 2.8s ease-in-out infinite 0.7s; }
+  .hero-ball:nth-child(1)  { left: 6%;  top: 8px;  animation: floatBall1 3.2s ease-in-out infinite; }
+  .hero-ball:nth-child(2)  { left: 20%; top: 28px; animation: floatBall2 2.8s ease-in-out infinite 0.3s; }
+  .hero-ball:nth-child(3)  { left: 34%; top: 5px;  animation: floatBall3 3.5s ease-in-out infinite 0.6s; }
+  .hero-ball:nth-child(4)  { left: 48%; top: 25px; animation: floatBall1 2.6s ease-in-out infinite 0.2s; }
+  .hero-ball:nth-child(5)  { left: 62%; top: 4px;  animation: floatBall2 3.0s ease-in-out infinite 0.8s; }
+  .hero-ball:nth-child(6)  { left: 76%; top: 22px; animation: floatBall3 2.9s ease-in-out infinite 0.4s; }
+  .hero-ball:nth-child(7)  { left: 88%; top: 6px;  animation: floatBall1 3.3s ease-in-out infinite 1.0s; }
+  .hero-ball:nth-child(8)  { left: 13%; top: 38px; animation: floatBall2 2.7s ease-in-out infinite 0.5s; }
+  .hero-ball:nth-child(9)  { left: 42%; top: 36px; animation: floatBall3 3.1s ease-in-out infinite 0.9s; }
+  .hero-ball:nth-child(10) { left: 70%; top: 35px; animation: floatBall1 2.8s ease-in-out infinite 0.7s; }
 
   @keyframes floatBall1 {
     0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -288,7 +289,7 @@
     margin-bottom: 20px;
     position: relative;
     overflow: hidden;
-    max-height: 180px;
+    max-height: 150px;
   }
 
   .preview-section::after {
@@ -494,7 +495,7 @@
   .loading-wrap {
     display: none;
     text-align: center;
-    padding: 32px 20px;
+    padding: 20px 16px;
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(201,168,76,0.2);
     border-radius: 20px;
@@ -502,9 +503,9 @@
   }
 
   .loading-orb {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 20px;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 14px;
     position: relative;
   }
 
@@ -532,7 +533,7 @@
 
   .orb-center {
     position: absolute;
-    inset: 24px;
+    inset: 16px;
     border-radius: 50%;
     background: radial-gradient(circle, var(--gold-light), var(--gold));
     animation: pulse-orb 1.5s ease-in-out infinite;
@@ -547,15 +548,15 @@
 
   .loading-title {
     font-family: 'Nanum Myeongjo', serif;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--gold);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .loading-sub {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-muted);
-    margin-bottom: 24px;
+    margin-bottom: 14px;
   }
 
   /* ── 광고 영역 ── */
@@ -565,7 +566,7 @@
     border-radius: 12px;
     padding: 16px;
     text-align: center;
-    min-height: 120px;
+    min-height: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1013,16 +1014,12 @@
   </div>
 
 
-  <!-- ══ 오늘의 운세 ══ -->
-  <div class="today-fortune" id="todayFortune"></div>
-
   <!-- ══ 샘플 미리보기 ══ -->
   <div class="preview-section" id="preview-section">
     <div class="preview-label">✨ 오늘의 행운 번호 미리보기</div>
     <div class="preview-sets" id="previewSets"></div>
     <div class="preview-unlock">
       <div class="preview-unlock-text">🌙 꿈을 입력하면 나만의 번호를 받을 수 있어요</div>
-      <div class="preview-unlock-sub">아래에 어젯밤 꿈을 입력해보세요</div>
     </div>
   </div>
 
@@ -1056,6 +1053,9 @@
     </div>
   </div>
 
+  <!-- ══ 오늘의 운세 ══ -->
+  <div class="today-fortune" id="todayFortune"></div>
+
   <button class="cta-btn" id="mainBtn" onclick="startReading()">
     ✨ 꿈 해몽하기
   </button>
@@ -1072,7 +1072,7 @@
     <div class="loading-sub">잠시만 기다려 주세요</div>
     <div class="ad-box">
       <div class="ad-label">ADVERTISEMENT</div>
-      <div class="ad-placeholder">광고 영역 (320×100)</div>
+      <div class="ad-placeholder">광고 영역 (320×250)</div>
       <!--
       <ins class="adsbygoogle"
            style="display:inline-block;width:320px;height:100px"
@@ -1115,7 +1115,7 @@
     <div class="loading-sub">꿈의 기운으로 번호를 고르고 있어요</div>
     <div class="ad-box">
       <div class="ad-label">ADVERTISEMENT</div>
-      <div class="ad-placeholder">광고 영역 (320×100)</div>
+      <div class="ad-placeholder">광고 영역 (320×250)</div>
       <!--
       <ins class="adsbygoogle"
            style="display:inline-block;width:320px;height:100px"
@@ -1461,8 +1461,9 @@ function startReading() {
   document.getElementById('scrollHint').style.display      = 'none';
   document.getElementById('input-section').style.display   = 'none';
   document.getElementById('mainBtn').style.display         = 'none';
+  document.getElementById('todayFortune').style.display    = 'none';
   document.getElementById('loading-section').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(() => document.getElementById('loading-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 
   const steps  = ['step1','step2','step3','step4'];
   const delays = [400,1200,2200,3400];
@@ -1486,13 +1487,13 @@ function showHaemong() {
   document.getElementById('haemongAdvice').innerHTML    = r.advice;
   document.getElementById('loading-section').style.display = 'none';
   document.getElementById('haemong-section').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(() => document.getElementById('haemong-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 }
 
 function startLucky() {
   document.getElementById('haemong-section').style.display = 'none';
   document.getElementById('lucky-loading').style.display   = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(() => document.getElementById('lucky-loading').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   setTimeout(showLuckyNumbers, 5000);
 }
 
@@ -1523,7 +1524,7 @@ function showLuckyNumbers() {
   });
   document.getElementById('lucky-loading').style.display = 'none';
   document.getElementById('lucky-section').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(() => document.getElementById('lucky-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   allBalls.forEach((ball, idx) => {
     setTimeout(() => ball.classList.add('show'), idx * 180);
   });
@@ -1534,6 +1535,7 @@ function resetApp() {
   document.getElementById('preview-section').style.display = 'block';
   document.getElementById('scrollHint').style.display      = 'block';
   document.getElementById('input-section').style.display   = 'block';
+  document.getElementById('todayFortune').style.display    = 'block';
   document.getElementById('mainBtn').style.display         = 'block';
   document.getElementById('haemong-section').style.display = 'none';
   document.getElementById('lucky-section').style.display   = 'none';
@@ -1691,5 +1693,3 @@ window.addEventListener('load', function() {
 });
 
 </script>
-</body>
-</html>
