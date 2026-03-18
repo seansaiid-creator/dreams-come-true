@@ -864,7 +864,10 @@
 <!-- ══ 네비게이션 ══ -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"></a>
+    <div class="nav-left">
+      <button class="nav-back" id="navBack" onclick="goBack()" style="display:none;">←</button>
+      <a href="index.html" class="nav-logo" onclick="resetApp(); return false;">🌙 꿈해몽 행운</a>
+    </div>
     <div class="nav-links">
       <a href="index.html" class="nav-link active">해몽하기</a>
       <a href="guide.html" class="nav-link">해몽 가이드</a>
