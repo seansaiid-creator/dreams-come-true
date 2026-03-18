@@ -144,12 +144,25 @@
     height: 52px;
   }
 
+  .nav-left { display:flex; align-items:center; gap:8px; }
   .nav-logo {
     font-family: 'Nanum Myeongjo', serif;
     font-size: 16px;
     font-weight: 800;
     color: var(--gold);
     text-decoration: none;
+    cursor: pointer;
+  }
+  .nav-back {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px 4px 0;
+    line-height: 1;
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   .nav-links {
@@ -280,100 +293,6 @@
   .flow-label { font-size: 11px; color: var(--text-muted); }
   .flow-arrow { color: var(--gold); font-size: 16px; margin-bottom: 16px; opacity: 0.7; }
 
-  /* ── 샘플 미리보기 ── */
-  .preview-section {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(201,168,76,0.15);
-    border-radius: 20px;
-    padding: 14px 16px;
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-    max-height: 150px;
-  }
-
-  .preview-section::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      transparent 20%,
-      rgba(13,10,26,0.6) 55%,
-      rgba(13,10,26,0.97) 80%,
-      rgba(13,10,26,1.0) 100%
-    );
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .preview-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    opacity: 0.7;
-  }
-
-  .preview-sets {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    filter: blur(4px);
-    opacity: 0.4;
-  }
-
-  .preview-set {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .preview-set-label {
-    font-size: 11px;
-    color: var(--text-muted);
-    width: 30px;
-    flex-shrink: 0;
-  }
-
-  .preview-balls { display: flex; gap: 6px; }
-
-  .preview-ball {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    box-shadow: inset 0 -3px 6px rgba(0,0,0,0.3);
-  }
-
-  .preview-unlock {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    text-align: center;
-    padding: 12px 16px;
-  }
-
-  .preview-unlock-text {
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 14px;
-    color: var(--gold-light);
-    margin-bottom: 2px;
-  }
-
-  .preview-unlock-sub {
-    font-size: 11px;
-    color: var(--text-muted);
-  }
 
   /* ── 스크롤 힌트 ── */
   .scroll-hint {
@@ -852,30 +771,11 @@
     line-height: 1.8;
   }
 
-  .fortune-numbers {
-    display: flex;
-    gap: 8px;
-    margin-top: 12px;
-    flex-wrap: wrap;
-  }
-
-  .fortune-num {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 700;
-    background: rgba(201,168,76,0.2);
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold-light);
-  }
 
   /* ── 공유/복사 버튼 ── */
   .share-section {
     margin-top: 16px;
+    margin-bottom: 16px;
     padding-top: 16px;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
@@ -1014,13 +914,12 @@
   </div>
 
 
-  <!-- ══ 샘플 미리보기 ══ -->
-  <div class="preview-section" id="preview-section">
-    <div class="preview-label">✨ 오늘의 행운 번호 미리보기</div>
-    <div class="preview-sets" id="previewSets"></div>
-    <div class="preview-unlock">
-      <div class="preview-unlock-text">🌙 꿈을 입력하면 나만의 번호를 받을 수 있어요</div>
-    </div>
+  <!-- ══ 오늘의 운세 ══ -->
+  <div class="today-fortune" id="todayFortune"></div>
+
+  <!-- ══ 안내 문구 ══ -->
+  <div id="preview-section" style="text-align:center; padding:4px 16px 16px;">
+    <div class="preview-unlock-text" style="color:var(--gold);">🌙 꿈을 입력하면 나만의 번호를 받을 수 있어요</div>
   </div>
 
   <!-- 스크롤 힌트 -->
@@ -1052,9 +951,6 @@
       <span class="tag" onclick="setDream('결혼하는 꿈')">💍 결혼</span>
     </div>
   </div>
-
-  <!-- ══ 오늘의 운세 ══ -->
-  <div class="today-fortune" id="todayFortune"></div>
 
   <button class="cta-btn" id="mainBtn" onclick="startReading()">
     ✨ 꿈 해몽하기
@@ -1098,6 +994,19 @@
       <div class="haemong-text"    id="haemongText"></div>
       <div class="haemong-advice"  id="haemongAdvice"></div>
     </div>
+    <!-- 해몽 결과 공유 버튼 -->
+    <div class="share-section fade-in" style="animation-delay:0.2s">
+      <div class="share-title">📢 해몽 결과 친구에게 공유하기</div>
+      <div class="share-buttons">
+        <button class="share-btn btn-kakao" onclick="shareHaemongKakao()">
+          <span>💬</span> 카카오톡
+        </button>
+        <button class="share-btn btn-copy" id="haemongLinkCopyBtn" onclick="copyHaemongLink()">
+          <span>🔗</span> 링크 복사
+        </button>
+      </div>
+    </div>
+
     <button class="cta-btn fade-in" style="animation-delay:0.3s" onclick="startLucky()">
       🎰 행운 번호 받기
     </button>
@@ -1414,38 +1323,6 @@ function getBallClass(n) {
   return 'r5';
 }
 
-function buildPreview() {
-  const sampleSets = [
-    [3,12,24,33,40,45],
-    [7,15,22,28,37,42],
-    [1,11,19,27,34,43],
-    [5,14,21,30,38,44],
-    [9,16,25,32,39,41]
-  ];
-  const labels = ['A세트','B세트','C세트','D세트','E세트'];
-  const container = document.getElementById('previewSets');
-  container.innerHTML = '';
-  sampleSets.forEach((set, i) => {
-    const row = document.createElement('div');
-    row.className = 'preview-set';
-    const lbl = document.createElement('div');
-    lbl.className = 'preview-set-label';
-    lbl.textContent = labels[i];
-    const balls = document.createElement('div');
-    balls.className = 'preview-balls';
-    set.forEach(n => {
-      const b = document.createElement('div');
-      b.className = `preview-ball ball ${getBallClass(n)}`;
-      b.style.opacity = '1';
-      b.style.transform = 'none';
-      b.textContent = n;
-      balls.appendChild(b);
-    });
-    row.appendChild(lbl);
-    row.appendChild(balls);
-    container.appendChild(row);
-  });
-}
 
 function setDream(text) {
   document.getElementById('dreamInput').value = text;
@@ -1463,6 +1340,7 @@ function startReading() {
   document.getElementById('mainBtn').style.display         = 'none';
   document.getElementById('todayFortune').style.display    = 'none';
   document.getElementById('loading-section').style.display = 'block';
+  showBackBtn();
   setTimeout(() => document.getElementById('loading-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 
   const steps  = ['step1','step2','step3','step4'];
@@ -1530,6 +1408,29 @@ function showLuckyNumbers() {
   });
 }
 
+/* ═══════════════════════════════════════════
+   뒤로가기 버튼 제어
+═══════════════════════════════════════════ */
+function showBackBtn() {
+  const btn = document.getElementById('navBack');
+  if (btn) btn.style.display = 'block';
+}
+
+function hideBackBtn() {
+  const btn = document.getElementById('navBack');
+  if (btn) btn.style.display = 'none';
+}
+
+function goBack() {
+  if (document.getElementById('lucky-section').style.display !== 'none') {
+    document.getElementById('lucky-section').style.display = 'none';
+    document.getElementById('haemong-section').style.display = 'block';
+    setTimeout(() => document.getElementById('haemong-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  } else {
+    resetApp();
+  }
+}
+
 function resetApp() {
   document.getElementById('dreamInput').value = '';
   document.getElementById('preview-section').style.display = 'block';
@@ -1546,6 +1447,8 @@ function resetApp() {
   });
   window._dreamText = '';
   window._reading   = null;
+  hideBackBtn();
+  hideBackBtn();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1565,7 +1468,6 @@ function resetApp() {
   }
 })();
 
-buildPreview();
 
 /* ═══════════════════════════════════════════
    오늘의 운세
@@ -1593,14 +1495,11 @@ function buildTodayFortune() {
   const days  = ['일','월','화','수','목','금','토'];
   const day   = days[today.getDay()];
 
-  const numHtml = fortune.nums.map(n => `<div class="fortune-num">${n}</div>`).join('');
-
   el.innerHTML = `
     <div class="fortune-label">⭐ 오늘의 운세</div>
     <div class="fortune-date">${month}월 ${date}일 (${day}요일)</div>
     <div class="fortune-title">${fortune.title}</div>
     <div class="fortune-text">${fortune.text}</div>
-    <div class="fortune-numbers">${numHtml}</div>
   `;
 }
 
@@ -1641,6 +1540,54 @@ function copyLink() {
   const url = 'https://dreams-come-true-ten.vercel.app';
   navigator.clipboard.writeText(url).then(() => {
     const btn = document.getElementById('linkCopyBtn');
+    btn.innerHTML = '<span>✅</span> 복사됨';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = '<span>🔗</span> 링크 복사';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    alert('링크: https://dreams-come-true-ten.vercel.app');
+  });
+}
+
+/* ═══════════════════════════════════════════
+   해몽 결과 카카오톡 공유
+═══════════════════════════════════════════ */
+function shareHaemongKakao() {
+  const keyword = document.getElementById('haemongKeyword').textContent;
+  const luck    = document.getElementById('haemongLuck').textContent;
+  const text    = document.getElementById('haemongText').textContent;
+
+  const shareText = '🌙 꿈해몽 행운 - 꿈 해몽 결과\n\n'
+    + keyword + ' ' + luck + '\n\n'
+    + text.substring(0, 80) + '...\n\n'
+    + '✨ 내 꿈도 해몽해보세요!';
+
+  if (typeof Kakao === 'undefined' || !Kakao.isInitialized()) {
+    copyHaemongLink();
+    return;
+  }
+
+  Kakao.Share.sendDefault({
+    objectType: 'text',
+    text: shareText,
+    link: {
+      mobileWebUrl: 'https://dreams-come-true-ten.vercel.app',
+      webUrl: 'https://dreams-come-true-ten.vercel.app',
+    },
+  });
+}
+
+function copyHaemongLink() {
+  const keyword = document.getElementById('haemongKeyword').textContent;
+  const luck    = document.getElementById('haemongLuck').textContent;
+  const text    = '🌙 ' + keyword + ' ' + luck
+    + '\n\n✨ 꿈해몽 행운에서 해몽해봤어요!'
+    + '\nhttps://dreams-come-true-ten.vercel.app';
+
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('haemongLinkCopyBtn');
     btn.innerHTML = '<span>✅</span> 복사됨';
     btn.classList.add('copied');
     setTimeout(() => {
