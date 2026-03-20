@@ -989,38 +989,10 @@ function openExternalBrowser() {
     </div>
   </div>
 
-  <button class="cta-btn" id="mainBtn" onclick="startReading()">
-    ✨ 꿈 해몽하기
+  <button class="cta-btn" id="mainBtn" onclick="startAll()">
+    ✨ 해몽 후 행운번호 받기
   </button>
 
-  <!-- ══ STEP 2 : 해몽 로딩 (광고) ══ -->
-  <div class="loading-wrap" id="loading-section">
-    <div class="loading-orb">
-      <div class="orb-ring"></div>
-      <div class="orb-ring"></div>
-      <div class="orb-ring"></div>
-      <div class="orb-center"></div>
-    </div>
-    <div class="loading-title">꿈의 기운을 읽는 중...</div>
-    <div class="loading-sub">잠시만 기다려 주세요</div>
-    <div class="ad-box">
-      <div class="ad-label">ADVERTISEMENT</div>
-      <div class="ad-placeholder">광고 영역 (320×250)</div>
-      <!--
-      <ins class="adsbygoogle"
-           style="display:inline-block;width:320px;height:100px"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      -->
-    </div>
-    <div class="loading-steps">
-      <div class="step-item" id="step1"><div class="step-dot"></div> 꿈의 키워드 분석 중...</div>
-      <div class="step-item" id="step2"><div class="step-dot"></div> 해몽 데이터 조회 중...</div>
-      <div class="step-item" id="step3"><div class="step-dot"></div> 해몽 결과 생성 중...</div>
-      <div class="step-item" id="step4"><div class="step-dot"></div> 해몽 완료!</div>
-    </div>
-  </div>
 
   <!-- ══ STEP 3 : 해몽 결과 ══ -->
   <div id="haemong-section">
@@ -1031,22 +1003,6 @@ function openExternalBrowser() {
       <div class="haemong-text"    id="haemongText"></div>
       <div class="haemong-advice"  id="haemongAdvice"></div>
     </div>
-    <!-- 해몽 결과 공유 버튼 -->
-    <div class="share-section fade-in" style="animation-delay:0.2s">
-      <div class="share-title">📢 해몽 결과 친구에게 공유하기</div>
-      <div class="share-buttons">
-        <button class="share-btn btn-kakao" onclick="shareHaemongKakao()">
-          <span>💬</span> 카카오톡
-        </button>
-        <button class="share-btn btn-copy" id="haemongLinkCopyBtn" onclick="copyHaemongLink()">
-          <span>🔗</span> 링크 복사
-        </button>
-      </div>
-    </div>
-
-    <button class="cta-btn fade-in" style="animation-delay:0.3s" onclick="startLucky()">
-      🎰 행운 번호 받기
-    </button>
   </div>
 
   <!-- ══ STEP 4+5 : 번호 로딩 + 결과 동시 표시 ══ -->
@@ -1354,53 +1310,37 @@ function setDream(text) {
   document.getElementById('dreamInput').value = text;
 }
 
-function startReading() {
+function startAll() {
   const dreamText = document.getElementById('dreamInput').value.trim();
   if (!dreamText) { alert('꿈 내용을 입력해주세요 🌙'); return; }
   window._dreamText = dreamText;
   window._reading   = analyzeDream(dreamText);
 
+  // UI 정리
   document.getElementById('preview-section').style.display = 'none';
   document.getElementById('scrollHint').style.display      = 'none';
   document.getElementById('input-section').style.display   = 'none';
   document.getElementById('mainBtn').style.display         = 'none';
   document.getElementById('todayFortune').style.display    = 'none';
-  document.getElementById('loading-section').style.display = 'block';
   showBackBtn();
-  setTimeout(() => document.getElementById('loading-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 
-  const steps  = ['step1','step2','step3','step4'];
-  const delays = [400,1200,2200,3400];
-  steps.forEach((id, idx) => {
-    setTimeout(() => {
-      document.getElementById(id).classList.add('show');
-      if (idx > 0) document.getElementById(steps[idx-1]).classList.add('done');
-    }, delays[idx]);
-  });
-  setTimeout(() => {
-    document.getElementById('step4').classList.add('done');
-    showHaemong();
-  }, 5000);
-}
-
-function showHaemong() {
+  // 해몽 결과 즉시 표시 (광고/로딩 없음)
   const r = window._reading;
   document.getElementById('haemongKeyword').textContent = r.keyword;
   document.getElementById('haemongLuck').innerHTML      = r.luck;
   document.getElementById('haemongText').textContent    = r.text;
   document.getElementById('haemongAdvice').innerHTML    = r.advice;
-  document.getElementById('loading-section').style.display = 'none';
   document.getElementById('haemong-section').style.display = 'block';
   setTimeout(() => document.getElementById('haemong-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-}
 
-function startLucky() {
-  document.getElementById('haemong-section').style.display = 'none';
-  // 광고 + 번호 동시 즉시 표시 (로딩 없음)
+  // 광고 + 행운번호 즉시 함께 표시
   document.getElementById('lucky-section').style.display = 'block';
-  setTimeout(() => document.getElementById('lucky-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   showLuckyNumbers();
 }
+
+// 하위 호환용 (혹시 다른 곳에서 호출될 경우 대비)
+function startReading() { startAll(); }
+function startLucky()   { startAll(); }
 
 function showLuckyNumbers() {
   const sets      = generateLucky(window._dreamText);
@@ -1429,7 +1369,7 @@ function showLuckyNumbers() {
   });
   // 광고는 번호 위에 유지, 번호공은 순차 등장 (5~6초간 자연스러운 광고 노출)
   allBalls.forEach((ball, idx) => {
-    setTimeout(() => ball.classList.add('show'), idx * 180);
+    setTimeout(() => ball.classList.add('show'), idx * 250);
   });
 }
 
@@ -1447,13 +1387,7 @@ function hideBackBtn() {
 }
 
 function goBack() {
-  if (document.getElementById('lucky-section').style.display !== 'none') {
-    document.getElementById('lucky-section').style.display = 'none';
-    document.getElementById('haemong-section').style.display = 'block';
-    setTimeout(() => document.getElementById('haemong-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-  } else {
-    resetApp();
-  }
+  resetApp();
 }
 
 function resetApp() {
@@ -1466,10 +1400,8 @@ function resetApp() {
   document.getElementById('haemong-section').style.display = 'none';
   document.getElementById('lucky-section').style.display   = 'none';
   document.getElementById('lotto-result').style.display   = 'none';
-  document.getElementById('loading-section').style.display = 'none';
-  ['step1','step2','step3','step4'].forEach(id => {
-    document.getElementById(id).classList.remove('show','done');
-  });
+
+
   window._dreamText = '';
   window._reading   = null;
   hideBackBtn();
