@@ -860,6 +860,39 @@
 </head>
 <body>
 
+<!-- ══ 카카오 인앱브라우저 안내 ══ -->
+<div id="inapp-banner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:9999; background:linear-gradient(135deg,#3A1C8A,#5B2D9A); padding:10px 16px; text-align:center; font-size:13px; color:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+  🌐 더 편하게 이용하려면 외부 브라우저로 여세요
+  <button onclick="openExternalBrowser()" style="margin-left:10px; background:#C9A84C; border:none; border-radius:8px; padding:5px 12px; font-size:12px; font-weight:700; color:#0D0A1A; cursor:pointer;">브라우저로 열기 →</button>
+  <button onclick="document.getElementById('inapp-banner').style.display='none'" style="margin-left:6px; background:rgba(255,255,255,0.15); border:none; border-radius:8px; padding:5px 10px; font-size:11px; color:#fff; cursor:pointer;">✕</button>
+</div>
+<script>
+(function(){
+  var ua = navigator.userAgent || '';
+  var isKakao = /KAKAOTALK/i.test(ua);
+  if(isKakao) {
+    document.getElementById('inapp-banner').style.display = 'block';
+  }
+})();
+function openExternalBrowser() {
+  var url = location.href;
+  // 안드로이드: intent 스킴으로 외부 브라우저 시도
+  var ua = navigator.userAgent || '';
+  if(/Android/i.test(ua)) {
+    location.href = 'intent://' + url.replace(/https?:\/\//,'') + '#Intent;scheme=https;action=android.intent.action.VIEW;end';
+  } else {
+    // iOS: 클립보드 복사 후 안내
+    if(navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function(){
+        alert('주소가 복사되었어요!\nSafari 주소창에 붙여넣기 해주세요 😊');
+      });
+    } else {
+      alert('주소창에 직접 입력해주세요:\n' + url);
+    }
+  }
+}
+</script>
+
 <div class="stars" id="stars"></div>
 
 <!-- ══ 네비게이션 ══ -->
@@ -1016,17 +1049,10 @@
     </button>
   </div>
 
-  <!-- ══ STEP 4 : 번호 로딩 (광고) ══ -->
-  <div class="loading-wrap" id="lucky-loading">
-    <div class="loading-orb">
-      <div class="orb-ring"></div>
-      <div class="orb-ring"></div>
-      <div class="orb-ring"></div>
-      <div class="orb-center"></div>
-    </div>
-    <div class="loading-title">행운의 번호 추출 중...</div>
-    <div class="loading-sub">꿈의 기운으로 번호를 고르고 있어요</div>
-    <div class="ad-box">
+  <!-- ══ STEP 4+5 : 번호 로딩 + 결과 동시 표시 ══ -->
+  <div id="lucky-section">
+    <!-- 광고: 번호 위에 항상 표시 -->
+    <div class="ad-box" id="lucky-ad-box">
       <div class="ad-label">ADVERTISEMENT</div>
       <div class="ad-placeholder">광고 영역 (320×250)</div>
       <!--
@@ -1037,11 +1063,7 @@
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       -->
     </div>
-  </div>
-
-  <!-- ══ STEP 5 : 번호 결과 ══ -->
-  <div id="lucky-section">
-    <div class="lotto-section fade-in">
+    <div class="lotto-section fade-in" id="lotto-result">
       <div class="numbers-header">
         <div class="lotto-title">🔮 행운의 번호 5세트</div>
         <button class="copy-numbers-btn" id="copyNumBtn" onclick="copyNumbers()">📋 복사</button>
@@ -1374,9 +1396,10 @@ function showHaemong() {
 
 function startLucky() {
   document.getElementById('haemong-section').style.display = 'none';
-  document.getElementById('lucky-loading').style.display   = 'block';
-  setTimeout(() => document.getElementById('lucky-loading').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-  setTimeout(showLuckyNumbers, 5000);
+  // 광고 + 번호 동시 즉시 표시 (로딩 없음)
+  document.getElementById('lucky-section').style.display = 'block';
+  setTimeout(() => document.getElementById('lucky-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  showLuckyNumbers();
 }
 
 function showLuckyNumbers() {
@@ -1404,9 +1427,7 @@ function showLuckyNumbers() {
     row.appendChild(ballWrap);
     container.appendChild(row);
   });
-  document.getElementById('lucky-loading').style.display = 'none';
-  document.getElementById('lucky-section').style.display = 'block';
-  setTimeout(() => document.getElementById('lucky-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  // 광고는 번호 위에 유지, 번호공은 순차 등장 (5~6초간 자연스러운 광고 노출)
   allBalls.forEach((ball, idx) => {
     setTimeout(() => ball.classList.add('show'), idx * 180);
   });
@@ -1444,7 +1465,7 @@ function resetApp() {
   document.getElementById('mainBtn').style.display         = 'block';
   document.getElementById('haemong-section').style.display = 'none';
   document.getElementById('lucky-section').style.display   = 'none';
-  document.getElementById('lucky-loading').style.display   = 'none';
+  document.getElementById('lotto-result').style.display   = 'none';
   document.getElementById('loading-section').style.display = 'none';
   ['step1','step2','step3','step4'].forEach(id => {
     document.getElementById(id).classList.remove('show','done');
