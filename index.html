@@ -862,7 +862,7 @@
 
 <!-- ══ 카카오 인앱브라우저 안내 ══ -->
 <div id="inapp-banner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:9999; background:linear-gradient(135deg,#3A1C8A,#5B2D9A); padding:10px 16px; text-align:center; font-size:13px; color:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
-  🌐 더 편하게 이용하려면 외부 브라우저로 여세요
+  🌐 카카오톡 내에서는 일부 기능이 제한돼요
   <button onclick="openExternalBrowser()" style="margin-left:10px; background:#C9A84C; border:none; border-radius:8px; padding:5px 12px; font-size:12px; font-weight:700; color:#0D0A1A; cursor:pointer;">브라우저로 열기 →</button>
   <button onclick="document.getElementById('inapp-banner').style.display='none'" style="margin-left:6px; background:rgba(255,255,255,0.15); border:none; border-radius:8px; padding:5px 10px; font-size:11px; color:#fff; cursor:pointer;">✕</button>
 </div>
@@ -876,20 +876,43 @@
 })();
 function openExternalBrowser() {
   var url = location.href;
-  // 안드로이드: intent 스킴으로 외부 브라우저 시도
   var ua = navigator.userAgent || '';
   if(/Android/i.test(ua)) {
-    location.href = 'intent://' + url.replace(/https?:\/\//,'') + '#Intent;scheme=https;action=android.intent.action.VIEW;end';
+    // 안드로이드: Chrome으로 강제 실행
+    var intentUrl = 'intent://' + url.replace(/https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;end';
+    location.href = intentUrl;
+    setTimeout(function() { location.href = url; }, 1500);
   } else {
-    // iOS: 클립보드 복사 후 안내
-    if(navigator.clipboard) {
-      navigator.clipboard.writeText(url).then(function(){
-        alert('주소가 복사되었어요!\nSafari 주소창에 붙여넣기 해주세요 😊');
-      });
+    // iOS: 주소 복사 + 친절한 팝업 안내
+    var copyDone = false;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function() { showCopyGuide(); }).catch(function() { fallbackCopy(url); });
     } else {
-      alert('주소창에 직접 입력해주세요:\n' + url);
+      fallbackCopy(url);
     }
   }
+}
+function fallbackCopy(url) {
+  var ta = document.createElement('textarea');
+  ta.value = url;
+  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+  showCopyGuide();
+}
+function showCopyGuide() {
+  var old = document.getElementById('copy-guide-popup');
+  if (old) old.remove();
+  var popup = document.createElement('div');
+  popup.id = 'copy-guide-popup';
+  popup.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:99999;background:#1A0F3A;border:1px solid rgba(201,168,76,0.4);border-radius:16px;padding:24px 20px;text-align:center;width:280px;box-shadow:0 8px 32px rgba(0,0,0,0.5);';
+  popup.innerHTML = '<div style="font-size:32px;margin-bottom:12px;">📋</div>'
+    + '<div style="color:#F0D080;font-size:15px;font-weight:700;margin-bottom:10px;">주소가 복사됐어요!</div>'
+    + '<div style="color:#C0B090;font-size:13px;line-height:1.8;margin-bottom:16px;">① 카카오톡 하단 <b style="color:#F0D080">···</b> 메뉴 클릭<br>② <b style="color:#F0D080">다른 브라우저로 열기</b> 선택<br><br>또는 Safari/Chrome 주소창에<br>붙여넣기 해주세요 😊</div>'
+    + '<button onclick="document.getElementById(&quot;copy-guide-popup&quot;).remove()" style="background:linear-gradient(135deg,#8B6914,#C9A84C);border:none;border-radius:10px;padding:10px 24px;color:#0D0A1A;font-weight:700;font-size:14px;cursor:pointer;">확인</button>';
+  document.body.appendChild(popup);
 }
 </script>
 
@@ -1331,11 +1354,13 @@ function startAll() {
   document.getElementById('haemongText').textContent    = r.text;
   document.getElementById('haemongAdvice').innerHTML    = r.advice;
   document.getElementById('haemong-section').style.display = 'block';
-  setTimeout(() => document.getElementById('haemong-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 
   // 광고 + 행운번호 즉시 함께 표시
   document.getElementById('lucky-section').style.display = 'block';
   showLuckyNumbers();
+
+  // 광고 + 행운공 섹션으로 자동 스크롤 (광고가 함께 보이도록)
+  setTimeout(() => document.getElementById('lucky-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
 }
 
 // 하위 호환용 (혹시 다른 곳에서 호출될 경우 대비)
@@ -1399,12 +1424,12 @@ function resetApp() {
   document.getElementById('mainBtn').style.display         = 'block';
   document.getElementById('haemong-section').style.display = 'none';
   document.getElementById('lucky-section').style.display   = 'none';
-  document.getElementById('lotto-result').style.display   = 'none';
-
-
+  document.getElementById('lotto-result').style.display    = 'block'; // 다음 사용을 위해 초기화
+  document.getElementById('lottoSets').innerHTML           = '';       // 이전 번호 완전 초기화
+  // 공 애니메이션 초기화
+  document.querySelectorAll('.ball').forEach(b => b.classList.remove('show'));
   window._dreamText = '';
   window._reading   = null;
-  hideBackBtn();
   hideBackBtn();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
