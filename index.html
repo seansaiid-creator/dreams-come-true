@@ -854,6 +854,61 @@
   .copy-numbers-btn:active { transform: scale(0.97); }
   .copy-numbers-btn.copied { color: #90D090; border-color: rgba(46,139,87,0.4); }
 
+  /* ── 사주행운 배너 ── */
+  .saju-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(107,63,160,0.22), rgba(201,168,76,0.12));
+    border: 1px solid rgba(201,168,76,0.35);
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .saju-banner:active {
+    background: linear-gradient(135deg, rgba(107,63,160,0.35), rgba(201,168,76,0.2));
+    transform: scale(0.98);
+  }
+  .saju-banner-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    animation: sajuFloat 3s ease-in-out infinite;
+  }
+  @keyframes sajuFloat {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+  }
+  .saju-banner-body { flex: 1; min-width: 0; }
+  .saju-banner-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 3px;
+  }
+  .saju-banner-title {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .saju-banner-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .saju-banner-arrow {
+    font-size: 16px;
+    color: var(--gold);
+    opacity: 0.8;
+    flex-shrink: 0;
+  }
+
 </style>
 <!-- 카카오 SDK -->
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
@@ -1026,6 +1081,18 @@ function showCopyGuide() {
       <div class="haemong-text"    id="haemongText"></div>
       <div class="haemong-advice"  id="haemongAdvice"></div>
     </div>
+
+    <!-- 사주행운 배너 -->
+    <a href="https://sajulucky.vercel.app" class="saju-banner fade-in" style="animation-delay:0.2s" target="_blank" rel="noopener">
+      <span class="saju-banner-icon">🔯</span>
+      <div class="saju-banner-body">
+        <div class="saju-banner-label">✦ 사주 운세 ✦</div>
+        <div class="saju-banner-title">사주로 오늘 운세를 더 깊게 알아보세요</div>
+        <div class="saju-banner-desc">생년월일로 사주 분석 + 행운번호 5세트 무료</div>
+      </div>
+      <span class="saju-banner-arrow">→</span>
+    </a>
+
   </div>
 
   <!-- ══ STEP 4+5 : 번호 로딩 + 결과 동시 표시 ══ -->
