@@ -991,7 +991,7 @@ function showCopyGuide() {
 <div class="container">
 
   <!-- ══ 히어로 ══ -->
-  <div class="hero">
+  <div class="hero" id="heroSection">
     <div class="balls-stage">
       <div class="hero-ball hb-r1">7</div>
       <div class="hero-ball hb-r2">14</div>
@@ -1412,6 +1412,7 @@ function startAll() {
   document.getElementById('input-section').style.display   = 'none';
   document.getElementById('mainBtn').style.display         = 'none';
   document.getElementById('todayFortune').style.display    = 'none';
+  document.getElementById('heroSection').style.display     = 'none';  // 히어로 숨김
   showBackBtn();
 
   // 해몽 결과 즉시 표시 (광고/로딩 없음)
@@ -1489,6 +1490,7 @@ function resetApp() {
   document.getElementById('input-section').style.display   = 'block';
   document.getElementById('todayFortune').style.display    = 'block';
   document.getElementById('mainBtn').style.display         = 'block';
+  document.getElementById('heroSection').style.display     = 'block';  // 히어로 복구
   document.getElementById('haemong-section').style.display = 'none';
   document.getElementById('lucky-section').style.display   = 'none';
   document.getElementById('lotto-result').style.display    = 'block'; // 다음 사용을 위해 초기화
