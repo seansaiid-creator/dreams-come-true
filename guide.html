@@ -36,318 +36,67 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --gold: #C9A84C;
-      --gold-light: #F0D080;
-      --gold-dark: #8B6914;
-      --deep: #0D0A1A;
-      --purple: #6B3FA0;
-      --purple-light: #9B6FD0;
-      --text: #F0EAD6;
-      --text-muted: #A09080;
-      --card: rgba(255,255,255,0.04);
-      --border: rgba(201,168,76,0.15);
-    }
-    * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-    html, body { width:100%; overflow-x:hidden; }
-    body {
-      background: var(--deep);
-      color: var(--text);
-      font-family: 'Pretendard', sans-serif;
-      min-height:100vh;
-    }
-    body::before {
-      content:'';
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      z-index:0;
-      background:
-        radial-gradient(ellipse at 20% 20%, rgba(107,63,160,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);
-    }
-    .nav {
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(13,10,26,0.92);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--border);
-      padding:0 16px;
-    }
-    .nav-inner {
-      max-width:480px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      height:52px;
-    }
-    .nav-logo {
-      font-family:'Nanum Myeongjo', serif;
-      font-size:16px;
-      font-weight:800;
-      color:var(--gold);
-      text-decoration:none;
-    }
-    .nav-links { display:flex; gap:4px; }
-    .nav-link {
-      padding:6px 10px;
-      font-size:12px;
-      color:var(--text-muted);
-      text-decoration:none;
-      border-radius:8px;
-      white-space:nowrap;
-    }
-    .nav-link.active { color:var(--gold); background:rgba(201,168,76,0.1); }
-    .container {
-      position:relative;
-      z-index:1;
-      max-width:480px;
-      margin:0 auto;
-      padding:0 16px 80px;
-    }
-    .hero {
-      text-align:center;
-      padding:36px 0 24px;
-    }
-    .hero-emoji {
-      font-size:60px;
-      display:block;
-      margin-bottom:16px;
-      animation:float 4s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%,100% { transform:translateY(0); }
-      50% { transform:translateY(-8px); }
-    }
-    .hero h1 {
-      font-family:'Nanum Myeongjo', serif;
-      font-size:28px;
-      font-weight:800;
-      color:var(--gold);
-      line-height:1.4;
-      margin-bottom:12px;
-      text-shadow:0 0 30px rgba(201,168,76,0.4);
-    }
-    .hero p {
-      font-size:14px;
-      line-height:1.8;
-      color:var(--text);
-      opacity:0.92;
-      max-width:420px;
-      margin:0 auto;
-    }
-    .hero-badge {
-      display:inline-flex;
-      align-items:center;
-      background:rgba(201,168,76,0.15);
-      border:1px solid rgba(201,168,76,0.3);
-      border-radius:20px;
-      padding:6px 16px;
-      font-size:13px;
-      color:var(--gold-light);
-      margin-top:16px;
-    }
-    .service-box {
-      background:rgba(107,63,160,0.12);
-      border:1px solid rgba(107,63,160,0.25);
-      border-radius:16px;
-      padding:18px;
-      margin-bottom:14px;
-    }
-    .service-box strong {
-      display:block;
-      color:var(--gold-light);
-      margin-bottom:8px;
-      font-size:15px;
-    }
-    .service-box p {
-      font-size:13px;
-      color:var(--text-muted);
-      line-height:1.8;
-    }
-    .service-btn {
-      display:block;
-      width:100%;
-      margin-top:12px;
-      text-decoration:none;
-      text-align:center;
-      background:linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
-      color:var(--deep);
-      border-radius:14px;
-      padding:14px;
-      font-family:'Nanum Myeongjo', serif;
-      font-size:17px;
-      font-weight:700;
-    }
-    .section {
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:20px;
-      margin-bottom:14px;
-    }
-    .section h2 {
-      font-family:'Nanum Myeongjo', serif;
-      font-size:18px;
-      color:var(--gold-light);
-      margin-bottom:12px;
-      padding-bottom:10px;
-      border-bottom:1px solid var(--border);
-    }
-    .grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-    }
-    .card-link {
-      display:block;
-      text-decoration:none;
-      color:inherit;
-      background:rgba(107,63,160,0.12);
-      border:1px solid rgba(107,63,160,0.25);
-      border-radius:14px;
-      padding:14px 12px;
-      min-height:88px;
-    }
-    .card-link strong {
-      display:block;
-      font-size:14px;
-      color:var(--gold-light);
-      margin-bottom:6px;
-      line-height:1.4;
-    }
-    .card-link span {
-      display:block;
-      font-size:12px;
-      color:var(--text-muted);
-      line-height:1.6;
-    }
-    .list-links {
-      display:grid;
-      gap:8px;
-    }
-    .list-links a {
-      display:block;
-      text-decoration:none;
-      color:var(--purple-light);
-      background:rgba(107,63,160,0.16);
-      border:1px solid rgba(107,63,160,0.24);
-      border-radius:12px;
-      padding:12px 14px;
-      font-size:13px;
-    }
-    footer {
-      text-align:center;
-      padding:28px 0 16px;
-      font-size:11px;
-      color:rgba(255,255,255,0.15);
-      line-height:2;
-    }
-    footer a {
-      color:rgba(255,255,255,0.25);
-      text-decoration:none;
-      margin:0 8px;
-      padding:8px 4px;
-      display:inline-block;
-    }
+    :root { --gold:#C9A84C; --gold-light:#F0D080; --gold-dark:#8B6914; --deep:#0D0A1A; --purple:#6B3FA0; --purple-light:#9B6FD0; --text:#F0EAD6; --text-muted:#A09080; --card:rgba(255,255,255,0.04); --border:rgba(201,168,76,0.15);}
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;} html,body{width:100%;overflow-x:hidden;}
+    body{background:var(--deep);color:var(--text);font-family:'Pretendard',sans-serif;min-height:100vh;}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 20% 20%, rgba(107,63,160,0.15) 0%, transparent 50%),radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);}
+    .nav{position:sticky;top:0;z-index:100;background:rgba(13,10,26,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 16px;}
+    .nav-inner{max-width:480px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;}
+    .nav-logo{font-family:'Nanum Myeongjo',serif;font-size:16px;font-weight:800;color:var(--gold);text-decoration:none;}
+    .nav-links{display:flex;gap:4px;}
+    .nav-link{padding:6px 10px;font-size:12px;color:var(--text-muted);text-decoration:none;border-radius:8px;white-space:nowrap;}
+    .nav-link.active{color:var(--gold);background:rgba(201,168,76,0.1);}
+    .container{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 16px 80px;}
+    .hero{text-align:center;padding:36px 0 24px;}
+    .hero-emoji{font-size:60px;display:block;margin-bottom:16px;}
+    .hero h1{font-family:'Nanum Myeongjo',serif;font-size:28px;font-weight:800;color:var(--gold);line-height:1.4;margin-bottom:12px;text-shadow:0 0 30px rgba(201,168,76,0.4);}
+    .hero p{font-size:14px;line-height:1.8;color:var(--text);opacity:0.92;max-width:420px;margin:0 auto;}
+    .hero-badge{display:inline-flex;align-items:center;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:6px 16px;font-size:13px;color:var(--gold-light);margin-top:16px;}
+    .service-box,.section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;}
+    .service-box strong{display:block;color:var(--gold-light);margin-bottom:8px;font-size:15px;}
+    .service-box p,.section p{font-size:13px;color:var(--text-muted);line-height:1.8;}
+    .service-btn{display:block;width:100%;margin-top:12px;text-decoration:none;text-align:center;background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));color:var(--deep);border-radius:14px;padding:14px;font-family:'Nanum Myeongjo',serif;font-size:17px;font-weight:700;}
+    .section h2{font-family:'Nanum Myeongjo',serif;font-size:18px;color:var(--gold-light);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .card-link{display:block;text-decoration:none;color:inherit;background:rgba(107,63,160,0.12);border:1px solid rgba(107,63,160,0.25);border-radius:14px;padding:14px 12px;min-height:88px;}
+    .card-link strong{display:block;font-size:14px;color:var(--gold-light);margin-bottom:6px;line-height:1.4;}
+    .card-link span{display:block;font-size:12px;color:var(--text-muted);line-height:1.6;}
+    .list-links{display:grid;gap:8px;}
+    .list-links a{display:block;text-decoration:none;color:var(--purple-light);background:rgba(107,63,160,0.16);border:1px solid rgba(107,63,160,0.24);border-radius:12px;padding:12px 14px;font-size:13px;}
+    footer{text-align:center;padding:28px 0 16px;font-size:11px;color:rgba(255,255,255,0.15);line-height:2;}
+    footer a{color:rgba(255,255,255,0.25);text-decoration:none;margin:0 8px;padding:8px 4px;display:inline-block;}
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">🌙 꿈해몽 행운</a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">해몽하기</a>
-        <a href="guide.html" class="nav-link active">해몽가이드</a>
-        <a href="about.html" class="nav-link">소개</a>
-      </div>
-    </div>
-  </nav>
-
+  <nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-logo">🌙 꿈해몽 행운</a><div class="nav-links"><a href="index.html" class="nav-link">해몽하기</a><a href="guide.html" class="nav-link active">해몽가이드</a><a href="about.html" class="nav-link">소개</a></div></div></nav>
   <div class="container">
-    <div class="hero">
-      <span class="hero-emoji">📚</span>
-      <h1>해몽가이드</h1>
-      <p>여기서는 꿈해몽을 먼저 자세히 읽고, 실제 해몽과 로또 번호 추천은 메인 서비스에서 확인할 수 있도록 구조를 나눴습니다. 원하는 꿈을 눌러 자세한 해몽으로 이동하세요.</p>
-      <div class="hero-badge">꿈해몽 총정리 허브</div>
-    </div>
-
-    <div class="service-box">
-      <strong>✨ 꿈 해몽 + 로또 번호 추천은 메인 서비스에서 진행</strong>
-      <p>이 페이지는 꿈해몽을 모아둔 가이드입니다. 실제로 꿈을 입력하고 AI 해몽을 본 뒤 로또 번호를 추천받는 기능은 메인 서비스에서 그대로 유지하는 구조가 가장 좋습니다.</p>
-      <a href="index.html" class="service-btn">지금 꿈 해몽하고 로또 번호 받기</a>
-    </div>
-
-    <div class="section">
-      <h2>인기 꿈해몽</h2>
-      <div class="grid">
-        <a class="card-link" href="dream-pig.html"><strong>🐷 돼지꿈 해몽</strong><span>재물운과 풍요의 대표 길몽</span></a>
-        <a class="card-link" href="dream-snake.html"><strong>🐍 뱀꿈 해몽</strong><span>지혜, 변화, 재물운의 상징</span></a>
-        <a class="card-link" href="dream-money.html"><strong>💵 돈꿈 해몽</strong><span>돈 줍는 꿈, 돈 받는 꿈 정리</span></a>
-        <a class="card-link" href="dream-poop.html"><strong>💩 똥꿈 해몽</strong><span>의외의 재물운을 뜻하는 꿈</span></a>
-        <a class="card-link" href="dream-water.html"><strong>🌊 물꿈 해몽</strong><span>감정과 흐름, 재물운 해석</span></a>
-        <a class="card-link" href="dream-fire.html"><strong>🔥 불꿈 해몽</strong><span>강한 에너지와 성취를 상징</span></a>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>상황별 꿈해몽</h2>
-      <div class="grid">
-        <a class="card-link" href="dream-tooth.html"><strong>🦷 이빨 빠지는 꿈</strong><span>변화, 불안, 회복의 의미</span></a>
-        <a class="card-link" href="dream-exam.html"><strong>📝 시험꿈</strong><span>압박, 준비, 평가의 상징</span></a>
-        <a class="card-link" href="dream-death.html"><strong>💀 죽는 꿈</strong><span>끝이 아닌 새로운 시작</span></a>
-        <a class="card-link" href="dream-chased.html"><strong>🏃 쫓기는 꿈</strong><span>스트레스와 압박 반영</span></a>
-        <a class="card-link" href="dream-wedding.html"><strong>💍 결혼꿈</strong><span>새로운 인연과 결합</span></a>
-        <a class="card-link" href="dream-pregnant.html"><strong>🤰 임신꿈</strong><span>창조, 시작, 풍요의 흐름</span></a>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>동물 꿈해몽</h2>
-      <div class="list-links">
-        <a href="dream-tiger.html">🐯 호랑이꿈 해몽</a>
-        <a href="dream-bear.html">🐻 곰꿈 해몽</a>
-        <a href="dream-dragon.html">🐉 용꿈 해몽</a>
-        <a href="dream-turtle.html">🐢 거북이꿈 해몽</a>
-        <a href="dream-fish.html">🐟 물고기꿈 해몽</a>
-        <a href="dream-whitesnake.html">🤍 흰뱀꿈 해몽</a>
-        <a href="dream-piglet.html">🐷 새끼돼지꿈 해몽</a>
-        <a href="dream-snakebite.html">🐍 뱀에 물리는 꿈 해몽</a>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>자연 · 상징 꿈해몽</h2>
-      <div class="list-links">
-        <a href="dream-sun.html">☀️ 태양꿈 해몽</a>
-        <a href="dream-sky.html">🌙 별꿈 달꿈 해몽</a>
-        <a href="dream-rainbow.html">🌈 무지개꿈 해몽</a>
-        <a href="dream-gold.html">🥇 금꿈 해몽</a>
-        <a href="dream-fly.html">🕊️ 하늘나는꿈 해몽</a>
-        <a href="dream-house.html">🏠 집꿈 해몽</a>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>특별한 의미의 꿈</h2>
-      <div class="list-links">
-        <a href="dream-baby.html">👶 아기꿈 해몽</a>
-        <a href="dream-ancestor.html">👴 조상꿈 해몽</a>
-        <a href="dream-ghost.html">👻 귀신꿈 해몽</a>
-        <a href="dream-lottery.html">🎯 복권꿈 해몽</a>
-      </div>
-    </div>
-
-    <footer>
-      꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>
-      © 2025 꿈해몽 행운<br>
-      <a href="privacy.html">개인정보처리방침</a>
-      <a href="terms.html">이용약관</a>
-      <a href="about.html">서비스 소개</a>
-    </footer>
+    <div class="hero"><span class="hero-emoji">📚</span><h1>해몽가이드</h1><p>여기서는 꿈해몽을 먼저 자세히 읽고, 실제 해몽과 로또 번호 추천은 메인 서비스에서 확인할 수 있도록 구조를 나눴습니다. 원하는 꿈을 눌러 자세한 해몽으로 이동하세요.</p><div class="hero-badge">꿈해몽 총정리 허브</div></div>
+    <div class="service-box"><strong>✨ 꿈 해몽 + 로또 번호 추천은 메인 서비스에서 진행</strong><p>이 페이지는 꿈해몽을 모아둔 가이드입니다. 실제로 꿈을 입력하고 AI 해몽을 본 뒤 로또 번호를 추천받는 기능은 메인 서비스에서 그대로 유지하는 구조가 가장 좋습니다.</p><a href="index.html" class="service-btn">지금 꿈 해몽하고 로또 번호 받기</a></div>
+    <div class="section"><h2>인기 꿈해몽</h2><div class="grid">
+      <a class="card-link" href="dream-pig.html"><strong>🐷 돼지꿈 해몽</strong><span>재물운과 풍요의 대표 길몽</span></a>
+      <a class="card-link" href="dream-money.html"><strong>💵 돈꿈 해몽</strong><span>돈 줍는 꿈, 돈 받는 꿈 정리</span></a>
+      <a class="card-link" href="dream-poop.html"><strong>💩 똥꿈 해몽</strong><span>의외의 재물운을 뜻하는 꿈</span></a>
+      <a class="card-link" href="dream-pregnant.html"><strong>🤰 임신꿈 해몽</strong><span>창조, 시작, 풍요의 흐름</span></a>
+      <a class="card-link" href="dream-rainbow.html"><strong>🌈 무지개꿈 해몽</strong><span>소원 성취와 행운의 상징</span></a>
+      <a class="card-link" href="dream-lottery.html"><strong>🎯 복권꿈 해몽</strong><span>행운과 기대, 재물운의 상징</span></a>
+    </div></div>
+    <div class="section"><h2>상세 꿈해몽</h2><div class="list-links">
+      <a href="dream-piglet.html">🐷 새끼돼지꿈 해몽</a>
+      <a href="dream-ancestor.html">👴 조상꿈 해몽</a>
+      <a href="dream-baby.html">👶 아기꿈 해몽</a>
+      <a href="dream-bear.html">🐻 곰꿈 해몽</a>
+      <a href="dream-chased.html">🏃 쫓기는 꿈 해몽</a>
+      <a href="dream-death.html">💀 죽는 꿈 해몽</a>
+      <a href="dream-dragon.html">🐉 용꿈 해몽</a>
+      <a href="dream-exam.html">📝 시험꿈 해몽</a>
+      <a href="dream-fire.html">🔥 불꿈 해몽</a>
+      <a href="dream-fish.html">🐟 물고기꿈 해몽</a>
+      <a href="dream-fly.html">🕊️ 하늘나는꿈 해몽</a>
+      <a href="dream-ghost.html">👻 귀신꿈 해몽</a>
+      <a href="dream-gold.html">🥇 금꿈 해몽</a>
+      <a href="dream-house.html">🏠 집꿈 해몽</a>
+    </div></div>
+    <footer>꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>© 2025 꿈해몽 행운<br><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="about.html">서비스 소개</a></footer>
   </div>
 </body>
 </html>
