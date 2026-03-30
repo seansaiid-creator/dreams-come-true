@@ -1080,7 +1080,7 @@ function showCopyGuide() {
   <!-- ══ 푸터 ══ -->
   <footer>
     꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>
-    행운 번호는 무작위로 생성되며 행운을 보장하지 않습니다<br>
+    행운 번호는 꿈 해몽 기반의 참고용 추천이며, 실제 당첨을 보장하지 않습니다<br>
     © 2025 꿈해몽 행운<br>
     <a href="privacy.html">개인정보처리방침</a>
     <a href="terms.html">이용약관</a>
@@ -1305,17 +1305,54 @@ function analyzeDream(text) {
 }
 
 function generateLucky(dreamText) {
-  const sets = [];
-  let seed = dreamText.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
-  seed += Date.now() % 10000;
-  function sr(s) { s = (s * 9301 + 49297) % 233280; return s / 233280; }
-  for (let i = 0; i < 5; i++) {
-    const nums = new Set();
-    while (nums.size < 6) {
-      seed = Math.floor(sr(seed + i * 1000 + nums.size * 100) * 233280);
-      nums.add(Math.floor(sr(seed) * 45) + 1);
+  const dreamNumberMap = {
+    '돼지':[3,7,12,21,28,33],'똥':[5,9,14,23,31,41],'뱀':[2,7,13,24,32,40],
+    '금':[6,12,24,33,37,44],'불':[5,15,22,29,35,43],'물':[4,8,14,26,34,40],
+    '하늘':[1,9,18,27,36,45],'이빨':[6,11,19,28,34,42],'호랑이':[8,17,22,31,38,44],
+    '용':[7,14,21,32,39,45],'죽음':[4,13,20,29,37,41],'결혼':[2,11,24,30,36,44],
+    '아기':[1,10,16,25,34,43],'조상':[6,12,19,26,33,40],'보석':[7,15,23,31,38,44],
+    '돈':[8,13,20,27,35,42],'태양':[1,10,19,28,37,45],'무지개':[3,11,21,29,38,44],
+    '음식':[5,12,18,27,33,41],'여행':[4,9,17,25,34,43],'눈':[2,8,16,24,32,40],
+    '비':[6,14,20,28,36,42],'나무':[3,9,15,26,34,41],'꽃':[7,13,19,27,35,43],
+    '별':[1,7,17,29,37,45],'달':[2,10,18,26,34,42],'학교':[5,11,19,27,36,44],
+    '집':[4,12,20,28,35,43],'말':[6,14,22,30,38,45],'소':[3,11,18,25,33,41],
+    '물고기':[7,16,24,31,39,44],'산':[5,13,21,29,37,42]
+  };
+
+  function pickDreamKey(text){
+    for(const [kw,key] of Object.entries(keywordMap)){
+      if(text.includes(kw)) return key;
     }
-    sets.push([...nums].sort((a, b) => a - b));
+    return null;
+  }
+
+  function unique(nums){
+    return [...new Set(nums)].filter(n=>n>=1&&n<=45).sort((a,b)=>a-b);
+  }
+
+  function rand(seed){
+    let s=0;
+    for(const c of seed) s=(s*31+c.charCodeAt(0))%2147483647;
+    return ()=>((s=(s*48271)%2147483647)/2147483647);
+  }
+
+  const key = pickDreamKey(dreamText);
+  const base = dreamNumberMap[key]||[3,7,12,21,28,33];
+
+  const sets=[];
+  for(let i=0;i<5;i++){
+    const r=rand(dreamText+i);
+    const nums=new Set();
+
+    // 핵심 2개 고정 (꿈 의미 유지)
+    nums.add(base[i%base.length]);
+    nums.add(base[(i*2+1)%base.length]);
+
+    while(nums.size<6){
+      nums.add(Math.floor(r()*45)+1);
+    }
+
+    sets.push(unique([...nums]));
   }
   return sets;
 }
