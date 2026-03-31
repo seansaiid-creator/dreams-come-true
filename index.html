@@ -854,6 +854,32 @@
   .copy-numbers-btn:active { transform: scale(0.97); }
   .copy-numbers-btn.copied { color: #90D090; border-color: rgba(46,139,87,0.4); }
 
+  /* ── 내부 링크 블록 ── */
+  .internal-links-box {
+    background: rgba(107,63,160,0.12);
+    border: 1px solid rgba(107,63,160,0.3);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 0 0 14px;
+  }
+
+  .internal-links-title {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 15px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .internal-links-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .internal-link {
+    text-decoration: none;
+  }
+
 </style>
 <!-- 카카오 SDK -->
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
@@ -1071,6 +1097,22 @@ function showCopyGuide() {
         <button class="share-btn btn-copy" id="linkCopyBtn" onclick="copyLink()">
           <span>🔗</span> 링크 복사
         </button>
+      </div>
+    </div>
+
+
+    <div class="internal-links-box fade-in" id="internal-links-box">
+      <div class="internal-links-title">🔗 다른 인기 꿈 해몽도 확인해보세요</div>
+      <div class="internal-links-sub">관련 꿈 페이지를 함께 둘러보면 더 다양한 해몽과 행운 번호를 확인할 수 있어요.</div>
+      <div class="tags">
+        <a class="tag internal-link" href="dream-pig.html">🐷 돼지꿈</a>
+        <a class="tag internal-link" href="dream-snake.html">🐍 뱀꿈</a>
+        <a class="tag internal-link" href="dream-money.html">💵 돈꿈</a>
+        <a class="tag internal-link" href="dream-tooth-loss.html">🦷 이빨꿈</a>
+        <a class="tag internal-link" href="dream-chased.html">🏃 쫓기는 꿈</a>
+        <a class="tag internal-link" href="dream-water.html">🌊 물꿈</a>
+        <a class="tag internal-link" href="dream-fire.html">🔥 불꿈</a>
+        <a class="tag internal-link" href="guide.html">📚 해몽 가이드</a>
       </div>
     </div>
 
