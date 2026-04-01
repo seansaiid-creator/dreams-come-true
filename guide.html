@@ -65,6 +65,10 @@
     .list-links a{display:block;text-decoration:none;color:var(--purple-light);background:rgba(107,63,160,0.16);border:1px solid rgba(107,63,160,0.24);border-radius:12px;padding:12px 14px;font-size:13px;}
     footer{text-align:center;padding:28px 0 16px;font-size:11px;color:rgba(255,255,255,0.15);line-height:2;}
     footer a{color:rgba(255,255,255,0.25);text-decoration:none;margin:0 8px;padding:8px 4px;display:inline-block;}
+
+    .dream-search{width:100%;margin-top:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text);font-size:14px;outline:none;}
+    .dream-search::placeholder{color:var(--text-muted);}
+
   </style>
 </head>
 <body>
@@ -80,61 +84,133 @@
       <a class="card-link" href="dream-rainbow.html"><strong>🌈 무지개꿈 해몽</strong><span>소원 성취와 행운의 상징</span></a>
       <a class="card-link" href="dream-lottery.html"><strong>🎯 복권꿈 해몽</strong><span>행운과 기대, 재물운의 상징</span></a>
     </div></div>
-    <div class="section"><h2>상세 꿈해몽</h2><div class="list-links">
+    
+    <div class="section">
+      <h2>🔍 꿈 검색</h2>
+      <p>찾고 싶은 꿈 키워드를 입력하면 아래 목록에서 바로 필터링됩니다. 별도 페이지가 생기지 않는 정적 검색 방식이라 구조도 깔끔하게 유지됩니다.</p>
+      <input type="text" id="dreamSearch" class="dream-search" placeholder="예: 돼지, 전남친, 복권, 물, 시험" onkeyup="filterDreams()">
+    </div>
+
+    <div class="section">
+      <h2>🔥 인기 꿈해몽</h2>
+      <div class="list-links dream-list">
       <a href="dream-pig.html">🐷 돼지꿈 해몽</a>
-      <a href="dream-snake.html">🐍 뱀꿈 해몽</a>
-      <a href="dream-tooth.html">🦷 이빨 빠지는 꿈 해몽</a>
       <a href="dream-money.html">💵 돈꿈 해몽</a>
+      <a href="dream-poop.html">💩 똥꿈 해몽</a>
+      <a href="dream-snake.html">🐍 뱀꿈 해몽</a>
+      <a href="dream-lottery.html">🎟️ 복권꿈 해몽</a>
+      <a href="dream-pregnant.html">🤰 임신꿈 해몽</a>
+      <a href="dream-tooth.html">🦷 이빨 빠지는 꿈 해몽</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>🐷 동물 · 생명 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-pig.html">🐷 돼지꿈 해몽</a>
+      <a href="dream-piglet.html">🐖 새끼돼지꿈 해몽</a>
+      <a href="dream-blackpig.html">🖤 검은 돼지 꿈 해몽</a>
+      <a href="dream-snake.html">🐍 뱀꿈 해몽</a>
+      <a href="dream-whitesnake.html">🤍 흰뱀꿈 해몽</a>
+      <a href="dream-snakebite.html">🐍 뱀에 물리는 꿈</a>
+      <a href="dream-tiger.html">🐯 호랑이꿈 해몽</a>
+      <a href="dream-turtle.html">🐢 거북이꿈 해몽</a>
+      <a href="dream-bear.html">🐻 곰꿈 해몽</a>
+      <a href="dream-fish.html">🐟 물고기꿈 해몽</a>
+      <a href="dream-dragon.html">🐉 용꿈 해몽</a>
+      <a href="dream-baby.html">👶 아기꿈 해몽</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>💰 재물 · 행운 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-money.html">💵 돈꿈 해몽</a>
+      <a href="dream-moneypickup.html">💸 돈 줍는 꿈</a>
       <a href="dream-goldpickup.html">💰 금 줍는 꿈</a>
       <a href="dream-gold.html">🥇 금꿈 해몽</a>
-      <a href="dream-fire.html">🔥 불꿈 해몽</a>
-      <a href="dream-water.html">💧 물꿈 해몽</a>
-      <a href="dream-exam.html">📝 시험꿈 해몽</a>
+      <a href="dream-golden.html">✨ 황금 꿈</a>
+      <a href="dream-jewel.html">💎 보석 꿈</a>
+      <a href="dream-lottery.html">🎟️ 복권꿈 해몽</a>
+      <a href="dream-lotterywin.html">🎉 복권 당첨 꿈</a>
+      <a href="dream-pig-lotto.html">🐷 돼지꿈 로또번호</a>
+      <a href="dream-tooth-loss.html">🦷 이빨 빠지는 꿈 로또번호</a>
+      <a href="dream-poop.html">💩 똥꿈 해몽</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>❤️ 관계 · 사랑 관련</h2>
+      <div class="list-links dream-list">
       <a href="dream-love.html">💕 연애 꿈 해몽</a>
       <a href="dream-breakup.html">💔 이별 꿈 해몽</a>
       <a href="dream-exboyfriend.html">💔 전남친 꿈 해몽</a>
       <a href="dream-wedding.html">💍 결혼꿈 해몽</a>
-      <a href="dream-friend.html">🤝 친구 나오는 꿈</a>
-      <a href="dream-piglet.html">🐖 새끼돼지꿈 해몽</a>
-      <a href="dream-blackpig.html">🖤 검은 돼지 꿈 해몽</a>
-      <a href="dream-whitesnake.html">🤍 흰뱀꿈 해몽</a>
-      <a href="dream-snakebite.html">🐍 뱀에 물리는 꿈</a>
-      <a href="dream-poop.html">💩 똥꿈 해몽</a>
-      <a href="dream-house.html">🏠 집꿈 해몽</a>
-      <a href="dream-baby.html">👶 아기꿈 해몽</a>
-      <a href="dream-pregnant.html">🤰 임신꿈 해몽</a>
-      <a href="dream-pregnancy.html">🤰 임신하는 꿈</a>
-      <a href="dream-lottery.html">🎟️ 복권꿈 해몽</a>
-      <a href="dream-lotterywin.html">🎉 복권 당첨 꿈</a>
-      <a href="dream-pig-lotto.html">🐷 돼지꿈 로또번호</a>
-      <a href="dream-pig-lotto-safe.html">🐷 돼지꿈 로또번호</a>
-      <a href="dream-pig-seo.html">🐷 돼지꿈 해몽</a>
-      <a href="dream-moneypickup.html">💸 돈 줍는 꿈</a>
       <a href="dream-marriage.html">💒 결혼하는 꿈</a>
+      <a href="dream-friend.html">🤝 친구 나오는 꿈</a>
+      <a href="dream-familydeath.html">👨‍👩‍👧 가족 죽는 꿈</a>
+      <a href="dream-ancestor.html">👴 조상꿈 해몽</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>⚠️ 불안 · 경고 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-tooth.html">🦷 이빨 빠지는 꿈 해몽</a>
+      <a href="dream-exam.html">📝 시험꿈 해몽</a>
+      <a href="dream-examfail.html">📉 시험 떨어지는 꿈</a>
+      <a href="dream-chased.html">🏃 쫓기는 꿈 해몽</a>
+      <a href="dream-falling.html">⬇️ 떨어지는 꿈</a>
+      <a href="dream-drowning.html">🌊 물에 빠지는 꿈</a>
+      <a href="dream-death.html">💀 죽는 꿈 해몽</a>
+      <a href="dream-ghost.html">👻 귀신꿈 해몽</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>🌦️ 자연 · 환경 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-fire.html">🔥 불꿈 해몽</a>
+      <a href="dream-water.html">💧 물꿈 해몽</a>
+      <a href="dream-house.html">🏠 집꿈 해몽</a>
       <a href="dream-rain.html">🌧️ 비 오는 꿈</a>
       <a href="dream-rainbow.html">🌈 무지개꿈 해몽</a>
       <a href="dream-sky.html">🌙 별·달 꿈 해몽</a>
       <a href="dream-sun.html">☀️ 태양꿈 해몽</a>
       <a href="dream-snow.html">❄️ 눈 오는 꿈</a>
-      <a href="dream-tiger.html">🐯 호랑이꿈 해몽</a>
-      <a href="dream-turtle.html">🐢 거북이꿈 해몽</a>
-      <a href="dream-ghost.html">👻 귀신꿈 해몽</a>
-      <a href="dream-bear.html">🐻 곰꿈 해몽</a>
-      <a href="dream-fish.html">🐟 물고기꿈 해몽</a>
       <a href="dream-fly.html">🕊️ 하늘나는꿈 해몽</a>
-      <a href="dream-dragon.html">🐉 용꿈 해몽</a>
-      <a href="dream-ancestor.html">👴 조상꿈 해몽</a>
-      <a href="dream-chased.html">🏃 쫓기는 꿈 해몽</a>
-      <a href="dream-falling.html">⬇️ 떨어지는 꿈</a>
-      <a href="dream-drowning.html">🌊 물에 빠지는 꿈</a>
-      <a href="dream-familydeath.html">👨‍👩‍👧 가족 죽는 꿈</a>
-      <a href="dream-death.html">💀 죽는 꿈 해몽</a>
-      <a href="dream-examfail.html">📉 시험 떨어지는 꿈</a>
-      <a href="dream-golden.html">✨ 황금 꿈</a>
-      <a href="dream-jewel.html">💎 보석 꿈</a>
-      <a href="dream-tooth-loss.html">🦷 이빨 빠지는 꿈 로또번호</a>
-    </div></div>
+      </div>
+    </div>
+    <div class="section">
+      <h2>🤰 인생 변화 · 성장 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-pregnant.html">🤰 임신꿈 해몽</a>
+      <a href="dream-pregnancy.html">🤰 임신하는 꿈</a>
+      <a href="dream-exam.html">📝 시험꿈 해몽</a>
+      <a href="dream-wedding.html">💍 결혼꿈 해몽</a>
+      <a href="dream-marriage.html">💒 결혼하는 꿈</a>
+      </div>
+    </div>
     <footer>꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>© 2025 꿈해몽 행운<br><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="about.html">서비스 소개</a></footer>
   </div>
+
+  <script>
+    function filterDreams() {
+      const input = document.getElementById('dreamSearch');
+      if (!input) return;
+      const keyword = input.value.toLowerCase().trim();
+      const sections = document.querySelectorAll('.dream-list');
+      sections.forEach(section => {
+        const links = section.querySelectorAll('a');
+        let visibleCount = 0;
+        links.forEach(link => {
+          const text = link.innerText.toLowerCase();
+          const matched = text.includes(keyword);
+          link.style.display = matched ? '' : 'none';
+          if (matched) visibleCount++;
+        });
+        const wrapper = section.closest('.section');
+        if (wrapper && wrapper.querySelector('h2')?.innerText !== '🔍 꿈 검색') {
+          wrapper.style.display = visibleCount > 0 ? '' : 'none';
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
