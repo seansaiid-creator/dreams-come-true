@@ -1,24 +1,309 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>꿈해몽 가이드</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>해몽가이드 | 돼지꿈, 뱀꿈, 돈꿈, 시험꿈 해석 총정리</title>
+  <meta name="description" content="해몽가이드에서 돼지꿈, 뱀꿈, 돈꿈, 시험꿈, 물꿈, 불꿈 등 다양한 꿈해몽을 한눈에 확인하세요. 각 꿈을 누르면 자세한 해몽 페이지로 이동합니다.">
+  <meta name="keywords" content="해몽가이드, 꿈해몽, 돼지꿈, 뱀꿈, 돈꿈, 시험꿈, 물꿈, 불꿈, 임신꿈, 태몽">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="꿈해몽 행운">
+  <link rel="canonical" href="https://dreams-come-true-ten.vercel.app/guide.html">
+  <meta property="og:title" content="해몽가이드 | 꿈해몽 총정리">
+  <meta property="og:description" content="자주 찾는 꿈해몽을 해몽가이드에서 한눈에 확인하세요. 각 꿈을 누르면 자세한 해몽 페이지로 이동합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dreams-come-true-ten.vercel.app/guide.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="google-site-verification" content="Mh56q-_VUPEPcyYz_cU3XBqcKlt_4Oko0K9wU4pYpwk">
+  <meta name="naver-site-verification" content="4b2fdca80f29813464ca9bd36997671928a7eacb">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCNS7P3XVT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MCNS7P3XVT');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "해몽가이드",
+    "url": "https://dreams-come-true-ten.vercel.app/guide.html",
+    "description": "꿈해몽 상세 페이지를 모아둔 허브 페이지입니다.",
+    "inLanguage": "ko"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --gold:#C9A84C; --gold-light:#F0D080; --gold-dark:#8B6914; --deep:#0D0A1A; --purple:#6B3FA0; --purple-light:#9B6FD0; --text:#F0EAD6; --text-muted:#A09080; --card:rgba(255,255,255,0.04); --border:rgba(201,168,76,0.15);}
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;} html,body{width:100%;overflow-x:hidden;}
+    body{background:var(--deep);color:var(--text);font-family:'Pretendard',sans-serif;min-height:100vh;}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 20% 20%, rgba(107,63,160,0.15) 0%, transparent 50%),radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);}
+    .nav{position:sticky;top:0;z-index:100;background:rgba(13,10,26,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 16px;}
+    .nav-inner{max-width:480px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;}
+    .nav-logo{font-family:'Nanum Myeongjo',serif;font-size:16px;font-weight:800;color:var(--gold);text-decoration:none;}
+    .nav-links{display:flex;gap:4px;}
+    .nav-link{padding:6px 10px;font-size:12px;color:var(--text-muted);text-decoration:none;border-radius:8px;white-space:nowrap;}
+    .nav-link.active{color:var(--gold);background:rgba(201,168,76,0.1);}
+    .container{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 16px 80px;}
+    .hero{text-align:center;padding:36px 0 24px;}
+    .hero-emoji{font-size:60px;display:block;margin-bottom:16px;}
+    .hero h1{font-family:'Nanum Myeongjo',serif;font-size:28px;font-weight:800;color:var(--gold);line-height:1.4;margin-bottom:12px;text-shadow:0 0 30px rgba(201,168,76,0.4);}
+    .hero p{font-size:14px;line-height:1.8;color:var(--text);opacity:0.92;max-width:420px;margin:0 auto;}
+    .hero-badge{display:inline-flex;align-items:center;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:6px 16px;font-size:13px;color:var(--gold-light);margin-top:16px;}
+    .service-box,.section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;}
+    .service-box strong{display:block;color:var(--gold-light);margin-bottom:8px;font-size:15px;}
+    .service-box p,.section p{font-size:13px;color:var(--text-muted);line-height:1.8;}
+    .service-btn{display:block;width:100%;margin-top:12px;text-decoration:none;text-align:center;background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));color:var(--deep);border-radius:14px;padding:14px;font-family:'Nanum Myeongjo',serif;font-size:17px;font-weight:700;}
+    .section h2{font-family:'Nanum Myeongjo',serif;font-size:18px;color:var(--gold-light);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .card-link{display:block;text-decoration:none;color:inherit;background:rgba(107,63,160,0.12);border:1px solid rgba(107,63,160,0.25);border-radius:14px;padding:14px 12px;min-height:88px;}
+    .card-link strong{display:block;font-size:14px;color:var(--gold-light);margin-bottom:6px;line-height:1.4;}
+    .card-link span{display:block;font-size:12px;color:var(--text-muted);line-height:1.6;}
+    .list-links{display:grid;gap:8px;}
+    .list-links a{display:block;text-decoration:none;color:var(--purple-light);background:rgba(107,63,160,0.16);border:1px solid rgba(107,63,160,0.24);border-radius:12px;padding:12px 14px;font-size:13px;}
+    footer{text-align:center;padding:28px 0 16px;font-size:11px;color:rgba(255,255,255,0.15);line-height:2;}
+    footer a{color:rgba(255,255,255,0.25);text-decoration:none;margin:0 8px;padding:8px 4px;display:inline-block;}
+
+    .dream-search{width:100%;margin-top:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text);font-size:14px;outline:none;}
+    .dream-search::placeholder{color:var(--text-muted);}
+
+  </style>
 </head>
 <body>
+  <nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-logo">🌙 꿈해몽 행운</a><div class="nav-links"><a href="index.html" class="nav-link">해몽하기</a><a href="guide.html" class="nav-link active">해몽가이드</a><a href="about.html" class="nav-link">소개</a></div></div></nav>
+  <div class="container">
+    <div class="hero"><span class="hero-emoji">📚</span><h1>해몽가이드</h1><p>여기서는 꿈해몽을 먼저 자세히 읽고, 실제 해몽과 로또 번호 추천은 메인 서비스에서 확인할 수 있도록 구조를 나눴습니다. 원하는 꿈을 눌러 자세한 해몽으로 이동하세요.</p><div class="hero-badge">꿈해몽 총정리 허브</div></div>
+    <div class="service-box"><strong>✨ 꿈 해몽 + 로또 번호 추천은 메인 서비스에서 진행</strong><p>이 페이지는 꿈해몽을 모아둔 가이드입니다. 실제로 꿈을 입력하고 AI 해몽을 본 뒤 로또 번호를 추천받는 기능은 메인 서비스에서 그대로 유지하는 구조가 가장 좋습니다.</p><a href="index.html" class="service-btn">지금 꿈 해몽하고 로또 번호 받기</a></div>
+    <div class="section"><h2>인기 꿈해몽</h2><div class="grid">
+      <a class="card-link" href="dream-pig.html"><strong>🐷 돼지꿈 해몽</strong><span>재물운과 풍요의 대표 길몽</span></a>
+      <a class="card-link" href="dream-money.html"><strong>💵 돈꿈 해몽</strong><span>돈 줍는 꿈, 돈 받는 꿈 정리</span></a>
+      <a class="card-link" href="dream-poop.html"><strong>💩 똥꿈 해몽</strong><span>의외의 재물운을 뜻하는 꿈</span></a>
+      <a class="card-link" href="dream-pregnant.html"><strong>🤰 임신꿈 해몽</strong><span>창조, 시작, 풍요의 흐름</span></a>
+      <a class="card-link" href="dream-rainbow.html"><strong>🌈 무지개꿈 해몽</strong><span>소원 성취와 행운의 상징</span></a>
+      <a class="card-link" href="dream-lottery.html"><strong>🎯 복권꿈 해몽</strong><span>행운과 기대, 재물운의 상징</span></a>
 
-<h2>🔥 인기 꿈해몽</h2>
-<div class="list-links dream-list">
-<a href="dream-door-closed-cant-leave.html">🚪 문이 닫혀서 못 나가는 꿈</a>
-<a href="dream-clock-stopped-full.html">⏱️ 시계가 멈추는 꿈</a>
-</div>
+      <a class="card-link" href="dream-toilet-cant-find.html"><strong>🚻 화장실 못 찾는 꿈</strong><span>답답함과 감정 배출 지연의 신호</span></a>
+      <a class="card-link" href="dream-elevator-falling.html"><strong>🛗 엘리베이터 추락 꿈</strong><span>통제 상실과 급격한 불안 흐름</span></a>
+      <a class="card-link" href="dream-shoes-wet.html"><strong>👟 신발이 젖는 꿈</strong><span>불안과 방향성의 신호</span></a>
+      <a class="card-link" href="dream-subway-wrong.html"><strong>🚇 지하철 잘못 타는 꿈</strong><span>방향 착오와 선택의 신호</span></a>
+      <a class="card-link" href="dream-password-wrong.html"><strong>🔐 비밀번호를 계속 틀리는 꿈</strong><span>접근 제한과 불안의 신호</span></a>
+      <a class="card-link" href="dream-repeating-path.html"><strong>🗺️ 같은 길을 반복하는 꿈</strong><span>정체와 반복 문제의 신호</span></a>
+      <a class="card-link" href="dream-door-closed-cant-leave.html"><strong>🚪 문이 닫혀서 못 나가는 꿈</strong><span>답답함과 기회 차단의 신호</span></a>
+      <a class="card-link" href="dream-clock-stopped-full.html"><strong>⏱️ 시계가 멈추는 꿈</strong><span>시간 압박과 정체의 신호</span></a>
+      <a class="card-link" href="dream-delivery-not-coming.html"><strong>📦 택배가 오지 않는 꿈</strong><span>기대 지연과 기다림의 신호</span></a>
+    </div></div>
+    
+    <div class="section">
+      <h2>🔍 꿈 검색</h2>
+      <p>찾고 싶은 꿈 키워드를 입력하면 아래 목록에서 바로 필터링됩니다. 별도 페이지가 생기지 않는 정적 검색 방식이라 구조도 깔끔하게 유지됩니다.</p>
+      <input type="text" id="dreamSearch" class="dream-search" placeholder="예: 돼지, 전남친, 복권, 물, 시험" onkeyup="filterDreams()">
+    </div>
 
-<h2>⚠️ 불안 · 경고 관련</h2>
-<div class="list-links dream-list">
-<a href="dream-password-wrong.html">🔐 비밀번호를 계속 틀리는 꿈</a>
-<a href="dream-repeating-path.html">🗺️ 같은 길을 반복하는 꿈</a>
-<a href="dream-door-closed-cant-leave.html">🚪 문이 닫혀서 못 나가는 꿈</a>
-<a href="dream-clock-stopped-full.html">⏱️ 시계가 멈추는 꿈</a>
-</div>
+    <div class="section">
+      <h2>🔥 인기 꿈해몽</h2>
+      <div class="list-links dream-list">
+      <a href="dream-pig.html">🐷 돼지꿈 해몽</a>
+      <a href="dream-money.html">💵 돈꿈 해몽</a>
+      <a href="dream-poop.html">💩 똥꿈 해몽</a>
+      <a href="dream-snake.html">🐍 뱀꿈 해몽</a>
+      <a href="dream-lottery.html">🎟️ 복권꿈 해몽</a>
+      <a href="dream-pregnant.html">🤰 임신꿈 해몽</a>
+      <a href="dream-tooth.html">🦷 이빨 빠지는 꿈 해몽</a>
+      <a href="dream-stair.html">🪜 계단 꿈 해몽</a>
+      <a href="dream-airplane.html">✈️ 비행기 꿈 해몽</a>
+      <a href="dream-house-remodeling.html">🏠 집 리모델링 꿈</a>
+      <a href="dream-ghost-chased.html">👻 귀신에게 쫓기는 꿈</a>
+      <a href="dream-shoes-lost.html">👟 신발 잃어버리는 꿈</a>
+      <a href="dream-phone-broken.html">📱 휴대폰 깨지는 꿈</a>
+      <a href="dream-elevator-stuck.html">🛗 엘리베이터 멈추는 꿈</a>
+      <a href="dream-late.html">⏰ 지각하는 꿈</a>
+      <a href="dream-shoes-slipping.html">👟 신발이 벗겨지는 꿈</a>
+      <a href="dream-elevator-ride.html">🛗 엘리베이터를 타는 꿈</a>
+      <a href="dream-lost-path.html">🗺️ 길을 잃는 꿈</a>
+      <a href="dream-breaking-things.html">🪟 물건을 깨뜨리는 꿈</a>
+      <a href="dream-mirror.html">🪞 거울을 보는 꿈</a>
+      <a href="dream-hitting-someone.html">👊 타인을 때리는 꿈</a>
+      <a href="dream-nightmare.html">😱 악몽을 꾸는 꿈</a>
+      <a href="dream-flying.html">✈️ 날아다니는 꿈</a>
+      <a href="dream-receiving-money.html">💰 돈을 받는 꿈</a>
+      <a href="dream-friend-dying.html">👫 친구가 죽는 꿈</a>
+
+      <a href="dream-toilet-cant-find.html">🚻 화장실을 찾지 못하는 꿈</a>
+      <a href="dream-elevator-falling.html">🛗 엘리베이터가 추락하는 꿈</a>
+      <a href="dream-shoes-wet.html">👟 신발이 젖는 꿈</a>
+      <a href="dream-subway-wrong.html">🚇 지하철을 잘못 타는 꿈</a>
+      <a href="dream-password-wrong.html">🔐 비밀번호를 계속 틀리는 꿈</a>
+      <a href="dream-repeating-path.html">🗺️ 같은 길을 반복하는 꿈</a>
+      <a href="dream-door-closed-cant-leave.html">🚪 문이 닫혀서 못 나가는 꿈</a>
+      <a href="dream-clock-stopped-full.html">⏱️ 시계가 멈추는 꿈</a>
+      <a href="dream-delivery-not-coming.html">📦 택배가 오지 않는 꿈</a>
+
+      </div>
+    </div>
+    <div class="section">
+      <h2>🐷 동물 · 생명 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-pig.html">🐷 돼지꿈 해몽</a>
+      <a href="dream-piglet.html">🐖 새끼돼지꿈 해몽</a>
+      <a href="dream-blackpig.html">🖤 검은 돼지 꿈 해몽</a>
+      <a href="dream-snake.html">🐍 뱀꿈 해몽</a>
+      <a href="dream-whitesnake.html">🤍 흰뱀꿈 해몽</a>
+      <a href="dream-snakebite.html">🐍 뱀에 물리는 꿈</a>
+      <a href="dream-tiger.html">🐯 호랑이꿈 해몽</a>
+      <a href="dream-turtle.html">🐢 거북이꿈 해몽</a>
+      <a href="dream-bear.html">🐻 곰꿈 해몽</a>
+      <a href="dream-fish.html">🐟 물고기꿈 해몽</a>
+      <a href="dream-dragon.html">🐉 용꿈 해몽</a>
+      <a href="dream-baby.html">👶 아기꿈 해몽</a>
+      <a href="dream-interview.html">📋 면접 보는 꿈 해몽</a>
+      <a href="dream-moving.html">🏠 이사 가는 꿈 해몽</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>💰 재물 · 행운 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-money.html">💵 돈꿈 해몽</a>
+      <a href="dream-count-money.html">💵 돈 세는 꿈</a>
+      <a href="dream-moneypickup.html">💸 돈 줍는 꿈</a>
+      <a href="dream-money-lost.html">💸 돈 줍다가 잃어버리는 꿈</a>
+      <a href="dream-wallet-lost.html">👛 지갑 잃어버리는 꿈</a>
+      <a href="dream-money-friend.html">🤝 친구와 함께 돈 줍는 꿈</a>
+      <a href="dream-goldpickup.html">💰 금 줍는 꿈</a>
+      <a href="dream-gold.html">🥇 금꿈 해몽</a>
+      <a href="dream-golden.html">✨ 황금 꿈</a>
+      <a href="dream-jewel.html">💎 보석 꿈</a>
+      <a href="dream-lottery.html">🎟️ 복권꿈 해몽</a>
+      <a href="dream-lotterywin.html">🎉 복권 당첨 꿈</a>
+      <a href="dream-pig-lotto.html">🐷 돼지꿈 로또번호</a>
+      <a href="dream-poop.html">💩 똥꿈 해몽</a>
+      <a href="dream-losing-money.html">💸 돈을 잃어버리는 꿈</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>❤️ 관계 · 사랑 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-love.html">💕 연애 꿈 해몽</a>
+      <a href="dream-breakup.html">💔 이별 꿈 해몽</a>
+      <a href="dream-exboyfriend.html">💔 전남친 꿈 해몽</a>
+      <a href="dream-wedding.html">💍 결혼꿈 해몽</a>
+      <a href="dream-friend.html">🤝 친구 나오는 꿈</a>
+      <a href="dream-familydeath.html">👨‍👩‍👧 가족 죽는 꿈</a>
+      <a href="dream-ancestor.html">👴 조상꿈 해몽</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>⚠️ 불안 · 경고 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-tooth.html">🦷 이빨 빠지는 꿈 해몽</a>
+      <a href="dream-exam.html">📝 시험꿈 해몽</a>
+      <a href="dream-examfail.html">📉 시험 떨어지는 꿈</a>
+      <a href="dream-chased.html">🏃 쫓기는 꿈 해몽</a>
+      <a href="dream-falling.html">⬇️ 떨어지는 꿈</a>
+      <a href="dream-drowning.html">🌊 물에 빠지는 꿈</a>
+      <a href="dream-death.html">💀 죽는 꿈 해몽</a>
+      <a href="dream-ghost.html">👻 귀신꿈 해몽</a>
+      <a href="dream-ghost-chased.html">👻 귀신에게 쫓기는 꿈</a>
+      <a href="dream-shoes-lost.html">👟 신발 잃어버리는 꿈</a>
+      <a href="dream-phone-broken.html">📱 휴대폰 깨지는 꿈</a>
+      <a href="dream-elevator-stuck.html">🛗 엘리베이터 멈추는 꿈</a>
+      <a href="dream-late.html">⏰ 지각하는 꿈</a>
+      <a href="dream-shoes-slipping.html">👟 신발이 벗겨지는 꿈</a>
+      <a href="dream-elevator-ride.html">🛗 엘리베이터를 타는 꿈</a>
+      <a href="dream-lost-path.html">🗺️ 길을 잃는 꿈</a>
+      <a href="dream-breaking-things.html">🪟 물건을 깨뜨리는 꿈</a>
+      <a href="dream-mirror.html">🪞 거울을 보는 꿈</a>
+      <a href="dream-hitting-someone.html">👊 타인을 때리는 꿈</a>
+      <a href="dream-nightmare.html">😱 악몽을 꾸는 꿈</a>
+
+      <a href="dream-toilet-cant-find.html">🚻 화장실을 찾지 못하는 꿈</a>
+      <a href="dream-elevator-falling.html">🛗 엘리베이터가 추락하는 꿈</a>
+      <a href="dream-shoes-wet.html">👟 신발이 젖는 꿈</a>
+      <a href="dream-subway-wrong.html">🚇 지하철을 잘못 타는 꿈</a>
+      <a href="dream-door-closed-cant-leave.html">🚪 문이 닫혀서 못 나가는 꿈</a>
+      <a href="dream-clock-stopped-full.html">⏱️ 시계가 멈추는 꿈</a>
+      <a href="dream-delivery-not-coming.html">📦 택배가 오지 않는 꿈</a>
+
+      </div>
+    </div>
+    <div class="section">
+      <h2>🌦️ 자연 · 환경 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-fire.html">🔥 불꿈 해몽</a>
+      <a href="dream-water.html">💧 물꿈 해몽</a>
+      <a href="dream-house.html">🏠 집꿈 해몽</a>
+      <a href="dream-rain.html">🌧️ 비 오는 꿈</a>
+      <a href="dream-rainbow.html">🌈 무지개꿈 해몽</a>
+      <a href="dream-sky.html">🌙 별·달 꿈 해몽</a>
+      <a href="dream-sun.html">☀️ 태양꿈 해몽</a>
+      <a href="dream-snow.html">❄️ 눈 오는 꿈</a>
+      <a href="dream-fly.html">🕊️ 하늘나는꿈 해몽</a>
+      <a href="dream-house-remodeling.html">🏠 집 리모델링 꿈</a>
+      <a href="dream-shoes-lost.html">👟 신발 잃어버리는 꿈</a>
+      <a href="dream-phone-broken.html">📱 휴대폰 깨지는 꿈</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>🤰 인생 변화 · 성장 관련</h2>
+      <div class="list-links dream-list">
+      <a href="dream-pregnant.html">🤰 임신꿈 해몽</a>
+      <a href="dream-exam.html">📝 시험꿈 해몽</a>
+      <a href="dream-wedding.html">💍 결혼꿈 해몽</a>
+      <a href="dream-stair.html">🪜 계단 꿈 해몽</a>
+      <a href="dream-airplane.html">✈️ 비행기 꿈 해몽</a>
+      <a href="dream-house-remodeling.html">🏠 집 리모델링 꿈</a>
+      <a href="dream-ghost-chased.html">👻 귀신에게 쫓기는 꿈</a>
+      <a href="dream-elevator-stuck.html">🛗 엘리베이터 멈추는 꿈</a>
+      <a href="dream-late.html">⏰ 지각하는 꿈</a>
+      <a href="dream-shoes-slipping.html">👟 신발이 벗겨지는 꿈</a>
+      <a href="dream-elevator-ride.html">🛗 엘리베이터를 타는 꿈</a>
+      <a href="dream-lost-path.html">🗺️ 길을 잃는 꿈</a>
+      <a href="dream-breaking-things.html">🪟 물건을 깨뜨리는 꿈</a>
+      <a href="dream-mirror.html">🪞 거울을 보는 꿈</a>
+      <a href="dream-hitting-someone.html">👊 타인을 때리는 꿈</a>
+      <a href="dream-nightmare.html">😱 악몽을 꾸는 꿈</a>
+      <a href="dream-flying.html">✈️ 날아다니는 꿈</a>
+      <a href="dream-receiving-money.html">💰 돈을 받는 꿈</a>
+      <a href="dream-friend-dying.html">👫 친구가 죽는 꿈</a>
+      <a href="dream-interview.html">📋 면접 보는 꿈</a>
+      <a href="dream-moving.html">🏠 이사 가는 꿈</a>
+      <a href="dream-escaping.html">🏃 도망치는 꿈</a>
+      <a href="dream-eating.html">🍽️ 음식 먹는 꿈</a>
+      <a href="dream-building.html">🏠 집 짓는 꿈</a>
+      <a href="dream-helped.html">🤝 누군가 도와주는 꿈</a>
+      <a href="dream-water-immersion.html">💧 물속에 들어가는 꿈</a>
+      <a href="dream-fire-dream.html">🔥 불이 나는 꿈</a>
+      <a href="dream-fighting.html">👊 누군가와 싸우는 꿈</a>
+      <a href="dream-taxi.html">🚖 택시 타는 꿈</a>
+
+      </div>
+    </div>
+    <footer>꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>© 2025 꿈해몽 행운<br><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="about.html">서비스 소개</a></footer>
+  </div>
+
+  <script>
+    function filterDreams() {
+      const input = document.getElementById('dreamSearch');
+      if (!input) return;
+      const keyword = input.value.toLowerCase().trim();
+      const sections = document.querySelectorAll('.dream-list');
+      sections.forEach(section => {
+        const links = section.querySelectorAll('a');
+        let visibleCount = 0;
+        links.forEach(link => {
+          const text = link.innerText.toLowerCase();
+          const matched = text.includes(keyword);
+          link.style.display = matched ? '' : 'none';
+          if (matched) visibleCount++;
+        });
+        const wrapper = section.closest('.section');
+        if (wrapper && wrapper.querySelector('h2')?.innerText !== '🔍 꿈 검색') {
+          wrapper.style.display = visibleCount > 0 ? '' : 'none';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
