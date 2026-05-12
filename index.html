@@ -881,13 +881,56 @@
     text-decoration: none;
   }
 
+
+  /* ── 홈 전용 ── */
+  .section-divider { height:1px; background:rgba(255,255,255,0.05); margin:20px 0; }
+  .home-section { margin-bottom:0; }
+  .home-section-title { font-size:15px; font-weight:700; color:var(--gold); margin-bottom:12px; }
+
+  .rank-item {
+    display:flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,0.03); border:0.5px solid rgba(255,255,255,0.07);
+    border-radius:12px; padding:12px 14px; text-decoration:none;
+    transition:background 0.15s;
+  }
+  .rank-item:active { background:rgba(255,255,255,0.06); }
+  .rank-num { font-size:13px; font-weight:700; color:var(--text-muted); min-width:16px; }
+  .rank-emoji { font-size:20px; }
+  .rank-name { font-size:14px; color:var(--text); flex:1; }
+  .rank-arrow { font-size:18px; color:rgba(255,255,255,0.2); }
+
+  .cat-card {
+    display:flex; flex-direction:row; align-items:center; gap:10px;
+    background:rgba(107,63,160,0.12); border:1px solid rgba(107,63,160,0.22);
+    border-radius:12px; padding:11px 14px; text-decoration:none;
+    transition:background 0.15s;
+  }
+  .cat-card:active { background:rgba(107,63,160,0.22); }
+  .cat-emoji { font-size:22px; flex-shrink:0; }
+  .cat-name { font-size:13px; font-weight:600; color:var(--gold-light); flex:1; }
+  .cat-count { display:none; }
+
+  .random-card {
+    display:flex; flex-direction:row; align-items:center; gap:10px;
+    background:rgba(107,63,160,0.1); border:0.5px solid rgba(107,63,160,0.2);
+    border-radius:10px; padding:10px 12px; text-decoration:none;
+    transition:background 0.15s;
+  }
+  .random-card:active { background:rgba(107,63,160,0.2); }
+
+  #haemong-section { display:none; }
+  #lucky-section   { display:none; }
+
+  #homeSearch:focus { border-color:rgba(201,168,76,0.5); }
+  #homeSearch::placeholder { color:var(--text-muted); font-size:13px; }
+
 </style>
 <!-- 카카오 SDK -->
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<!-- ══ 카카오 인앱브라우저 안내 ══ -->
+<!-- 카카오 인앱브라우저 안내 -->
 <div id="inapp-banner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:9999; background:linear-gradient(135deg,#3A1C8A,#5B2D9A); padding:10px 16px; text-align:center; font-size:13px; color:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
   🌐 카카오톡 내에서는 일부 기능이 제한돼요
   <button onclick="openExternalBrowser()" style="margin-left:10px; background:#C9A84C; border:none; border-radius:8px; padding:5px 12px; font-size:12px; font-weight:700; color:#0D0A1A; cursor:pointer;">브라우저로 열기 →</button>
@@ -896,65 +939,34 @@
 <script>
 (function(){
   var ua = navigator.userAgent || '';
-  var isKakao = /KAKAOTALK/i.test(ua);
-  if(isKakao) {
-    document.getElementById('inapp-banner').style.display = 'block';
-  }
+  if(/KAKAOTALK/i.test(ua)) document.getElementById('inapp-banner').style.display='block';
 })();
-function openExternalBrowser() {
-  var url = location.href;
-  var ua = navigator.userAgent || '';
-  if(/Android/i.test(ua)) {
-    // 안드로이드: Chrome으로 강제 실행
-    var intentUrl = 'intent://' + url.replace(/https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;end';
-    location.href = intentUrl;
-    setTimeout(function() { location.href = url; }, 1500);
+function openExternalBrowser(){
+  var url=location.href, ua=navigator.userAgent||'';
+  if(/Android/i.test(ua)){
+    var intentUrl='intent://'+url.replace(/https?:\/\//,'')+'#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;end';
+    location.href=intentUrl;
+    setTimeout(function(){location.href=url;},1500);
   } else {
-    // iOS: 주소 복사 + 친절한 팝업 안내
-    var copyDone = false;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(function() { showCopyGuide(); }).catch(function() { fallbackCopy(url); });
-    } else {
-      fallbackCopy(url);
-    }
+    if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(showCopyGuide).catch(function(){fallbackCopy(url);});
+    else fallbackCopy(url);
   }
 }
-function fallbackCopy(url) {
-  var ta = document.createElement('textarea');
-  ta.value = url;
-  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
-  document.body.appendChild(ta);
-  ta.focus(); ta.select();
-  try { document.execCommand('copy'); } catch(e) {}
-  document.body.removeChild(ta);
-  showCopyGuide();
-}
-function showCopyGuide() {
-  var old = document.getElementById('copy-guide-popup');
-  if (old) old.remove();
-  var popup = document.createElement('div');
-  popup.id = 'copy-guide-popup';
-  popup.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:99999;background:#1A0F3A;border:1px solid rgba(201,168,76,0.4);border-radius:16px;padding:24px 20px;text-align:center;width:280px;box-shadow:0 8px 32px rgba(0,0,0,0.5);';
-  popup.innerHTML = '<div style="font-size:32px;margin-bottom:12px;">📋</div>'
-    + '<div style="color:#F0D080;font-size:15px;font-weight:700;margin-bottom:10px;">주소가 복사됐어요!</div>'
-    + '<div style="color:#C0B090;font-size:13px;line-height:1.8;margin-bottom:16px;">① 카카오톡 하단 <b style="color:#F0D080">···</b> 메뉴 클릭<br>② <b style="color:#F0D080">다른 브라우저로 열기</b> 선택<br><br>또는 Safari/Chrome 주소창에<br>붙여넣기 해주세요 😊</div>'
-    + '<button onclick="document.getElementById(&quot;copy-guide-popup&quot;).remove()" style="background:linear-gradient(135deg,#8B6914,#C9A84C);border:none;border-radius:10px;padding:10px 24px;color:#0D0A1A;font-weight:700;font-size:14px;cursor:pointer;">확인</button>';
-  document.body.appendChild(popup);
-}
+function fallbackCopy(url){var ta=document.createElement('textarea');ta.value=url;ta.style.cssText='position:fixed;opacity:0;top:0;left:0;';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);showCopyGuide();}
+function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(old)old.remove();var popup=document.createElement('div');popup.id='copy-guide-popup';popup.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:99999;background:#1A0F3A;border:1px solid rgba(201,168,76,0.4);border-radius:16px;padding:24px 20px;text-align:center;width:280px;box-shadow:0 8px 32px rgba(0,0,0,0.5);';popup.innerHTML='<div style="font-size:32px;margin-bottom:12px;">📋</div><div style="color:#F0D080;font-size:15px;font-weight:700;margin-bottom:10px;">주소가 복사됐어요!</div><div style="color:#C0B090;font-size:13px;line-height:1.8;margin-bottom:16px;">① 카카오톡 하단 <b style="color:#F0D080">···</b> 메뉴 클릭<br>② <b style="color:#F0D080">다른 브라우저로 열기</b> 선택<br><br>또는 Safari/Chrome 주소창에<br>붙여넣기 해주세요 😊</div><button onclick="document.getElementById(&quot;copy-guide-popup&quot;).remove()" style="background:linear-gradient(135deg,#8B6914,#C9A84C);border:none;border-radius:10px;padding:10px 24px;color:#0D0A1A;font-weight:700;font-size:14px;cursor:pointer;">확인</button>';document.body.appendChild(popup);}
 </script>
 
 <div class="stars" id="stars"></div>
 
-<!-- ══ 네비게이션 ══ -->
+<!-- 네비게이션 -->
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <button class="nav-back" id="navBack" onclick="goBack()" style="display:none;">←</button>
-      <a href="index.html" class="nav-logo" onclick="resetApp(); return false;">🌙 꿈해몽 행운</a>
+      <a href="index.html" class="nav-logo">🌙 꿈해몽 행운</a>
     </div>
     <div class="nav-links">
-      <a href="index.html" class="nav-link active">해몽하기</a>
-      <a href="guide.html" class="nav-link">해몽 가이드</a>
+      <a href="index.html" class="nav-link active">홈</a>
+      <a href="guide.html" class="nav-link">꿈 사전</a>
       <a href="about.html" class="nav-link">소개</a>
     </div>
   </div>
@@ -962,300 +974,166 @@ function showCopyGuide() {
 
 <div class="container">
 
-  <!-- ══ 히어로 ══ -->
-  <div class="hero">
-    <div class="balls-stage">
-      <div class="hero-ball hb-r1">7</div>
-      <div class="hero-ball hb-r2">14</div>
-      <div class="hero-ball hb-r3">23</div>
-      <div class="hero-ball hb-r4">31</div>
-      <div class="hero-ball hb-r5">42</div>
-      <div class="hero-ball hb-r1">3</div>
-      <div class="hero-ball hb-r3">28</div>
-      <div class="hero-ball hb-r2">19</div>
-      <div class="hero-ball hb-r4">37</div>
-      <div class="hero-ball hb-r5">45</div>
-    </div>
-
-    <div class="logo-area">
-      <div class="logo-title">꿈해몽 행운</div>
-      <div class="logo-sub">꿈이 알려주는 행운의 번호</div>
-    </div>
-
-    <div class="flow-bar">
-      <div class="flow-item">
-        <span class="flow-icon">🌙</span>
-        <span class="flow-label">꿈 입력</span>
-      </div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-item">
-        <span class="flow-icon">🔮</span>
-        <span class="flow-label">해몽</span>
-      </div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-item">
-        <span class="flow-icon">🎰</span>
-        <span class="flow-label">행운번호</span>
-      </div>
-    </div>
+  <!-- 상단 배너 광고 -->
+  <div style="text-align:center; margin:12px 0 0; min-height:52px; display:flex; align-items:center; justify-content:center;">
+    <!-- 카카오 애드핏 배너 광고 삽입 위치 -->
+    <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(201,168,76,0.15); border-radius:8px; padding:10px 48px; color:rgba(201,168,76,0.25); font-size:11px;">광고</div>
   </div>
 
+  <!-- 타이틀 + 검색 -->
+  <div style="padding:20px 0 0;">
+    <h1 style="font-family:'Nanum Myeongjo',serif; font-size:26px; font-weight:800; color:var(--gold); margin-bottom:6px; text-shadow:0 0 24px rgba(201,168,76,0.3);">꿈해몽 사전</h1>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">어젯밤 꿈, 무슨 의미였을까요?</p>
 
-  <!-- ══ 오늘의 운세 ══ -->
-  <div class="today-fortune" id="todayFortune"></div>
+    <!-- 검색창 -->
+    <div style="position:relative; margin-bottom:10px;">
+      <span style="position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:16px; pointer-events:none;">🔍</span>
+      <input
+        type="text"
+        id="homeSearch"
+        placeholder="꿈 키워드 검색 (예: 이빨, 뱀, 쫓기는)"
+        oninput="handleSearch(this.value)"
+        style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(201,168,76,0.3); border-radius:12px; padding:13px 14px 13px 42px; color:var(--text); font-size:14px; outline:none; font-family:'Pretendard',sans-serif;"
+      />
+    </div>
 
-  <!-- ══ 서비스 소개 (AdSense 콘텐츠 추가) ══ -->
-  <div style="padding: 32px 16px; background: rgba(107,63,160,0.08); border-radius: 16px; margin: 24px 16px 0;">
-    <h2 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 16px; font-family: 'Nanum Myeongjo';">꿈해몽 행운이란?</h2>
-    <p style="font-size: 15px; line-height: 1.8; color: var(--text); margin-bottom: 12px;">
-      꿈은 단순한 무의식의 산물이 아닙니다. 수천 년의 동양 전통 문화에서 꿈은 미래를 알려주는 신호이자, 인생의 방향을 제시하는 메시지로 여겨져 왔습니다. 
-      <strong style="color: var(--gold-light);">꿈해몽 행운</strong>은 이러한 전통 해몽을 바탕으로 당신의 꿈을 해석해드리고, 꿈의 기운에 맞는 행운의 번호 5세트를 추천해드립니다.
-    </p>
-    <p style="font-size: 15px; line-height: 1.8; color: var(--text);">
-      회원가입 없이 <strong style="color: var(--gold-light);">완전히 무료</strong>로 이용 가능하며, 입력하신 꿈에 따라 즉시 해몽 결과와 행운번호를 받아보실 수 있습니다. 
-      매일 새로운 해석으로 하루를 긍정적으로 시작해보세요.
-    </p>
+    <!-- 검색 결과 -->
+    <div id="search-results" style="display:none; margin-top:8px; background:rgba(255,255,255,0.03); border:1px solid rgba(201,168,76,0.2); border-radius:12px; overflow:hidden;"></div>
   </div>
 
-  <!-- ══ 안내 문구 ══ -->
-  <div id="preview-section" style="text-align:center; padding:4px 16px 16px;">
-    <div class="preview-unlock-text" style="color:var(--gold);">🌙 꿈을 입력하면 나만의 번호를 받을 수 있어요</div>
-  </div>
+  <div class="section-divider"></div>
 
-  <!-- 스크롤 힌트 -->
-  <div class="scroll-hint" id="scrollHint">
-    <span class="scroll-hint-text">꿈을 입력하세요</span>
-    <span class="scroll-hint-arrow">↓</span>
-  </div>
-
-  <!-- ══ STEP 1 : 꿈 입력 ══ -->
-  <div class="input-section" id="input-section">
-    <div class="section-label">어젯밤 꿈 이야기</div>
-    <textarea
-      class="dream-input"
-      id="dreamInput"
-      placeholder="어젯밤 꿈에서 무엇을 보셨나요?&#10;예: 돼지가 나타나서 저를 쫓아왔어요...">
-    </textarea>
-    <div class="tags">
-      <span class="tag" onclick="setDream('돼지가 나타난 꿈')">🐷 돼지</span>
-      <span class="tag" onclick="setDream('똥을 밟은 꿈')">💩 똥</span>
-      <span class="tag" onclick="setDream('뱀이 나온 꿈')">🐍 뱀</span>
-      <span class="tag" onclick="setDream('금을 발견한 꿈')">🥇 금</span>
-      <span class="tag" onclick="setDream('불이 난 꿈')">🔥 불</span>
-      <span class="tag" onclick="setDream('물에 빠진 꿈')">🌊 물</span>
-      <span class="tag" onclick="setDream('하늘을 나는 꿈')">🕊️ 하늘</span>
-      <span class="tag" onclick="setDream('이가 빠진 꿈')">🦷 이빨</span>
-      <span class="tag" onclick="setDream('호랑이를 만난 꿈')">🐯 호랑이</span>
-      <span class="tag" onclick="setDream('용이 나타난 꿈')">🐉 용</span>
-      <span class="tag" onclick="setDream('죽는 꿈')">💀 죽음</span>
-      <span class="tag" onclick="setDream('결혼하는 꿈')">💍 결혼</span>
-    </div>
-  </div>
-
-  <button class="cta-btn" id="mainBtn" onclick="startAll()">
-    ✨ 해몽 후 행운번호 받기
-  </button>
-
-  <!-- ══ 인기 꿈해몽 정보 섹션 (AdSense 콘텐츠) ══ -->
-  <div style="padding: 32px 16px; margin: 24px 16px 0;">
-    <h2 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 24px; font-family: 'Nanum Myeongjo'; text-align: center;">🔥 자주 찾는 꿈해몽</h2>
-    
-    <!-- 꿈 정보 카드 1 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>🐷</span> 돼지꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        돼지는 재물, 풍요, 성공을 상징하는 동양 전통 해몽에서 가장 길한 꿈 중 하나입니다. 황금 돼지 꿈은 엄청난 재물운을, 새끼돼지는 작은 행운들이 겹칠 것을 의미합니다. 집으로 들어오는 돼지 꿈은 복이 찾아올 최고의 길몽입니다. 흰 돼지나 검은 돼지도 각각 다른 의미를 지니고 있으며, 돼지가 자신에게 다가오는 꿈은 재물과 기회가 찾아올 것을 예고합니다.
-      </p>
-      <a href="dream-pig.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 꿈 정보 카드 2 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>🐍</span> 뱀꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        뱀 꿈은 변화, 지혜, 재물을 상징합니다. 흰뱀 꿈은 순수하고 강력한 행운을 의미하며, 뱀에 물리는 꿈은 예상치 못한 기회와 변화를 예고합니다. 황금 뱀이나 큰 뱀 꿈은 특히 재물과 권력의 상승을 나타냅니다. 뱀이 자신을 감싸는 꿈은 보호받을 것을 의미하며, 뱀을 피하는 꿈은 문제를 회피하려는 마음을 나타냅니다.
-      </p>
-      <a href="dream-snake.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 꿈 정보 카드 3 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>💵</span> 돈꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        돈과 재물은 풍요, 기회, 행운을 상징합니다. 돈을 세는 꿈은 재산 증식을, 돈을 받는 꿈은 좋은 일과 기쁜 소식을, 돈을 주는 꿈은 좋은 일이 생길 것을 의미합니다. 많은 돈을 줍는 꿈은 특히 예상치 못한 횡재를 예고합니다. 지갑에서 돈이 넘쳐나는 꿈은 재정적 풍요를, 돈을 잃어버리는 꿈은 기회를 놓칠 수 있으니 주의가 필요합니다.
-      </p>
-      <a href="dream-money.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 꿈 정보 카드 4 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>💩</span> 똥꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        똥 꿈은 더럽게 느껴지지만 동양 해몽에서는 최고의 대길몽입니다. 재물, 부, 성공을 상징하며, 특히 황금빛이나 반짝이는 똥 꿈은 엄청난 재물운을 의미합니다. 똥을 밟거나 묻히는 꿈도 전부 길한 꿈으로 해석됩니다. 아기 똥, 동물 똥 등 다양한 형태의 똥도 모두 길한 의미를 지니고 있으며, 화장실에서 배설하는 꿈은 특히 정화와 새로운 시작을 의미합니다.
-      </p>
-      <a href="dream-poop.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 꿈 정보 카드 5 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>🥇</span> 금꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        금 꿈은 재물, 부, 명예를 상징하는 최고의 길몽입니다. 금을 발견하거나 줍는 꿈은 뜻밖의 행운과 재물을, 금을 받는 꿈은 귀인의 도움을 의미합니다. 황금빛으로 빛나는 금 꿈은 특히 큰 성공을 예고합니다. 금 목걸이, 금반지, 금팔찌 등 금으로 만든 장신구를 받거나 착용하는 꿈도 매우 길한 꿈입니다.
-      </p>
-      <a href="dream-gold.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 꿈 정보 카드 6 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>🔥</span> 불꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        불 꿈은 열정, 에너지, 성공을 상징하는 길몽입니다. 맑고 밝은 불이 타오르는 꿈은 앞날의 성공과 번영을 의미하며, 부글거리는 불은 강한 에너지와 열정을 나타냅니다. 불이 집으로 들어오는 꿈은 재물이 들어올 것을 예고합니다. 다만 자신이 타거나 화상을 입는 꿈은 조심이 필요하며, 통제할 수 없는 큰 불은 주의가 필요할 수 있습니다.
-      </p>
-      <a href="dream-fire.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 꿈 정보 카드 7 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>🐯</span> 호랑이꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        호랑이는 힘, 용맹, 성공을 상징하는 길몽입니다. 큰 호랑이가 나타나는 꿈은 큰 권력과 성공을 예고하며, 호랑이를 타는 꿈은 최고의 성공과 명예를 의미합니다. 흰 호랑이 꿈은 특별한 행운을 나타내고, 호랑이가 자신을 보호하는 꿈은 귀인이 나타날 것을 의미합니다.
-      </p>
-      <a href="dream-tiger.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 꿈 정보 카드 8 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>🐉</span> 용꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        용은 최고의 권력, 부, 성공을 상징하는 동양 문화에서 가장 길한 존재입니다. 용이 하늘로 올라가는 꿈은 큰 성공을 예고하며, 용을 타는 꿈은 인생의 대전환을 의미합니다. 용이 자신의 집으로 들어오는 꿈은 엄청난 재물과 행운이 찾아올 것을 의미합니다. 황금 용 꿈은 최고의 대길몽입니다.
-      </p>
-      <a href="dream-dragon.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 꿈 정보 카드 9 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>💧</span> 물꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        물은 정화, 치유, 풍요를 상징합니다. 맑고 깨끗한 물에 들어가는 꿈은 심신이 정화되고 새로운 시작을 의미하며, 물에 빠지는 꿈은 감정의 깊이를 나타냅니다. 흐르는 물은 순조로운 진행을, 고인 물은 정체를 의미합니다. 물이 출렁이며 넘치는 꿈은 풍요로운 변화를 예고합니다.
-      </p>
-      <a href="dream-water.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 꿈 정보 카드 10 -->
-    <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-      <h3 style="font-size: 17px; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-        <span>☀️</span> 태양꿈 해몽
-      </h3>
-      <p style="font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 8px;">
-        태양은 명예, 성공, 생명력을 상징하는 가장 긍정적인 꿈입니다. 태양이 밝게 떠오르는 꿈은 새로운 시작과 번영을 의미하며, 일출 꿈은 특히 인생의 전환점을 나타냅니다. 황금빛 태양은 최고의 성공을 예고하며, 태양이 자신에게 따뜻함을 주는 꿈은 행운과 축복을 의미합니다.
-      </p>
-      <a href="dream-sun.html" style="font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600;">자세히 보기 →</a>
-    </div>
-
-    <!-- 더보기 링크 -->
-    <div style="text-align: center; margin-top: 24px;">
-      <a href="guide.html" style="display: inline-block; padding: 12px 24px; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; color: var(--gold); text-decoration: none; font-weight: 600; font-size: 14px;">
-        📚 모든 꿈해몽 보기 →
+  <!-- 이번 주 인기 꿈 -->
+  <div class="home-section">
+    <h2 class="home-section-title">🔥 이번 주 인기 꿈</h2>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <a href="dream-house-remodeling.html" class="rank-item" style="border-left:3px solid #E53935;">
+        <span class="rank-num" style="color:#E53935;">1</span>
+        <span class="rank-emoji">🏠</span>
+        <span class="rank-name">집 리모델링 꿈</span>
+        <span class="rank-arrow">›</span>
+      </a>
+      <a href="dream-getting-lost.html" class="rank-item" style="border-left:3px solid #FB8C00;">
+        <span class="rank-num" style="color:#FB8C00;">2</span>
+        <span class="rank-emoji">🗺️</span>
+        <span class="rank-name">길 잃는 꿈</span>
+        <span class="rank-arrow">›</span>
+      </a>
+      <a href="dream-airplane.html" class="rank-item" style="border-left:3px solid #F9A825;">
+        <span class="rank-num" style="color:#F9A825;">3</span>
+        <span class="rank-emoji">✈️</span>
+        <span class="rank-name">비행기 꿈</span>
+        <span class="rank-arrow">›</span>
+      </a>
+      <a href="dream-tooth.html" class="rank-item">
+        <span class="rank-num">4</span>
+        <span class="rank-emoji">🦷</span>
+        <span class="rank-name">이빨 빠지는 꿈</span>
+        <span class="rank-arrow">›</span>
+      </a>
+      <a href="dream-pig.html" class="rank-item">
+        <span class="rank-num">5</span>
+        <span class="rank-emoji">🐷</span>
+        <span class="rank-name">돼지꿈</span>
+        <span class="rank-arrow">›</span>
       </a>
     </div>
   </div>
 
-  <!-- ══ 꿈해몽의 의미와 역사 섹션 ══ -->
-  <div style="padding: 32px 16px; background: rgba(107,63,160,0.08); border-radius: 16px; margin: 24px 16px 0;">
-    <h2 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 16px; font-family: 'Nanum Myeongjo';">꿈해몽의 역사와 문화</h2>
-    <p style="font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 12px;">
-      꿈 해석은 인류의 역사만큼 오래된 문화입니다. 동양에서는 수천 년 전부터 꿈을 신비로운 메시지로 여겨왔으며, 특히 한국, 중국, 일본 등 동아시아 문화권에서 발전된 해몽 이론은 인생의 중요한 결정에 영향을 미쳐왔습니다. 
-    </p>
-    <p style="font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 12px;">
-      전통 해몽에서는 꿈을 예지몽(미래를 예고하는 꿈), 길몽(좋은 일을 암시하는 꿈), 흉몽(주의가 필요한 꿈) 등으로 분류합니다. 특정 동물이나 물체가 나타나는 꿈은 깊은 상징적 의미를 지니고 있으며, 같은 꿈이라도 당사자의 상황에 따라 다르게 해석될 수 있습니다.
-    </p>
-    <p style="font-size: 14px; line-height: 1.8; color: var(--text);">
-      현대에는 이러한 전통 해몽을 심리학적 관점과 결합하여 더욱 풍부한 해석을 제공합니다. 꿈해몽은 오락의 차원을 넘어 자신의 내면을 이해하고, 잠재의식이 보내는 메시지를 읽는 과정이 될 수 있습니다.
-    </p>
-  </div>
+  <div class="section-divider"></div>
 
-  <!-- ══ 행운번호의 의미 섹션 ══ -->
-  <div style="padding: 32px 16px; margin: 24px 16px 0;">
-    <h2 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 16px; font-family: 'Nanum Myeongjo';">행운번호와 수리학</h2>
-    <p style="font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 12px;">
-      동양의 수리학에서는 각 숫자가 고유의 에너지와 의미를 지니고 있다고 봅니다. 예를 들어, 8은 무한과 번영을, 7은 신비로움과 영적 깨달음을, 9는 완성과 성숙을 상징합니다. 
-    </p>
-    <p style="font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 12px;">
-      꿈해몽 행운에서 제공하는 행운번호는 당신의 꿈에서 나타나는 이미지나 상황과 조화를 이루는 숫자들로 구성됩니다. 이 숫자들은 당신의 꿈이 암시하는 운의 기운을 담고 있으며, 하루를 시작할 때 긍정적인 에너지를 실어줄 수 있습니다.
-    </p>
-    <p style="font-size: 14px; line-height: 1.8; color: var(--text);">
-      행운번호는 로또, 복권 등 다양한 상황에서 참고할 수 있지만, 무엇보다 중요한 것은 이 숫자들이 당신에게 주는 심리적 위안과 긍정적인 기운입니다. 매일 새로운 꿈으로 새로운 행운번호를 받아보세요.
-    </p>
-  </div>
-
-  <!-- ══ 서비스 특징 섹션 ══ -->
-  <div style="padding: 32px 16px; background: rgba(201,168,76,0.08); border-radius: 16px; margin: 24px 16px 0; margin-bottom: 40px;">
-    <h2 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 20px; font-family: 'Nanum Myeongjo';">꿈해몽 행운의 특징</h2>
-    
-    <div style="display: grid; gap: 16px;">
-      <div style="padding: 16px; background: rgba(107,63,160,0.15); border-radius: 10px; border-left: 4px solid var(--gold);">
-        <h3 style="font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 8px;">✨ 전통 해몽 기반</h3>
-        <p style="font-size: 13px; color: var(--text);">
-          수천 년의 동양 문화와 전통에서 비롯된 신뢰할 수 있는 해몽 이론을 바탕으로 합니다.
-        </p>
-      </div>
-
-      <div style="padding: 16px; background: rgba(107,63,160,0.15); border-radius: 10px; border-left: 4px solid var(--gold);">
-        <h3 style="font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 8px;">⚡ 즉시 결과 제공</h3>
-        <p style="font-size: 13px; color: var(--text);">
-          꿈을 입력하면 바로 상세한 해몽과 행운번호 5세트를 받을 수 있습니다.
-        </p>
-      </div>
-
-      <div style="padding: 16px; background: rgba(107,63,160,0.15); border-radius: 10px; border-left: 4px solid var(--gold);">
-        <h3 style="font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 8px;">🆓 완전 무료</h3>
-        <p style="font-size: 13px; color: var(--text);">
-          회원가입이나 결제 없이 누구나 무료로 무제한 이용할 수 있습니다.
-        </p>
-      </div>
-
-      <div style="padding: 16px; background: rgba(107,63,160,0.15); border-radius: 10px; border-left: 4px solid var(--gold);">
-        <h3 style="font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 8px;">📱 모바일 최적화</h3>
-        <p style="font-size: 13px; color: var(--text);">
-          스마트폰, 태블릿 등 모든 기기에서 쉽게 이용할 수 있도록 최적화되었습니다.
-        </p>
-      </div>
-
-      <div style="padding: 16px; background: rgba(107,63,160,0.15); border-radius: 10px; border-left: 4px solid var(--gold);">
-        <h3 style="font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 8px;">📊 상세한 정보</h3>
-        <p style="font-size: 13px; color: var(--text);">
-          50개 이상의 꿈 키워드에 대한 상세한 해몽 정보가 준비되어 있습니다.
-        </p>
-      </div>
-
-      <div style="padding: 16px; background: rgba(107,63,160,0.15); border-radius: 10px; border-left: 4px solid var(--gold);">
-        <h3 style="font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 8px;">🔄 매일 새로운 해석</h3>
-        <p style="font-size: 13px; color: var(--text);">
-          매일 새로운 꿈으로 새로운 해석과 행운번호를 받으며 긍정적인 하루를 시작하세요.
-        </p>
-      </div>
+  <!-- 카테고리 -->
+  <div class="home-section">
+    <h2 class="home-section-title">📚 카테고리별 꿈해몽</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px;">
+      <a href="guide.html#cho-ㄱ" class="cat-card">
+        <span class="cat-emoji">🐾</span>
+        <span class="cat-name">동물·자연</span>
+        <span class="cat-count">17개</span>
+      </a>
+      <a href="guide.html#cho-ㄷ" class="cat-card">
+        <span class="cat-emoji">💰</span>
+        <span class="cat-name">재물·행운</span>
+        <span class="cat-count">18개</span>
+      </a>
+      <a href="guide.html#cho-ㅇ" class="cat-card">
+        <span class="cat-emoji">😰</span>
+        <span class="cat-name">불안·심리</span>
+        <span class="cat-count">32개</span>
+      </a>
+      <a href="guide.html#cho-ㅇ" class="cat-card">
+        <span class="cat-emoji">👥</span>
+        <span class="cat-name">사람·관계</span>
+        <span class="cat-count">12개</span>
+      </a>
+      <a href="guide.html#cho-ㅈ" class="cat-card">
+        <span class="cat-emoji">🏠</span>
+        <span class="cat-name">집·공간</span>
+        <span class="cat-count">8개</span>
+      </a>
+      <a href="guide.html#cho-ㅅ" class="cat-card">
+        <span class="cat-emoji">📚</span>
+        <span class="cat-name">학교·시험</span>
+        <span class="cat-count">5개</span>
+      </a>
     </div>
   </div>
 
+  <div class="section-divider"></div>
 
+  <!-- 중간 광고 -->
+  <div style="text-align:center; margin:0 0 4px; min-height:52px; display:flex; align-items:center; justify-content:center;">
+    <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(201,168,76,0.15); border-radius:8px; padding:10px 48px; color:rgba(201,168,76,0.25); font-size:11px; width:100%;">광고</div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 오늘 알아볼만한 꿈 -->
+  <div class="home-section">
+    <h2 class="home-section-title">🎲 오늘 알아볼만한 꿈</h2>
+    <div id="random-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:9px;"></div>
+    <button onclick="shuffleRandom()" style="width:100%; margin-top:9px; background:rgba(107,63,160,0.1); border:1px solid rgba(107,63,160,0.2); border-radius:10px; padding:10px; color:var(--text-muted); font-size:13px; cursor:pointer; font-family:'Pretendard',sans-serif;">🔀 다른 꿈 보기</button>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 꿈 해몽 위젯 (접었다 펼치기) -->
+  <div class="home-section" style="padding-bottom:0;">
+    <div id="haemong-widget-toggle" onclick="toggleHaemongWidget()" style="display:flex; align-items:center; justify-content:space-between; cursor:pointer; padding-bottom:16px;">
+      <div>
+        <div style="font-size:15px; font-weight:600; color:var(--gold);">✨ 꿈 직접 해몽해보기</div>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:3px;">꿈 내용 입력 → 해몽 + 행운번호</div>
+      </div>
+      <span id="widget-chevron" style="font-size:22px; color:var(--gold); transition:transform 0.3s;">›</span>
+    </div>
+
+    <!-- 접힌 영역 -->
+    <div id="haemong-widget-body" style="display:none; border-top:1px solid rgba(255,255,255,0.06); padding-top:16px; padding-bottom:16px;">
+      <div class="input-section" id="input-section" style="margin:0 0 12px;">
+        <div class="section-label">어젯밤 꿈 이야기</div>
+        <textarea
+          class="dream-input"
+          id="dreamInput"
+          placeholder="어젯밤 꿈에서 무엇을 보셨나요?&#10;예: 돼지가 나타나서 저를 쫓아왔어요...">
+        </textarea>
+        <div class="tags">
+          <span class="tag" onclick="setDream('쫓기는 꿈')">🏃 쫓기는 꿈</span>
+          <span class="tag" onclick="setDream('이가 빠진 꿈')">🦷 이빨</span>
+          <span class="tag" onclick="setDream('돼지가 나타난 꿈')">🐷 돼지</span>
+          <span class="tag" onclick="setDream('뱀이 나온 꿈')">🐍 뱀</span>
+          <span class="tag" onclick="setDream('길을 잃는 꿈')">🗺️ 길 잃는 꿈</span>
+          <span class="tag" onclick="setDream('비행기 타는 꿈')">✈️ 비행기</span>
+          <span class="tag" onclick="setDream('똥을 밟은 꿈')">💩 똥</span>
+          <span class="tag" onclick="setDream('금을 발견한 꿈')">🥇 금</span>
+          <span class="tag" onclick="setDream('불이 난 꿈')">🔥 불</span>
+          <span class="tag" onclick="setDream('용이 나타난 꿈')">🐉 용</span>
+        </div>
+      </div>
+      <button class="cta-btn" id="mainBtn" onclick="startAll()">✨ 해몽 후 행운번호 받기</button>
+    </div>
+  </div>
+
+  <!-- 해몽 결과 (위젯 아래) -->
   <div id="haemong-section">
     <div class="haemong-card fade-in">
       <div class="haemong-badge">해몽 결과</div>
@@ -1266,19 +1144,11 @@ function showCopyGuide() {
     </div>
   </div>
 
-  <!-- ══ STEP 4+5 : 번호 로딩 + 결과 동시 표시 ══ -->
+  <!-- 행운번호 섹션 -->
   <div id="lucky-section">
-    <!-- 광고: 번호 위에 항상 표시 -->
     <div class="ad-box" id="lucky-ad-box">
       <div class="ad-label">ADVERTISEMENT</div>
       <div class="ad-placeholder">광고 영역 (320×250)</div>
-      <!--
-      <ins class="adsbygoogle"
-           style="display:inline-block;width:320px;height:100px"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      -->
     </div>
     <div class="lotto-section fade-in" id="lotto-result">
       <div class="numbers-header">
@@ -1291,52 +1161,25 @@ function showCopyGuide() {
     <div class="bottom-ad">
       <div class="ad-label">ADVERTISEMENT</div>
       <div class="ad-placeholder">광고 영역 (320×50)</div>
-      <!--
-      <ins class="adsbygoogle"
-           style="display:inline-block;width:320px;height:50px"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      -->
     </div>
-    <!-- 공유 버튼 -->
     <div class="share-section">
       <div class="share-title">📢 행운의 번호 친구에게 공유하기</div>
       <div class="share-buttons">
-        <button class="share-btn btn-kakao" onclick="shareKakao()">
-          <span>💬</span> 카카오톡
-        </button>
-        <button class="share-btn btn-copy" id="linkCopyBtn" onclick="copyLink()">
-          <span>🔗</span> 링크 복사
-        </button>
+        <button class="share-btn btn-kakao" onclick="shareKakao()"><span>💬</span> 카카오톡</button>
+        <button class="share-btn btn-copy" id="linkCopyBtn" onclick="copyLink()"><span>🔗</span> 링크 복사</button>
       </div>
     </div>
-
-
-    <div class="internal-links-box fade-in" id="internal-links-box">
-      <div class="internal-links-title">🔗 다른 인기 꿈 해몽도 확인해보세요</div>
-      <div class="internal-links-sub">관련 꿈 페이지를 함께 둘러보면 더 다양한 해몽과 행운 번호를 확인할 수 있어요.</div>
-      <div class="tags">
-        <a class="tag internal-link" href="dream-pig.html">🐷 돼지꿈</a>
-        <a class="tag internal-link" href="dream-snake.html">🐍 뱀꿈</a>
-        <a class="tag internal-link" href="dream-money.html">💵 돈꿈</a>
-        <a class="tag internal-link" href="dream-tooth-loss.html">🦷 이빨꿈</a>
-        <a class="tag internal-link" href="dream-chased.html">🏃 쫓기는 꿈</a>
-        <a class="tag internal-link" href="dream-water.html">🌊 물꿈</a>
-        <a class="tag internal-link" href="dream-fire.html">🔥 불꿈</a>
-        <a class="tag internal-link" href="dream-stair.html">🪜 계단꿈</a>
-        <a class="tag internal-link" href="dream-airplane.html">✈️ 비행기꿈</a>
-        <a class="tag internal-link" href="guide.html">📚 해몽 가이드</a>
-      </div>
-    </div>
-
     <button class="retry-btn" onclick="resetApp()">🔄 다른 꿈 해몽하기</button>
   </div>
 
-  <!-- ══ 푸터 ══ -->
+  <!-- 하단 광고 -->
+  <div style="text-align:center; margin:8px 0 0; min-height:52px; display:flex; align-items:center; justify-content:center;">
+    <div style="background:rgba(255,255,255,0.02); border:1px dashed rgba(201,168,76,0.15); border-radius:8px; padding:10px 48px; color:rgba(201,168,76,0.25); font-size:11px; width:100%;">광고</div>
+  </div>
+
+  <!-- 푸터 -->
   <footer>
     꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>
-    행운 번호는 꿈 해몽 기반의 참고용 추천이며, 실제 당첨을 보장하지 않습니다<br>
     © 2026 꿈해몽 행운<br>
     <a href="privacy.html">개인정보처리방침</a>
     <a href="terms.html">이용약관</a>
@@ -1344,8 +1187,119 @@ function showCopyGuide() {
   </footer>
 
 </div>
-
 <script>
+/* ═══════════════════════════════════════════
+   홈 전용: 랜덤 꿈 추천
+═══════════════════════════════════════════ */
+const randomPool = [
+  {emoji:'🏠',name:'집 리모델링 꿈',desc:'변화와 새 출발의 신호',url:'dream-house-remodeling.html'},
+  {emoji:'🛗',name:'엘리베이터 멈추는 꿈',desc:'정체와 막힘의 심리',url:'dream-elevator-stuck.html'},
+  {emoji:'🛗',name:'엘리베이터 추락 꿈',desc:'급격한 변화 불안',url:'dream-elevator-falling.html'},
+  {emoji:'📱',name:'휴대폰 깨지는 꿈',desc:'연결 불안의 신호',url:'dream-phone-broken.html'},
+  {emoji:'👟',name:'신발 잃어버리는 꿈',desc:'방향 상실의 표현',url:'dream-shoes-lost.html'},
+  {emoji:'🚻',name:'화장실 못 찾는 꿈',desc:'감정 배출 지연 신호',url:'dream-toilet-cant-find.html'},
+  {emoji:'🔐',name:'비밀번호 틀리는 꿈',desc:'접근 제한의 불안',url:'dream-password-wrong.html'},
+  {emoji:'🌫️',name:'안개로 앞이 안 보이는 꿈',desc:'불확실성의 표현',url:'dream-fog-cant-see.html'},
+  {emoji:'📦',name:'택배가 오지 않는 꿈',desc:'기대 지연의 감정',url:'dream-delivery-not-coming.html'},
+  {emoji:'🗺️',name:'같은 길을 반복하는 꿈',desc:'정체와 반복의 신호',url:'dream-repeating-path.html'},
+  {emoji:'🚇',name:'지하철 잘못 타는 꿈',desc:'방향 착오의 신호',url:'dream-subway-wrong.html'},
+  {emoji:'🔑',name:'열쇠 잃어버리는 꿈',desc:'해결책 탐색 중',url:'dream-key-lost.html'},
+  {emoji:'🪟',name:'창문이 깨지는 꿈',desc:'마음의 경계 약화',url:'dream-window-broken.html'},
+  {emoji:'🌉',name:'다리가 끊어지는 꿈',desc:'전환기의 단절감',url:'dream-broken-bridge.html'},
+  {emoji:'🪜',name:'끝없는 계단 오르는 꿈',desc:'목표 피로의 신호',url:'dream-endless-stairs.html'},
+  {emoji:'⏱️',name:'시계가 멈추는 꿈',desc:'시간 압박의 표현',url:'dream-clock-stopped-full.html'},
+  {emoji:'🚪',name:'문이 닫혀 못 나가는 꿈',desc:'기회 차단의 신호',url:'dream-door-closed-cant-leave.html'},
+  {emoji:'💵',name:'돈 세는 꿈',desc:'재산 증식 예고',url:'dream-count-money.html'},
+  {emoji:'🏠',name:'이사 가는 꿈',desc:'환경 변화의 예고',url:'dream-moving.html'},
+  {emoji:'📋',name:'면접 보는 꿈',desc:'평가와 기회의 신호',url:'dream-interview.html'},
+];
+
+function shuffleRandom(){
+  const grid=document.getElementById('random-grid');
+  if(!grid)return;
+  const picks=[...randomPool].sort(()=>Math.random()-0.5).slice(0,4);
+  grid.innerHTML=picks.map(d=>`
+    <a href="${d.url}" class="random-card">
+      <span style="font-size:26px;">${d.emoji}</span>
+      <span style="color:var(--gold-light);font-size:13px;font-weight:600;">${d.name}</span>
+      <span style="color:var(--text-muted);font-size:11px;">${d.desc}</span>
+    </a>
+  `).join('');
+}
+
+/* ── 위젯 토글 ── */
+function toggleHaemongWidget(){
+  const body=document.getElementById('haemong-widget-body');
+  const chevron=document.getElementById('widget-chevron');
+  if(body.style.display==='none'){
+    body.style.display='block';
+    chevron.style.transform='rotate(90deg)';
+  } else {
+    body.style.display='none';
+    chevron.style.transform='';
+  }
+}
+
+/* ── 검색 ── */
+const searchIndex = [
+  {name:'돼지꿈 해몽',emoji:'🐷',url:'dream-pig.html',keywords:['돼지','pig']},
+  {name:'뱀꿈 해몽',emoji:'🐍',url:'dream-snake.html',keywords:['뱀','snake']},
+  {name:'이빨 빠지는 꿈',emoji:'🦷',url:'dream-tooth.html',keywords:['이빨','이','치아','tooth']},
+  {name:'쫓기는 꿈',emoji:'🏃',url:'dream-chased.html',keywords:['쫓','도망','chase']},
+  {name:'돈꿈 해몽',emoji:'💰',url:'dream-money.html',keywords:['돈','money','현금']},
+  {name:'물꿈 해몽',emoji:'🌊',url:'dream-water.html',keywords:['물','water','바다','강']},
+  {name:'불꿈 해몽',emoji:'🔥',url:'dream-fire.html',keywords:['불','fire','화재']},
+  {name:'호랑이꿈',emoji:'🐯',url:'dream-tiger.html',keywords:['호랑이','tiger']},
+  {name:'용꿈 해몽',emoji:'🐉',url:'dream-dragon.html',keywords:['용','dragon']},
+  {name:'죽는 꿈',emoji:'💀',url:'dream-death.html',keywords:['죽','사망','death']},
+  {name:'아기꿈 해몽',emoji:'👶',url:'dream-baby.html',keywords:['아기','baby','갓난']},
+  {name:'비행기 꿈',emoji:'✈️',url:'dream-airplane.html',keywords:['비행기','airplane','항공']},
+  {name:'금꿈 해몽',emoji:'🥇',url:'dream-gold.html',keywords:['금','gold','황금']},
+  {name:'태양꿈 해몽',emoji:'☀️',url:'dream-sun.html',keywords:['태양','해','sun']},
+  {name:'결혼꿈 해몽',emoji:'💍',url:'dream-wedding.html',keywords:['결혼','웨딩','wedding']},
+  {name:'집꿈 해몽',emoji:'🏠',url:'dream-house.html',keywords:['집','house','아파트']},
+  {name:'시험꿈 해몽',emoji:'📝',url:'dream-exam.html',keywords:['시험','exam','합격','불합격']},
+  {name:'하늘 나는 꿈',emoji:'🕊️',url:'dream-fly.html',keywords:['하늘','날','fly','비행']},
+  {name:'길 잃는 꿈',emoji:'🗺️',url:'dream-getting-lost.html',keywords:['길','잃','미아','lost']},
+  {name:'조상꿈 해몽',emoji:'👴',url:'dream-ancestor.html',keywords:['조상','할머니','할아버지','돌아가신']},
+  {name:'무지개꿈',emoji:'🌈',url:'dream-rainbow.html',keywords:['무지개','rainbow']},
+  {name:'곰꿈 해몽',emoji:'🐻',url:'dream-bear.html',keywords:['곰','bear']},
+  {name:'거북이꿈',emoji:'🐢',url:'dream-turtle.html',keywords:['거북','turtle']},
+  {name:'물고기꿈',emoji:'🐟',url:'dream-fish.html',keywords:['물고기','fish','생선']},
+  {name:'임신꿈 해몽',emoji:'🤰',url:'dream-pregnant.html',keywords:['임신','pregnant','태몽']},
+  {name:'귀신꿈 해몽',emoji:'👻',url:'dream-ghost.html',keywords:['귀신','유령','ghost']},
+  {name:'뱀에 물리는 꿈',emoji:'🐍',url:'dream-snakebite.html',keywords:['뱀에','물리','snakebite']},
+  {name:'흰뱀 꿈',emoji:'🤍',url:'dream-whitesnake.html',keywords:['흰뱀','백사','white snake']},
+  {name:'새끼 돼지 꿈',emoji:'🐷',url:'dream-piglet.html',keywords:['새끼돼지','아기돼지','piglet']},
+];
+
+function handleSearch(val){
+  const box=document.getElementById('search-results');
+  if(!val||val.trim().length<1){box.style.display='none';return;}
+  const q=val.trim().toLowerCase();
+  const results=searchIndex.filter(d=>
+    d.name.includes(val)||d.keywords.some(k=>k.includes(q)||q.includes(k))
+  ).slice(0,6);
+  if(results.length===0){
+    box.innerHTML='<div style="padding:14px 16px; color:var(--text-muted); font-size:13px;">검색 결과가 없어요. 다른 키워드를 입력해보세요.</div>';
+  } else {
+    box.innerHTML=results.map(d=>`
+      <a href="${d.url}" style="display:flex;align-items:center;gap:10px;padding:12px 16px;text-decoration:none;border-bottom:0.5px solid rgba(255,255,255,0.05);">
+        <span style="font-size:20px;">${d.emoji}</span>
+        <span style="font-size:14px;color:var(--text);">${d.name}</span>
+        <span style="margin-left:auto;font-size:16px;color:rgba(255,255,255,0.2);">›</span>
+      </a>
+    `).join('');
+  }
+  box.style.display='block';
+}
+
+function goSearch(keyword){
+  const input=document.getElementById('homeSearch');
+  if(input){input.value=keyword; handleSearch(keyword);}
+  input.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
 /* ═══════════════════════════════════════════
    해몽 데이터베이스 (33개)
 ═══════════════════════════════════════════ */
@@ -1951,7 +1905,6 @@ window.addEventListener('load', function() {
   if (typeof Kakao !== 'undefined' && !Kakao.isInitialized()) {
     try { Kakao.init('7b87b3bb674e9bec0fd123f31a4e6e24'); } catch(e) {}
   }
-  buildTodayFortune();
+  shuffleRandom();
 });
-
 </script>
