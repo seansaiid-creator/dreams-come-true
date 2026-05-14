@@ -1027,6 +1027,53 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
     <button class="cta-btn" id="mainBtn" onclick="startAll()">✨ 해몽 후 행운번호 받기</button>
   </div>
 
+  <!-- 해몽 결과 (위젯 아래) -->
+  <div id="haemong-section">
+    <div class="haemong-card fade-in">
+      <div class="haemong-badge">해몽 결과</div>
+      <div class="haemong-keyword" id="haemongKeyword"></div>
+      <div class="haemong-luck"    id="haemongLuck"></div>
+      <div class="haemong-text"    id="haemongText"></div>
+      <div class="haemong-advice"  id="haemongAdvice"></div>
+    </div>
+  </div>
+
+  <!-- 행운번호 섹션 -->
+  <div id="lucky-section">
+
+    <div class="ad-box" id="lucky-ad-box">
+      <ins class="kakao_ad_area" style="display:none;"
+        data-ad-unit="DAN-EQAu5MKxjYS15ONg"
+        data-ad-width="320"
+        data-ad-height="100"></ins>
+      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <div class="lotto-section fade-in" id="lotto-result">
+      <div class="numbers-header">
+        <div class="lotto-title">🔮 행운의 번호 5세트</div>
+        <button class="copy-numbers-btn" id="copyNumBtn" onclick="copyNumbers()">📋 복사</button>
+      </div>
+      <div class="lotto-subtitle">오늘의 행운을 함께 잡아보세요</div>
+      <div class="lotto-sets" id="lottoSets"></div>
+    </div>
+
+    <div class="share-section">
+      <div class="share-title">📢 행운의 번호 친구에게 공유하기</div>
+      <div class="share-buttons">
+        <button class="share-btn btn-kakao" onclick="shareKakao()"><span>💬</span> 카카오톡</button>
+        <button class="share-btn btn-copy" id="linkCopyBtn" onclick="copyLink()"><span>🔗</span> 링크 복사</button>
+      </div>
+    </div>
+    <button class="retry-btn" onclick="resetApp()">🔄 다른 꿈 해몽하기</button>
+    <div class="bottom-ad">
+      <ins class="kakao_ad_area" style="display:none;"
+        data-ad-unit="DAN-xsEr1zraBjbgyH3q"
+        data-ad-width="320"
+        data-ad-height="50"></ins>
+      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+    </div>
+  </div>
+
   <div class="section-divider"></div>
 
   <!-- 이번 주 인기 꿈 -->
@@ -1124,52 +1171,6 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
 
 
 
-  <!-- 해몽 결과 (위젯 아래) -->
-  <div id="haemong-section">
-    <div class="haemong-card fade-in">
-      <div class="haemong-badge">해몽 결과</div>
-      <div class="haemong-keyword" id="haemongKeyword"></div>
-      <div class="haemong-luck"    id="haemongLuck"></div>
-      <div class="haemong-text"    id="haemongText"></div>
-      <div class="haemong-advice"  id="haemongAdvice"></div>
-    </div>
-  </div>
-
-  <!-- 행운번호 섹션 -->
-  <div id="lucky-section">
-
-    <div class="ad-box" id="lucky-ad-box">
-      <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit="DAN-EQAu5MKxjYS15ONg"
-        data-ad-width="320"
-        data-ad-height="100"></ins>
-      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
-    </div>
-    <div class="lotto-section fade-in" id="lotto-result">
-      <div class="numbers-header">
-        <div class="lotto-title">🔮 행운의 번호 5세트</div>
-        <button class="copy-numbers-btn" id="copyNumBtn" onclick="copyNumbers()">📋 복사</button>
-      </div>
-      <div class="lotto-subtitle">오늘의 행운을 함께 잡아보세요</div>
-      <div class="lotto-sets" id="lottoSets"></div>
-    </div>
-
-    <div class="share-section">
-      <div class="share-title">📢 행운의 번호 친구에게 공유하기</div>
-      <div class="share-buttons">
-        <button class="share-btn btn-kakao" onclick="shareKakao()"><span>💬</span> 카카오톡</button>
-        <button class="share-btn btn-copy" id="linkCopyBtn" onclick="copyLink()"><span>🔗</span> 링크 복사</button>
-      </div>
-    </div>
-    <button class="retry-btn" onclick="resetApp()">🔄 다른 꿈 해몽하기</button>
-    <div class="bottom-ad">
-      <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit="DAN-xsEr1zraBjbgyH3q"
-        data-ad-width="320"
-        data-ad-height="50"></ins>
-      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
-    </div>
-  </div>
 
   <!-- 하단 광고 -->
   <div style="text-align:center; margin:8px 0 0; min-height:52px; display:flex; align-items:center; justify-content:center;">
