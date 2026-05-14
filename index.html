@@ -1001,6 +1001,32 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
     <div id="search-results" style="display:none; margin-top:8px; background:rgba(255,255,255,0.03); border:1px solid rgba(201,168,76,0.2); border-radius:12px; overflow:hidden;"></div>
   </div>
 
+  <!-- 꿈 해몽 위젯 (검색창 바로 아래, 항상 펼침) -->
+  <div class="home-section" style="padding:16px 0 0;">
+    <div id="input-section" style="margin:0 0 12px;">
+      <div class="section-label" style="font-size:13px; color:var(--text-muted); margin-bottom:8px;">어젯밤 꿈 이야기</div>
+      <textarea
+        class="dream-input"
+        id="dreamInput"
+        placeholder="어젯밤 꿈에서 무엇을 보셨나요?&#10;예: 돼지가 나타나서 저를 쫓아왔어요..."
+        style="min-height:80px;">
+      </textarea>
+      <div class="tags">
+        <span class="tag" onclick="setDream('쫓기는 꿈')">🏃 쫓기는 꿈</span>
+        <span class="tag" onclick="setDream('이가 빠진 꿈')">🦷 이빨</span>
+        <span class="tag" onclick="setDream('돼지가 나타난 꿈')">🐷 돼지</span>
+        <span class="tag" onclick="setDream('뱀이 나온 꿈')">🐍 뱀</span>
+        <span class="tag" onclick="setDream('길을 잃는 꿈')">🗺️ 길 잃는 꿈</span>
+        <span class="tag" onclick="setDream('비행기 타는 꿈')">✈️ 비행기</span>
+        <span class="tag" onclick="setDream('똥을 밟은 꿈')">💩 똥</span>
+        <span class="tag" onclick="setDream('금을 발견한 꿈')">🥇 금</span>
+        <span class="tag" onclick="setDream('불이 난 꿈')">🔥 불</span>
+        <span class="tag" onclick="setDream('용이 나타난 꿈')">🐉 용</span>
+      </div>
+    </div>
+    <button class="cta-btn" id="mainBtn" onclick="startAll()">✨ 해몽 후 행운번호 받기</button>
+  </div>
+
   <div class="section-divider"></div>
 
   <!-- 이번 주 인기 꿈 -->
@@ -1096,43 +1122,7 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
     <button onclick="shuffleRandom()" style="width:100%; margin-top:9px; background:rgba(107,63,160,0.1); border:1px solid rgba(107,63,160,0.2); border-radius:10px; padding:10px; color:var(--text-muted); font-size:13px; cursor:pointer; font-family:'Pretendard',sans-serif;">🔀 다른 꿈 보기</button>
   </div>
 
-  <div class="section-divider"></div>
 
-  <!-- 꿈 해몽 위젯 (접었다 펼치기) -->
-  <div class="home-section" style="padding-bottom:0;">
-    <div id="haemong-widget-toggle" onclick="toggleHaemongWidget()" style="display:flex; align-items:center; justify-content:space-between; cursor:pointer; padding-bottom:16px;">
-      <div>
-        <div style="font-size:15px; font-weight:600; color:var(--gold);">✨ 꿈 직접 해몽해보기</div>
-        <div style="font-size:12px; color:var(--text-muted); margin-top:3px;">꿈 내용 입력 → 해몽 + 행운번호</div>
-      </div>
-      <span id="widget-chevron" style="font-size:22px; color:var(--gold); transition:transform 0.3s;">›</span>
-    </div>
-
-    <!-- 접힌 영역 -->
-    <div id="haemong-widget-body" style="display:none; border-top:1px solid rgba(255,255,255,0.06); padding-top:16px; padding-bottom:16px;">
-      <div class="input-section" id="input-section" style="margin:0 0 12px;">
-        <div class="section-label">어젯밤 꿈 이야기</div>
-        <textarea
-          class="dream-input"
-          id="dreamInput"
-          placeholder="어젯밤 꿈에서 무엇을 보셨나요?&#10;예: 돼지가 나타나서 저를 쫓아왔어요...">
-        </textarea>
-        <div class="tags">
-          <span class="tag" onclick="setDream('쫓기는 꿈')">🏃 쫓기는 꿈</span>
-          <span class="tag" onclick="setDream('이가 빠진 꿈')">🦷 이빨</span>
-          <span class="tag" onclick="setDream('돼지가 나타난 꿈')">🐷 돼지</span>
-          <span class="tag" onclick="setDream('뱀이 나온 꿈')">🐍 뱀</span>
-          <span class="tag" onclick="setDream('길을 잃는 꿈')">🗺️ 길 잃는 꿈</span>
-          <span class="tag" onclick="setDream('비행기 타는 꿈')">✈️ 비행기</span>
-          <span class="tag" onclick="setDream('똥을 밟은 꿈')">💩 똥</span>
-          <span class="tag" onclick="setDream('금을 발견한 꿈')">🥇 금</span>
-          <span class="tag" onclick="setDream('불이 난 꿈')">🔥 불</span>
-          <span class="tag" onclick="setDream('용이 나타난 꿈')">🐉 용</span>
-        </div>
-      </div>
-      <button class="cta-btn" id="mainBtn" onclick="startAll()">✨ 해몽 후 행운번호 받기</button>
-    </div>
-  </div>
 
   <!-- 해몽 결과 (위젯 아래) -->
   <div id="haemong-section">
@@ -1148,8 +1138,11 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
   <!-- 행운번호 섹션 -->
   <div id="lucky-section">
     <div class="ad-box" id="lucky-ad-box">
-      <div class="ad-label">ADVERTISEMENT</div>
-      <div class="ad-placeholder">광고 영역 (320×250)</div>
+      <ins class="kakao_ad_area" style="display:none;"
+        data-ad-unit="DAN-hocmoZxuOVv1icNx"
+        data-ad-width="320"
+        data-ad-height="100"></ins>
+      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
     </div>
     <div class="lotto-section fade-in" id="lotto-result">
       <div class="numbers-header">
@@ -1160,8 +1153,11 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
       <div class="lotto-sets" id="lottoSets"></div>
     </div>
     <div class="bottom-ad">
-      <div class="ad-label">ADVERTISEMENT</div>
-      <div class="ad-placeholder">광고 영역 (320×50)</div>
+      <ins class="kakao_ad_area" style="display:none;"
+        data-ad-unit="DAN-AtRUawKZBJQF2cvp"
+        data-ad-width="320"
+        data-ad-height="50"></ins>
+      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
     </div>
     <div class="share-section">
       <div class="share-title">📢 행운의 번호 친구에게 공유하기</div>
@@ -1215,6 +1211,8 @@ const randomPool = [
   {emoji:'💵',name:'돈 세는 꿈',desc:'재산 증식 예고',url:'dream-count-money.html'},
   {emoji:'🏠',name:'이사 가는 꿈',desc:'환경 변화의 예고',url:'dream-moving.html'},
   {emoji:'📋',name:'면접 보는 꿈',desc:'평가와 기회의 신호',url:'dream-interview.html'},
+  {emoji:'🚗',name:'차 시동 안 걸리는 꿈',desc:'목표가 막힌 심리',url:'dream-car-engine.html'},
+  {emoji:'🙈',name:'숨는 꿈',desc:'회피와 자아방어 신호',url:'dream-hiding.html'},
 ];
 
 function shuffleRandom(){
@@ -1230,50 +1228,111 @@ function shuffleRandom(){
   `).join('');
 }
 
-/* ── 위젯 토글 ── */
-function toggleHaemongWidget(){
-  const body=document.getElementById('haemong-widget-body');
-  const chevron=document.getElementById('widget-chevron');
-  if(body.style.display==='none'){
-    body.style.display='block';
-    chevron.style.transform='rotate(90deg)';
-  } else {
-    body.style.display='none';
-    chevron.style.transform='';
-  }
-}
+/* 위젯 토글 제거 (항상 펼침으로 변경) */
 
 /* ── 검색 ── */
 const searchIndex = [
-  {name:'돼지꿈 해몽',emoji:'🐷',url:'dream-pig.html',keywords:['돼지','pig']},
-  {name:'뱀꿈 해몽',emoji:'🐍',url:'dream-snake.html',keywords:['뱀','snake']},
-  {name:'이빨 빠지는 꿈',emoji:'🦷',url:'dream-tooth.html',keywords:['이빨','이','치아','tooth']},
-  {name:'쫓기는 꿈',emoji:'🏃',url:'dream-chased.html',keywords:['쫓','도망','chase']},
-  {name:'돈꿈 해몽',emoji:'💰',url:'dream-money.html',keywords:['돈','money','현금']},
-  {name:'물꿈 해몽',emoji:'🌊',url:'dream-water.html',keywords:['물','water','바다','강']},
-  {name:'불꿈 해몽',emoji:'🔥',url:'dream-fire.html',keywords:['불','fire','화재']},
-  {name:'호랑이꿈',emoji:'🐯',url:'dream-tiger.html',keywords:['호랑이','tiger']},
-  {name:'용꿈 해몽',emoji:'🐉',url:'dream-dragon.html',keywords:['용','dragon']},
-  {name:'죽는 꿈',emoji:'💀',url:'dream-death.html',keywords:['죽','사망','death']},
-  {name:'아기꿈 해몽',emoji:'👶',url:'dream-baby.html',keywords:['아기','baby','갓난']},
-  {name:'비행기 꿈',emoji:'✈️',url:'dream-airplane.html',keywords:['비행기','airplane','항공']},
-  {name:'금꿈 해몽',emoji:'🥇',url:'dream-gold.html',keywords:['금','gold','황금']},
-  {name:'태양꿈 해몽',emoji:'☀️',url:'dream-sun.html',keywords:['태양','해','sun']},
-  {name:'결혼꿈 해몽',emoji:'💍',url:'dream-wedding.html',keywords:['결혼','웨딩','wedding']},
-  {name:'집꿈 해몽',emoji:'🏠',url:'dream-house.html',keywords:['집','house','아파트']},
-  {name:'시험꿈 해몽',emoji:'📝',url:'dream-exam.html',keywords:['시험','exam','합격','불합격']},
-  {name:'하늘 나는 꿈',emoji:'🕊️',url:'dream-fly.html',keywords:['하늘','날','fly','비행']},
-  {name:'길 잃는 꿈',emoji:'🗺️',url:'dream-getting-lost.html',keywords:['길','잃','미아','lost']},
-  {name:'조상꿈 해몽',emoji:'👴',url:'dream-ancestor.html',keywords:['조상','할머니','할아버지','돌아가신']},
-  {name:'무지개꿈',emoji:'🌈',url:'dream-rainbow.html',keywords:['무지개','rainbow']},
-  {name:'곰꿈 해몽',emoji:'🐻',url:'dream-bear.html',keywords:['곰','bear']},
-  {name:'거북이꿈',emoji:'🐢',url:'dream-turtle.html',keywords:['거북','turtle']},
-  {name:'물고기꿈',emoji:'🐟',url:'dream-fish.html',keywords:['물고기','fish','생선']},
-  {name:'임신꿈 해몽',emoji:'🤰',url:'dream-pregnant.html',keywords:['임신','pregnant','태몽']},
-  {name:'귀신꿈 해몽',emoji:'👻',url:'dream-ghost.html',keywords:['귀신','유령','ghost']},
-  {name:'뱀에 물리는 꿈',emoji:'🐍',url:'dream-snakebite.html',keywords:['뱀에','물리','snakebite']},
-  {name:'흰뱀 꿈',emoji:'🤍',url:'dream-whitesnake.html',keywords:['흰뱀','백사','white snake']},
-  {name:'새끼 돼지 꿈',emoji:'🐷',url:'dream-piglet.html',keywords:['새끼돼지','아기돼지','piglet']},
+  {name:'비행기 꿈 해몽',emoji:'✈️',url:'dream-airplane.html',keywords:['비행기','항공','airplane','이륙','착륙']},
+  {name:'조상 꿈 해몽',emoji:'👴',url:'dream-ancestor.html',keywords:['조상','할머니','할아버지','돌아가신','귀신','제사']},
+  {name:'아기 꿈 해몽',emoji:'👶',url:'dream-baby.html',keywords:['아기','baby','갓난','신생아','육아']},
+  {name:'곰꿈 해몽',emoji:'🐻',url:'dream-bear.html',keywords:['곰','bear','불곰','熊']},
+  {name:'검은 돼지 꿈',emoji:'🖤',url:'dream-blackpig.html',keywords:['검은돼지','흑돼지','검은 돼지','black pig']},
+  {name:'물건 깨지는 꿈',emoji:'💥',url:'dream-breaking-things.html',keywords:['깨지','부서지','물건','컵','그릇']},
+  {name:'이별 꿈 해몽',emoji:'💔',url:'dream-breakup.html',keywords:['이별','헤어지','breakup','실연','연인']},
+  {name:'다리가 끊어지는 꿈',emoji:'🌉',url:'dream-broken-bridge.html',keywords:['다리','끊어지','교량','bridge']},
+  {name:'집 짓는 꿈',emoji:'🏗️',url:'dream-building.html',keywords:['집짓','건축','건물','짓는','건설']},
+  {name:'버스 놓치는 꿈',emoji:'🚌',url:'dream-bus-missed.html',keywords:['버스','놓치','bus','대중교통','막차']},
+  {name:'쫓기는 꿈 해몽',emoji:'🏃',url:'dream-chased.html',keywords:['쫓기','도망','chase','추격','쫓아']},
+  {name:'시계가 멈추는 꿈',emoji:'⏱️',url:'dream-clock-stopped-full.html',keywords:['시계','멈추','clock','시간','정지']},
+  {name:'돈 세는 꿈',emoji:'💵',url:'dream-count-money.html',keywords:['돈세','돈 세','현금','지폐','세다']},
+  {name:'죽는 꿈 해몽',emoji:'💀',url:'dream-death.html',keywords:['죽','사망','death','돌아가','죽음']},
+  {name:'택배 오지 않는 꿈',emoji:'📦',url:'dream-delivery-not-coming.html',keywords:['택배','배송','delivery','소포','기다리']},
+  {name:'문이 막히는 꿈',emoji:'🚪',url:'dream-door-blocked-full.html',keywords:['문이막','막힌문','출입','도어']},
+  {name:'문이 닫혀 못 나가는 꿈',emoji:'🚪',url:'dream-door-closed-cant-leave.html',keywords:['문','닫혀','못나가','갇히','출구']},
+  {name:'문이 안 열리는 꿈',emoji:'🚪',url:'dream-door-not-open-final.html',keywords:['문','안열리','열리지않','잠긴']},
+  {name:'용꿈 해몽',emoji:'🐉',url:'dream-dragon.html',keywords:['용','dragon','이무기','청룡','황룡']},
+  {name:'물에 빠지는 꿈',emoji:'🌊',url:'dream-drowning.html',keywords:['물에빠','빠지','drowning','익사','허우적']},
+  {name:'음식 먹는 꿈',emoji:'🍽️',url:'dream-eating.html',keywords:['음식','먹','eating','밥','식사','배부르']},
+  {name:'엘리베이터 추락 꿈',emoji:'🛗',url:'dream-elevator-falling.html',keywords:['엘리베이터','추락','떨어지','elevator']},
+  {name:'엘리베이터 타는 꿈',emoji:'🛗',url:'dream-elevator-ride.html',keywords:['엘리베이터','타는','elevator','승강기']},
+  {name:'엘리베이터 멈추는 꿈',emoji:'🛗',url:'dream-elevator-stuck.html',keywords:['엘리베이터','멈추','갇히','elevator','고장']},
+  {name:'끝없는 계단 오르는 꿈',emoji:'🪜',url:'dream-endless-stairs.html',keywords:['계단','끝없','endless','오르는','stairs']},
+  {name:'도망치는 꿈',emoji:'🏃',url:'dream-escaping.html',keywords:['도망','탈출','escape','피하','달아나']},
+  {name:'시험꿈 해몽',emoji:'📝',url:'dream-exam.html',keywords:['시험','exam','시험지','합격','불합격','수능']},
+  {name:'시험 떨어지는 꿈',emoji:'📉',url:'dream-examfail.html',keywords:['시험','떨어지','불합격','낙방','fail']},
+  {name:'전남친 꿈 해몽',emoji:'💔',url:'dream-exboyfriend.html',keywords:['전남친','전 남자친구','옛남자','전남자','exboyfriend']},
+  {name:'떨어지는 꿈 해몽',emoji:'⬇️',url:'dream-falling.html',keywords:['떨어지','추락','falling','높은곳','절벽']},
+  {name:'가족 죽는 꿈',emoji:'👨‍👩‍👧',url:'dream-familydeath.html',keywords:['가족','죽','엄마','아빠','부모','형제']},
+  {name:'싸우는 꿈 해몽',emoji:'👊',url:'dream-fighting.html',keywords:['싸우','싸움','fight','다툼','격투']},
+  {name:'불꿈 해몽 (상세)',emoji:'🔥',url:'dream-fire-dream.html',keywords:['불','화재','fire','불길','연기']},
+  {name:'불꿈 해몽',emoji:'🔥',url:'dream-fire.html',keywords:['불','화재','fire','불길','화염']},
+  {name:'물고기꿈 해몽',emoji:'🐟',url:'dream-fish.html',keywords:['물고기','fish','생선','낚시','붕어','잉어']},
+  {name:'손전등 안 켜지는 꿈',emoji:'🔦',url:'dream-flashlight-not-working.html',keywords:['손전등','플래시','flashlight','어둠','켜지지않']},
+  {name:'날아다니는 꿈',emoji:'🕊️',url:'dream-flying.html',keywords:['날아다니','비행','flying','하늘','날다']},
+  {name:'안개로 앞이 안 보이는 꿈',emoji:'🌫️',url:'dream-fog-cant-see.html',keywords:['안개','fog','앞이안보','불명확','흐릿']},
+  {name:'친구가 죽는 꿈',emoji:'👫',url:'dream-friend-dying.html',keywords:['친구','죽','친구죽','사망','friend']},
+  {name:'친구 나오는 꿈',emoji:'🤝',url:'dream-friend.html',keywords:['친구','friend','지인','동창','동료']},
+  {name:'귀신에게 쫓기는 꿈',emoji:'👻',url:'dream-ghost-chased.html',keywords:['귀신','쫓기','유령','ghost','무서운']},
+  {name:'귀신꿈 해몽',emoji:'👻',url:'dream-ghost.html',keywords:['귀신','유령','ghost','혼','악몽']},
+  {name:'금꿈 해몽',emoji:'🥇',url:'dream-gold.html',keywords:['금','gold','황금','금덩이','귀금속']},
+  {name:'황금 꿈 해몽',emoji:'✨',url:'dream-golden.html',keywords:['황금','gold','금빛','황금빛','금색']},
+  {name:'금 줍는 꿈',emoji:'💰',url:'dream-goldpickup.html',keywords:['금줍','금을줍','황금줍','gold','횡재']},
+  {name:'누군가 도와주는 꿈',emoji:'🤝',url:'dream-helped.html',keywords:['도와주','도움','help','귀인','구해주']},
+  {name:'타인을 때리는 꿈',emoji:'👊',url:'dream-hitting-someone.html',keywords:['때리','폭력','hit','치는','구타']},
+  {name:'집 리모델링 꿈',emoji:'🏠',url:'dream-house-remodeling.html',keywords:['리모델링','인테리어','집수리','renovation','고치는']},
+  {name:'집꿈 해몽',emoji:'🏠',url:'dream-house.html',keywords:['집','house','아파트','주택','내집']},
+  {name:'면접 보는 꿈',emoji:'📋',url:'dream-interview.html',keywords:['면접','취업','interview','채용','입사']},
+  {name:'보석 꿈 해몽',emoji:'💎',url:'dream-jewel.html',keywords:['보석','jewel','다이아','루비','에메랄드']},
+  {name:'열쇠 잃어버리는 꿈',emoji:'🔑',url:'dream-key-lost.html',keywords:['열쇠','잃어버리','key','분실','자동차열쇠']},
+  {name:'지각하는 꿈 해몽',emoji:'⏰',url:'dream-late.html',keywords:['지각','늦는','late','늦잠','지각꿈']},
+  {name:'돈 잃는 꿈',emoji:'💸',url:'dream-losing-money-final.html',keywords:['돈잃','잃어버리','분실','lose money']},
+  {name:'길을 잃는 꿈',emoji:'🗺️',url:'dream-lost-path.html',keywords:['길잃','길을잃','lost path','미로','헤매']},
+  {name:'복권꿈 해몽',emoji:'🎟️',url:'dream-lottery.html',keywords:['복권','lottery','로또','당첨','긁는']},
+  {name:'복권 당첨 꿈',emoji:'🎉',url:'dream-lotterywin.html',keywords:['복권당첨','당첨','lottery','로또당첨','1등']},
+  {name:'연애 꿈 해몽',emoji:'💕',url:'dream-love.html',keywords:['연애','사랑','love','연인','데이트','고백']},
+  {name:'거울 보는 꿈',emoji:'🪞',url:'dream-mirror.html',keywords:['거울','mirror','반사','내얼굴','비춰']},
+  {name:'친구에게 돈 받는 꿈',emoji:'💵',url:'dream-money-friend.html',keywords:['친구','돈','받는','빌려주','money']},
+  {name:'돈 잃어버리는 꿈',emoji:'💸',url:'dream-money-lost.html',keywords:['돈잃','지갑잃','분실','money lost']},
+  {name:'돈꿈 해몽',emoji:'💰',url:'dream-money.html',keywords:['돈','money','현금','지폐','부자']},
+  {name:'돈 줍는 꿈',emoji:'💸',url:'dream-moneypickup.html',keywords:['돈줍','횡재','pick up money','노상','길에서']},
+  {name:'이사 가는 꿈',emoji:'🏠',url:'dream-moving.html',keywords:['이사','moving','새집','이사꿈','집이동']},
+  {name:'악몽 해몽',emoji:'😱',url:'dream-nightmare.html',keywords:['악몽','nightmare','무서운꿈','공포','깜짝']},
+  {name:'비밀번호 틀리는 꿈',emoji:'🔐',url:'dream-password-wrong.html',keywords:['비밀번호','틀리','password','잠금','핀번호']},
+  {name:'휴대폰 깨지는 꿈',emoji:'📱',url:'dream-phone-broken.html',keywords:['휴대폰','핸드폰','깨지','phone','스마트폰']},
+  {name:'돼지꿈 로또번호',emoji:'🐷',url:'dream-pig-lotto.html',keywords:['돼지','로또','번호','pig','행운번호']},
+  {name:'돼지꿈 해몽 완벽정리',emoji:'🐷',url:'dream-pig-seo.html',keywords:['돼지','pig','길몽','재물','돼지꿈']},
+  {name:'돼지꿈 해몽',emoji:'🐷',url:'dream-pig.html',keywords:['돼지','pig','돼지꿈','돼지나오는','황금돼지']},
+  {name:'새끼돼지꿈 해몽',emoji:'🐖',url:'dream-piglet.html',keywords:['새끼돼지','아기돼지','piglet','작은돼지']},
+  {name:'똥꿈 해몽',emoji:'💩',url:'dream-poop.html',keywords:['똥','poop','대변','화장실','변기']},
+  {name:'임신꿈 해몽',emoji:'🤰',url:'dream-pregnant.html',keywords:['임신','pregnant','태몽','아이','출산']},
+  {name:'비 오는 꿈',emoji:'🌧️',url:'dream-rain.html',keywords:['비','rain','소나기','폭우','우산']},
+  {name:'무지개꿈 해몽',emoji:'🌈',url:'dream-rainbow.html',keywords:['무지개','rainbow','색깔','하늘','일곱빛']},
+  {name:'돈을 받는 꿈',emoji:'💰',url:'dream-receiving-money.html',keywords:['돈받','받는','receive money','선물','용돈']},
+  {name:'같은 길 반복하는 꿈',emoji:'🔄',url:'dream-repeating-path.html',keywords:['반복','같은길','repeating','제자리','뱅뱅']},
+  {name:'신발 잃어버리는 꿈',emoji:'👟',url:'dream-shoes-lost.html',keywords:['신발잃','신발분실','shoes lost','슬리퍼','운동화']},
+  {name:'신발이 벗겨지는 꿈',emoji:'👟',url:'dream-shoes-slipping.html',keywords:['신발벗','벗겨지','slipping shoes','넘어지']},
+  {name:'신발 젖는 꿈',emoji:'👟',url:'dream-shoes-wet.html',keywords:['신발젖','젖는','wet shoes','물에젖','비맞는']},
+  {name:'별·달 꿈 해몽',emoji:'🌙',url:'dream-sky.html',keywords:['별','달','sky','moon','star','밤하늘','보름달']},
+  {name:'뱀꿈 해몽',emoji:'🐍',url:'dream-snake.html',keywords:['뱀','snake','구렁이','독사','파이썬']},
+  {name:'뱀에 물리는 꿈',emoji:'🐍',url:'dream-snakebite.html',keywords:['뱀에물','물리','snakebite','독','뱀이무는']},
+  {name:'눈 오는 꿈',emoji:'❄️',url:'dream-snow.html',keywords:['눈','snow','눈밭','폭설','함박눈']},
+  {name:'계단 꿈 해몽',emoji:'🪜',url:'dream-stair.html',keywords:['계단','stair','오르는','내려가','층계']},
+  {name:'계단에서 미끄러지는 꿈',emoji:'🪜',url:'dream-stairs-slipping.html',keywords:['계단','미끄러지','slip','넘어지','구르는']},
+  {name:'지하철 잘못 타는 꿈',emoji:'🚇',url:'dream-subway-wrong.html',keywords:['지하철','잘못타','subway','wrong train','역']},
+  {name:'태양꿈 해몽',emoji:'☀️',url:'dream-sun.html',keywords:['태양','sun','해','일출','햇빛']},
+  {name:'택시 타는 꿈',emoji:'🚖',url:'dream-taxi.html',keywords:['택시','taxi','cab','기사','승차']},
+  {name:'호랑이꿈 해몽',emoji:'🐯',url:'dream-tiger.html',keywords:['호랑이','tiger','범','백호','새끼호랑이']},
+  {name:'화장실 못 찾는 꿈',emoji:'🚻',url:'dream-toilet-cant-find.html',keywords:['화장실','못찾','toilet','변기','급한데']},
+  {name:'이빨 빠지는 꿈 해몽',emoji:'🦷',url:'dream-tooth.html',keywords:['이빨','이가빠','치아','tooth','빠지는']},
+  {name:'거북이꿈 해몽',emoji:'🐢',url:'dream-turtle.html',keywords:['거북','turtle','자라','바다거북','장수']},
+  {name:'지갑 잃어버리는 꿈',emoji:'👛',url:'dream-wallet-lost.html',keywords:['지갑','wallet','분실','잃어버리','카드']},
+  {name:'물속에 들어가는 꿈',emoji:'💧',url:'dream-water-immersion.html',keywords:['물속','잠수','물에들어가','immersion','수영']},
+  {name:'물꿈 해몽',emoji:'🌊',url:'dream-water.html',keywords:['물','water','강','바다','홍수','파도']},
+  {name:'결혼꿈 해몽',emoji:'💍',url:'dream-wedding.html',keywords:['결혼','wedding','웨딩','혼인','식장']},
+  {name:'흰뱀꿈 해몽',emoji:'🤍',url:'dream-whitesnake.html',keywords:['흰뱀','백사','white snake','흰색뱀','백뱀']},
+  {name:'창문이 깨지는 꿈',emoji:'🪟',url:'dream-window-broken.html',keywords:['창문','깨지','window','유리','깨짐']},
+  {name:'차 시동 안 걸리는 꿈',emoji:'🚗',url:'dream-car-engine.html',keywords:['차시동','시동이안걸리','자동차','배터리','시동불량','시동꿈']},
+  {name:'홍수 꿈 해몽',emoji:'🌊',url:'dream-flood.html',keywords:['홍수','범람','침수','물바다','강물범람','물이넘치']},
 ];
 
 function handleSearch(val){
@@ -1629,13 +1688,15 @@ function startAll() {
   window._dreamText = dreamText;
   window._reading   = analyzeDream(dreamText);
 
-  // UI 정리
-  document.getElementById('preview-section').style.display = 'none';
-  document.getElementById('scrollHint').style.display      = 'none';
-  document.getElementById('input-section').style.display   = 'none';
-  document.getElementById('mainBtn').style.display         = 'none';
-  document.getElementById('todayFortune').style.display    = 'none';
-  showBackBtn();
+  // UI 정리 (null-safe: 새 홈화면에 없는 요소는 무시)
+  const hide = (id) => { const el = document.getElementById(id); if(el) el.style.display = 'none'; };
+  hide('preview-section');
+  hide('scrollHint');
+  hide('input-section');
+  hide('mainBtn');
+  hide('todayFortune');
+  hide('haemong-widget-toggle');
+  if (typeof showBackBtn === 'function') showBackBtn();
 
   // 해몽 결과 즉시 표시 (광고/로딩 없음)
   const r = window._reading;
@@ -1706,21 +1767,30 @@ function goBack() {
 }
 
 function resetApp() {
-  document.getElementById('dreamInput').value = '';
-  document.getElementById('preview-section').style.display = 'block';
-  document.getElementById('scrollHint').style.display      = 'block';
-  document.getElementById('input-section').style.display   = 'block';
-  document.getElementById('todayFortune').style.display    = 'block';
-  document.getElementById('mainBtn').style.display         = 'block';
-  document.getElementById('haemong-section').style.display = 'none';
-  document.getElementById('lucky-section').style.display   = 'none';
-  document.getElementById('lotto-result').style.display    = 'block'; // 다음 사용을 위해 초기화
-  document.getElementById('lottoSets').innerHTML           = '';       // 이전 번호 완전 초기화
-  // 공 애니메이션 초기화
+  // null-safe helper
+  const show = (id) => { const el = document.getElementById(id); if(el) el.style.display = 'block'; };
+  const hide = (id) => { const el = document.getElementById(id); if(el) el.style.display = 'none'; };
+
+  const inp = document.getElementById('dreamInput');
+  if (inp) inp.value = '';
+
+  show('preview-section');
+  show('scrollHint');
+  show('input-section');
+  show('todayFortune');
+  show('mainBtn');
+  hide('haemong-section');
+  hide('lucky-section');
+
+  const lottoResult = document.getElementById('lotto-result');
+  if (lottoResult) lottoResult.style.display = 'block';
+  const lottoSets = document.getElementById('lottoSets');
+  if (lottoSets) lottoSets.innerHTML = '';
+
   document.querySelectorAll('.ball').forEach(b => b.classList.remove('show'));
   window._dreamText = '';
   window._reading   = null;
-  hideBackBtn();
+  if (typeof hideBackBtn === 'function') hideBackBtn();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
