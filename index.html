@@ -1027,6 +1027,15 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
     <button class="cta-btn" id="mainBtn" onclick="startAll()">✨ 해몽 후 행운번호 받기</button>
   </div>
 
+  <!-- 행운번호 위 광고 (항상 로드) -->
+  <div style="text-align:center; margin:16px 0 0; min-height:100px;">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-EQAu5MKxjYS15ONg"
+      data-ad-width="320"
+      data-ad-height="100"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+
   <!-- 해몽 결과 (위젯 아래) -->
   <div id="haemong-section">
     <div class="haemong-card fade-in">
@@ -1041,13 +1050,7 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
   <!-- 행운번호 섹션 -->
   <div id="lucky-section">
 
-    <div class="ad-box" id="lucky-ad-box">
-      <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit="DAN-EQAu5MKxjYS15ONg"
-        data-ad-width="320"
-        data-ad-height="100"></ins>
-      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
-    </div>
+
     <div class="lotto-section fade-in" id="lotto-result">
       <div class="numbers-header">
         <div class="lotto-title">🔮 행운의 번호 5세트</div>
@@ -1065,13 +1068,16 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
       </div>
     </div>
     <button class="retry-btn" onclick="resetApp()">🔄 다른 꿈 해몽하기</button>
-    <div class="bottom-ad">
-      <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit="DAN-xsEr1zraBjbgyH3q"
-        data-ad-width="320"
-        data-ad-height="50"></ins>
-      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
-    </div>
+
+  </div>
+
+  <!-- 행운번호 아래 광고 (항상 로드) -->
+  <div style="text-align:center; margin:8px 0; min-height:50px;">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-xsEr1zraBjbgyH3q"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
   </div>
 
   <div class="section-divider"></div>
