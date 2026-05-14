@@ -1124,6 +1124,15 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
 
 
 
+  <!-- 행운번호 위 광고 (항상 로드됨) -->
+  <div id="lucky-ad-wrapper" style="text-align:center; margin:16px 0; min-height:100px;">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-EQAu5MKxjYS15ONg"
+      data-ad-width="320"
+      data-ad-height="100"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+
   <!-- 해몽 결과 (위젯 아래) -->
   <div id="haemong-section">
     <div class="haemong-card fade-in">
@@ -1137,13 +1146,7 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
 
   <!-- 행운번호 섹션 -->
   <div id="lucky-section">
-    <div class="ad-box" id="lucky-ad-box">
-      <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit="DAN-EQAu5MKxjYS15ONg"
-        data-ad-width="320"
-        data-ad-height="100"></ins>
-      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
-    </div>
+
     <div class="lotto-section fade-in" id="lotto-result">
       <div class="numbers-header">
         <div class="lotto-title">🔮 행운의 번호 5세트</div>
@@ -1152,13 +1155,7 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
       <div class="lotto-subtitle">오늘의 행운을 함께 잡아보세요</div>
       <div class="lotto-sets" id="lottoSets"></div>
     </div>
-    <div class="bottom-ad">
-      <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit="DAN-xsEr1zraBjbgyH3q"
-        data-ad-width="320"
-        data-ad-height="50"></ins>
-      <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
-    </div>
+
     <div class="share-section">
       <div class="share-title">📢 행운의 번호 친구에게 공유하기</div>
       <div class="share-buttons">
@@ -1167,6 +1164,15 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
       </div>
     </div>
     <button class="retry-btn" onclick="resetApp()">🔄 다른 꿈 해몽하기</button>
+  </div>
+
+  <!-- 행운번호 아래 광고 (항상 로드됨) -->
+  <div style="text-align:center; margin:8px 0; min-height:50px;">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-xsEr1zraBjbgyH3q"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
   </div>
 
   <!-- 하단 광고 -->
@@ -1709,6 +1715,25 @@ function startAll() {
   // 광고 + 행운번호 즉시 함께 표시
   document.getElementById('lucky-section').style.display = 'block';
   showLuckyNumbers();
+
+  // lucky-section 내 카카오 애드핏 광고 동적 재로드
+  // (display:none → block 전환 후 광고가 다시 요청되도록)
+  setTimeout(() => {
+    try {
+      const adSlots = document.querySelectorAll('#lucky-section .kakao_ad_area');
+      adSlots.forEach(slot => {
+        // 기존 ins 태그 내용 초기화 후 재요청
+        if (slot.getAttribute('data-ad-status') !== 'done') {
+          const parent = slot.parentNode;
+          const clone = slot.cloneNode(true);
+          parent.replaceChild(clone, slot);
+        }
+      });
+      if (window.adfit && typeof window.adfit.display === 'function') {
+        window.adfit.display();
+      }
+    } catch(e) {}
+  }, 300);
 
   // 광고 + 행운공 섹션으로 자동 스크롤 (광고가 함께 보이도록)
   setTimeout(() => document.getElementById('lucky-section').scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
