@@ -528,7 +528,7 @@
   .step-item.done .step-dot { background: var(--gold); }
 
   /* ── 해몽 결과 ── */
-  #haemong-section { display: none; }
+  #haemong-section { visibility:hidden; height:0; overflow:hidden; margin:0; padding:0; }
 
   .haemong-card {
     background: rgba(107,63,160,0.12);
@@ -600,7 +600,7 @@
   .haemong-advice strong { color: var(--gold); font-weight: 600; }
 
   /* ── 행운 번호 ── */
-  #lucky-section { display: none; }
+  #lucky-section { visibility:hidden; height:0; overflow:hidden; margin:0; padding:0; }
 
   .lotto-section {
     background: rgba(255,255,255,0.04);
@@ -918,8 +918,8 @@
   }
   .random-card:active { background:rgba(107,63,160,0.2); }
 
-  #haemong-section { display:none; }
-  #lucky-section   { display:none; }
+  #haemong-section { visibility:hidden; height:0; overflow:hidden; margin:0; padding:0; }
+  #lucky-section   { visibility:hidden; height:0; overflow:hidden; margin:0; padding:0; }
 
   #homeSearch:focus { border-color:rgba(201,168,76,0.5); }
   #homeSearch::placeholder { color:var(--text-muted); font-size:13px; }
@@ -1707,10 +1707,20 @@ function startAll() {
   document.getElementById('haemongLuck').innerHTML      = r.luck;
   document.getElementById('haemongText').textContent    = r.text;
   document.getElementById('haemongAdvice').innerHTML    = r.advice;
-  document.getElementById('haemong-section').style.display = 'block';
+  const hs = document.getElementById('haemong-section');
+  hs.style.visibility = 'visible';
+  hs.style.height = 'auto';
+  hs.style.overflow = 'visible';
+  hs.style.margin = '';
+  hs.style.padding = '';
 
   // 광고 + 행운번호 즉시 함께 표시
-  document.getElementById('lucky-section').style.display = 'block';
+  const ls = document.getElementById('lucky-section');
+  ls.style.visibility = 'visible';
+  ls.style.height = 'auto';
+  ls.style.overflow = 'visible';
+  ls.style.margin = '';
+  ls.style.padding = '';
   showLuckyNumbers();
 
   // lucky-section 광고 재로드 (display:none → block 전환 후 광고 다시 요청)
@@ -1812,8 +1822,10 @@ function resetApp() {
   show('input-section');
   show('todayFortune');
   show('mainBtn');
-  hide('haemong-section');
-  hide('lucky-section');
+  const hs2 = document.getElementById('haemong-section');
+  if(hs2){ hs2.style.visibility='hidden'; hs2.style.height='0'; hs2.style.overflow='hidden'; hs2.style.margin='0'; hs2.style.padding='0'; }
+  const ls2 = document.getElementById('lucky-section');
+  if(ls2){ ls2.style.visibility='hidden'; ls2.style.height='0'; ls2.style.overflow='hidden'; ls2.style.margin='0'; ls2.style.padding='0'; }
 
   const lottoResult = document.getElementById('lotto-result');
   if (lottoResult) lottoResult.style.display = 'block';
