@@ -1200,6 +1200,8 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
    홈 전용: 랜덤 꿈 추천
 ═══════════════════════════════════════════ */
 const randomPool = [
+  {emoji:'📞',name:'부재중 전화 꿈',desc:'놓친 연락과 관계 신호',url:'dream-missed-call.html'},
+  {emoji:'🧾',name:'영수증 잃어버리는 꿈',desc:'돈과 확인 부족의 신호',url:'dream-receipt-lost.html'},
   {emoji:'🏠',name:'집 리모델링 꿈',desc:'변화와 새 출발의 신호',url:'dream-house-remodeling.html'},
   {emoji:'🛗',name:'엘리베이터 멈추는 꿈',desc:'정체와 막힘의 심리',url:'dream-elevator-stuck.html'},
   {emoji:'🛗',name:'엘리베이터 추락 꿈',desc:'급격한 변화 불안',url:'dream-elevator-falling.html'},
@@ -1222,6 +1224,8 @@ const randomPool = [
   {emoji:'📋',name:'면접 보는 꿈',desc:'평가와 기회의 신호',url:'dream-interview.html'},
   {emoji:'🚗',name:'차 시동 안 걸리는 꿈',desc:'목표가 막힌 심리',url:'dream-car-engine.html'},
   {emoji:'🙈',name:'숨는 꿈',desc:'회피와 자아방어 신호',url:'dream-hiding.html'},
+  {emoji:'🏔️',name:'낭떠러지 앞에 서는 꿈',desc:'중요한 선택의 기로 신호',url:'dream-cliff.html'},
+  {emoji:'🏥',name:'병원에 가는 꿈',desc:'치유와 회복의 예고',url:'dream-hospital.html'},
 ];
 
 function shuffleRandom(){
@@ -1241,6 +1245,8 @@ function shuffleRandom(){
 
 /* ── 검색 ── */
 const searchIndex = [
+  {name:'부재중 전화 꿈',emoji:'📞',url:'dream-missed-call.html',keywords:['부재중','부재중전화','전화못받','missed call','연락']},
+  {name:'영수증 잃어버리는 꿈',emoji:'🧾',url:'dream-receipt-lost.html',keywords:['영수증','receipt','환불','결제내역','증빙','정산']},
   {name:'비행기 꿈 해몽',emoji:'✈️',url:'dream-airplane.html',keywords:['비행기','항공','airplane','이륙','착륙']},
   {name:'조상 꿈 해몽',emoji:'👴',url:'dream-ancestor.html',keywords:['조상','할머니','할아버지','돌아가신','귀신','제사']},
   {name:'아기 꿈 해몽',emoji:'👶',url:'dream-baby.html',keywords:['아기','baby','갓난','신생아','육아']},
@@ -1342,6 +1348,8 @@ const searchIndex = [
   {name:'창문이 깨지는 꿈',emoji:'🪟',url:'dream-window-broken.html',keywords:['창문','깨지','window','유리','깨짐']},
   {name:'차 시동 안 걸리는 꿈',emoji:'🚗',url:'dream-car-engine.html',keywords:['차시동','시동이안걸리','자동차','배터리','시동불량','시동꿈']},
   {name:'홍수 꿈 해몽',emoji:'🌊',url:'dream-flood.html',keywords:['홍수','범람','침수','물바다','강물범람','물이넘치']},
+  {name:'낭떠러지 앞에 서는 꿈',emoji:'🏔️',url:'dream-cliff.html',keywords:['낭떠러지','절벽','벼랑','낭떠러지앞','절벽앞']},
+  {name:'병원에 가는 꿈',emoji:'🏥',url:'dream-hospital.html',keywords:['병원','진료','수술','입원','퇴원','응급실']},
 ];
 
 function handleSearch(val){
@@ -1575,6 +1583,16 @@ const dreamDB = {
     text: '무지개가 뜨는 꿈은 최고의 길몽 중 하나입니다. 쌍무지개를 보는 꿈은 두 배의 행운이 찾아올 것을, 무지개 끝에 다다르는 꿈은 오랫동안 바라던 소원이 이루어질 것을 의미합니다.',
     advice: '<strong>오늘의 조언:</strong> 행운과 희망이 가득한 날입니다. 오랫동안 원해온 일에 도전해볼 최적의 타이밍입니다.'
   }
+,  부재중전화: {
+    keyword: '부재중 전화 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '부재중 전화 꿈은 놓친 연락, 확인하지 못한 신호, 관계 속 기다림을 의미합니다. 실제 연락보다 현재 당신이 어떤 답을 기다리고 있는지, 어떤 관계를 아직 마음속에서 정리하지 못했는지를 보여주는 꿈입니다.',
+    advice: '<strong>오늘의 조언:</strong> 미뤄둔 연락과 중요한 메시지를 확인하고, 기다림에만 머물지 말고 필요한 경우 먼저 확인해보세요.'
+  },
+  영수증: {
+    keyword: '영수증을 잃어버리는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '영수증을 잃어버리는 꿈은 돈, 기록, 확인 부족, 선택에 대한 후회를 의미합니다. 지출이나 계약, 약속 내용을 다시 확인해야 할 시기에 나타나기 쉬운 꿈입니다.',
+    advice: '<strong>오늘의 조언:</strong> 결제 내역과 중요한 기록을 정리하고, 증빙이 필요한 일은 미리 확인해두세요.'
+  },
 };
 
 const defaultDream = {
@@ -1584,6 +1602,7 @@ const defaultDream = {
 };
 
 const keywordMap = {
+  '부재중':'부재중전화','전화못':'부재중전화','전화 못':'부재중전화','영수증':'영수증','환불':'영수증','결제내역':'영수증',
   '이가':'이빨','이빨':'이빨','치아':'이빨',
   '죽었':'죽음','죽는':'죽음','사망':'죽음',
   '황금':'금','금괴':'금','금반지':'금','금을':'금',
@@ -1627,6 +1646,7 @@ function analyzeDream(text) {
 
 function generateLucky(dreamText) {
   const dreamNumberMap = {
+    '부재중전화':[2,8,16,24,33,41],'영수증':[4,11,19,27,35,43],
     '돼지':[3,7,12,21,28,33],'똥':[5,9,14,23,31,41],'뱀':[2,7,13,24,32,40],
     '금':[6,12,24,33,37,44],'불':[5,15,22,29,35,43],'물':[4,8,14,26,34,40],
     '하늘':[1,9,18,27,36,45],'계단':[4,11,18,26,34,42],'비행기':[3,12,21,28,37,45],'이빨':[6,11,19,28,34,42],'호랑이':[8,17,22,31,38,44],
