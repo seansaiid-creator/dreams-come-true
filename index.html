@@ -1200,6 +1200,8 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
    홈 전용: 랜덤 꿈 추천
 ═══════════════════════════════════════════ */
 const randomPool = [
+  {emoji:'🪞',name:'거울 속 얼굴 흐려지는 꿈',desc:'정체성과 자기 인식의 신호',url:'dream-mirror-face-blur.html'},
+  {emoji:'🎫',name:'표를 잃어버리는 꿈',desc:'기회와 타이밍 불안',url:'dream-ticket-lost.html'},
   {emoji:'📞',name:'부재중 전화 꿈',desc:'놓친 연락과 관계 신호',url:'dream-missed-call.html'},
   {emoji:'🧾',name:'영수증 잃어버리는 꿈',desc:'돈과 확인 부족의 신호',url:'dream-receipt-lost.html'},
   {emoji:'🏠',name:'집 리모델링 꿈',desc:'변화와 새 출발의 신호',url:'dream-house-remodeling.html'},
@@ -1245,6 +1247,8 @@ function shuffleRandom(){
 
 /* ── 검색 ── */
 const searchIndex = [
+  {name:'거울 속 얼굴이 흐려지는 꿈',emoji:'🪞',url:'dream-mirror-face-blur.html',keywords:['거울','얼굴','흐려','흐릿','자존감','정체성']},
+  {name:'표를 잃어버리는 꿈',emoji:'🎫',url:'dream-ticket-lost.html',keywords:['표','티켓','입장권','기차표','비행기표','잃어버']},
   {name:'부재중 전화 꿈',emoji:'📞',url:'dream-missed-call.html',keywords:['부재중','부재중전화','전화못받','missed call','연락']},
   {name:'영수증 잃어버리는 꿈',emoji:'🧾',url:'dream-receipt-lost.html',keywords:['영수증','receipt','환불','결제내역','증빙','정산']},
   {name:'비행기 꿈 해몽',emoji:'✈️',url:'dream-airplane.html',keywords:['비행기','항공','airplane','이륙','착륙']},
@@ -1591,6 +1595,16 @@ const dreamDB = {
     text: '영수증을 잃어버리는 꿈은 돈, 기록, 확인 부족, 선택에 대한 후회를 의미합니다. 지출이나 계약, 약속 내용을 다시 확인해야 할 시기에 나타나기 쉬운 꿈입니다.',
     advice: '<strong>오늘의 조언:</strong> 결제 내역과 중요한 기록을 정리하고, 증빙이 필요한 일은 미리 확인해두세요.'
   },
+  거울얼굴흐림: {
+    keyword: '거울 속 얼굴이 흐려지는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '거울 속 얼굴이 흐려지는 꿈은 자기 인식, 자존감, 정체성에 대한 불안이 커졌다는 신호입니다. 주변 시선에 흔들리기보다 내 기준을 다시 세워야 하는 시기에 나타나기 쉽습니다.',
+    advice: '<strong>오늘의 조언:</strong> 남에게 어떻게 보이는지보다 내가 나를 어떻게 바라보고 있는지 점검해보세요.'
+  },
+  표분실: {
+    keyword: '표를 잃어버리는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '표를 잃어버리는 꿈은 중요한 기회, 자격, 이동, 타이밍에 대한 불안을 의미합니다. 준비한 일을 마지막 순간에 놓칠까 봐 긴장하고 있을 때 나타나기 쉽습니다.',
+    advice: '<strong>오늘의 조언:</strong> 중요한 일정, 예약, 준비물, 계약 조건을 다시 확인해보세요.'
+  },
 };
 
 const defaultDream = {
@@ -1600,6 +1614,7 @@ const defaultDream = {
 };
 
 const keywordMap = {
+  '거울얼굴':'거울얼굴흐림','얼굴흐려':'거울얼굴흐림','얼굴 흐려':'거울얼굴흐림','흐릿':'거울얼굴흐림','표':'표분실','티켓':'표분실','입장권':'표분실','기차표':'표분실','비행기표':'표분실',
   '부재중':'부재중전화','전화못':'부재중전화','전화 못':'부재중전화','영수증':'영수증','환불':'영수증','결제내역':'영수증',
   '이가':'이빨','이빨':'이빨','치아':'이빨',
   '죽었':'죽음','죽는':'죽음','사망':'죽음',
@@ -1644,6 +1659,7 @@ function analyzeDream(text) {
 
 function generateLucky(dreamText) {
   const dreamNumberMap = {
+    '거울얼굴흐림':[3,10,18,26,34,42],'표분실':[5,12,19,27,36,44],
     '부재중전화':[2,8,16,24,33,41],'영수증':[4,11,19,27,35,43],
     '돼지':[3,7,12,21,28,33],'똥':[5,9,14,23,31,41],'뱀':[2,7,13,24,32,40],
     '금':[6,12,24,33,37,44],'불':[5,15,22,29,35,43],'물':[4,8,14,26,34,40],
