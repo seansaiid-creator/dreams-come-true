@@ -528,6 +528,73 @@
   .step-item.done .step-dot { background: var(--gold); }
 
   /* ── 해몽 결과 ── */
+
+  .category-result-box {
+    display:none;
+    margin-top:12px;
+    background:rgba(255,255,255,0.035);
+    border:1px solid rgba(201,168,76,0.14);
+    border-radius:14px;
+    padding:14px;
+  }
+  .category-result-box.active { display:block; }
+  .category-result-head {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:10px;
+  }
+  .category-result-title {
+    font-size:14px;
+    font-weight:700;
+    color:var(--gold-light);
+  }
+  .category-result-close {
+    border:0;
+    background:rgba(255,255,255,0.06);
+    color:var(--text-muted);
+    border-radius:999px;
+    padding:6px 10px;
+    font-size:12px;
+    cursor:pointer;
+  }
+  .category-result-list {
+    display:grid;
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .category-result-item {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    background:rgba(107,63,160,0.10);
+    border:1px solid rgba(107,63,160,0.18);
+    border-radius:12px;
+    padding:11px 12px;
+  }
+  .category-result-emoji { font-size:20px; flex-shrink:0; }
+  .category-result-text { flex:1; min-width:0; }
+  .category-result-name {
+    display:block;
+    color:var(--text);
+    font-size:13px;
+    font-weight:600;
+    line-height:1.35;
+  }
+  .category-result-desc {
+    display:block;
+    color:var(--text-muted);
+    font-size:11px;
+    line-height:1.35;
+    margin-top:2px;
+  }
+  .category-result-arrow {
+    color:rgba(255,255,255,0.28);
+    font-size:16px;
+  }
+
   #haemong-section { visibility:hidden; height:0; overflow:hidden; margin:0; padding:0; }
 
   .haemong-card {
@@ -1125,37 +1192,45 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
   <div class="home-section">
     <h2 class="home-section-title">📚 카테고리별 꿈해몽</h2>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px;">
-      <a href="guide.html#cho-ㄱ" class="cat-card">
+      <a href="#" class="cat-card" data-dream-category="nature" role="button" aria-label="동물·자연 꿈해몽 보기">
         <span class="cat-emoji">🐾</span>
         <span class="cat-name">동물·자연</span>
         <span class="cat-count">17개</span>
       </a>
-      <a href="guide.html#cho-ㄷ" class="cat-card">
+      <a href="#" class="cat-card" data-dream-category="money" role="button" aria-label="재물·행운 꿈해몽 보기">
         <span class="cat-emoji">💰</span>
         <span class="cat-name">재물·행운</span>
         <span class="cat-count">18개</span>
       </a>
-      <a href="guide.html#cho-ㅇ" class="cat-card">
+      <a href="#" class="cat-card" data-dream-category="anxiety" role="button" aria-label="불안·심리 꿈해몽 보기">
         <span class="cat-emoji">😰</span>
         <span class="cat-name">불안·심리</span>
         <span class="cat-count">32개</span>
       </a>
-      <a href="guide.html#cho-ㅇ" class="cat-card">
+      <a href="#" class="cat-card" data-dream-category="people" role="button" aria-label="사람·관계 꿈해몽 보기">
         <span class="cat-emoji">👥</span>
         <span class="cat-name">사람·관계</span>
         <span class="cat-count">12개</span>
       </a>
-      <a href="guide.html#cho-ㅈ" class="cat-card">
+      <a href="#" class="cat-card" data-dream-category="space" role="button" aria-label="집·공간 꿈해몽 보기">
         <span class="cat-emoji">🏠</span>
         <span class="cat-name">집·공간</span>
         <span class="cat-count">8개</span>
       </a>
-      <a href="guide.html#cho-ㅅ" class="cat-card">
+      <a href="#" class="cat-card" data-dream-category="school" role="button" aria-label="학교·시험 꿈해몽 보기">
         <span class="cat-emoji">📚</span>
         <span class="cat-name">학교·시험</span>
         <span class="cat-count">5개</span>
       </a>
     </div>
+    <div id="categoryResultBox" class="category-result-box" aria-live="polite">
+      <div class="category-result-head">
+        <div id="categoryResultTitle" class="category-result-title">카테고리 꿈해몽</div>
+        <button type="button" id="categoryResultClose" class="category-result-close">닫기</button>
+      </div>
+      <div id="categoryResultList" class="category-result-list"></div>
+    </div>
+
   </div>
 
   <div class="section-divider"></div>
@@ -2089,4 +2164,55 @@ window.addEventListener('load', function() {
   }
   shuffleRandom();
 });
+
+
+/* ═══════════════════════════════════════════
+   카테고리별 꿈해몽 표시
+═══════════════════════════════════════════ */
+(function(){
+  const categoryData = {"nature": {"title": "🐾 동물·자연 꿈해몽", "items": [{"emoji": "🐷", "name": "돼지꿈", "desc": "재물운과 큰 행운", "url": "dream-pig.html"}, {"emoji": "🐍", "name": "뱀꿈", "desc": "재물·변화·직감", "url": "dream-snake.html"}, {"emoji": "🐉", "name": "용꿈", "desc": "성공과 대길몽", "url": "dream-dragon.html"}, {"emoji": "🐯", "name": "호랑이 꿈", "desc": "권력과 성취", "url": "dream-tiger.html"}, {"emoji": "🐢", "name": "거북이 꿈", "desc": "장수와 안정운", "url": "dream-turtle.html"}, {"emoji": "🐟", "name": "물고기 꿈", "desc": "재물과 기회", "url": "dream-fish.html"}, {"emoji": "🌧️", "name": "비 오는 꿈", "desc": "감정과 정화", "url": "dream-rain.html"}, {"emoji": "🌫️", "name": "안개 때문에 앞이 안 보이는 꿈", "desc": "불확실성과 방향성", "url": "dream-fog-cant-see.html"}]}, "money": {"title": "💰 재물·행운 꿈해몽", "items": [{"emoji": "💵", "name": "돈꿈 해몽", "desc": "재물 흐름과 기회", "url": "dream-money.html"}, {"emoji": "💵", "name": "돈 세는 꿈", "desc": "정리와 재물 관리", "url": "dream-count-money.html"}, {"emoji": "🥇", "name": "금꿈 해몽", "desc": "큰 재물운과 성취", "url": "dream-gold.html"}, {"emoji": "💎", "name": "보석 꿈", "desc": "가치와 행운", "url": "dream-jewel.html"}, {"emoji": "💩", "name": "똥꿈", "desc": "대표적인 재물 길몽", "url": "dream-poop.html"}, {"emoji": "🧾", "name": "영수증을 잃어버리는 꿈", "desc": "돈과 확인 부족", "url": "dream-receipt-lost.html"}, {"emoji": "🧳", "name": "가방 안 물건이 전부 사라지는 꿈", "desc": "소유와 준비 불안", "url": "dream-bag-empty-fixed.html"}]}, "anxiety": {"title": "😰 불안·심리 꿈해몽", "items": [{"emoji": "🗺️", "name": "길을 잃는 꿈", "desc": "방향성과 혼란", "url": "dream-lost-path.html"}, {"emoji": "🔐", "name": "비밀번호를 계속 틀리는 꿈", "desc": "접근 제한과 불안", "url": "dream-password-wrong.html"}, {"emoji": "📞", "name": "부재중 전화 꿈", "desc": "놓친 연락과 기다림", "url": "dream-missed-call.html"}, {"emoji": "🔋", "name": "휴대폰 배터리가 계속 꺼지는 꿈", "desc": "소통 피로와 에너지 고갈", "url": "dream-phone-battery-dead.html"}, {"emoji": "🪞", "name": "거울 속 얼굴이 흐려지는 꿈", "desc": "자기 인식과 불안", "url": "dream-mirror-face-blur.html"}, {"emoji": "🎫", "name": "표를 잃어버리는 꿈", "desc": "기회와 타이밍 불안", "url": "dream-ticket-lost.html"}, {"emoji": "🌧️", "name": "우산을 쓰고 있는데 비를 다 맞는 꿈", "desc": "보호와 감정 방어", "url": "dream-umbrella-rain-fixed.html"}, {"emoji": "⏱️", "name": "시계가 멈추는 꿈", "desc": "정체와 시간 압박", "url": "dream-clock-stopped-full.html"}]}, "people": {"title": "👥 사람·관계 꿈해몽", "items": [{"emoji": "🤝", "name": "친구 나오는 꿈", "desc": "인간관계와 소통", "url": "dream-friend.html"}, {"emoji": "💔", "name": "전남친 꿈", "desc": "미련과 관계 정리", "url": "dream-exboyfriend.html"}, {"emoji": "👨‍👩‍👧", "name": "가족 꿈", "desc": "책임감과 안정", "url": "dream-family.html"}, {"emoji": "👶", "name": "아기 꿈", "desc": "새로운 시작과 가능성", "url": "dream-baby.html"}, {"emoji": "👻", "name": "귀신 꿈", "desc": "불안과 억눌린 감정", "url": "dream-ghost.html"}, {"emoji": "📞", "name": "부재중 전화 꿈", "desc": "관계의 신호와 기다림", "url": "dream-missed-call.html"}, {"emoji": "🧤", "name": "장갑 한 짝을 잃어버리는 꿈", "desc": "관계 균형과 보호", "url": "dream-glove-lost-one.html"}]}, "space": {"title": "🏠 집·공간 꿈해몽", "items": [{"emoji": "🏠", "name": "집꿈 해몽", "desc": "생활 기반과 안정", "url": "dream-house.html"}, {"emoji": "🚪", "name": "문이 닫혀서 못 나가는 꿈", "desc": "막힘과 답답함", "url": "dream-door-closed-cant-leave.html"}, {"emoji": "🪟", "name": "창문이 깨지는 꿈", "desc": "마음의 경계와 외부 자극", "url": "dream-window-broken.html"}, {"emoji": "🪜", "name": "계단을 계속 올라가는데 끝이 없는 꿈", "desc": "압박과 목표의 부담", "url": "dream-endless-stairs.html"}, {"emoji": "🌉", "name": "다리를 건너는데 중간이 끊어진 꿈", "desc": "단절과 전환기", "url": "dream-broken-bridge.html"}, {"emoji": "🧳", "name": "가방 안 물건이 전부 사라지는 꿈", "desc": "준비와 상실 불안", "url": "dream-bag-empty-fixed.html"}]}, "school": {"title": "📚 학교·시험 꿈해몽", "items": [{"emoji": "📚", "name": "시험 꿈", "desc": "평가와 압박", "url": "dream-exam.html"}, {"emoji": "⏰", "name": "지각하는 꿈", "desc": "책임감과 시간 압박", "url": "dream-late.html"}, {"emoji": "🏫", "name": "학교 꿈", "desc": "성장과 배움", "url": "dream-school.html"}, {"emoji": "🎫", "name": "표를 잃어버리는 꿈", "desc": "자격과 기회 불안", "url": "dream-ticket-lost.html"}, {"emoji": "🔦", "name": "손전등이 켜지지 않는 꿈", "desc": "불확실성과 판단", "url": "dream-flashlight-not-working.html"}]}};
+  function initCategoryFilter(){
+    const resultBox = document.getElementById('categoryResultBox');
+    const resultTitle = document.getElementById('categoryResultTitle');
+    const resultList = document.getElementById('categoryResultList');
+    const closeBtn = document.getElementById('categoryResultClose');
+    if(!resultBox || !resultTitle || !resultList) return;
+
+    function renderCategory(categoryKey){
+      const data = categoryData[categoryKey];
+      if(!data) return;
+      resultTitle.textContent = data.title;
+      resultList.innerHTML = data.items.map(function(item){
+        return '<a class="category-result-item" href="' + item.url + '">' +
+          '<span class="category-result-emoji">' + item.emoji + '</span>' +
+          '<span class="category-result-text">' +
+            '<span class="category-result-name">' + item.name + '</span>' +
+            '<span class="category-result-desc">' + item.desc + '</span>' +
+          '</span>' +
+          '<span class="category-result-arrow">›</span>' +
+        '</a>';
+      }).join('');
+      resultBox.classList.add('active');
+      resultBox.scrollIntoView({behavior:'smooth', block:'nearest'});
+    }
+
+    document.querySelectorAll('[data-dream-category]').forEach(function(card){
+      card.addEventListener('click', function(e){
+        e.preventDefault();
+        renderCategory(card.getAttribute('data-dream-category'));
+      });
+    });
+
+    if(closeBtn){
+      closeBtn.addEventListener('click', function(){ resultBox.classList.remove('active'); });
+    }
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initCategoryFilter);
+  } else {
+    initCategoryFilter();
+  }
+})();
+
 </script>
