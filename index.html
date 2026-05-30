@@ -1275,8 +1275,8 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
    홈 전용: 랜덤 꿈 추천
 ═══════════════════════════════════════════ */
 const randomPool = [
+  {emoji:'🏧',name:'ATM에서 돈이 안 나오는 꿈',desc:'재물 흐름과 보상 지연의 신호',url:'dream-atm-money-not-coming-out-final.html'},
   {emoji:'🚕',name:'택시가 다른 길로 가는 꿈',desc:'방향과 주도권 불안의 신호',url:'dream-taxi-wrong-way.html'},
-  {emoji:'🏧',name:'ATM에서 돈이 안 나오는 꿈',desc:'재물 흐름과 보상 지연의 신호',url:'dream-atm-money-not-coming-out.html'},
   {emoji:'👛',name:'계산하려는데 지갑이 없는 꿈',desc:'준비와 책임 불안의 신호',url:'dream-wallet-missing-checkout.html'},
   {emoji:'🧾',name:'예약했는데 내 이름이 없는 꿈',desc:'확인과 자격 불안의 신호',url:'dream-reservation-name-missing.html'},
   {emoji:'🚇',name:'지하철 문이 닫히기 직전에 뛰어 타는 꿈',desc:'기회와 시간 압박의 신호',url:'dream-subway-door-closing.html'},
@@ -1332,8 +1332,8 @@ function shuffleRandom(){
 
 /* ── 검색 ── */
 const searchIndex = [
+  {name:'ATM에서 돈이 안 나오는 꿈',emoji:'🏧',url:'dream-atm-money-not-coming-out-final.html',keywords:['ATM','atm','에이티엠','돈안나옴','돈이 안 나오는','출금안됨','출금 실패','인출 안됨','현금 안 나옴']},
   {name:'택시가 다른 길로 가는 꿈',emoji:'🚕',url:'dream-taxi-wrong-way.html',keywords:['택시','택시꿈','택시 다른 길','택시가 다른 길','택시 돌아감','택시 기사','길 돌아가는 택시']},
-  {name:'ATM에서 돈이 안 나오는 꿈',emoji:'🏧',url:'dream-atm-money-not-coming-out.html',keywords:['atm','ATM','돈안나옴','출금안됨','돈이 안 나오는','인출']},
   {name:'계산하려는데 지갑이 없는 꿈',emoji:'👛',url:'dream-wallet-missing-checkout.html',keywords:['계산','지갑없','지갑 없는','결제','돈없','카드없']},
   {name:'예약했는데 내 이름이 없는 꿈',emoji:'🧾',url:'dream-reservation-name-missing.html',keywords:['예약','예약명단','이름없음','명단에 없음','예약누락']},
   {name:'지하철 문이 닫히기 직전에 뛰어 타는 꿈',emoji:'🚇',url:'dream-subway-door-closing.html',keywords:['지하철','문닫힘','지하철문','뛰어타','닫히기직전']},
@@ -1480,11 +1480,17 @@ function goSearch(keyword){
    해몽 데이터베이스 (33개)
 ═══════════════════════════════════════════ */
 const dreamDB = {
+  ATM돈안나옴: {
+    keyword: 'ATM에서 돈이 안 나오는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: 'ATM에서 돈이 안 나오는 꿈은 필요한 자금이나 보상, 결과가 기대한 순간에 나오지 않을까 봐 느끼는 불안을 의미합니다. 돈의 흐름, 정산, 환불, 입금 일정을 다시 확인해야 할 때입니다.',
+    advice: '<strong>오늘의 조언:</strong> 계좌, 카드, 자동이체, 정산 예정일, 환불 내역을 점검하고 대체 계획을 준비해보세요.'
+  },
   택시다른길: {
     keyword: '택시가 다른 길로 가는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
     text: '택시가 다른 길로 가는 꿈은 내가 원하는 방향과 실제 상황의 흐름이 달라지고 있다고 느끼는 불안과 주도권 문제를 의미합니다. 누군가에게 맡긴 일의 방향과 조건을 다시 확인해야 할 때입니다.',
     advice: '<strong>오늘의 조언:</strong> 맡긴 일, 계약, 관계의 흐름이 내 목적지와 맞는지 중간 점검해보세요.'
   },
+
 
   지갑: {
   keyword: '지갑 잃어버리는 꿈',
@@ -1728,11 +1734,6 @@ const dreamDB = {
     text: '냉장고 안 음식이 전부 상하는 꿈은 관리하지 못한 자원, 방치된 감정, 생활의 정리 필요성을 의미합니다. 더 늦기 전에 미뤄둔 일과 감정을 정리해야 할 때입니다.',
     advice: '<strong>오늘의 조언:</strong> 생활비, 냉장고, 메일함, 일정표처럼 쌓여 있는 것을 하나씩 정리해보세요.'
   },
-  ATM돈안나옴: {
-    keyword: 'ATM에서 돈이 안 나오는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: 'ATM에서 돈이 안 나오는 꿈은 필요한 자금이나 보상, 결과가 기대한 순간에 나오지 않을까 봐 느끼는 불안을 의미합니다. 돈의 흐름, 정산, 환불, 입금 일정을 다시 확인해야 할 때입니다.',
-    advice: '<strong>오늘의 조언:</strong> 계좌, 카드, 자동이체, 정산 예정일, 환불 내역을 점검하고 대체 계획을 준비해보세요.'
-  },
 };
 
 const defaultDream = {
@@ -1742,8 +1743,8 @@ const defaultDream = {
 };
 
 const keywordMap = {
+  'ATM':'ATM돈안나옴','atm':'ATM돈안나옴','에이티엠':'ATM돈안나옴','돈안나':'ATM돈안나옴','출금':'ATM돈안나옴','인출':'ATM돈안나옴','현금 안나':'ATM돈안나옴',
   '택시':'택시다른길','택시꿈':'택시다른길','택시다른길':'택시다른길','택시 돌아':'택시다른길','택시 기사':'택시다른길',
-  'ATM':'ATM돈안나옴','atm':'ATM돈안나옴','돈안나':'ATM돈안나옴','출금':'ATM돈안나옴','인출':'ATM돈안나옴',
   '계산':'지갑없음계산','지갑없':'지갑없음계산','지갑 없는':'지갑없음계산','카드없':'지갑없음계산','결제':'지갑없음계산','예약':'예약이름없음','예약명단':'예약이름없음','이름없':'예약이름없음','명단':'예약이름없음',
   '지하철문':'지하철문닫힘','문닫힘':'지하철문닫힘','뛰어타':'지하철문닫힘','지하철':'지하철문닫힘','냉장고':'냉장고상함','음식상':'냉장고상함','상한음식':'냉장고상함',
   '가방안':'가방비움','가방 물건':'가방비움','물건사라':'가방비움','소지품':'가방비움','우산':'우산비','우산새':'우산비','비맞':'우산비',
@@ -1793,8 +1794,8 @@ function analyzeDream(text) {
 
 function generateLucky(dreamText) {
   const dreamNumberMap = {
-    '택시다른길':[3,12,20,29,37,44],
     'ATM돈안나옴':[2,11,20,28,36,44],
+    '택시다른길':[3,12,20,29,37,44],
     '지갑없음계산':[2,11,20,28,36,45],'예약이름없음':[6,15,24,31,39,45],
     '지하철문닫힘':[4,13,22,28,36,45],'냉장고상함':[1,10,19,27,35,43],
     '가방비움':[6,14,22,31,38,45],'우산비':[7,15,23,30,39,44],
