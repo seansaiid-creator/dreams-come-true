@@ -1275,9 +1275,9 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
    홈 전용: 랜덤 꿈 추천
 ═══════════════════════════════════════════ */
 const randomPool = [
+  {emoji:'👛',name:'계산하려는데 지갑이 없는 꿈',desc:'준비와 책임 불안의 신호',url:'dream-wallet-missing-checkout-today-grid-fixed.html'},
   {emoji:'🏧',name:'ATM에서 돈이 안 나오는 꿈',desc:'재물 흐름과 보상 지연의 신호',url:'dream-atm-money-not-coming-out-final.html'},
   {emoji:'🚕',name:'택시가 다른 길로 가는 꿈',desc:'방향과 주도권 불안의 신호',url:'dream-taxi-wrong-way.html'},
-  {emoji:'👛',name:'계산하려는데 지갑이 없는 꿈',desc:'준비와 책임 불안의 신호',url:'dream-wallet-missing-checkout.html'},
   {emoji:'🧾',name:'예약했는데 내 이름이 없는 꿈',desc:'확인과 자격 불안의 신호',url:'dream-reservation-name-missing.html'},
   {emoji:'🚇',name:'지하철 문이 닫히기 직전에 뛰어 타는 꿈',desc:'기회와 시간 압박의 신호',url:'dream-subway-door-closing.html'},
   {emoji:'🧊',name:'냉장고 안 음식이 전부 상하는 꿈',desc:'관리와 정리 필요의 신호',url:'dream-fridge-food-spoiled.html'},
@@ -1332,9 +1332,9 @@ function shuffleRandom(){
 
 /* ── 검색 ── */
 const searchIndex = [
+  {name:'계산하려는데 지갑이 없는 꿈',emoji:'👛',url:'dream-wallet-missing-checkout-today-grid-fixed.html',keywords:['지갑','지갑없는꿈','지갑이 없는 꿈','계산','결제','계산하려는데 지갑이 없는 꿈','지갑 없음','돈 없음']},
   {name:'ATM에서 돈이 안 나오는 꿈',emoji:'🏧',url:'dream-atm-money-not-coming-out-final.html',keywords:['ATM','atm','에이티엠','돈안나옴','돈이 안 나오는','출금안됨','출금 실패','인출 안됨','현금 안 나옴']},
   {name:'택시가 다른 길로 가는 꿈',emoji:'🚕',url:'dream-taxi-wrong-way.html',keywords:['택시','택시꿈','택시 다른 길','택시가 다른 길','택시 돌아감','택시 기사','길 돌아가는 택시']},
-  {name:'계산하려는데 지갑이 없는 꿈',emoji:'👛',url:'dream-wallet-missing-checkout.html',keywords:['계산','지갑없','지갑 없는','결제','돈없','카드없']},
   {name:'예약했는데 내 이름이 없는 꿈',emoji:'🧾',url:'dream-reservation-name-missing.html',keywords:['예약','예약명단','이름없음','명단에 없음','예약누락']},
   {name:'지하철 문이 닫히기 직전에 뛰어 타는 꿈',emoji:'🚇',url:'dream-subway-door-closing.html',keywords:['지하철','문닫힘','지하철문','뛰어타','닫히기직전']},
   {name:'냉장고 안 음식이 전부 상하는 꿈',emoji:'🧊',url:'dream-fridge-food-spoiled.html',keywords:['냉장고','음식상함','상한음식','냉장고음식','음식']},
@@ -1480,6 +1480,12 @@ function goSearch(keyword){
    해몽 데이터베이스 (33개)
 ═══════════════════════════════════════════ */
 const dreamDB = {
+  지갑없는계산: {
+    keyword: '계산하려는데 지갑이 없는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '계산하려는데 지갑이 없는 꿈은 중요한 순간에 필요한 준비가 부족할까 봐 느끼는 불안과 책임감, 체면에 대한 압박을 의미합니다. 결제 수단, 약속 비용, 책임 범위를 다시 확인해야 할 때입니다.',
+    advice: '<strong>오늘의 조언:</strong> 카드, 계좌, 자동결제, 약속 비용을 미리 확인하고 감당해야 할 책임을 현실적으로 정리해보세요.'
+  },
+
   ATM돈안나옴: {
     keyword: 'ATM에서 돈이 안 나오는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
     text: 'ATM에서 돈이 안 나오는 꿈은 필요한 자금이나 보상, 결과가 기대한 순간에 나오지 않을까 봐 느끼는 불안을 의미합니다. 돈의 흐름, 정산, 환불, 입금 일정을 다시 확인해야 할 때입니다.',
@@ -1743,6 +1749,7 @@ const defaultDream = {
 };
 
 const keywordMap = {
+  '지갑':'지갑없는계산','지갑없는꿈':'지갑없는계산','지갑이 없는':'지갑없는계산','계산':'지갑없는계산','결제':'지갑없는계산','돈 없음':'지갑없는계산',
   'ATM':'ATM돈안나옴','atm':'ATM돈안나옴','에이티엠':'ATM돈안나옴','돈안나':'ATM돈안나옴','출금':'ATM돈안나옴','인출':'ATM돈안나옴','현금 안나':'ATM돈안나옴',
   '택시':'택시다른길','택시꿈':'택시다른길','택시다른길':'택시다른길','택시 돌아':'택시다른길','택시 기사':'택시다른길',
   '계산':'지갑없음계산','지갑없':'지갑없음계산','지갑 없는':'지갑없음계산','카드없':'지갑없음계산','결제':'지갑없음계산','예약':'예약이름없음','예약명단':'예약이름없음','이름없':'예약이름없음','명단':'예약이름없음',
@@ -1794,6 +1801,7 @@ function analyzeDream(text) {
 
 function generateLucky(dreamText) {
   const dreamNumberMap = {
+    '지갑없는계산':[5,14,23,31,38,42],
     'ATM돈안나옴':[2,11,20,28,36,44],
     '택시다른길':[3,12,20,29,37,44],
     '지갑없음계산':[2,11,20,28,36,45],'예약이름없음':[6,15,24,31,39,45],
