@@ -1275,8 +1275,8 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
    홈 전용: 랜덤 꿈 추천
 ═══════════════════════════════════════════ */
 const randomPool = [
-  {emoji:'⏰',name:'알람이 울렸는데 계속 못 일어나는 꿈',desc:'기회와 책임 압박의 신호',url:'dream-cant-wake-up-after-alarm.html'},
-  {emoji:'🚦',name:'신호등이 계속 빨간불인 꿈',desc:'정체와 타이밍 지연의 신호',url:'dream-red-light-never-changes.html'},
+  {emoji:'📧',name:'중요한 메일을 보냈는데 전송이 안 되는 꿈',desc:'소통과 결과 전달 불안의 신호',url:'dream-email-not-sent.html'},
+  {emoji:'🔐',name:'휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈',desc:'인정과 접근 제한 불안의 신호',url:'dream-password-correct-but-wrong.html'},
   {emoji:'👛',name:'계산하려는데 지갑이 없는 꿈',desc:'준비와 책임 불안의 신호',url:'dream-wallet-missing-checkout-today-grid-fixed.html'},
   {emoji:'🏧',name:'ATM에서 돈이 안 나오는 꿈',desc:'재물 흐름과 보상 지연의 신호',url:'dream-atm-money-not-coming-out-final.html'},
   {emoji:'🚕',name:'택시가 다른 길로 가는 꿈',desc:'방향과 주도권 불안의 신호',url:'dream-taxi-wrong-way.html'},
@@ -1334,8 +1334,8 @@ function shuffleRandom(){
 
 /* ── 검색 ── */
 const searchIndex = [
-  {name:'알람이 울렸는데 계속 못 일어나는 꿈',emoji:'⏰',url:'dream-cant-wake-up-after-alarm.html',keywords:['알람','못일어남','못 일어나는','알람꿈','늦잠','지각','알람 끄고 잠','출근 못함']},
-  {name:'신호등이 계속 빨간불인 꿈',emoji:'🚦',url:'dream-red-light-never-changes.html',keywords:['신호등','빨간불','계속 빨간불','신호대기','정체','기다림','타이밍','멈춤']},
+  {name:'중요한 메일을 보냈는데 전송이 안 되는 꿈',emoji:'📧',url:'dream-email-not-sent.html',keywords:['메일','이메일','전송실패','메일안감','보낸메일','이메일실패','전송 안 됨','첨부파일']},
+  {name:'휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈',emoji:'🔐',url:'dream-password-correct-but-wrong.html',keywords:['비밀번호','암호','로그인','잠금해제','인증실패','비번','맞는데 틀림','휴대폰 비밀번호']},
   {name:'계산하려는데 지갑이 없는 꿈',emoji:'👛',url:'dream-wallet-missing-checkout-today-grid-fixed.html',keywords:['지갑','지갑없는꿈','지갑이 없는 꿈','계산','결제','계산하려는데 지갑이 없는 꿈','지갑 없음','돈 없음']},
   {name:'ATM에서 돈이 안 나오는 꿈',emoji:'🏧',url:'dream-atm-money-not-coming-out-final.html',keywords:['ATM','atm','에이티엠','돈안나옴','돈이 안 나오는','출금안됨','출금 실패','인출 안됨','현금 안 나옴']},
   {name:'택시가 다른 길로 가는 꿈',emoji:'🚕',url:'dream-taxi-wrong-way.html',keywords:['택시','택시꿈','택시 다른 길','택시가 다른 길','택시 돌아감','택시 기사','길 돌아가는 택시']},
@@ -1484,8 +1484,8 @@ function goSearch(keyword){
    해몽 데이터베이스 (33개)
 ═══════════════════════════════════════════ */
 const dreamDB = {
-  알람못일어남: {keyword: '알람이 울렸는데 계속 못 일어나는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2, text: '알람이 울렸는데 계속 못 일어나는 꿈은 해야 할 일을 알고 있지만 피로와 부담 때문에 움직이지 못하는 심리와 기회 상실 불안을 의미합니다.', advice: '<strong>오늘의 조언:</strong> 오늘 해야 할 일을 작게 나누고, 중요한 일정과 마감 시간을 다시 확인해보세요.'},
-  빨간신호등: {keyword: '신호등이 계속 빨간불인 꿈', luck: '⭐⭐ 주의몽', luckScore: 2, text: '신호등이 계속 빨간불인 꿈은 앞으로 나아가고 싶지만 상황이 허락하지 않아 기다리고 있는 정체감과 타이밍 불안을 의미합니다.', advice: '<strong>오늘의 조언:</strong> 막힌 일을 억지로 밀어붙이기보다 현재 조건과 대체 경로를 함께 점검해보세요.'},
+  메일전송실패: {keyword: '중요한 메일을 보냈는데 전송이 안 되는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2, text: '중요한 메일을 보냈는데 전송이 안 되는 꿈은 전달하고 싶은 말이나 결과가 상대에게 제대로 닿지 않을까 봐 느끼는 소통 불안과 확인 필요성을 의미합니다.', advice: '<strong>오늘의 조언:</strong> 중요한 메일, 첨부파일, 수신자 주소, 제출 마감일을 다시 확인해보세요.'},
+  휴대폰비번오류: {keyword: '휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2, text: '휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈은 내가 맞다고 생각한 것과 외부의 인정이 어긋나며 생기는 답답함과 접근 제한 불안을 의미합니다.', advice: '<strong>오늘의 조언:</strong> 중요한 계정, 비밀번호, 인증 정보와 함께 최근 인정받고 싶었던 상황을 차분히 점검해보세요.'},
 
   지갑없는계산: {
     keyword: '계산하려는데 지갑이 없는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
@@ -1756,8 +1756,8 @@ const defaultDream = {
 };
 
 const keywordMap = {
-  '알람':'알람못일어남','못일어':'알람못일어남','못 일어':'알람못일어남','늦잠':'알람못일어남','알람꿈':'알람못일어남','출근 못':'알람못일어남',
-  '신호등':'빨간신호등','빨간불':'빨간신호등','신호대기':'빨간신호등','계속 빨간불':'빨간신호등','정체':'빨간신호등',
+  '메일':'메일전송실패','이메일':'메일전송실패','전송실패':'메일전송실패','메일안감':'메일전송실패','보낸메일':'메일전송실패','첨부파일':'메일전송실패',
+  '비밀번호 맞':'휴대폰비번오류','맞는데 틀':'휴대폰비번오류','인증실패':'휴대폰비번오류','로그인':'휴대폰비번오류','잠금해제':'휴대폰비번오류','비번':'휴대폰비번오류',
 
   '지갑':'지갑없는계산','지갑없는꿈':'지갑없는계산','지갑이 없는':'지갑없는계산','계산':'지갑없는계산','결제':'지갑없는계산','돈 없음':'지갑없는계산',
   'ATM':'ATM돈안나옴','atm':'ATM돈안나옴','에이티엠':'ATM돈안나옴','돈안나':'ATM돈안나옴','출금':'ATM돈안나옴','인출':'ATM돈안나옴','현금 안나':'ATM돈안나옴',
@@ -1811,8 +1811,8 @@ function analyzeDream(text) {
 
 function generateLucky(dreamText) {
   const dreamNumberMap = {
-    '알람못일어남':[4,12,19,27,34,41],
-    '빨간신호등':[6,14,22,30,38,45],
+    '메일전송실패':[3,11,18,26,37,44],
+    '휴대폰비번오류':[5,14,21,29,38,42],
 
     '지갑없는계산':[5,14,23,31,38,42],
     'ATM돈안나옴':[2,11,20,28,36,44],
@@ -2233,7 +2233,7 @@ window.addEventListener('load', function() {
    카테고리별 꿈해몽 표시
 ═══════════════════════════════════════════ */
 (function(){
-  const categoryData = {"nature": {"title": "🐾 동물·자연 꿈해몽", "items": [{"emoji": "🐷", "name": "돼지꿈", "desc": "재물운과 큰 행운", "url": "dream-pig.html"}, {"emoji": "🐍", "name": "뱀꿈", "desc": "재물·변화·직감", "url": "dream-snake.html"}, {"emoji": "🐉", "name": "용꿈", "desc": "성공과 대길몽", "url": "dream-dragon.html"}, {"emoji": "🐯", "name": "호랑이 꿈", "desc": "권력과 성취", "url": "dream-tiger.html"}, {"emoji": "🐢", "name": "거북이 꿈", "desc": "장수와 안정운", "url": "dream-turtle.html"}, {"emoji": "🐟", "name": "물고기 꿈", "desc": "재물과 기회", "url": "dream-fish.html"}, {"emoji": "🌧️", "name": "비 오는 꿈", "desc": "감정과 정화", "url": "dream-rain.html"}, {"emoji": "🌫️", "name": "안개 때문에 앞이 안 보이는 꿈", "desc": "불확실성과 방향성", "url": "dream-fog-cant-see.html"}]}, "money": {"title": "💰 재물·행운 꿈해몽", "items": [{"emoji": "💵", "name": "돈꿈 해몽", "desc": "재물 흐름과 기회", "url": "dream-money.html"}, {"emoji": "💵", "name": "돈 세는 꿈", "desc": "정리와 재물 관리", "url": "dream-count-money.html"}, {"emoji": "🥇", "name": "금꿈 해몽", "desc": "큰 재물운과 성취", "url": "dream-gold.html"}, {"emoji": "💎", "name": "보석 꿈", "desc": "가치와 행운", "url": "dream-jewel.html"}, {"emoji": "💩", "name": "똥꿈", "desc": "대표적인 재물 길몽", "url": "dream-poop.html"}, {"emoji": "🧾", "name": "영수증을 잃어버리는 꿈", "desc": "돈과 확인 부족", "url": "dream-receipt-lost.html"}, {"emoji": "🧳", "name": "가방 안 물건이 전부 사라지는 꿈", "desc": "소유와 준비 불안", "url": "dream-bag-empty.html"}]}, "anxiety": {"title": "😰 불안·심리 꿈해몽", "items": [{"emoji":"⏰","name":"알람이 울렸는데 계속 못 일어나는 꿈","desc":"기회와 책임 압박","url":"dream-cant-wake-up-after-alarm.html"},{"emoji":"🚦","name":"신호등이 계속 빨간불인 꿈","desc":"정체와 타이밍 지연","url":"dream-red-light-never-changes.html"},{"emoji": "🗺️", "name": "길을 잃는 꿈", "desc": "방향성과 혼란", "url": "dream-lost-path.html"}, {"emoji": "🔐", "name": "비밀번호를 계속 틀리는 꿈", "desc": "접근 제한과 불안", "url": "dream-password-wrong.html"}, {"emoji": "📞", "name": "부재중 전화 꿈", "desc": "놓친 연락과 기다림", "url": "dream-missed-call.html"}, {"emoji": "🔋", "name": "휴대폰 배터리가 계속 꺼지는 꿈", "desc": "소통 피로와 에너지 고갈", "url": "dream-phone-battery-dead.html"}, {"emoji": "🪞", "name": "거울 속 얼굴이 흐려지는 꿈", "desc": "자기 인식과 불안", "url": "dream-mirror-face-blur.html"}, {"emoji": "🎫", "name": "표를 잃어버리는 꿈", "desc": "기회와 타이밍 불안", "url": "dream-ticket-lost.html"}, {"emoji": "🌧️", "name": "우산을 쓰고 있는데 비를 다 맞는 꿈", "desc": "보호와 감정 방어", "url": "dream-umbrella-rain.html"}, {"emoji": "⏱️", "name": "시계가 멈추는 꿈", "desc": "정체와 시간 압박", "url": "dream-clock-stopped-full.html"}]}, "people": {"title": "👥 사람·관계 꿈해몽", "items": [{"emoji": "🤝", "name": "친구 나오는 꿈", "desc": "인간관계와 소통", "url": "dream-friend.html"}, {"emoji": "💔", "name": "전남친 꿈", "desc": "미련과 관계 정리", "url": "dream-exboyfriend.html"}, {"emoji": "👨‍👩‍👧", "name": "가족 꿈", "desc": "책임감과 안정", "url": "dream-family.html"}, {"emoji": "👶", "name": "아기 꿈", "desc": "새로운 시작과 가능성", "url": "dream-baby.html"}, {"emoji": "👻", "name": "귀신 꿈", "desc": "불안과 억눌린 감정", "url": "dream-ghost.html"}, {"emoji": "📞", "name": "부재중 전화 꿈", "desc": "관계의 신호와 기다림", "url": "dream-missed-call.html"}, {"emoji": "🧤", "name": "장갑 한 짝을 잃어버리는 꿈", "desc": "관계 균형과 보호", "url": "dream-glove-lost-one.html"}]}, "space": {"title": "🏠 집·공간 꿈해몽", "items": [{"emoji": "🏠", "name": "집꿈 해몽", "desc": "생활 기반과 안정", "url": "dream-house.html"}, {"emoji": "🚪", "name": "문이 닫혀서 못 나가는 꿈", "desc": "막힘과 답답함", "url": "dream-door-closed-cant-leave.html"}, {"emoji": "🪟", "name": "창문이 깨지는 꿈", "desc": "마음의 경계와 외부 자극", "url": "dream-window-broken.html"}, {"emoji": "🪜", "name": "계단을 계속 올라가는데 끝이 없는 꿈", "desc": "압박과 목표의 부담", "url": "dream-endless-stairs.html"}, {"emoji": "🌉", "name": "다리를 건너는데 중간이 끊어진 꿈", "desc": "단절과 전환기", "url": "dream-broken-bridge.html"}, {"emoji": "🧳", "name": "가방 안 물건이 전부 사라지는 꿈", "desc": "준비와 상실 불안", "url": "dream-bag-empty.html"}]}, "school": {"title": "📚 학교·시험 꿈해몽", "items": [{"emoji": "📚", "name": "시험 꿈", "desc": "평가와 압박", "url": "dream-exam.html"}, {"emoji": "⏰", "name": "지각하는 꿈", "desc": "책임감과 시간 압박", "url": "dream-late.html"}, {"emoji": "🏫", "name": "학교 꿈", "desc": "성장과 배움", "url": "dream-school.html"}, {"emoji": "🎫", "name": "표를 잃어버리는 꿈", "desc": "자격과 기회 불안", "url": "dream-ticket-lost.html"}, {"emoji": "🔦", "name": "손전등이 켜지지 않는 꿈", "desc": "불확실성과 판단", "url": "dream-flashlight-not-working.html"}]}};
+  const categoryData = {"nature": {"title": "🐾 동물·자연 꿈해몽", "items": [{"emoji": "🐷", "name": "돼지꿈", "desc": "재물운과 큰 행운", "url": "dream-pig.html"}, {"emoji": "🐍", "name": "뱀꿈", "desc": "재물·변화·직감", "url": "dream-snake.html"}, {"emoji": "🐉", "name": "용꿈", "desc": "성공과 대길몽", "url": "dream-dragon.html"}, {"emoji": "🐯", "name": "호랑이 꿈", "desc": "권력과 성취", "url": "dream-tiger.html"}, {"emoji": "🐢", "name": "거북이 꿈", "desc": "장수와 안정운", "url": "dream-turtle.html"}, {"emoji": "🐟", "name": "물고기 꿈", "desc": "재물과 기회", "url": "dream-fish.html"}, {"emoji": "🌧️", "name": "비 오는 꿈", "desc": "감정과 정화", "url": "dream-rain.html"}, {"emoji": "🌫️", "name": "안개 때문에 앞이 안 보이는 꿈", "desc": "불확실성과 방향성", "url": "dream-fog-cant-see.html"}]}, "money": {"title": "💰 재물·행운 꿈해몽", "items": [{"emoji": "💵", "name": "돈꿈 해몽", "desc": "재물 흐름과 기회", "url": "dream-money.html"}, {"emoji": "💵", "name": "돈 세는 꿈", "desc": "정리와 재물 관리", "url": "dream-count-money.html"}, {"emoji": "🥇", "name": "금꿈 해몽", "desc": "큰 재물운과 성취", "url": "dream-gold.html"}, {"emoji": "💎", "name": "보석 꿈", "desc": "가치와 행운", "url": "dream-jewel.html"}, {"emoji": "💩", "name": "똥꿈", "desc": "대표적인 재물 길몽", "url": "dream-poop.html"}, {"emoji": "🧾", "name": "영수증을 잃어버리는 꿈", "desc": "돈과 확인 부족", "url": "dream-receipt-lost.html"}, {"emoji": "🧳", "name": "가방 안 물건이 전부 사라지는 꿈", "desc": "소유와 준비 불안", "url": "dream-bag-empty.html"}]}, "anxiety": {"title": "😰 불안·심리 꿈해몽", "items": [{"emoji": "🗺️", "name": "길을 잃는 꿈", "desc": "방향성과 혼란", "url": "dream-lost-path.html"}, {"emoji": "🔐", "name": "비밀번호를 계속 틀리는 꿈", "desc": "접근 제한과 불안", "url": "dream-password-wrong.html"}, {"emoji": "📞", "name": "부재중 전화 꿈", "desc": "놓친 연락과 기다림", "url": "dream-missed-call.html"}, {"emoji": "🔋", "name": "휴대폰 배터리가 계속 꺼지는 꿈", "desc": "소통 피로와 에너지 고갈", "url": "dream-phone-battery-dead.html"}, {"emoji": "🪞", "name": "거울 속 얼굴이 흐려지는 꿈", "desc": "자기 인식과 불안", "url": "dream-mirror-face-blur.html"}, {"emoji": "🎫", "name": "표를 잃어버리는 꿈", "desc": "기회와 타이밍 불안", "url": "dream-ticket-lost.html"}, {"emoji": "🌧️", "name": "우산을 쓰고 있는데 비를 다 맞는 꿈", "desc": "보호와 감정 방어", "url": "dream-umbrella-rain.html"}, {"emoji": "⏱️", "name": "시계가 멈추는 꿈", "desc": "정체와 시간 압박", "url": "dream-clock-stopped-full.html"}]}, "people": {"title": "👥 사람·관계 꿈해몽", "items": [{"emoji": "🤝", "name": "친구 나오는 꿈", "desc": "인간관계와 소통", "url": "dream-friend.html"}, {"emoji": "💔", "name": "전남친 꿈", "desc": "미련과 관계 정리", "url": "dream-exboyfriend.html"}, {"emoji": "👨‍👩‍👧", "name": "가족 꿈", "desc": "책임감과 안정", "url": "dream-family.html"}, {"emoji": "👶", "name": "아기 꿈", "desc": "새로운 시작과 가능성", "url": "dream-baby.html"}, {"emoji": "👻", "name": "귀신 꿈", "desc": "불안과 억눌린 감정", "url": "dream-ghost.html"}, {"emoji": "📞", "name": "부재중 전화 꿈", "desc": "관계의 신호와 기다림", "url": "dream-missed-call.html"}, {"emoji": "🧤", "name": "장갑 한 짝을 잃어버리는 꿈", "desc": "관계 균형과 보호", "url": "dream-glove-lost-one.html"}]}, "space": {"title": "🏠 집·공간 꿈해몽", "items": [{"emoji": "🏠", "name": "집꿈 해몽", "desc": "생활 기반과 안정", "url": "dream-house.html"}, {"emoji": "🚪", "name": "문이 닫혀서 못 나가는 꿈", "desc": "막힘과 답답함", "url": "dream-door-closed-cant-leave.html"}, {"emoji": "🪟", "name": "창문이 깨지는 꿈", "desc": "마음의 경계와 외부 자극", "url": "dream-window-broken.html"}, {"emoji": "🪜", "name": "계단을 계속 올라가는데 끝이 없는 꿈", "desc": "압박과 목표의 부담", "url": "dream-endless-stairs.html"}, {"emoji": "🌉", "name": "다리를 건너는데 중간이 끊어진 꿈", "desc": "단절과 전환기", "url": "dream-broken-bridge.html"}, {"emoji": "🧳", "name": "가방 안 물건이 전부 사라지는 꿈", "desc": "준비와 상실 불안", "url": "dream-bag-empty.html"}]}, "school": {"title": "📚 학교·시험 꿈해몽", "items": [{"emoji": "📚", "name": "시험 꿈", "desc": "평가와 압박", "url": "dream-exam.html"}, {"emoji": "⏰", "name": "지각하는 꿈", "desc": "책임감과 시간 압박", "url": "dream-late.html"}, {"emoji": "🏫", "name": "학교 꿈", "desc": "성장과 배움", "url": "dream-school.html"}, {"emoji": "🎫", "name": "표를 잃어버리는 꿈", "desc": "자격과 기회 불안", "url": "dream-ticket-lost.html"}, {"emoji": "🔦", "name": "손전등이 켜지지 않는 꿈", "desc": "불확실성과 판단", "url": "dream-flashlight-not-working.html"}]}};
   function initCategoryFilter(){
     const resultBox = document.getElementById('categoryResultBox');
     const resultTitle = document.getElementById('categoryResultTitle');
