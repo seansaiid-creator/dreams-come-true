@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="robots" content="index, follow">
+<meta name="author" content="꿈해몽 행운">
+<meta name="google-site-verification" content="Mh56q-_VUPEPcyYz_cU3XBqcKlt_4Oko0K9wU4pYpwk">
+<meta name="naver-site-verification" content="4b2fdca80f29813464ca9bd36997671928a7eacb">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MCNS7P3XVT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-MCNS7P3XVT');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>:root { --gold:#C9A84C; --gold-light:#F0D080; --gold-dark:#8B6914; --deep:#0D0A1A; --purple:#6B3FA0; --purple-light:#9B6FD0; --text:#F0EAD6; --text-muted:#A09080; --card:rgba(255,255,255,0.04); --border:rgba(201,168,76,0.15);}*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;} html,body{width:100%;overflow-x:hidden;}body{background:var(--deep);color:var(--text);font-family:'Pretendard',sans-serif;min-height:100vh;}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 20% 20%, rgba(107,63,160,0.15) 0%, transparent 50%),radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);}.nav{position:sticky;top:0;z-index:100;background:rgba(13,10,26,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 16px;}.nav-inner{max-width:480px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;}.nav-logo{font-family:'Nanum Myeongjo',serif;font-size:16px;font-weight:800;color:var(--gold);text-decoration:none;}.nav-links{display:flex;gap:4px;}.nav-link{padding:6px 10px;font-size:12px;color:var(--text-muted);text-decoration:none;border-radius:8px;white-space:nowrap;}.nav-link.active{color:var(--gold);background:rgba(201,168,76,0.1);}.container{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 16px 80px;}.hero{text-align:center;padding:36px 0 24px;}.hero-emoji{font-size:60px;display:block;margin-bottom:16px;}.hero h1{font-family:'Nanum Myeongjo',serif;font-size:28px;font-weight:800;color:var(--gold);line-height:1.4;margin-bottom:12px;text-shadow:0 0 30px rgba(201,168,76,0.4);}.hero p{font-size:14px;line-height:1.85;color:var(--text);opacity:0.92;max-width:420px;margin:0 auto;}.hero-badge{display:inline-flex;align-items:center;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:6px 16px;font-size:13px;color:var(--gold-light);margin-top:16px;}.section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;}.section h2{font-family:'Nanum Myeongjo',serif;font-size:18px;color:var(--gold-light);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);}.section h3{font-size:14px;color:var(--text);margin:14px 0 8px;font-weight:700;}.section p{font-size:13px;color:var(--text);opacity:0.92;line-height:1.9;margin-bottom:10px;}.service-btn{display:block;width:100%;margin-top:12px;text-decoration:none;text-align:center;background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));color:var(--deep);border-radius:14px;padding:14px;font-family:'Nanum Myeongjo',serif;font-size:17px;font-weight:700;}.related-links{display:grid;gap:8px;}.related-links a{display:block;text-decoration:none;color:var(--purple-light);background:rgba(107,63,160,0.16);border:1px solid rgba(107,63,160,0.24);border-radius:12px;padding:12px 14px;font-size:13px;}.notice{font-size:12px;color:var(--text-muted)!important;}footer{text-align:center;padding:28px 0 16px;font-size:11px;color:rgba(255,255,255,0.15);line-height:2;}footer a{color:rgba(255,255,255,0.25);text-decoration:none;margin:0 8px;padding:8px 4px;display:inline-block;}
+    .eng-ad {
+      width: 100%;
+      background: rgba(201,168,76,0.05);
+      border: 1px dashed rgba(201,168,76,0.25);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      font-size: 11px;
+      color: #A09080;
+      margin: 24px 0;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 4px;
+      box-sizing: border-box;
+    }
+    .eng-ad-label { font-size: 10px; opacity: 0.7; }
+    .eng-cta-box {
+      background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(107,63,160,0.18));
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .eng-cta-title { font-size: 16px; font-weight: 700; color: #F0D080; margin-bottom: 6px; }
+    .eng-cta-desc { font-size: 13px; color: #C9A084; margin-bottom: 14px; line-height: 1.6; }
+    .eng-cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #C9A84C, #F0D080);
+      color: #0D0A1A;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .eng-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .eng-h3 { font-size: 17px; font-weight: 700; color: #C9A84C; margin: 0; }
+    .eng-sub { font-size: 12px; color: #A09080; margin: 0 0 14px 0; }
+    .eng-section { margin: 28px 0 0; }
+    .eng-related-list { display: flex; flex-direction: column; gap: 8px; }
+    .eng-related-item {
+      display: block;
+      background: rgba(107,63,160,0.15);
+      border-left: 3px solid #9B6FD0;
+      border-radius: 8px;
+      padding: 13px 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .eng-related-item:hover { background: rgba(107,63,160,0.25); }
+    .eng-related-row { display: flex; align-items: center; justify-content: space-between; }
+    .eng-related-name { font-size: 14px; font-weight: 500; color: #F0EAD6; }
+    .eng-related-arrow { color: #9B6FD0; font-size: 14px; }
+    .eng-related-meta { font-size: 11px; color: #A09080; margin-top: 4px; }
+    .eng-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    @media (min-width: 600px) { .eng-grid { grid-template-columns: repeat(4, 1fr); } }
+    .eng-card {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 12px;
+      padding: 16px 10px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .eng-card:hover { transform: translateY(-2px); border-color: rgba(201,168,76,0.55); }
+    .eng-card-icon { font-size: 28px; margin-bottom: 6px; }
+    .eng-card-title { font-size: 13px; font-weight: 600; color: #F0EAD6; margin-bottom: 4px; }
+    .eng-card-score { font-size: 10px; color: #F0D080; }
+    .eng-share {
+      background: rgba(107,63,160,0.12);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .eng-share-title { font-size: 13px; color: #F0EAD6; margin-bottom: 10px; }
+    .eng-share-buttons { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .eng-share-btn {
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .eng-share-btn.kakao { background: #FEE500; color: #000; }
+    .eng-share-btn.copy {
+      background: rgba(255,255,255,0.1);
+      color: #F0EAD6;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+</style>
+
+<title>알람이 울렸는데 계속 못 일어나는 꿈 해몽 총정리 (+기회 상실, 책임감, 압박감 의미)</title>
+<meta name="description" content="알람이 울렸는데 계속 못 일어나는 꿈의 의미를 상황별로 정리했습니다. 알람을 끄고 다시 자는 꿈, 출근해야 하는데 못 일어나는 꿈까지 확인해보세요.">
+<meta name="keywords" content="알람 꿈, 알람이 울렸는데 못 일어나는 꿈, 늦잠 꿈, 지각 꿈, 꿈해몽">
+<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-cant-wake-up-after-alarm.html">
+<meta property="og:title" content="알람이 울렸는데 계속 못 일어나는 꿈 해몽 총정리 (+기회 상실, 책임감, 압박감 의미)">
+<meta property="og:description" content="알람이 울렸는데 계속 못 일어나는 꿈의 의미를 상황별로 정리했습니다. 알람을 끄고 다시 자는 꿈, 출근해야 하는데 못 일어나는 꿈까지 확인해보세요.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://dreams-come-true-ten.vercel.app/dream-cant-wake-up-after-alarm.html">
+<meta property="og:locale" content="ko_KR">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-logo">🌙 꿈해몽 행운</a><div class="nav-links"><a href="index.html" class="nav-link">해몽하기</a><a href="guide.html" class="nav-link active">해몽가이드</a><a href="about.html" class="nav-link">소개</a></div></div></nav>
+<div class="container">
+  <!-- 상단 배너 광고 (페이지 진입 즉시 노출) -->
+  <div class="eng-ad" id="ad-slot-top" style="margin: 12px 0 20px; min-height: 64px;">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-mEWbnds31xgI1VZG"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+
+  <div class="hero"><span class="hero-emoji">⏰</span><h1>알람이 울렸는데 계속 못 일어나는 꿈 해몽 진짜 의미</h1><p>알람이 울렸는데 계속 못 일어나는 꿈은 해야 할 일을 알고 있지만 피로와 부담 때문에 움직이지 못하는 심리와 기회 상실 불안을 보여주는 꿈입니다.</p><div class="hero-badge">기회 · 책임 · 피로 불안 해석</div></div>
+
+<div class="section"><h2>알람이 울렸는데 계속 못 일어나는 꿈의 기본 의미</h2><p>알람이 울렸는데 계속 못 일어나는 꿈은 현실에서 해야 할 일은 분명히 알고 있지만 몸과 마음이 따라주지 않는 상태를 상징합니다. 알람은 꿈에서 시간, 기회, 책임, 시작 신호를 의미합니다. 그런데 알람이 울렸는데도 일어나지 못한다는 것은 현실에서도 중요한 일을 시작해야 하는데 부담감이나 피로 때문에 움직이지 못하고 있다는 심리가 반영된 경우가 많습니다.</p><p>이 꿈은 단순히 늦잠에 대한 걱정만을 뜻하지 않습니다. 이미 마음속으로는 해야 할 일을 알고 있고, 미루면 안 된다는 것도 알지만 실제 행동으로 옮기기 어려운 상태일 때 나타납니다. 특히 시험, 출근, 면접, 약속, 마감, 계약, 중요한 연락처럼 시간을 맞춰야 하는 일이 있을 때 이런 꿈을 꾸기 쉽습니다.</p><p>꿈속에서 알람 소리가 계속 울리는데 몸이 무겁거나, 눈은 떴지만 움직이지 못하거나, 알람을 끄고 다시 잠드는 장면이 나왔다면 현재 당신의 마음이 상당히 지쳐 있다는 의미일 수 있습니다. 이 꿈은 게으름의 꿈이라기보다 책임감과 피로가 동시에 커진 상태를 보여주는 꿈입니다.</p></div>
+<div class="section"><h2>상황별 해석</h2><h3>1. 알람 소리는 들리는데 몸이 움직이지 않는 꿈</h3><p>알람 소리는 들리지만 몸이 움직이지 않는 꿈은 현실에서 해야 할 일을 인식하고 있지만 실행력이 떨어진 상태를 의미합니다. 의지가 없어서가 아니라 부담과 피로가 쌓여 시작이 어려운 상황일 수 있습니다.</p><h3>2. 알람을 끄고 다시 자는 꿈</h3><p>알람을 끄고 다시 자는 꿈은 미루고 싶은 일이 있거나 현실을 잠시 외면하고 싶은 마음을 의미합니다. 해야 할 일을 알고 있지만 당장 마주하기 부담스러운 상태일 수 있습니다.</p><h3>3. 알람이 계속 울리는데 깨지 못하는 꿈</h3><p>알람이 계속 울리는데도 깨지 못하는 꿈은 반복되는 경고와 신호를 무시하고 있다는 의미가 있습니다. 현실에서 이미 여러 번 미뤄둔 일이나 확인해야 할 문제가 있을 수 있습니다.</p><h3>4. 중요한 약속 시간에 못 일어나는 꿈</h3><p>중요한 약속 시간에 못 일어나는 꿈은 기회 상실에 대한 불안을 의미합니다. 누군가와의 약속, 면접, 시험, 계약처럼 중요한 순간을 놓칠까 봐 걱정하는 마음이 반영된 꿈입니다.</p><h3>5. 출근해야 하는데 못 일어나는 꿈</h3><p>출근해야 하는데 못 일어나는 꿈은 직장이나 사회적 책임에 대한 압박을 의미합니다. 업무량이 많거나 평가받는 상황이 부담스러울 때 나타날 수 있습니다.</p><h3>6. 시험 보러 가야 하는데 못 일어나는 꿈</h3><p>시험에 늦을까 봐 못 일어나는 꿈은 준비 부족에 대한 불안을 의미합니다. 실제 시험뿐 아니라 평가받는 모든 상황과 연결될 수 있습니다.</p><h3>7. 알람이 고장 나서 못 일어나는 꿈</h3><p>알람이 고장 나서 못 일어나는 꿈은 내 잘못보다 외부 환경이나 시스템 문제 때문에 일이 틀어질까 봐 걱정하는 마음을 의미합니다. 일정, 연락, 장비, 약속 조건을 확인할 필요가 있습니다.</p><h3>8. 결국 늦게 일어나는 꿈</h3><p>늦게라도 일어나는 꿈은 불안은 있지만 아직 회복과 해결 가능성이 남아 있음을 의미합니다. 완전히 포기한 것이 아니라 뒤늦게라도 움직이려는 마음이 있다는 긍정적인 신호입니다.</p></div>
+<div class="section"><h2>재물운 관점에서 보는 해석</h2><p>알람이 울렸는데 계속 못 일어나는 꿈은 재물운에서 타이밍 관리와 기회 지연을 의미합니다. 돈이 들어오거나 나가는 문제 자체보다, 중요한 결제일, 마감일, 정산일, 신청 기한을 놓치지 말라는 경고에 가깝습니다.</p><p>특히 자동이체, 카드 결제일, 세금 신고, 환불 기간, 예약 취소 기한처럼 날짜가 중요한 일이 있다면 반드시 확인하는 것이 좋습니다. 이 꿈은 큰 손실을 예고한다기보다 작은 지연이나 방심이 불편을 만들 수 있음을 알려주는 꿈입니다.</p></div>
+<div class="section"><h2>심리학적 해석</h2><p>심리적으로 이 꿈은 책임감과 피로가 충돌하는 상태를 보여줍니다. 알람은 마음속에서 ‘이제 움직여야 한다’는 신호입니다. 그런데 그 신호를 듣고도 몸이 움직이지 않는다는 것은 현재 마음은 긴장되어 있지만 에너지는 부족하다는 뜻입니다.</p><p>이 꿈을 반복해서 꾼다면 단순히 더 열심히 해야 한다는 뜻이 아닙니다. 오히려 현재 계획이 너무 빡빡하거나, 쉬지 못한 상태에서 계속 자신을 몰아붙이고 있을 가능성이 있습니다. 해야 할 일을 줄이고 우선순위를 다시 정하는 것이 필요합니다.</p></div>
+<div class="section"><h2>이 꿈을 꿨다면?</h2><p>알람이 울렸는데 계속 못 일어나는 꿈을 꿨다면 오늘은 먼저 일정표와 해야 할 일을 확인해보는 것이 좋습니다. 중요한 약속, 제출일, 결제일, 연락할 사람을 정리하면 막연한 불안이 줄어듭니다.</p><p>또한 실제로 피로가 누적되어 있다면 수면과 휴식도 점검해야 합니다. 이 꿈은 게으르다는 메시지가 아니라 몸과 마음이 지쳐서 신호를 받아도 반응하기 어렵다는 신호일 수 있습니다. 중요한 일을 앞두고 있다면 전날 준비를 줄이고, 알람을 여러 개 맞추는 현실적인 방법도 도움이 됩니다.</p></div>
+<div class="section"><h2>추가 해석과 실제 사례</h2><p>직장인이 이 꿈을 꾸었다면 출근, 회의, 마감, 평가에 대한 압박이 반영된 것일 수 있습니다. 할 일은 많고 시간은 부족하다고 느낄 때 알람이 울려도 일어나지 못하는 장면으로 나타날 수 있습니다.</p><p>학생이나 취업 준비생에게는 시험, 면접, 제출, 발표와 관련된 불안이 강하게 반영됩니다. 특히 준비가 충분하지 않다고 느낄 때 이 꿈을 꾸기 쉽습니다.</p><p>연애나 인간관계에서는 중요한 대화나 약속을 미루고 있다는 의미로도 볼 수 있습니다. 연락해야 한다는 것을 알면서도 마음이 무거워 움직이지 못하는 상태가 꿈으로 표현될 수 있습니다.</p></div>
+<div class="section"><h2>긍정적인 의미</h2><p>이 꿈은 불안한 꿈이지만 긍정적으로 보면 아직 내 안의 경고 신호가 작동하고 있다는 뜻입니다. 알람이 울렸다는 것은 무의식이 이미 중요한 일을 알고 있으며, 놓치지 않기 위해 신호를 보내고 있다는 의미입니다.</p><p>꿈속에서 결국 일어났거나 누군가 깨워줬다면 현실에서도 도움을 받거나 늦게라도 문제를 해결할 수 있음을 의미합니다. 지금 필요한 것은 자책이 아니라 일정과 에너지를 다시 정리하는 것입니다.</p></div>
+<div class="section"><h2>마무리 해석</h2><p>알람이 울렸는데 계속 못 일어나는 꿈은 기회 상실, 책임감, 피로, 준비 부족에 대한 꿈입니다. 오늘은 중요한 일정을 확인하고, 미뤄둔 일을 작게 나누어 시작해보세요. 알람은 불안의 소리이기도 하지만 다시 시작하라는 신호이기도 합니다.</p></div>
+
+
+
+<div class="section"><h2>현실에서 특히 주의할 부분</h2>
+<p>알람이 울렸는데 계속 못 일어나는 꿈은 실제 생활에서 시간 관리와 에너지 관리가 동시에 필요하다는 메시지로 볼 수 있습니다. 단순히 더 많은 알람을 맞추라는 뜻이 아니라, 왜 알람이 울려도 움직이기 어려운 상태가 되었는지 살펴보는 것이 중요합니다. 할 일이 너무 많거나, 해야 할 일을 머릿속으로만 반복하고 실제 정리는 하지 못하고 있거나, 잠을 자도 피로가 풀리지 않는 상태일 수 있습니다.</p>
+<p>이 꿈을 꾼 날에는 가장 먼저 내일이나 이번 주에 반드시 처리해야 하는 일을 적어보는 것이 좋습니다. 막연히 ‘해야 한다’고 생각하는 것보다 종이에 쓰거나 메모 앱에 정리하면 부담이 훨씬 줄어듭니다. 특히 마감 시간이 있는 일, 돈과 관련된 일, 누군가와 약속한 일은 우선순위를 높게 두고 먼저 확인하는 것이 좋습니다.</p>
+<p>또한 이 꿈은 중요한 기회를 놓칠까 봐 걱정하는 마음과도 연결됩니다. 하지만 꿈이 보여주는 핵심은 이미 늦었다는 뜻이 아니라, 늦기 전에 다시 준비하라는 뜻에 가깝습니다. 지금이라도 일정을 다시 세우고 작은 행동부터 시작하면 충분히 흐름을 바꿀 수 있습니다.</p>
+</div>
+<div class="section"><h2>관계와 일에서 보는 해석</h2>
+<p>관계 측면에서 이 꿈은 미뤄둔 연락이나 꺼내야 할 대화를 계속 피하고 있다는 의미가 될 수 있습니다. 상대에게 답장을 해야 하거나, 사과해야 하거나, 중요한 이야기를 나눠야 하는데 마음이 무거워 계속 미루고 있다면 알람이 울려도 일어나지 못하는 장면으로 나타날 수 있습니다.</p>
+<p>일과 커리어 측면에서는 해야 할 역할과 실제 컨디션 사이의 차이가 크게 벌어졌다는 신호입니다. 책임감은 강하지만 에너지가 부족한 상태이기 때문에, 무작정 자신을 몰아붙이면 오히려 실수가 늘어날 수 있습니다. 이때는 일을 줄이는 것이 아니라 일을 더 작게 나누는 방식이 필요합니다.</p>
+<p>중요한 것은 이 꿈을 보고 자책하지 않는 것입니다. 꿈은 당신이 게으르다고 말하는 것이 아니라, 지금의 속도와 방식이 너무 부담스럽다고 알려주는 신호입니다. 해야 할 일을 작게 나누고, 가장 급한 것부터 하나씩 처리하면 다시 움직일 힘을 찾을 수 있습니다.</p>
+</div>
+<div class="section"><h2>좋은 방향으로 바꾸는 방법</h2>
+<p>이 꿈을 꾼 뒤에는 하루 전체를 완벽하게 바꾸려 하기보다 가장 작은 실천을 정하는 것이 좋습니다. 예를 들어 내일 입을 옷을 미리 꺼내두기, 필요한 서류를 가방에 넣어두기, 알람을 침대에서 떨어진 곳에 두기, 아침에 할 일을 세 가지 이하로 줄이기 같은 작은 준비가 실제 불안을 크게 줄여줍니다.</p>
+<p>알람이 울렸는데 계속 못 일어나는 꿈은 결국 ‘일어나야 한다’는 신호가 이미 내 안에서 울리고 있다는 뜻입니다. 이 신호를 무시하지 말고, 지금 내 생활에서 무엇이 너무 무겁게 느껴지는지 확인해보세요. 문제를 알면 해결은 훨씬 쉬워집니다.</p>
+</div>
+
+
+<div class="section"><h2>반복해서 꿀 때의 의미</h2>
+<p>알람이 울렸는데 계속 못 일어나는 꿈을 한 번이 아니라 반복해서 꾼다면, 단순한 일시적 불안보다 생활 리듬 전체가 지쳐 있다는 신호일 수 있습니다. 해야 할 일은 계속 쌓이는데 회복할 시간은 부족하고, 마음은 조급하지만 몸은 따라주지 않는 상태가 반복되고 있을 가능성이 큽니다.</p>
+<p>이럴 때는 목표를 더 크게 세우기보다 하루의 시작을 단순하게 만드는 것이 중요합니다. 아침에 해야 할 일을 줄이고, 전날 밤에 필요한 준비를 미리 끝내두면 꿈에서 느낀 압박감이 현실에서도 조금씩 줄어듭니다. 반복되는 알람 꿈은 나를 몰아붙이라는 뜻이 아니라, 지금의 방식으로는 계속 지칠 수 있으니 리듬을 다시 조정하라는 메시지로 보는 것이 좋습니다.</p>
+</div>
+
+<a href="index.html" class="service-btn">지금 꿈 해몽하고 행운번호 받기</a>
+<div class="section"><h2>함께 보면 좋은 꿈해몽</h2><div class="related-links"><a href="dream-late.html">⏰ 지각하는 꿈</a><a href="dream-phone-battery-dead.html">🔋 휴대폰 배터리가 계속 꺼지는 꿈</a><a href="dream-clock-stopped-full.html">⏱️ 시계가 멈추는 꿈</a><a href="dream-exam.html">📝 시험꿈 해몽</a><a href="dream-missed-call.html">📞 부재중 전화 꿈</a></div></div>
+<div class="section"><p class="notice">※ 본 내용은 전통 해몽, 일반적인 상징 해석, 심리적 관점을 함께 정리한 참고용 정보입니다. 실제 미래나 결과를 보장하는 정보는 아니며, 재미와 참고의 목적으로 활용해 주세요.</p></div>
+  <!-- ════════ 회유 섹션 시작 ════════ -->
+
+  <!-- 광고 #1: 본문 직후 -->
+  <div class="eng-ad" id="ad-slot-1">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-hocmoZxuOVv1icNx"
+      data-ad-width="320"
+      data-ad-height="100"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+
+  <!-- 행운번호 CTA -->
+  <div class="eng-cta-box">
+    <div class="eng-cta-title">🎰 이 꿈의 행운번호 받기</div>
+    <div class="eng-cta-desc">알람이 울렸는데 계속 못 일어나는 꿈의 기운에 맞춘<br>행운번호 5세트를 받아보세요</div>
+    <a href="index.html?dream=cant-wake-up-after-alarm" class="eng-cta-btn">✨ 무료로 행운번호 받기</a>
+  </div>
+
+  <!-- 비슷한 꿈 -->
+  <div class="eng-section">
+    <div class="eng-header">
+      <span style="font-size:18px;">🔗</span>
+      <h3 class="eng-h3">이 꿈과 비슷한 꿈</h3>
+    </div>
+    <p class="eng-sub">"알람이 울렸는데 계속 못 일어나는 꿈"을 본 사람들이 함께 본 꿈</p>
+    <div class="eng-related-list">
+      <a href="dream-late.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">⏰ 지각하는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">시간압박 · 책임 · ⭐⭐ 주의몽</div>
+      </a>
+      <a href="dream-phone-battery-dead.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🔋 휴대폰 배터리가 계속 꺼지는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">에너지 고갈 · 소통 피로 · ⭐⭐ 주의몽</div>
+      </a>
+      <a href="dream-clock-stopped-full.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">⏱️ 시계가 멈추는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">시간 정체 · 압박 · ⭐⭐ 주의몽</div>
+      </a>
+      <a href="dream-exam.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">📝 시험꿈 해몽</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">평가 · 준비 · ⭐⭐⭐ 중길몽</div>
+      </a>
+      <a href="dream-missed-call.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">📞 부재중 전화 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">놓친 신호 · 확인 · ⭐⭐ 주의몽</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 광고 #2 -->
+  <div class="eng-ad" id="ad-slot-2">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-AtRUawKZBJQF2cvp"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+<!-- 공유 -->
+  <div class="eng-share">
+    <div class="eng-share-title">📤 친구에게 공유하기</div>
+    <div class="eng-share-buttons">
+      <button class="eng-share-btn kakao" onclick="if(window.shareKakao){window.shareKakao()}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))}">💬 카카오톡</button>
+      <button class="eng-share-btn copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))">🔗 링크 복사</button>
+    </div>
+  </div>
+
+  <!-- 광고 #3: 최하단 -->
+  <div class="eng-ad" id="ad-slot-3">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-xsEr1zraBjbgyH3q"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+  <!-- ════════ 회유 섹션 끝 ════════ -->
+  <footer>운영사: 에스이(SE)컴퍼니<br>꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>© 2025 꿈해몽 행운<br><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="about.html">서비스 소개</a></footer></div>
+</body>
+</html>
