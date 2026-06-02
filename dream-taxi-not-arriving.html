@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="robots" content="index, follow">
+<meta name="author" content="꿈해몽 행운">
+<meta name="google-site-verification" content="Mh56q-_VUPEPcyYz_cU3XBqcKlt_4Oko0K9wU4pYpwk">
+<meta name="naver-site-verification" content="4b2fdca80f29813464ca9bd36997671928a7eacb">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MCNS7P3XVT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-MCNS7P3XVT');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>:root { --gold:#C9A84C; --gold-light:#F0D080; --gold-dark:#8B6914; --deep:#0D0A1A; --purple:#6B3FA0; --purple-light:#9B6FD0; --text:#F0EAD6; --text-muted:#A09080; --card:rgba(255,255,255,0.04); --border:rgba(201,168,76,0.15);}*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;} html,body{width:100%;overflow-x:hidden;}body{background:var(--deep);color:var(--text);font-family:'Pretendard',sans-serif;min-height:100vh;}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 20% 20%, rgba(107,63,160,0.15) 0%, transparent 50%),radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);}.nav{position:sticky;top:0;z-index:100;background:rgba(13,10,26,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 16px;}.nav-inner{max-width:480px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;}.nav-logo{font-family:'Nanum Myeongjo',serif;font-size:16px;font-weight:800;color:var(--gold);text-decoration:none;}.nav-links{display:flex;gap:4px;}.nav-link{padding:6px 10px;font-size:12px;color:var(--text-muted);text-decoration:none;border-radius:8px;white-space:nowrap;}.nav-link.active{color:var(--gold);background:rgba(201,168,76,0.1);}.container{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 16px 80px;}.hero{text-align:center;padding:36px 0 24px;}.hero-emoji{font-size:60px;display:block;margin-bottom:16px;}.hero h1{font-family:'Nanum Myeongjo',serif;font-size:28px;font-weight:800;color:var(--gold);line-height:1.4;margin-bottom:12px;text-shadow:0 0 30px rgba(201,168,76,0.4);}.hero p{font-size:14px;line-height:1.85;color:var(--text);opacity:0.92;max-width:420px;margin:0 auto;}.hero-badge{display:inline-flex;align-items:center;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:6px 16px;font-size:13px;color:var(--gold-light);margin-top:16px;}.section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;}.section h2{font-family:'Nanum Myeongjo',serif;font-size:18px;color:var(--gold-light);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);}.section h3{font-size:14px;color:var(--text);margin:14px 0 8px;font-weight:700;}.section p{font-size:13px;color:var(--text);opacity:0.92;line-height:1.9;margin-bottom:10px;}.service-btn{display:block;width:100%;margin-top:12px;text-decoration:none;text-align:center;background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));color:var(--deep);border-radius:14px;padding:14px;font-family:'Nanum Myeongjo',serif;font-size:17px;font-weight:700;}.related-links{display:grid;gap:8px;}.related-links a{display:block;text-decoration:none;color:var(--purple-light);background:rgba(107,63,160,0.16);border:1px solid rgba(107,63,160,0.24);border-radius:12px;padding:12px 14px;font-size:13px;}.notice{font-size:12px;color:var(--text-muted)!important;}footer{text-align:center;padding:28px 0 16px;font-size:11px;color:rgba(255,255,255,0.15);line-height:2;}footer a{color:rgba(255,255,255,0.25);text-decoration:none;margin:0 8px;padding:8px 4px;display:inline-block;}
+    .eng-ad {
+      width: 100%;
+      background: rgba(201,168,76,0.05);
+      border: 1px dashed rgba(201,168,76,0.25);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      font-size: 11px;
+      color: #A09080;
+      margin: 24px 0;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 4px;
+      box-sizing: border-box;
+    }
+    .eng-ad-label { font-size: 10px; opacity: 0.7; }
+    .eng-cta-box {
+      background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(107,63,160,0.18));
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .eng-cta-title { font-size: 16px; font-weight: 700; color: #F0D080; margin-bottom: 6px; }
+    .eng-cta-desc { font-size: 13px; color: #C9A084; margin-bottom: 14px; line-height: 1.6; }
+    .eng-cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #C9A84C, #F0D080);
+      color: #0D0A1A;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .eng-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .eng-h3 { font-size: 17px; font-weight: 700; color: #C9A84C; margin: 0; }
+    .eng-sub { font-size: 12px; color: #A09080; margin: 0 0 14px 0; }
+    .eng-section { margin: 28px 0 0; }
+    .eng-related-list { display: flex; flex-direction: column; gap: 8px; }
+    .eng-related-item {
+      display: block;
+      background: rgba(107,63,160,0.15);
+      border-left: 3px solid #9B6FD0;
+      border-radius: 8px;
+      padding: 13px 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .eng-related-item:hover { background: rgba(107,63,160,0.25); }
+    .eng-related-row { display: flex; align-items: center; justify-content: space-between; }
+    .eng-related-name { font-size: 14px; font-weight: 500; color: #F0EAD6; }
+    .eng-related-arrow { color: #9B6FD0; font-size: 14px; }
+    .eng-related-meta { font-size: 11px; color: #A09080; margin-top: 4px; }
+    .eng-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    @media (min-width: 600px) { .eng-grid { grid-template-columns: repeat(4, 1fr); } }
+    .eng-card {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 12px;
+      padding: 16px 10px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .eng-card:hover { transform: translateY(-2px); border-color: rgba(201,168,76,0.55); }
+    .eng-card-icon { font-size: 28px; margin-bottom: 6px; }
+    .eng-card-title { font-size: 13px; font-weight: 600; color: #F0EAD6; margin-bottom: 4px; }
+    .eng-card-score { font-size: 10px; color: #F0D080; }
+    .eng-share {
+      background: rgba(107,63,160,0.12);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .eng-share-title { font-size: 13px; color: #F0EAD6; margin-bottom: 10px; }
+    .eng-share-buttons { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .eng-share-btn {
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .eng-share-btn.kakao { background: #FEE500; color: #000; }
+    .eng-share-btn.copy {
+      background: rgba(255,255,255,0.1);
+      color: #F0EAD6;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+</style>
+
+<title>택시를 불렀는데 계속 안 오는 꿈 해몽 총정리 (+기회 지연, 기다림, 타이밍 의미)</title>
+<meta name="description" content="택시를 불렀는데 계속 안 오는 꿈의 의미를 상황별로 정리했습니다. 택시 호출 실패, 배차 지연, 약속에 늦는 꿈까지 확인해보세요.">
+<meta name="keywords" content="택시 꿈, 택시를 불렀는데 안 오는 꿈, 택시 안 오는 꿈, 택시 호출 꿈, 기다리는 꿈해몽">
+<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-taxi-not-arriving.html">
+<meta property="og:title" content="택시를 불렀는데 계속 안 오는 꿈 해몽 총정리 (+기회 지연, 기다림, 타이밍 의미)">
+<meta property="og:description" content="택시를 불렀는데 계속 안 오는 꿈의 의미를 상황별로 정리했습니다. 택시 호출 실패, 배차 지연, 약속에 늦는 꿈까지 확인해보세요.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://dreams-come-true-ten.vercel.app/dream-taxi-not-arriving.html">
+<meta property="og:locale" content="ko_KR">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-logo">🌙 꿈해몽 행운</a><div class="nav-links"><a href="index.html" class="nav-link">해몽하기</a><a href="guide.html" class="nav-link active">해몽가이드</a><a href="about.html" class="nav-link">소개</a></div></div></nav>
+<div class="container">
+  <!-- 상단 배너 광고 (페이지 진입 즉시 노출) -->
+  <div class="eng-ad" id="ad-slot-top" style="margin: 12px 0 20px; min-height: 64px;">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-mEWbnds31xgI1VZG"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+
+  <div class="hero"><span class="hero-emoji">🚕</span><h1>택시를 불렀는데 계속 안 오는 꿈 해몽 진짜 의미</h1><p>택시를 불렀는데 계속 안 오는 꿈은 기다리던 도움이나 기회가 원하는 타이밍에 도착하지 않아 느끼는 답답함과 기회 지연 불안을 보여주는 꿈입니다.</p><div class="hero-badge">기다림 · 도움 · 기회 지연 해석</div></div>
+
+<div class="section"><h2>택시를 불렀는데 계속 안 오는 꿈의 기본 의미</h2><p>택시를 불렀는데 계속 안 오는 꿈은 현실에서 도움, 기회, 이동 수단, 해결책을 기다리고 있지만 원하는 타이밍에 도착하지 않아 답답함을 느끼는 심리를 상징합니다. 택시는 꿈에서 내가 직접 모든 것을 해결하지 않고 외부의 도움이나 서비스, 누군가의 지원을 통해 목적지로 이동하는 수단을 의미합니다. 그런데 택시를 불렀는데도 오지 않는다는 것은 현실에서도 내가 기다리는 도움이나 답변, 기회가 지연되고 있다고 느끼는 상태를 보여줍니다.</p><p>이 꿈은 단순히 교통수단에 대한 꿈이 아니라 이미 요청했고 기다리고 있는데도 움직임이 없는 상태를 보여줍니다. 면접 결과, 거래처 연락, 친구나 연인의 답장, 업무 승인, 계약 진행, 입금, 예약 확인처럼 누군가의 반응이나 외부 일정에 기대고 있는 상황에서 자주 나타날 수 있습니다.</p><p>꿈속에서 택시가 오지 않아 계속 화면만 확인했거나, 기사에게 전화를 걸어도 받지 않았거나, 약속 시간은 다가오는데 차가 잡히지 않았다면 현재 삶에서도 기다림에 대한 피로와 조급함이 커져 있다는 의미로 볼 수 있습니다.</p></div>
+<div class="section"><h2>상황별 해석</h2><h3>1. 택시 앱으로 불렀는데 계속 도착하지 않는 꿈</h3><p>이미 요청한 일이나 기다리는 답변이 늦어지고 있다는 의미입니다. 연락, 승인, 계약, 입금처럼 상대의 반응이 필요한 일이 지연될 수 있습니다.</p><h3>2. 택시가 배차됐는데 움직이지 않는 꿈</h3><p>기회가 잡힌 것처럼 보이지만 실제로는 진행이 멈춰 있는 상태를 의미합니다. 말로는 진행된다고 하지만 현실적인 움직임이 없다고 느낄 때 나타날 수 있습니다.</p><h3>3. 택시 기사가 길을 헤매는 꿈</h3><p>도움을 주는 사람이나 협력자가 내 상황을 제대로 이해하지 못하고 있다는 의미입니다. 방향성을 다시 설명하거나 조건을 확인할 필요가 있습니다.</p><h3>4. 택시가 근처까지 왔다가 사라지는 꿈</h3><p>잡힐 것 같았던 기회가 마지막 순간에 멀어질까 봐 느끼는 불안을 의미합니다. 면접, 계약, 약속, 거래 성사 직전에 조심해야 할 시기일 수 있습니다.</p><h3>5. 택시를 기다리다 약속에 늦는 꿈</h3><p>타이밍을 놓칠까 봐 느끼는 불안을 의미합니다. 내 의지만으로는 해결되지 않는 일 때문에 중요한 순간을 놓칠까 걱정하고 있을 수 있습니다.</p><h3>6. 비 오는 날 택시가 안 오는 꿈</h3><p>이미 감정적으로 지친 상태에서 도움마저 늦어지는 느낌을 의미합니다. 보호받고 싶지만 현실에서는 혼자 버티고 있다고 느낄 수 있습니다.</p><h3>7. 다른 사람은 택시를 타는데 나만 못 타는 꿈</h3><p>비교심리와 소외감을 의미합니다. 주변 사람들은 기회를 잡는 것 같은데 나만 기다리고 있다고 느낄 때 나타날 수 있습니다.</p><h3>8. 결국 택시가 오는 꿈</h3><p>늦어지던 도움이나 기회가 결국 도착할 가능성을 의미합니다. 당장은 답답해도 기다리던 연락이나 해결책이 나타날 수 있습니다.</p></div>
+<div class="section"><h2>재물운 관점에서 보는 해석</h2><p>택시를 불렀는데 계속 안 오는 꿈은 재물운에서 입금, 정산, 계약, 거래 진행이 예상보다 늦어질 수 있다는 의미가 있습니다. 돈 자체가 사라지는 꿈이라기보다 금전 흐름을 만들어줄 외부 조건이 지연되는 꿈에 가깝습니다.</p><p>거래처 입금, 환불, 정산, 보상, 계약금, 비용 처리처럼 누군가의 처리나 확인이 필요한 돈 문제가 있다면 일정을 다시 확인하는 것이 좋습니다. 이 꿈은 조급하게 독촉하라는 뜻이 아니라 대체 수단과 여유 시간을 준비하라는 신호입니다.</p></div>
+<div class="section"><h2>심리학적 해석</h2><p>심리적으로 이 꿈은 내가 원하는 방향으로 가고 싶지만 스스로 모든 것을 통제할 수 없다고 느끼는 상태를 보여줍니다. 택시는 내가 직접 운전하는 차가 아니라 누군가의 도움으로 움직이는 수단입니다. 따라서 택시가 오지 않는 꿈은 외부 도움에 대한 기대와 실망이 동시에 커졌다는 의미입니다.</p><p>또한 이 꿈은 기다림에 대한 피로를 나타냅니다. 이미 충분히 기다렸고 이제는 움직여야 한다고 느끼는데 상황이 바뀌지 않을 때 이런 꿈이 나타날 수 있습니다.</p></div>
+<div class="section"><h2>이 꿈을 꿨다면?</h2><p>택시를 불렀는데 계속 안 오는 꿈을 꿨다면 오늘은 기다리고 있는 연락이나 일정의 상태를 확인해보는 것이 좋습니다. 약속 시간, 예약, 계약 진행 상황, 입금 예정일, 상대방의 답변 여부를 정리해보면 막연한 불안이 줄어듭니다.</p><p>또한 한 가지 방법만 기다리고 있다면 대체 경로를 준비하는 것이 좋습니다. 택시가 오지 않으면 버스, 지하철, 다른 차량을 생각하듯 현실에서도 하나의 답변이나 도움에만 의존하지 않는 태도가 필요합니다.</p></div>
+<div class="section"><h2>추가 해석과 실제 사례</h2><p>직장인이 이 꿈을 꾸었다면 업무 승인, 회의 일정, 상사의 답변, 프로젝트 진행이 늦어지는 상황과 연결될 수 있습니다. 프리랜서나 사업자라면 거래처 회신, 계약 확정, 정산 지연이 꿈으로 나타날 수 있습니다.</p><p>연애에서는 상대의 연락을 기다리는 마음, 약속이 확정되지 않는 답답함, 관계가 앞으로 나아가지 않는 느낌과 관련될 수 있습니다. 취업 준비생에게는 면접 결과나 연락 대기 상태가 반영될 수 있습니다.</p></div>
+<div class="section"><h2>긍정적인 의미</h2><p>택시가 계속 안 오는 꿈은 답답하지만 긍정적으로 보면 내가 목적지를 알고 있다는 뜻입니다. 어디로 가야 할지 모르는 꿈이 아니라, 가고 싶은 곳은 분명한데 이동 수단이 늦어지고 있는 꿈입니다.</p><p>꿈속에서 결국 택시가 도착했다면 현실에서도 늦어졌던 도움이나 답변이 도착할 가능성이 있습니다. 중요한 것은 기다림 속에서도 대체 계획을 준비하는 것입니다.</p></div>
+<div class="section"><h2>마무리 해석</h2><p>택시를 불렀는데 계속 안 오는 꿈은 기다림, 기회 지연, 도움 부족, 타이밍 불안에 대한 꿈입니다. 오늘은 기다리는 일의 진행 상황을 확인하고, 동시에 다른 방법도 함께 준비해보세요. 기다림은 막힘이 아니라 다음 이동을 위한 준비 과정일 수 있습니다.</p></div>
+
+
+
+<div class="section"><h2>택시가 안 오는 꿈을 더 깊게 보는 포인트</h2>
+<p>이 꿈에서 가장 중요한 부분은 택시가 오지 않았다는 결과보다, 내가 그 상황에서 어떤 감정을 느꼈는지입니다. 초조하고 화가 났다면 현실에서 기다림에 대한 피로가 많이 쌓여 있다는 뜻이고, 불안해서 계속 휴대폰 화면만 확인했다면 실제로도 누군가의 연락이나 답변에 마음이 묶여 있을 가능성이 큽니다.</p>
+<p>반대로 꿈속에서 다른 방법을 찾아 움직였다면 현실에서도 문제 해결 능력이 살아 있다는 뜻입니다. 택시가 오지 않아도 다른 교통수단을 찾거나 걸어가기 시작했다면, 지금의 답답한 상황이 반드시 막힘으로 끝나지는 않는다는 의미로 볼 수 있습니다.</p>
+<p>택시가 안 오는 꿈은 특히 기다리는 사람이 있는 경우에 자주 나타납니다. 누군가가 나를 도와주길 바라고 있거나, 어떤 결정권자가 움직여주기를 기다리는 상황이라면 이 꿈은 그 기다림을 그대로 보여줍니다. 중요한 것은 기다림 자체보다 내가 너무 한 가지 방법에만 의존하고 있는지 점검하는 것입니다.</p>
+</div>
+<div class="section"><h2>직장·사업·관계에서의 세부 해석</h2>
+<p>직장에서는 상사의 승인, 프로젝트 진행, 인사 결정, 회의 일정처럼 누군가의 결정이 필요한 일이 늦어지는 상황과 연결될 수 있습니다. 나는 이미 준비가 끝났지만 결정권자가 움직이지 않아 답답한 상태일 수 있습니다.</p>
+<p>사업이나 프리랜서 상황에서는 거래처 답변, 계약 확정, 입금 일정, 견적 회신이 늦어지는 의미로 해석할 수 있습니다. 이 경우 중요한 것은 감정적으로 조급해지기보다 확인 메시지와 대체 거래처, 대체 일정까지 함께 준비하는 것입니다.</p>
+<p>관계에서는 상대의 연락을 기다리거나, 약속이 확정되지 않거나, 관계가 다음 단계로 넘어가지 않는 답답함이 반영될 수 있습니다. 상대가 오기만 기다리기보다 내가 원하는 관계의 방향을 분명히 정리하는 것이 필요합니다.</p>
+</div>
+<div class="section"><h2>오늘의 행동 가이드</h2>
+<p>이 꿈을 꿨다면 오늘은 기다리는 일을 목록으로 정리해보세요. 누구의 답을 기다리는지, 언제까지 기다릴 수 있는지, 답이 오지 않을 경우 어떤 대안이 있는지 적어보면 불안이 줄어듭니다.</p>
+<p>또한 중요한 약속이나 일정이 있다면 이동 시간을 넉넉하게 잡는 것이 좋습니다. 꿈에서 택시가 늦었다는 것은 현실에서도 타이밍에 대한 불안이 커져 있다는 신호이므로, 미리 준비하면 실제 문제를 예방할 수 있습니다.</p>
+<p>기다림은 때로 필요한 과정이지만, 무기력하게 멈춰 있는 것과는 다릅니다. 택시가 오지 않는 꿈을 꿨다면 오늘은 기다리되, 동시에 내가 선택할 수 있는 다른 길도 함께 준비해보세요.</p>
+</div>
+
+
+<div class="section"><h2>택시가 오지 않는 꿈에서 주의할 점</h2>
+<p>이 꿈은 기다림 자체보다 기다림을 통제하지 못하는 느낌이 중요합니다. 내가 할 수 있는 일은 이미 했지만, 이후의 흐름이 다른 사람이나 외부 시스템에 달려 있을 때 이런 꿈이 나타납니다. 따라서 꿈을 꾼 뒤에는 기다리는 대상을 명확히 구분하는 것이 좋습니다. 내가 바로 해결할 수 있는 일인지, 상대의 답변이 필요한 일인지, 시간이 필요한 일인지 나눠보면 불안이 줄어듭니다.</p>
+<p>또한 택시가 오지 않는 꿈은 타이밍 관리의 중요성을 알려줍니다. 현실에서도 촉박하게 움직이거나 하나의 방법에만 의존하면 작은 지연이 큰 스트레스로 이어질 수 있습니다. 오늘은 이동, 약속, 연락, 제출, 입금과 관련된 일정을 조금 넉넉하게 잡는 것이 좋습니다.</p>
+<p>꿈속에서 택시가 안 와서 화가 났다면 현실에서도 누군가에게 서운함이나 답답함이 쌓여 있을 수 있습니다. 하지만 그 감정을 바로 터뜨리기보다는 어떤 부분이 늦어지고 있는지, 내가 원하는 답이 무엇인지 먼저 정리하는 것이 더 도움이 됩니다.</p>
+</div>
+<div class="section"><h2>비슷한 꿈과의 차이</h2>
+<p>택시가 다른 길로 가는 꿈은 이미 이동을 시작했지만 방향이 잘못된 상태를 의미하는 경우가 많습니다. 반면 택시를 불렀는데 계속 안 오는 꿈은 아직 출발도 하지 못한 상태를 의미합니다. 즉 전자는 방향성의 문제이고, 후자는 시작과 도움의 지연에 더 가깝습니다.</p>
+<p>지하철을 잘못 타는 꿈은 내가 선택한 방향의 착오를 의미하지만, 택시가 안 오는 꿈은 선택 이전의 대기 상태를 의미합니다. 신호등이 계속 빨간불인 꿈과도 비슷하지만, 신호등 꿈은 사회적 규칙이나 타이밍에 막힌 느낌이 강하고 택시 꿈은 외부 도움이나 사람의 반응을 기다리는 의미가 더 강합니다.</p>
+</div>
+
+<a href="index.html" class="service-btn">지금 꿈 해몽하고 행운번호 받기</a>
+<div class="section"><h2>함께 보면 좋은 꿈해몽</h2><div class="related-links"><a href="dream-taxi.html">🚖 택시 타는 꿈</a><a href="dream-taxi-wrong-way.html">🚕 택시가 다른 길로 가는 꿈</a><a href="dream-late.html">⏰ 지각하는 꿈</a><a href="dream-red-light-never-changes.html">🚦 신호등이 계속 빨간불인 꿈</a><a href="dream-subway-wrong.html">🚇 지하철을 잘못 타는 꿈</a></div></div>
+<div class="section"><p class="notice">※ 본 내용은 전통 해몽, 일반적인 상징 해석, 심리적 관점을 함께 정리한 참고용 정보입니다. 실제 미래나 결과를 보장하는 정보는 아니며, 재미와 참고의 목적으로 활용해 주세요.</p></div>
+  <!-- ════════ 회유 섹션 시작 ════════ -->
+
+  <!-- 광고 #1: 본문 직후 -->
+  <div class="eng-ad" id="ad-slot-1">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-hocmoZxuOVv1icNx"
+      data-ad-width="320"
+      data-ad-height="100"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+
+  <!-- 행운번호 CTA -->
+  <div class="eng-cta-box">
+    <div class="eng-cta-title">🎰 이 꿈의 행운번호 받기</div>
+    <div class="eng-cta-desc">택시를 불렀는데 계속 안 오는 꿈의 기운에 맞춘<br>행운번호 5세트를 받아보세요</div>
+    <a href="index.html?dream=taxi-not-arriving" class="eng-cta-btn">✨ 무료로 행운번호 받기</a>
+  </div>
+
+  <!-- 비슷한 꿈 -->
+  <div class="eng-section">
+    <div class="eng-header">
+      <span style="font-size:18px;">🔗</span>
+      <h3 class="eng-h3">이 꿈과 비슷한 꿈</h3>
+    </div>
+    <p class="eng-sub">"택시를 불렀는데 계속 안 오는 꿈"을 본 사람들이 함께 본 꿈</p>
+    <div class="eng-related-list">
+      <a href="dream-taxi.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🚖 택시 타는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">이동 · 도움 · ⭐⭐⭐ 중길몽</div>
+      </a>
+      <a href="dream-taxi-wrong-way.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🚕 택시가 다른 길로 가는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">방향성 · 주도권 · ⭐⭐ 주의몽</div>
+      </a>
+      <a href="dream-late.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">⏰ 지각하는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">시간압박 · 책임 · ⭐⭐ 주의몽</div>
+      </a>
+      <a href="dream-red-light-never-changes.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🚦 신호등이 계속 빨간불인 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">정체 · 기다림 · ⭐⭐ 주의몽</div>
+      </a>
+      <a href="dream-subway-wrong.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🚇 지하철을 잘못 타는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">방향착오 · 선택 · ⭐⭐ 주의몽</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 광고 #2 -->
+  <div class="eng-ad" id="ad-slot-2">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-AtRUawKZBJQF2cvp"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+<!-- 공유 -->
+  <div class="eng-share">
+    <div class="eng-share-title">📤 친구에게 공유하기</div>
+    <div class="eng-share-buttons">
+      <button class="eng-share-btn kakao" onclick="if(window.shareKakao){window.shareKakao()}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))}">💬 카카오톡</button>
+      <button class="eng-share-btn copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))">🔗 링크 복사</button>
+    </div>
+  </div>
+
+  <!-- 광고 #3: 최하단 -->
+  <div class="eng-ad" id="ad-slot-3">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-xsEr1zraBjbgyH3q"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+  <!-- ════════ 회유 섹션 끝 ════════ -->
+  <footer>운영사: 에스이(SE)컴퍼니<br>꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>© 2025 꿈해몽 행운<br><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="about.html">서비스 소개</a></footer></div>
+</body>
+</html>
