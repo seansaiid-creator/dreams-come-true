@@ -528,73 +528,6 @@
   .step-item.done .step-dot { background: var(--gold); }
 
   /* ── 해몽 결과 ── */
-
-  .category-result-box {
-    display:none;
-    margin-top:12px;
-    background:rgba(255,255,255,0.035);
-    border:1px solid rgba(201,168,76,0.14);
-    border-radius:14px;
-    padding:14px;
-  }
-  .category-result-box.active { display:block; }
-  .category-result-head {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    margin-bottom:10px;
-  }
-  .category-result-title {
-    font-size:14px;
-    font-weight:700;
-    color:var(--gold-light);
-  }
-  .category-result-close {
-    border:0;
-    background:rgba(255,255,255,0.06);
-    color:var(--text-muted);
-    border-radius:999px;
-    padding:6px 10px;
-    font-size:12px;
-    cursor:pointer;
-  }
-  .category-result-list {
-    display:grid;
-    grid-template-columns:1fr;
-    gap:8px;
-  }
-  .category-result-item {
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    background:rgba(107,63,160,0.10);
-    border:1px solid rgba(107,63,160,0.18);
-    border-radius:12px;
-    padding:11px 12px;
-  }
-  .category-result-emoji { font-size:20px; flex-shrink:0; }
-  .category-result-text { flex:1; min-width:0; }
-  .category-result-name {
-    display:block;
-    color:var(--text);
-    font-size:13px;
-    font-weight:600;
-    line-height:1.35;
-  }
-  .category-result-desc {
-    display:block;
-    color:var(--text-muted);
-    font-size:11px;
-    line-height:1.35;
-    margin-top:2px;
-  }
-  .category-result-arrow {
-    color:rgba(255,255,255,0.28);
-    font-size:16px;
-  }
-
   #haemong-section { visibility:hidden; height:0; overflow:hidden; margin:0; padding:0; }
 
   .haemong-card {
@@ -1192,45 +1125,37 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
   <div class="home-section">
     <h2 class="home-section-title">📚 카테고리별 꿈해몽</h2>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px;">
-      <a href="#" class="cat-card" data-dream-category="nature" role="button" aria-label="동물·자연 꿈해몽 보기">
+      <a href="guide.html#cho-ㄱ" class="cat-card">
         <span class="cat-emoji">🐾</span>
         <span class="cat-name">동물·자연</span>
         <span class="cat-count">17개</span>
       </a>
-      <a href="#" class="cat-card" data-dream-category="money" role="button" aria-label="재물·행운 꿈해몽 보기">
+      <a href="guide.html#cho-ㄷ" class="cat-card">
         <span class="cat-emoji">💰</span>
         <span class="cat-name">재물·행운</span>
         <span class="cat-count">18개</span>
       </a>
-      <a href="#" class="cat-card" data-dream-category="anxiety" role="button" aria-label="불안·심리 꿈해몽 보기">
+      <a href="guide.html#cho-ㅇ" class="cat-card">
         <span class="cat-emoji">😰</span>
         <span class="cat-name">불안·심리</span>
         <span class="cat-count">32개</span>
       </a>
-      <a href="#" class="cat-card" data-dream-category="people" role="button" aria-label="사람·관계 꿈해몽 보기">
+      <a href="guide.html#cho-ㅇ" class="cat-card">
         <span class="cat-emoji">👥</span>
         <span class="cat-name">사람·관계</span>
         <span class="cat-count">12개</span>
       </a>
-      <a href="#" class="cat-card" data-dream-category="space" role="button" aria-label="집·공간 꿈해몽 보기">
+      <a href="guide.html#cho-ㅈ" class="cat-card">
         <span class="cat-emoji">🏠</span>
         <span class="cat-name">집·공간</span>
         <span class="cat-count">8개</span>
       </a>
-      <a href="#" class="cat-card" data-dream-category="school" role="button" aria-label="학교·시험 꿈해몽 보기">
+      <a href="guide.html#cho-ㅅ" class="cat-card">
         <span class="cat-emoji">📚</span>
         <span class="cat-name">학교·시험</span>
         <span class="cat-count">5개</span>
       </a>
     </div>
-    <div id="categoryResultBox" class="category-result-box" aria-live="polite">
-      <div class="category-result-head">
-        <div id="categoryResultTitle" class="category-result-title">카테고리 꿈해몽</div>
-        <button type="button" id="categoryResultClose" class="category-result-close">닫기</button>
-      </div>
-      <div id="categoryResultList" class="category-result-list"></div>
-    </div>
-
   </div>
 
   <div class="section-divider"></div>
@@ -1275,24 +1200,8 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
    홈 전용: 랜덤 꿈 추천
 ═══════════════════════════════════════════ */
 const randomPool = [
-  {emoji:'📞',name:'전화를 걸었는데 계속 통화중인 꿈',desc:'소통 지연과 답변 대기의 신호',url:'dream-phone-busy-signal.html'},
-  {emoji:'💰',name:'계좌 잔액을 확인했는데 0원이 된 꿈',desc:'재물 불안과 자산 점검의 신호',url:'dream-bank-balance-zero.html'},
-  {emoji:'🚕',name:'택시를 불렀는데 계속 안 오는 꿈',desc:'기다림과 기회 지연의 신호',url:'dream-taxi-not-arriving.html'},
-  {emoji:'💳',name:'결제했는데 결제가 취소되는 꿈',desc:'결과 무산과 재물 확인의 신호',url:'dream-payment-cancelled.html'},
-  {emoji:'📧',name:'중요한 메일을 보냈는데 전송이 안 되는 꿈',desc:'소통과 결과 전달 불안의 신호',url:'dream-email-not-sent.html'},
-  {emoji:'🔐',name:'휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈',desc:'인정과 접근 제한 불안의 신호',url:'dream-password-correct-but-wrong.html'},
-  {emoji:'👛',name:'계산하려는데 지갑이 없는 꿈',desc:'준비와 책임 불안의 신호',url:'dream-wallet-missing-checkout-today-grid-fixed.html'},
-  {emoji:'🏧',name:'ATM에서 돈이 안 나오는 꿈',desc:'재물 흐름과 보상 지연의 신호',url:'dream-atm-money-not-coming-out-final.html'},
-  {emoji:'🚕',name:'택시가 다른 길로 가는 꿈',desc:'방향과 주도권 불안의 신호',url:'dream-taxi-wrong-way.html'},
-  {emoji:'🧾',name:'예약했는데 내 이름이 없는 꿈',desc:'확인과 자격 불안의 신호',url:'dream-reservation-name-missing.html'},
-  {emoji:'🚇',name:'지하철 문이 닫히기 직전에 뛰어 타는 꿈',desc:'기회와 시간 압박의 신호',url:'dream-subway-door-closing.html'},
-  {emoji:'🧊',name:'냉장고 안 음식이 전부 상하는 꿈',desc:'관리와 정리 필요의 신호',url:'dream-fridge-food-spoiled.html'},
-  {emoji:'🧳',name:'가방 안 물건이 전부 사라지는 꿈',desc:'준비와 안정감 상실의 신호',url:'dream-bag-empty.html'},
-  {emoji:'🌧️',name:'우산을 쓰고 있는데 비를 다 맞는 꿈',desc:'보호와 감정 방어의 신호',url:'dream-umbrella-rain.html'},
-  {emoji:'🧤',name:'장갑 한 짝을 잃어버리는 꿈',desc:'보호와 관계 균형의 신호',url:'dream-glove-lost-one.html'},
-  {emoji:'🔋',name:'휴대폰 배터리가 계속 꺼지는 꿈',desc:'소통 피로와 에너지 고갈',url:'dream-phone-battery-dead.html'},
-  {emoji:'🪞',name:'거울 속 얼굴 흐려지는 꿈',desc:'정체성과 자기 인식의 신호',url:'dream-mirror-face-blur.html'},
-  {emoji:'🎫',name:'표를 잃어버리는 꿈',desc:'기회와 타이밍 불안',url:'dream-ticket-lost.html'},
+  {emoji:'📱',name:'휴대폰을 잃어버리는 꿈',desc:'소통과 정보 관리의 신호',url:'dream-phone-lost.html'},
+  {emoji:'👜',name:'가방을 잃어버리는 꿈',desc:'책임과 기회 관리의 신호',url:'dream-bag-lost.html'},
   {emoji:'📞',name:'부재중 전화 꿈',desc:'놓친 연락과 관계 신호',url:'dream-missed-call.html'},
   {emoji:'🧾',name:'영수증 잃어버리는 꿈',desc:'돈과 확인 부족의 신호',url:'dream-receipt-lost.html'},
   {emoji:'🏠',name:'집 리모델링 꿈',desc:'변화와 새 출발의 신호',url:'dream-house-remodeling.html'},
@@ -1338,24 +1247,8 @@ function shuffleRandom(){
 
 /* ── 검색 ── */
 const searchIndex = [
-  {name:'전화를 걸었는데 계속 통화중인 꿈',emoji:'📞',url:'dream-phone-busy-signal.html',keywords:['전화','통화중','전화연결안됨','계속통화중','전화안받음','연락안됨','통화중 신호']},
-  {name:'계좌 잔액을 확인했는데 0원이 된 꿈',emoji:'💰',url:'dream-bank-balance-zero.html',keywords:['통장','계좌','잔액','0원','잔고없음','돈없음','계좌 0원','통장 0원']},
-  {name:'택시를 불렀는데 계속 안 오는 꿈',emoji:'🚕',url:'dream-taxi-not-arriving.html',keywords:['택시','택시안옴','택시 안오는','택시기다림','택시호출','택시안잡힘','배차지연']},
-  {name:'결제했는데 결제가 취소되는 꿈',emoji:'💳',url:'dream-payment-cancelled.html',keywords:['결제','결제취소','승인취소','카드결제','결제실패','환불','온라인결제']},
-  {name:'중요한 메일을 보냈는데 전송이 안 되는 꿈',emoji:'📧',url:'dream-email-not-sent.html',keywords:['메일','이메일','전송실패','메일안감','보낸메일','이메일실패','전송 안 됨','첨부파일']},
-  {name:'휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈',emoji:'🔐',url:'dream-password-correct-but-wrong.html',keywords:['비밀번호','암호','로그인','잠금해제','인증실패','비번','맞는데 틀림','휴대폰 비밀번호']},
-  {name:'계산하려는데 지갑이 없는 꿈',emoji:'👛',url:'dream-wallet-missing-checkout-today-grid-fixed.html',keywords:['지갑','지갑없는꿈','지갑이 없는 꿈','계산','결제','계산하려는데 지갑이 없는 꿈','지갑 없음','돈 없음']},
-  {name:'ATM에서 돈이 안 나오는 꿈',emoji:'🏧',url:'dream-atm-money-not-coming-out-final.html',keywords:['ATM','atm','에이티엠','돈안나옴','돈이 안 나오는','출금안됨','출금 실패','인출 안됨','현금 안 나옴']},
-  {name:'택시가 다른 길로 가는 꿈',emoji:'🚕',url:'dream-taxi-wrong-way.html',keywords:['택시','택시꿈','택시 다른 길','택시가 다른 길','택시 돌아감','택시 기사','길 돌아가는 택시']},
-  {name:'예약했는데 내 이름이 없는 꿈',emoji:'🧾',url:'dream-reservation-name-missing.html',keywords:['예약','예약명단','이름없음','명단에 없음','예약누락']},
-  {name:'지하철 문이 닫히기 직전에 뛰어 타는 꿈',emoji:'🚇',url:'dream-subway-door-closing.html',keywords:['지하철','문닫힘','지하철문','뛰어타','닫히기직전']},
-  {name:'냉장고 안 음식이 전부 상하는 꿈',emoji:'🧊',url:'dream-fridge-food-spoiled.html',keywords:['냉장고','음식상함','상한음식','냉장고음식','음식']},
-  {name:'가방 안 물건이 전부 사라지는 꿈',emoji:'🧳',url:'dream-bag-empty.html',keywords:['가방','가방안','물건사라','소지품','가방 비어']},
-  {name:'우산을 쓰고 있는데 비를 다 맞는 꿈',emoji:'🌧️',url:'dream-umbrella-rain.html',keywords:['우산','비맞','우산새','우산 쓰고 비','비']},
-  {name:'장갑 한 짝을 잃어버리는 꿈',emoji:'🧤',url:'dream-glove-lost-one.html',keywords:['장갑','장갑한짝','장갑 잃어버','glove','보호']},
-  {name:'휴대폰 배터리가 계속 꺼지는 꿈',emoji:'🔋',url:'dream-phone-battery-dead.html',keywords:['휴대폰배터리','배터리','충전','휴대폰 꺼짐','핸드폰 배터리']},
-  {name:'거울 속 얼굴이 흐려지는 꿈',emoji:'🪞',url:'dream-mirror-face-blur.html',keywords:['거울','얼굴','흐려','흐릿','자존감','정체성']},
-  {name:'표를 잃어버리는 꿈',emoji:'🎫',url:'dream-ticket-lost.html',keywords:['표','티켓','입장권','기차표','비행기표','잃어버']},
+  {name:'휴대폰을 잃어버리는 꿈',emoji:'📱',url:'dream-phone-lost.html',keywords:['휴대폰','핸드폰','스마트폰','잃어버리','분실','휴대폰분실','핸드폰분실','연락처']},
+  {name:'가방을 잃어버리는 꿈',emoji:'👜',url:'dream-bag-lost.html',keywords:['가방','가방분실','잃어버리','도둑맞','백팩','핸드백','서류가방','짐가방']},
   {name:'부재중 전화 꿈',emoji:'📞',url:'dream-missed-call.html',keywords:['부재중','부재중전화','전화못받','missed call','연락']},
   {name:'영수증 잃어버리는 꿈',emoji:'🧾',url:'dream-receipt-lost.html',keywords:['영수증','receipt','환불','결제내역','증빙','정산']},
   {name:'비행기 꿈 해몽',emoji:'✈️',url:'dream-airplane.html',keywords:['비행기','항공','airplane','이륙','착륙']},
@@ -1492,48 +1385,16 @@ function goSearch(keyword){
    해몽 데이터베이스 (33개)
 ═══════════════════════════════════════════ */
 const dreamDB = {
-  전화통화중: {
-    keyword: '전화를 걸었는데 계속 통화중인 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '전화를 걸었는데 계속 통화중인 꿈은 누군가와 연결되고 싶지만 원하는 타이밍에 소통이 되지 않아 느끼는 연락 지연과 관계 정체 불안을 의미합니다.',
-    advice: '<strong>오늘의 조언:</strong> 기다리는 연락과 답변을 정리하고, 필요하다면 다른 방식으로 한 번 더 확인해보세요.'
+  휴대폰분실: {
+    keyword: '휴대폰을 잃어버리는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '휴대폰을 잃어버리는 꿈은 소통, 인간관계, 중요한 정보와 기회를 놓칠까 봐 느끼는 불안을 의미합니다. 중요한 연락이나 일정, 계정 정보를 다시 확인해야 하는 시기에 나타나기 쉬운 꿈입니다.',
+    advice: '<strong>오늘의 조언:</strong> 문자, 메일, 일정, 연락처, 계정 보안과 중요한 알림을 다시 확인해보세요.'
   },
-  계좌잔액제로: {
-    keyword: '계좌 잔액을 확인했는데 0원이 된 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '계좌 잔액을 확인했는데 0원이 된 꿈은 재물, 안정감, 미래 계획에 대한 불안과 자산 관리 필요성을 의미합니다.',
-    advice: '<strong>오늘의 조언:</strong> 계좌와 지출 내역, 자동이체, 카드 결제 예정액을 확인하고 불필요한 지출을 정리해보세요.'
+  가방분실: {
+    keyword: '가방을 잃어버리는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '가방을 잃어버리는 꿈은 책임, 재물, 기회, 사회적 역할을 놓칠까 봐 느끼는 불안과 삶의 우선순위 점검을 의미합니다.',
+    advice: '<strong>오늘의 조언:</strong> 중요한 물건, 일정, 결제 내역, 계약서, 해야 할 일을 다시 정리하고 놓친 부분이 없는지 확인해보세요.'
   },
-
-  택시안옴: {
-    keyword: '택시를 불렀는데 계속 안 오는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '택시를 불렀는데 계속 안 오는 꿈은 기다리던 도움이나 기회가 원하는 타이밍에 도착하지 않아 느끼는 답답함과 기회 지연 불안을 의미합니다.',
-    advice: '<strong>오늘의 조언:</strong> 기다리는 연락이나 일정의 진행 상황을 확인하고, 하나의 방법만 기다리지 말고 대체 경로도 준비해보세요.'
-  },
-  결제취소: {
-    keyword: '결제했는데 결제가 취소되는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '결제했는데 결제가 취소되는 꿈은 거의 마무리됐다고 생각한 일이 마지막 단계에서 흔들릴까 봐 느끼는 재물 흐름과 결과 확정 불안을 의미합니다.',
-    advice: '<strong>오늘의 조언:</strong> 카드 결제, 자동이체, 환불, 계약 조건, 영수증을 다시 확인하고 중요한 결정은 마지막 조건까지 점검해보세요.'
-  },
-
-  메일전송실패: {keyword: '중요한 메일을 보냈는데 전송이 안 되는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2, text: '중요한 메일을 보냈는데 전송이 안 되는 꿈은 전달하고 싶은 말이나 결과가 상대에게 제대로 닿지 않을까 봐 느끼는 소통 불안과 확인 필요성을 의미합니다.', advice: '<strong>오늘의 조언:</strong> 중요한 메일, 첨부파일, 수신자 주소, 제출 마감일을 다시 확인해보세요.'},
-  휴대폰비번오류: {keyword: '휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2, text: '휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈은 내가 맞다고 생각한 것과 외부의 인정이 어긋나며 생기는 답답함과 접근 제한 불안을 의미합니다.', advice: '<strong>오늘의 조언:</strong> 중요한 계정, 비밀번호, 인증 정보와 함께 최근 인정받고 싶었던 상황을 차분히 점검해보세요.'},
-
-  지갑없는계산: {
-    keyword: '계산하려는데 지갑이 없는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '계산하려는데 지갑이 없는 꿈은 중요한 순간에 필요한 준비가 부족할까 봐 느끼는 불안과 책임감, 체면에 대한 압박을 의미합니다. 결제 수단, 약속 비용, 책임 범위를 다시 확인해야 할 때입니다.',
-    advice: '<strong>오늘의 조언:</strong> 카드, 계좌, 자동결제, 약속 비용을 미리 확인하고 감당해야 할 책임을 현실적으로 정리해보세요.'
-  },
-
-  ATM돈안나옴: {
-    keyword: 'ATM에서 돈이 안 나오는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: 'ATM에서 돈이 안 나오는 꿈은 필요한 자금이나 보상, 결과가 기대한 순간에 나오지 않을까 봐 느끼는 불안을 의미합니다. 돈의 흐름, 정산, 환불, 입금 일정을 다시 확인해야 할 때입니다.',
-    advice: '<strong>오늘의 조언:</strong> 계좌, 카드, 자동이체, 정산 예정일, 환불 내역을 점검하고 대체 계획을 준비해보세요.'
-  },
-  택시다른길: {
-    keyword: '택시가 다른 길로 가는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '택시가 다른 길로 가는 꿈은 내가 원하는 방향과 실제 상황의 흐름이 달라지고 있다고 느끼는 불안과 주도권 문제를 의미합니다. 누군가에게 맡긴 일의 방향과 조건을 다시 확인해야 할 때입니다.',
-    advice: '<strong>오늘의 조언:</strong> 맡긴 일, 계약, 관계의 흐름이 내 목적지와 맞는지 중간 점검해보세요.'
-  },
-
 
   지갑: {
   keyword: '지갑 잃어버리는 꿈',
@@ -1734,8 +1595,8 @@ const dreamDB = {
     keyword: '무지개 꿈', luck: '⭐⭐⭐⭐⭐ 대길몽', luckScore: 5,
     text: '무지개가 뜨는 꿈은 최고의 길몽 중 하나입니다. 쌍무지개를 보는 꿈은 두 배의 행운이 찾아올 것을, 무지개 끝에 다다르는 꿈은 오랫동안 바라던 소원이 이루어질 것을 의미합니다.',
     advice: '<strong>오늘의 조언:</strong> 행운과 희망이 가득한 날입니다. 오랫동안 원해온 일에 도전해볼 최적의 타이밍입니다.'
-  },
-  부재중전화: {
+  }
+,  부재중전화: {
     keyword: '부재중 전화 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
     text: '부재중 전화 꿈은 놓친 연락, 확인하지 못한 신호, 관계 속 기다림을 의미합니다. 실제 연락보다 현재 당신이 어떤 답을 기다리고 있는지, 어떤 관계를 아직 마음속에서 정리하지 못했는지를 보여주는 꿈입니다.',
     advice: '<strong>오늘의 조언:</strong> 미뤄둔 연락과 중요한 메시지를 확인하고, 기다림에만 머물지 말고 필요한 경우 먼저 확인해보세요.'
@@ -1744,38 +1605,6 @@ const dreamDB = {
     keyword: '영수증을 잃어버리는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
     text: '영수증을 잃어버리는 꿈은 돈, 기록, 확인 부족, 선택에 대한 후회를 의미합니다. 지출이나 계약, 약속 내용을 다시 확인해야 할 시기에 나타나기 쉬운 꿈입니다.',
     advice: '<strong>오늘의 조언:</strong> 결제 내역과 중요한 기록을 정리하고, 증빙이 필요한 일은 미리 확인해두세요.'
-  },
-  거울얼굴흐림: {
-    keyword: '거울 속 얼굴이 흐려지는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '거울 속 얼굴이 흐려지는 꿈은 자기 인식, 자존감, 정체성에 대한 불안이 커졌다는 신호입니다. 주변 시선에 흔들리기보다 내 기준을 다시 세워야 하는 시기에 나타나기 쉽습니다.',
-    advice: '<strong>오늘의 조언:</strong> 남에게 어떻게 보이는지보다 내가 나를 어떻게 바라보고 있는지 점검해보세요.'
-  },
-  표분실: {
-    keyword: '표를 잃어버리는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '표를 잃어버리는 꿈은 중요한 기회, 자격, 이동, 타이밍에 대한 불안을 의미합니다. 준비한 일을 마지막 순간에 놓칠까 봐 긴장하고 있을 때 나타나기 쉽습니다.',
-    advice: '<strong>오늘의 조언:</strong> 중요한 일정, 예약, 준비물, 계약 조건을 다시 확인해보세요.'
-  },
-  장갑한짝: {
-    keyword: '장갑 한 짝을 잃어버리는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '장갑 한 짝을 잃어버리는 꿈은 보호받고 싶은 마음, 관계의 균형, 준비 부족에 대한 불안을 의미합니다. 완전히 잃은 것이 아니라 한쪽이 비어 있다는 점에서 보완과 균형 회복이 핵심입니다.',
-    advice: '<strong>오늘의 조언:</strong> 관계나 일에서 한쪽으로 치우친 부분이 없는지 확인하고, 부족한 준비를 차분히 채워보세요.'
-  },
-  폰배터리: {
-    keyword: '휴대폰 배터리가 계속 꺼지는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '휴대폰 배터리가 계속 꺼지는 꿈은 소통 피로, 에너지 고갈, 중요한 연락을 놓칠까 봐 느끼는 불안을 의미합니다. 지금은 연결보다 회복이 필요한 시기일 수 있습니다.',
-    advice: '<strong>오늘의 조언:</strong> 미뤄둔 연락과 일정을 정리하되, 불필요한 알림과 부담도 함께 줄여보세요.'
-  },
-  가방비움: {keyword: '가방 안 물건이 전부 사라지는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2, text: '가방 안 물건이 전부 사라지는 꿈은 준비해둔 것, 소유, 책임, 안정감이 흔들릴까 봐 느끼는 불안을 의미합니다.', advice: '<strong>오늘의 조언:</strong> 중요한 소지품, 결제 내역, 일정, 서류를 다시 점검해보세요.'},
-  우산비: {keyword: '우산을 쓰고 있는데 비를 다 맞는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2, text: '우산을 쓰고 있는데도 비를 다 맞는 꿈은 대비했지만 충분히 보호받지 못한다고 느끼는 심리와 감정적 피로를 의미합니다.', advice: '<strong>오늘의 조언:</strong> 혼자 모든 것을 막으려 하지 말고, 더 나은 보호 방법이나 도움을 찾아보세요.'},
-  지하철문닫힘: {
-    keyword: '지하철 문이 닫히기 직전에 뛰어 타는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '지하철 문이 닫히기 직전에 뛰어 타는 꿈은 중요한 기회와 타이밍, 시간 압박에 대한 불안을 의미합니다. 아직 기회가 남아 있지만 조급함 때문에 방향을 놓치지 않도록 주의가 필요합니다.',
-    advice: '<strong>오늘의 조언:</strong> 마감과 약속을 다시 확인하고, 빠르게 움직이되 방향과 조건을 먼저 점검해보세요.'
-  },
-  냉장고상함: {
-    keyword: '냉장고 안 음식이 전부 상하는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
-    text: '냉장고 안 음식이 전부 상하는 꿈은 관리하지 못한 자원, 방치된 감정, 생활의 정리 필요성을 의미합니다. 더 늦기 전에 미뤄둔 일과 감정을 정리해야 할 때입니다.',
-    advice: '<strong>오늘의 조언:</strong> 생활비, 냉장고, 메일함, 일정표처럼 쌓여 있는 것을 하나씩 정리해보세요.'
   },
 };
 
@@ -1786,23 +1615,9 @@ const defaultDream = {
 };
 
 const keywordMap = {
-  '통화중':'전화통화중','계속통화중':'전화통화중','전화연결안됨':'전화통화중','전화안받음':'전화통화중','연락안됨':'전화통화중','통화중 신호':'전화통화중',
-  '계좌0원':'계좌잔액제로','계좌 0원':'계좌잔액제로','통장0원':'계좌잔액제로','통장 0원':'계좌잔액제로','잔고없음':'계좌잔액제로','돈없음':'계좌잔액제로','잔액':'계좌잔액제로',
+  '휴대폰잃':'휴대폰분실','휴대폰 잃':'휴대폰분실','핸드폰잃':'휴대폰분실','핸드폰 잃':'휴대폰분실','스마트폰잃':'휴대폰분실','연락처':'휴대폰분실',
+  '가방잃':'가방분실','가방 잃':'가방분실','가방분실':'가방분실','백팩':'가방분실','핸드백':'가방분실','서류가방':'가방분실','짐가방':'가방분실',
 
-  '택시안옴':'택시안옴','택시 안오는':'택시안옴','택시기다림':'택시안옴','택시호출':'택시안옴','택시안잡힘':'택시안옴','배차지연':'택시안옴',
-  '결제취소':'결제취소','승인취소':'결제취소','결제실패':'결제취소','카드결제':'결제취소','환불':'결제취소','온라인결제':'결제취소',
-
-  '메일':'메일전송실패','이메일':'메일전송실패','전송실패':'메일전송실패','메일안감':'메일전송실패','보낸메일':'메일전송실패','첨부파일':'메일전송실패',
-  '비밀번호 맞':'휴대폰비번오류','맞는데 틀':'휴대폰비번오류','인증실패':'휴대폰비번오류','로그인':'휴대폰비번오류','잠금해제':'휴대폰비번오류','비번':'휴대폰비번오류',
-
-  '지갑':'지갑없는계산','지갑없는꿈':'지갑없는계산','지갑이 없는':'지갑없는계산','계산':'지갑없는계산','결제':'지갑없는계산','돈 없음':'지갑없는계산',
-  'ATM':'ATM돈안나옴','atm':'ATM돈안나옴','에이티엠':'ATM돈안나옴','돈안나':'ATM돈안나옴','출금':'ATM돈안나옴','인출':'ATM돈안나옴','현금 안나':'ATM돈안나옴',
-  '택시':'택시다른길','택시꿈':'택시다른길','택시다른길':'택시다른길','택시 돌아':'택시다른길','택시 기사':'택시다른길',
-  '계산':'지갑없음계산','지갑없':'지갑없음계산','지갑 없는':'지갑없음계산','카드없':'지갑없음계산','결제':'지갑없음계산','예약':'예약이름없음','예약명단':'예약이름없음','이름없':'예약이름없음','명단':'예약이름없음',
-  '지하철문':'지하철문닫힘','문닫힘':'지하철문닫힘','뛰어타':'지하철문닫힘','지하철':'지하철문닫힘','냉장고':'냉장고상함','음식상':'냉장고상함','상한음식':'냉장고상함',
-  '가방안':'가방비움','가방 물건':'가방비움','물건사라':'가방비움','소지품':'가방비움','우산':'우산비','우산새':'우산비','비맞':'우산비',
-  '장갑':'장갑한짝','장갑한짝':'장갑한짝','휴대폰배터리':'폰배터리','핸드폰배터리':'폰배터리','배터리':'폰배터리','충전':'폰배터리',
-  '거울얼굴':'거울얼굴흐림','얼굴흐려':'거울얼굴흐림','얼굴 흐려':'거울얼굴흐림','흐릿':'거울얼굴흐림','표':'표분실','티켓':'표분실','입장권':'표분실','기차표':'표분실','비행기표':'표분실',
   '부재중':'부재중전화','전화못':'부재중전화','전화 못':'부재중전화','영수증':'영수증','환불':'영수증','결제내역':'영수증',
   '이가':'이빨','이빨':'이빨','치아':'이빨',
   '죽었':'죽음','죽는':'죽음','사망':'죽음',
@@ -1847,23 +1662,9 @@ function analyzeDream(text) {
 
 function generateLucky(dreamText) {
   const dreamNumberMap = {
-    '전화통화중':[5,12,21,29,37,45],
-    '계좌잔액제로':[3,11,19,28,36,42],
+    '휴대폰분실':[7,13,22,29,37,45],
+    '가방분실':[5,12,21,30,39,44],
 
-    '택시안옴':[7,13,24,31,39,44],
-    '결제취소':[2,10,18,27,35,43],
-
-    '메일전송실패':[3,11,18,26,37,44],
-    '휴대폰비번오류':[5,14,21,29,38,42],
-
-    '지갑없는계산':[5,14,23,31,38,42],
-    'ATM돈안나옴':[2,11,20,28,36,44],
-    '택시다른길':[3,12,20,29,37,44],
-    '지갑없음계산':[2,11,20,28,36,45],'예약이름없음':[6,15,24,31,39,45],
-    '지하철문닫힘':[4,13,22,28,36,45],'냉장고상함':[1,10,19,27,35,43],
-    '가방비움':[6,14,22,31,38,45],'우산비':[7,15,23,30,39,44],
-    '장갑한짝':[3,9,18,26,34,42],'폰배터리':[5,12,21,29,37,44],
-    '거울얼굴흐림':[3,10,18,26,34,42],'표분실':[5,12,19,27,36,44],
     '부재중전화':[2,8,16,24,33,41],'영수증':[4,11,19,27,35,43],
     '돼지':[3,7,12,21,28,33],'똥':[5,9,14,23,31,41],'뱀':[2,7,13,24,32,40],
     '금':[6,12,24,33,37,44],'불':[5,15,22,29,35,43],'물':[4,8,14,26,34,40],
@@ -2269,55 +2070,4 @@ window.addEventListener('load', function() {
   }
   shuffleRandom();
 });
-
-
-/* ═══════════════════════════════════════════
-   카테고리별 꿈해몽 표시
-═══════════════════════════════════════════ */
-(function(){
-  const categoryData = {"nature": {"title": "🐾 동물·자연 꿈해몽", "items": [{"emoji": "🐷", "name": "돼지꿈", "desc": "재물운과 큰 행운", "url": "dream-pig.html"}, {"emoji": "🐍", "name": "뱀꿈", "desc": "재물·변화·직감", "url": "dream-snake.html"}, {"emoji": "🐉", "name": "용꿈", "desc": "성공과 대길몽", "url": "dream-dragon.html"}, {"emoji": "🐯", "name": "호랑이 꿈", "desc": "권력과 성취", "url": "dream-tiger.html"}, {"emoji": "🐢", "name": "거북이 꿈", "desc": "장수와 안정운", "url": "dream-turtle.html"}, {"emoji": "🐟", "name": "물고기 꿈", "desc": "재물과 기회", "url": "dream-fish.html"}, {"emoji": "🌧️", "name": "비 오는 꿈", "desc": "감정과 정화", "url": "dream-rain.html"}, {"emoji": "🌫️", "name": "안개 때문에 앞이 안 보이는 꿈", "desc": "불확실성과 방향성", "url": "dream-fog-cant-see.html"}]}, "money": {"title": "💰 재물·행운 꿈해몽", "items": [{"emoji": "💵", "name": "돈꿈 해몽", "desc": "재물 흐름과 기회", "url": "dream-money.html"}, {"emoji": "💵", "name": "돈 세는 꿈", "desc": "정리와 재물 관리", "url": "dream-count-money.html"}, {"emoji": "🥇", "name": "금꿈 해몽", "desc": "큰 재물운과 성취", "url": "dream-gold.html"}, {"emoji": "💎", "name": "보석 꿈", "desc": "가치와 행운", "url": "dream-jewel.html"}, {"emoji": "💩", "name": "똥꿈", "desc": "대표적인 재물 길몽", "url": "dream-poop.html"}, {"emoji": "🧾", "name": "영수증을 잃어버리는 꿈", "desc": "돈과 확인 부족", "url": "dream-receipt-lost.html"}, {"emoji": "🧳", "name": "가방 안 물건이 전부 사라지는 꿈", "desc": "소유와 준비 불안", "url": "dream-bag-empty.html"}]}, "anxiety": {"title": "😰 불안·심리 꿈해몽", "items": [{"emoji": "🗺️", "name": "길을 잃는 꿈", "desc": "방향성과 혼란", "url": "dream-lost-path.html"}, {"emoji": "🔐", "name": "비밀번호를 계속 틀리는 꿈", "desc": "접근 제한과 불안", "url": "dream-password-wrong.html"}, {"emoji": "📞", "name": "부재중 전화 꿈", "desc": "놓친 연락과 기다림", "url": "dream-missed-call.html"}, {"emoji": "🔋", "name": "휴대폰 배터리가 계속 꺼지는 꿈", "desc": "소통 피로와 에너지 고갈", "url": "dream-phone-battery-dead.html"}, {"emoji": "🪞", "name": "거울 속 얼굴이 흐려지는 꿈", "desc": "자기 인식과 불안", "url": "dream-mirror-face-blur.html"}, {"emoji": "🎫", "name": "표를 잃어버리는 꿈", "desc": "기회와 타이밍 불안", "url": "dream-ticket-lost.html"}, {"emoji": "🌧️", "name": "우산을 쓰고 있는데 비를 다 맞는 꿈", "desc": "보호와 감정 방어", "url": "dream-umbrella-rain.html"}, {"emoji": "⏱️", "name": "시계가 멈추는 꿈", "desc": "정체와 시간 압박", "url": "dream-clock-stopped-full.html"}]}, "people": {"title": "👥 사람·관계 꿈해몽", "items": [{"emoji": "🤝", "name": "친구 나오는 꿈", "desc": "인간관계와 소통", "url": "dream-friend.html"}, {"emoji": "💔", "name": "전남친 꿈", "desc": "미련과 관계 정리", "url": "dream-exboyfriend.html"}, {"emoji": "👨‍👩‍👧", "name": "가족 꿈", "desc": "책임감과 안정", "url": "dream-family.html"}, {"emoji": "👶", "name": "아기 꿈", "desc": "새로운 시작과 가능성", "url": "dream-baby.html"}, {"emoji": "👻", "name": "귀신 꿈", "desc": "불안과 억눌린 감정", "url": "dream-ghost.html"}, {"emoji": "📞", "name": "부재중 전화 꿈", "desc": "관계의 신호와 기다림", "url": "dream-missed-call.html"}, {"emoji": "🧤", "name": "장갑 한 짝을 잃어버리는 꿈", "desc": "관계 균형과 보호", "url": "dream-glove-lost-one.html"}]}, "space": {"title": "🏠 집·공간 꿈해몽", "items": [{"emoji": "🏠", "name": "집꿈 해몽", "desc": "생활 기반과 안정", "url": "dream-house.html"}, {"emoji": "🚪", "name": "문이 닫혀서 못 나가는 꿈", "desc": "막힘과 답답함", "url": "dream-door-closed-cant-leave.html"}, {"emoji": "🪟", "name": "창문이 깨지는 꿈", "desc": "마음의 경계와 외부 자극", "url": "dream-window-broken.html"}, {"emoji": "🪜", "name": "계단을 계속 올라가는데 끝이 없는 꿈", "desc": "압박과 목표의 부담", "url": "dream-endless-stairs.html"}, {"emoji": "🌉", "name": "다리를 건너는데 중간이 끊어진 꿈", "desc": "단절과 전환기", "url": "dream-broken-bridge.html"}, {"emoji": "🧳", "name": "가방 안 물건이 전부 사라지는 꿈", "desc": "준비와 상실 불안", "url": "dream-bag-empty.html"}]}, "school": {"title": "📚 학교·시험 꿈해몽", "items": [{"emoji": "📚", "name": "시험 꿈", "desc": "평가와 압박", "url": "dream-exam.html"}, {"emoji": "⏰", "name": "지각하는 꿈", "desc": "책임감과 시간 압박", "url": "dream-late.html"}, {"emoji": "🏫", "name": "학교 꿈", "desc": "성장과 배움", "url": "dream-school.html"}, {"emoji": "🎫", "name": "표를 잃어버리는 꿈", "desc": "자격과 기회 불안", "url": "dream-ticket-lost.html"}, {"emoji": "🔦", "name": "손전등이 켜지지 않는 꿈", "desc": "불확실성과 판단", "url": "dream-flashlight-not-working.html"}]}};
-  function initCategoryFilter(){
-    const resultBox = document.getElementById('categoryResultBox');
-    const resultTitle = document.getElementById('categoryResultTitle');
-    const resultList = document.getElementById('categoryResultList');
-    const closeBtn = document.getElementById('categoryResultClose');
-    if(!resultBox || !resultTitle || !resultList) return;
-
-    function renderCategory(categoryKey){
-      const data = categoryData[categoryKey];
-      if(!data) return;
-      resultTitle.textContent = data.title;
-      resultList.innerHTML = data.items.map(function(item){
-        return '<a class="category-result-item" href="' + item.url + '">' +
-          '<span class="category-result-emoji">' + item.emoji + '</span>' +
-          '<span class="category-result-text">' +
-            '<span class="category-result-name">' + item.name + '</span>' +
-            '<span class="category-result-desc">' + item.desc + '</span>' +
-          '</span>' +
-          '<span class="category-result-arrow">›</span>' +
-        '</a>';
-      }).join('');
-      resultBox.classList.add('active');
-      resultBox.scrollIntoView({behavior:'smooth', block:'nearest'});
-    }
-
-    document.querySelectorAll('[data-dream-category]').forEach(function(card){
-      card.addEventListener('click', function(e){
-        e.preventDefault();
-        renderCategory(card.getAttribute('data-dream-category'));
-      });
-    });
-
-    if(closeBtn){
-      closeBtn.addEventListener('click', function(){ resultBox.classList.remove('active'); });
-    }
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', initCategoryFilter);
-  } else {
-    initCategoryFilter();
-  }
-})();
-
 </script>
