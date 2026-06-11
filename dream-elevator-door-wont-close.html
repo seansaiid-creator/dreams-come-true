@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="robots" content="index, follow">
+<meta name="author" content="꿈해몽 행운">
+<meta name="google-site-verification" content="Mh56q-_VUPEPcyYz_cU3XBqcKlt_4Oko0K9wU4pYpwk">
+<meta name="naver-site-verification" content="4b2fdca80f29813464ca9bd36997671928a7eacb">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MCNS7P3XVT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-MCNS7P3XVT');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>:root { --gold:#C9A84C; --gold-light:#F0D080; --gold-dark:#8B6914; --deep:#0D0A1A; --purple:#6B3FA0; --purple-light:#9B6FD0; --text:#F0EAD6; --text-muted:#A09080; --card:rgba(255,255,255,0.04); --border:rgba(201,168,76,0.15);}*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;} html,body{width:100%;overflow-x:hidden;}body{background:var(--deep);color:var(--text);font-family:'Pretendard',sans-serif;min-height:100vh;}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 20% 20%, rgba(107,63,160,0.15) 0%, transparent 50%),radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);}.nav{position:sticky;top:0;z-index:100;background:rgba(13,10,26,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 16px;}.nav-inner{max-width:480px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;}.nav-logo{font-family:'Nanum Myeongjo',serif;font-size:16px;font-weight:800;color:var(--gold);text-decoration:none;}.nav-links{display:flex;gap:4px;}.nav-link{padding:6px 10px;font-size:12px;color:var(--text-muted);text-decoration:none;border-radius:8px;white-space:nowrap;}.nav-link.active{color:var(--gold);background:rgba(201,168,76,0.1);}.container{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 16px 80px;}.hero{text-align:center;padding:36px 0 24px;}.hero-emoji{font-size:60px;display:block;margin-bottom:16px;}.hero h1{font-family:'Nanum Myeongjo',serif;font-size:28px;font-weight:800;color:var(--gold);line-height:1.4;margin-bottom:12px;text-shadow:0 0 30px rgba(201,168,76,0.4);}.hero p{font-size:14px;line-height:1.85;color:var(--text);opacity:0.92;max-width:420px;margin:0 auto;}.hero-badge{display:inline-flex;align-items:center;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:6px 16px;font-size:13px;color:var(--gold-light);margin-top:16px;}.section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;}.section h2{font-family:'Nanum Myeongjo',serif;font-size:18px;color:var(--gold-light);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);}.section h3{font-size:14px;color:var(--text);margin:14px 0 8px;font-weight:700;}.section p{font-size:13px;color:var(--text);opacity:0.92;line-height:1.9;margin-bottom:10px;}.service-btn{display:block;width:100%;margin-top:12px;text-decoration:none;text-align:center;background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));color:var(--deep);border-radius:14px;padding:14px;font-family:'Nanum Myeongjo',serif;font-size:17px;font-weight:700;}.related-links{display:grid;gap:8px;}.related-links a{display:block;text-decoration:none;color:var(--purple-light);background:rgba(107,63,160,0.16);border:1px solid rgba(107,63,160,0.24);border-radius:12px;padding:12px 14px;font-size:13px;}.notice{font-size:12px;color:var(--text-muted)!important;}footer{text-align:center;padding:28px 0 16px;font-size:11px;color:rgba(255,255,255,0.15);line-height:2;}footer a{color:rgba(255,255,255,0.25);text-decoration:none;margin:0 8px;padding:8px 4px;display:inline-block;}
+    .eng-ad {
+      width: 100%;
+      background: rgba(201,168,76,0.05);
+      border: 1px dashed rgba(201,168,76,0.25);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      font-size: 11px;
+      color: #A09080;
+      margin: 24px 0;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 4px;
+      box-sizing: border-box;
+    }
+    .eng-ad-label { font-size: 10px; opacity: 0.7; }
+    .eng-cta-box {
+      background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(107,63,160,0.18));
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .eng-cta-title { font-size: 16px; font-weight: 700; color: #F0D080; margin-bottom: 6px; }
+    .eng-cta-desc { font-size: 13px; color: #C9A084; margin-bottom: 14px; line-height: 1.6; }
+    .eng-cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #C9A84C, #F0D080);
+      color: #0D0A1A;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .eng-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .eng-h3 { font-size: 17px; font-weight: 700; color: #C9A84C; margin: 0; }
+    .eng-sub { font-size: 12px; color: #A09080; margin: 0 0 14px 0; }
+    .eng-section { margin: 28px 0 0; }
+    .eng-related-list { display: flex; flex-direction: column; gap: 8px; }
+    .eng-related-item {
+      display: block;
+      background: rgba(107,63,160,0.15);
+      border-left: 3px solid #9B6FD0;
+      border-radius: 8px;
+      padding: 13px 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .eng-related-item:hover { background: rgba(107,63,160,0.25); }
+    .eng-related-row { display: flex; align-items: center; justify-content: space-between; }
+    .eng-related-name { font-size: 14px; font-weight: 500; color: #F0EAD6; }
+    .eng-related-arrow { color: #9B6FD0; font-size: 14px; }
+    .eng-related-meta { font-size: 11px; color: #A09080; margin-top: 4px; }
+    .eng-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    @media (min-width: 600px) { .eng-grid { grid-template-columns: repeat(4, 1fr); } }
+    .eng-card {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 12px;
+      padding: 16px 10px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .eng-card:hover { transform: translateY(-2px); border-color: rgba(201,168,76,0.55); }
+    .eng-card-icon { font-size: 28px; margin-bottom: 6px; }
+    .eng-card-title { font-size: 13px; font-weight: 600; color: #F0EAD6; margin-bottom: 4px; }
+    .eng-card-score { font-size: 10px; color: #F0D080; }
+    .eng-share {
+      background: rgba(107,63,160,0.12);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .eng-share-title { font-size: 13px; color: #F0EAD6; margin-bottom: 10px; }
+    .eng-share-buttons { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .eng-share-btn {
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .eng-share-btn.kakao { background: #FEE500; color: #000; }
+    .eng-share-btn.copy {
+      background: rgba(255,255,255,0.1);
+      color: #F0EAD6;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+</style>
+
+<title>엘리베이터 문이 계속 닫히지 않는 꿈 해몽 총정리 (+결정 지연, 출발 지연, 준비 부족 의미)</title>
+<meta name="description" content="엘리베이터 문이 계속 닫히지 않는 꿈의 의미를 상황별로 정리했습니다. 결정 지연, 출발 지연, 준비 부족까지 확인해보세요.">
+<meta name="keywords" content="엘리베이터 문 안 닫히는 꿈, 엘리베이터 문 꿈, 엘리베이터 고장 꿈, 결정 지연 꿈, 이동 꿈해몽">
+<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-elevator-door-wont-close.html">
+<meta property="og:title" content="엘리베이터 문이 계속 닫히지 않는 꿈 해몽 총정리 (+결정 지연, 출발 지연, 준비 부족 의미)">
+<meta property="og:description" content="엘리베이터 문이 계속 닫히지 않는 꿈의 의미를 상황별로 정리했습니다. 결정 지연, 출발 지연, 준비 부족까지 확인해보세요.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://dreams-come-true-ten.vercel.app/dream-elevator-door-wont-close.html">
+<meta property="og:locale" content="ko_KR">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-logo">🌙 꿈해몽 행운</a><div class="nav-links"><a href="index.html" class="nav-link">해몽하기</a><a href="guide.html" class="nav-link active">해몽가이드</a><a href="about.html" class="nav-link">소개</a></div></div></nav>
+<div class="container">
+  <!-- 상단 배너 광고 (페이지 진입 즉시 노출) -->
+  <div class="eng-ad" id="ad-slot-top" style="margin: 12px 0 20px; min-height: 64px;">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-mEWbnds31xgI1VZG"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+
+  <div class="hero"><span class="hero-emoji">🛗</span><h1>엘리베이터 문이 계속 닫히지 않는 꿈 해몽 진짜 의미</h1><p>엘리베이터 문이 계속 닫히지 않는 꿈은 다음 단계로 이동하려는 마음과 마지막 결정이 지연되는 불안을 보여주는 꿈입니다.</p><div class="hero-badge">결정 지연 · 출발 전 점검 · 준비 해석</div></div>
+
+<div class="section"><h2>엘리베이터 문이 계속 닫히지 않는 꿈의 기본 의미</h2><p>엘리베이터 문이 계속 닫히지 않는 꿈은 현실에서 출발해야 할 일이 있는데 마지막 준비나 결정이 끝나지 않아 앞으로 나아가지 못하고 있다는 심리를 보여주는 꿈입니다. 엘리베이터는 꿈에서 이동, 상승, 하강, 환경 변화, 단계 전환을 의미합니다. 문은 시작과 마무리, 경계, 선택의 확정을 상징합니다.</p><p>따라서 엘리베이터 문이 계속 닫히지 않는 꿈은 이동할 준비는 되었지만 아직 완전히 출발하지 못한 상태를 의미합니다. 이미 엘리베이터 안에 들어가 있다는 것은 변화의 흐름 안에 들어와 있다는 뜻입니다. 하지만 문이 닫히지 않아 움직이지 못한다는 것은 현실에서도 어떤 일이 시작되기 직전 마지막 확인이나 결정이 지연되고 있다는 의미로 볼 수 있습니다.</p><p>이 꿈은 이직, 프로젝트 시작, 계약, 관계 변화, 이사, 여행, 시험, 발표처럼 실제로 다음 단계로 넘어가야 하는 일이 있을 때 자주 나타납니다. 문이 열려 있어 답답하거나 불안했다면 준비가 끝나지 않았다는 압박이 크고, 오히려 편안했다면 아직 조금 더 시간을 갖고 싶다는 마음이 반영된 것일 수 있습니다.</p></div>
+<div class="section"><h2>상황별 해석</h2><h3>1. 엘리베이터에 탔는데 문이 계속 닫히지 않는 꿈</h3><p>새로운 단계로 이동할 준비는 되었지만 마지막 확정이 늦어지는 상태를 의미합니다. 마음은 이미 움직였지만 현실 조건이 아직 정리되지 않았을 수 있습니다.</p><h3>2. 문이 닫히려다가 다시 열리는 꿈</h3><p>결정이 반복해서 미뤄지는 상황을 의미합니다. 시작하려고 할 때마다 새로운 변수나 확인할 일이 생기고 있을 수 있습니다.</p><h3>3. 누군가 계속 타려고 해서 문이 안 닫히는 꿈</h3><p>타인의 개입이나 주변 상황 때문에 내 계획이 지연되고 있다는 의미입니다. 가족, 동료, 상사, 관계자의 의견이 영향을 줄 수 있습니다.</p><h3>4. 엘리베이터 문이 고장 나서 닫히지 않는 꿈</h3><p>내 의지보다 시스템이나 환경 문제로 일이 진행되지 않는다는 뜻입니다. 회사, 계약, 일정, 외부 조건의 지연과 연결될 수 있습니다.</p><h3>5. 문이 열려 있어 불안한 꿈</h3><p>개인적인 영역이나 계획이 외부에 노출되는 것에 대한 불안을 의미합니다. 아직 준비되지 않은 상태에서 평가받을까 봐 걱정하고 있을 수 있습니다.</p><h3>6. 닫힘 버튼을 눌러도 문이 안 닫히는 꿈</h3><p>내가 아무리 서두르려 해도 현실의 속도가 따라주지 않는 상태입니다. 통제할 수 없는 부분을 억지로 밀어붙이고 있을 수 있습니다.</p><h3>7. 문이 안 닫혀 엘리베이터가 움직이지 않는 꿈</h3><p>시작 직전의 정체를 의미합니다. 목표는 있지만 실행 단계에서 막혀 있다는 뜻입니다.</p><h3>8. 문이 안 닫혀 사람들이 쳐다보는 꿈</h3><p>타인의 시선과 평가에 대한 부담을 의미합니다. 일이 지연되는 것보다 지연되는 모습을 남들이 보는 것이 더 신경 쓰이는 상태일 수 있습니다.</p><h3>9. 문이 닫히지 않다가 결국 닫히는 꿈</h3><p>지연되던 일이 결국 시작될 가능성을 의미합니다. 시간이 조금 필요하지만 흐름은 다시 움직일 수 있습니다.</p><h3>10. 문이 닫히지 않아 엘리베이터에서 내리는 꿈</h3><p>현재 선택을 잠시 보류하거나 다른 방법을 찾고 싶은 마음을 의미합니다. 꼭 실패가 아니라 방향 전환의 신호일 수 있습니다.</p></div>
+<div class="section"><h2>재물운 관점에서 보는 해석</h2><p>엘리베이터 문이 계속 닫히지 않는 꿈은 재물운에서 돈의 흐름이 완전히 막힌다기보다 진행 직전의 지연을 의미합니다. 계약금, 정산, 결제, 투자, 매출, 승인처럼 시작되거나 확정되어야 할 일이 마지막 단계에서 조금 늦어질 수 있습니다.</p><p>특히 엘리베이터가 올라가야 하는데 문이 닫히지 않았다면 재물 상승 흐름이 준비 중이지만 아직 조건이 완성되지 않았다는 뜻입니다. 반대로 내려가야 하는 상황에서 문이 안 닫혔다면 불필요한 지출이나 손실을 막기 위해 잠시 멈추라는 신호로도 볼 수 있습니다.</p><p>이 꿈을 꿨다면 오늘은 계약 조건, 결제 일정, 정산 자료, 자동이체, 투자 계획을 다시 확인하는 것이 좋습니다. 문이 닫혀야 엘리베이터가 움직이듯, 작은 확인이 끝나야 재물 흐름도 안정적으로 움직일 수 있습니다.</p></div>
+<div class="section"><h2>연애운과 인간관계 해석</h2><p>연애에서 엘리베이터 문이 계속 닫히지 않는 꿈은 관계가 다음 단계로 넘어가야 하는데 아직 확정되지 않은 상태를 의미합니다. 고백, 재회, 결혼, 관계 정리처럼 중요한 전환점 앞에서 망설임이 생길 때 나타날 수 있습니다.</p><p>문이 닫히지 않아 계속 열린 상태였다면 두 사람의 관계에 외부 시선이나 주변 사람의 개입이 영향을 주고 있을 수 있습니다. 둘만의 결정을 내려야 하는데 가족, 친구, 상황, 거리감 같은 요소가 끼어들고 있을 수 있습니다.</p><p>이 꿈은 관계가 끝난다는 뜻보다 아직 대화와 조율이 필요하다는 뜻입니다. 문이 닫히고 엘리베이터가 움직였다면 관계의 방향이 정리될 가능성이 있습니다.</p></div>
+<div class="section"><h2>직장운과 사업운 해석</h2><p>직장에서는 이 꿈이 프로젝트 시작 지연, 결재 대기, 인사 이동 보류, 업무 승인 지연과 관련될 수 있습니다. 준비는 되었지만 마지막 확인이나 의사결정이 늦어지는 상황을 의미합니다.</p><p>문이 계속 열려 있는 장면은 업무가 아직 외부 평가나 검토 단계에 있다는 뜻일 수 있습니다. 확정된 줄 알았던 일이 다시 검토되거나, 새로운 담당자가 끼어들면서 진행이 늦어질 수 있습니다.</p><p>사업자나 프리랜서라면 계약 체결, 견적 확정, 입금 전 단계, 플랫폼 승인, 고객 최종 확인과 연결될 수 있습니다. 이 꿈을 꿨다면 시작을 재촉하기보다 빠진 조건이 없는지 확인하는 것이 좋습니다.</p></div>
+<div class="section"><h2>심리학적 해석</h2><p>심리적으로 이 꿈은 시작하고 싶은 마음과 아직 준비되지 않았다는 불안이 동시에 존재하는 상태를 보여줍니다. 엘리베이터에 탔다는 것은 변화하고 싶은 마음이 있다는 뜻입니다. 하지만 문이 닫히지 않는다는 것은 아직 마음 한쪽에서 출발을 막고 있다는 의미일 수 있습니다.</p><p>닫힘 버튼을 계속 눌러도 문이 닫히지 않았다면 현실에서 내가 통제할 수 없는 것을 통제하려 하고 있다는 신호입니다. 모든 조건이 완벽하게 맞아야 시작할 수 있다고 느끼는 사람에게도 이런 꿈이 자주 나타납니다.</p><p>또한 문이 열린 상태는 노출감과 취약함을 의미합니다. 아직 준비가 덜 된 나의 모습이 남들에게 보일까 봐 두려운 마음이 꿈으로 나타날 수 있습니다.</p></div>
+<div class="section"><h2>이 꿈을 꿨다면</h2><p>엘리베이터 문이 계속 닫히지 않는 꿈을 꿨다면 오늘은 시작하려는 일의 마지막 조건을 점검해보는 것이 좋습니다. 이미 큰 준비는 끝났지만 작은 확인이 남아 있을 수 있습니다.</p><p>업무라면 결재 라인, 일정, 자료, 담당자를 확인하고, 금전 문제라면 정산일과 계약 조건을 살펴보세요. 관계 문제라면 상대와의 대화가 충분히 끝났는지 돌아보는 것이 좋습니다.</p><p>또한 모든 것을 완벽하게 만든 뒤 출발하려는 마음이 오히려 진행을 막고 있지는 않은지도 확인해보세요. 때로는 문이 닫히기를 기다리기보다, 왜 닫히지 않는지 원인을 차분히 보는 것이 더 중요합니다.</p></div>
+<div class="section"><h2>긍정적인 의미와 마무리</h2><p>엘리베이터 문이 계속 닫히지 않는 꿈은 답답하지만 긍정적으로 보면 아직 출발 전 점검 시간이 남아 있다는 뜻입니다. 이미 변화의 공간 안에 들어와 있기 때문에, 완전히 멈춘 것이 아니라 준비 단계에 있는 꿈입니다.</p><p>문이 결국 닫혔다면 지연되던 일이 시작될 가능성이 높고, 엘리베이터에서 내렸다면 다른 선택지나 방향 전환을 고민해볼 수 있습니다. 어느 쪽이든 이 꿈은 실패보다 준비와 조율의 의미가 강합니다.</p><p>결국 이 꿈은 결정 지연, 출발 전 점검, 다음 단계로 넘어가기 전의 불안을 보여줍니다. 오늘은 조급함보다 빠진 조건을 확인하고, 내가 정말 원하는 방향으로 움직일 준비가 되었는지 돌아보세요.</p></div>
+
+
+<div class="section"><h2>이 꿈에서 특히 중요한 해석 포인트</h2><p>엘리베이터 문이 계속 닫히지 않는 꿈에서 가장 중요한 것은 엘리베이터가 올라가려 했는지, 내려가려 했는지, 또는 층수가 보였는지입니다. 올라가려는 상황이었다면 승진, 성장, 목표 달성, 새로운 기회와 관련된 지연을 의미할 수 있습니다. 내려가려는 상황이었다면 부담을 줄이거나 현실적인 문제를 정리하려는 과정에서 아직 결정이 끝나지 않았다는 뜻일 수 있습니다.</p><p>문이 닫히지 않는 원인도 중요합니다. 사람이 계속 타고 내려서 문이 닫히지 않았다면 주변 사람의 요구나 의견 때문에 내 계획이 지연되는 상황을 의미합니다. 기계 고장처럼 보였다면 외부 시스템이나 조직 문제로 진행이 늦어지는 상태일 수 있습니다. 내가 버튼을 눌러도 반응이 없었다면 통제할 수 없는 부분을 억지로 조절하려는 심리가 반영된 것입니다.</p><p>꿈속에서 불안했는지, 짜증이 났는지, 혹은 오히려 안심했는지도 해석에 영향을 줍니다. 불안했다면 시작해야 하는데 못 하고 있다는 압박이 크고, 짜증이 났다면 반복되는 지연에 대한 현실적 피로가 큽니다. 안심했다면 아직 출발하고 싶지 않은 마음, 즉 준비 시간을 더 갖고 싶은 심리가 숨어 있을 수 있습니다.</p></div>
+<div class="section"><h2>반복해서 이 꿈을 꾸는 경우</h2><p>엘리베이터 문이 계속 닫히지 않는 꿈이 반복된다면 현실에서 시작 직전의 일이 계속 미뤄지고 있을 가능성이 큽니다. 이직을 마음먹었지만 지원을 미루고 있거나, 프로젝트를 시작해야 하는데 결재가 나지 않거나, 관계를 정리하거나 발전시켜야 하는데 대화가 끝나지 않은 상황일 수 있습니다.</p><p>반복되는 꿈은 단순한 불안보다 패턴을 보여줍니다. 매번 문이 닫히지 않는다면 내가 계속 같은 이유로 출발하지 못하고 있다는 뜻입니다. 그 이유가 외부 조건인지, 다른 사람의 개입인지, 내 마음의 망설임인지 구분해야 합니다.</p><p>이 꿈이 반복될 때는 큰 결정을 무작정 밀어붙이기보다 ‘닫히지 않는 문’이 무엇인지 찾는 것이 중요합니다. 확인하지 않은 조건, 끝내지 않은 대화, 정리하지 않은 자료, 미뤄둔 결재가 있다면 그것이 바로 현실의 열린 문일 수 있습니다.</p></div>
+<div class="section"><h2>길몽과 주의몽으로 나누어 보는 해석</h2><p>이 꿈은 기본적으로 지연과 점검을 뜻하는 주의몽에 가깝지만, 문이 결국 닫히고 엘리베이터가 움직였다면 긍정적인 의미가 강합니다. 늦어지던 일이 결국 시작되고, 답답했던 상황이 정리될 가능성이 있습니다.</p><p>문이 끝까지 닫히지 않았다면 현재는 아직 출발 조건이 완성되지 않았다는 뜻입니다. 그러나 이것도 실패를 의미하지는 않습니다. 오히려 지금 출발하면 놓칠 수 있는 부분을 미리 확인하라는 신호일 수 있습니다.</p><p>엘리베이터에서 내리는 꿈은 포기라기보다 방향 전환의 의미가 될 수 있습니다. 지금 선택한 방식이 맞지 않다면 다른 길을 찾는 것도 좋은 선택입니다. 중요한 것은 멈춰 있는 이유를 정확히 아는 것입니다.</p></div>
+
+<a href="index.html?dream=elevator-door-wont-close" class="service-btn">지금 꿈 해몽하고 행운번호 받기</a>
+<div class="section"><h2>함께 보면 좋은 꿈해몽</h2><div class="related-links"><a href="dream-elevator-stuck.html">🛗 엘리베이터 멈추는 꿈</a><a href="dream-elevator-ride.html">🛗 엘리베이터를 타는 꿈</a><a href="dream-elevator-falling.html">🛗 엘리베이터가 추락하는 꿈</a><a href="dream-door-not-open-final.html">🚪 문이 안 열리는 꿈</a><a href="dream-door-closed-cant-leave.html">🚪 문이 닫혀서 못 나가는 꿈</a></div></div>
+<div class="section"><p class="notice">※ 본 내용은 전통 해몽, 일반적인 상징 해석, 심리적 관점을 함께 정리한 참고용 정보입니다. 실제 미래나 결과를 보장하는 정보는 아니며, 재미와 참고의 목적으로 활용해 주세요.</p></div>
+  <!-- ════════ 회유 섹션 시작 ════════ -->
+
+  <!-- 광고 #1: 본문 직후 -->
+  <div class="eng-ad" id="ad-slot-1">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-hocmoZxuOVv1icNx"
+      data-ad-width="320"
+      data-ad-height="100"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+
+  <!-- 행운번호 CTA -->
+  <div class="eng-cta-box">
+    <div class="eng-cta-title">🎰 이 꿈의 행운번호 받기</div>
+    <div class="eng-cta-desc">엘리베이터 문이 계속 닫히지 않는 꿈의 기운에 맞춘<br>행운번호 5세트를 받아보세요</div>
+    <a href="index.html?dream=elevator-door-wont-close" class="eng-cta-btn">✨ 무료로 행운번호 받기</a>
+  </div>
+
+  <!-- 비슷한 꿈 -->
+  <div class="eng-section">
+    <div class="eng-header">
+      <span style="font-size:18px;">🔗</span>
+      <h3 class="eng-h3">이 꿈과 비슷한 꿈</h3>
+    </div>
+    <p class="eng-sub">"엘리베이터 문이 계속 닫히지 않는 꿈"을 본 사람들이 함께 본 꿈</p>
+    <div class="eng-related-list">
+      <a href="dream-elevator-stuck.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🛗 엘리베이터 멈추는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">정체 · 막힘 · ⭐⭐ 주의몽</div>
+      </a>
+      <a href="dream-elevator-ride.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🛗 엘리베이터를 타는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">이동 · 변화 · ⭐⭐⭐ 중길몽</div>
+      </a>
+      <a href="dream-elevator-falling.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🛗 엘리베이터가 추락하는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">급변 · 불안 · ⭐⭐ 주의몽</div>
+      </a>
+      <a href="dream-door-not-open-final.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🚪 문이 안 열리는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">기회차단 · 확인 · ⭐⭐ 주의몽</div>
+      </a>
+      <a href="dream-door-closed-cant-leave.html" class="eng-related-item">
+        <div class="eng-related-row">
+          <span class="eng-related-name">🚪 문이 닫혀서 못 나가는 꿈</span>
+          <span class="eng-related-arrow">→</span>
+        </div>
+        <div class="eng-related-meta">제한 · 답답함 · ⭐⭐ 주의몽</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 광고 #2 -->
+  <div class="eng-ad" id="ad-slot-2">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-AtRUawKZBJQF2cvp"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+<!-- 공유 -->
+  <div class="eng-share">
+    <div class="eng-share-title">📤 친구에게 공유하기</div>
+    <div class="eng-share-buttons">
+      <button class="eng-share-btn kakao" onclick="if(window.shareKakao){window.shareKakao()}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))}">💬 카카오톡</button>
+      <button class="eng-share-btn copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))">🔗 링크 복사</button>
+    </div>
+  </div>
+
+  <!-- 광고 #3: 최하단 -->
+  <div class="eng-ad" id="ad-slot-3">
+    <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit="DAN-xsEr1zraBjbgyH3q"
+      data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+  </div>
+  <!-- ════════ 회유 섹션 끝 ════════ -->
+  <footer>운영사: 에스이(SE)컴퍼니<br>꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>© 2025 꿈해몽 행운<br><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="about.html">서비스 소개</a></footer></div>
+</body>
+</html>
