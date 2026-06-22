@@ -1200,6 +1200,8 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
    홈 전용: 랜덤 꿈 추천
 ═══════════════════════════════════════════ */
 const randomPool = [
+  {emoji:'💳',name:'카드를 분명 긁었는데 결제가 안 되는 꿈',desc:'재물 흐름과 승인 지연의 신호',url:'dream-card-payment-fail.html'},
+  {emoji:'🚗',name:'주차한 차를 찾을 수 없는 꿈',desc:'목표와 방향 재정비의 신호',url:'dream-parked-car-lost.html'},
   {emoji:'💻',name:'컴퓨터 파일을 저장했는데 모두 사라지는 꿈',desc:'노력과 성과 보존 점검의 신호',url:'dream-computer-file-disappears.html'},
   {emoji:'📊',name:'발표 직전 자료가 전부 빈 화면으로 나오는 꿈',desc:'평가 불안과 자신감 점검의 신호',url:'dream-presentation-blank-screen.html'},
   {emoji:'🎫',name:'공연 티켓을 샀는데 좌석이 없는 꿈',desc:'자리와 인정 욕구 점검의 신호',url:'dream-concert-seat-missing.html'},
@@ -1251,6 +1253,9 @@ function shuffleRandom(){
 
 /* ── 검색 ── */
 const searchIndex = [
+  {name:'카드를 분명 긁었는데 결제가 안 되는 꿈',emoji:'💳',url:'dream-card-payment-fail.html',keywords:['카드','결제','결제가안돼','결제실패','승인거절','카드결제','긁었는데']},
+  {name:'주차한 차를 찾을 수 없는 꿈',emoji:'🚗',url:'dream-parked-car-lost.html',keywords:['주차','차를못찾','자동차','차','주차장','차찾기','차분실']},
+  {name:'하늘나는꿈 해몽',emoji:'🕊️',url:'dream-fly.html',keywords:['하늘나는꿈','하늘','나는꿈','날아오르는','비행']},
   {name:'컴퓨터 파일을 저장했는데 모두 사라지는 꿈',emoji:'💻',url:'dream-computer-file-disappears.html',keywords:['컴퓨터','파일','저장','사라짐','데이터','자료','백업','삭제','파일사라짐']},
   {name:'발표 직전 자료가 전부 빈 화면으로 나오는 꿈',emoji:'📊',url:'dream-presentation-blank-screen.html',keywords:['발표','자료','빈화면','프레젠테이션','슬라이드','PPT','평가','발표자료']},
   {name:'공연 티켓을 샀는데 좌석이 없는 꿈',emoji:'🎫',url:'dream-concert-seat-missing.html',keywords:['공연','티켓','좌석','자리없','좌석없','공연장','예약자리','티켓좌석']},
@@ -1393,6 +1398,17 @@ function goSearch(keyword){
    해몽 데이터베이스 (33개)
 ═══════════════════════════════════════════ */
 const dreamDB = {
+  카드결제실패: {
+    keyword: '카드를 분명 긁었는데 결제가 안 되는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '카드를 분명 긁었는데 결제가 안 되는 꿈은 실행하려는 일이 마지막 승인 단계에서 막히거나 재물 흐름과 계약 조건을 다시 확인해야 함을 의미합니다.',
+    advice: '<strong>오늘의 조언:</strong> 카드 결제 내역, 자동이체, 계약 조건, 승인 상태를 다시 확인하고 중요한 지출은 서두르지 마세요.'
+  },
+  주차한차분실: {
+    keyword: '주차한 차를 찾을 수 없는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '주차한 차를 찾을 수 없는 꿈은 현재 목표와 방향이 흐려져 있거나 다시 출발하기 전 내 위치와 우선순위를 점검해야 함을 의미합니다.',
+    advice: '<strong>오늘의 조언:</strong> 진행 중인 일과 미뤄둔 결정을 정리하고, 지금 내가 어디에 멈춰 있는지 차분히 확인해보세요.'
+  },
+
   컴퓨터파일사라짐: {
     keyword: '컴퓨터 파일을 저장했는데 모두 사라지는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
     text: '컴퓨터 파일을 저장했는데 모두 사라지는 꿈은 내가 쌓아온 노력과 결과가 사라질까 봐 느끼는 성과 불안과 확인 필요성을 의미합니다.',
@@ -1645,6 +1661,9 @@ const defaultDream = {
 };
 
 const keywordMap = {
+  '카드결제':'카드결제실패','결제실패':'카드결제실패','결제가안':'카드결제실패','승인거절':'카드결제실패','긁었는데':'카드결제실패',
+  '주차한차':'주차한차분실','차를못찾':'주차한차분실','주차장':'주차한차분실','자동차못찾':'주차한차분실','차분실':'주차한차분실',
+
   '컴퓨터파일':'컴퓨터파일사라짐','파일사라':'컴퓨터파일사라짐','저장했는데':'컴퓨터파일사라짐','데이터':'컴퓨터파일사라짐','백업':'컴퓨터파일사라짐','삭제':'컴퓨터파일사라짐',
   '발표자료':'발표빈화면','빈화면':'발표빈화면','프레젠테이션':'발표빈화면','슬라이드':'발표빈화면','PPT':'발표빈화면','발표':'발표빈화면',
 
@@ -1698,6 +1717,9 @@ function analyzeDream(text) {
 
 function generateLucky(dreamText) {
   const dreamNumberMap = {
+    '카드결제실패':[3,11,20,28,36,44],
+    '주차한차분실':[5,13,21,29,37,43],
+
     '컴퓨터파일사라짐':[4,12,19,27,34,42],
     '발표빈화면':[6,14,22,30,38,45],
 
