@@ -1200,6 +1200,8 @@ function showCopyGuide(){var old=document.getElementById('copy-guide-popup');if(
    홈 전용: 랜덤 꿈 추천
 ═══════════════════════════════════════════ */
 const randomPool = [
+  {emoji:'📦',name:'택배를 열었는데 내가 주문한 물건이 아닌 꿈',desc:'기대와 현실 차이 점검의 신호',url:'dream-package-wrong-item.html'},
+  {emoji:'⏰',name:'알람을 여러 개 맞췄는데 모두 울리지 않는 꿈',desc:'타이밍과 책임감 점검의 신호',url:'dream-alarm-not-ringing.html'},
   {emoji:'💳',name:'카드를 분명 긁었는데 결제가 안 되는 꿈',desc:'재물 흐름과 승인 지연의 신호',url:'dream-card-payment-fail.html'},
   {emoji:'🚗',name:'주차한 차를 찾을 수 없는 꿈',desc:'목표와 방향 재정비의 신호',url:'dream-parked-car-lost.html'},
   {emoji:'💻',name:'컴퓨터 파일을 저장했는데 모두 사라지는 꿈',desc:'노력과 성과 보존 점검의 신호',url:'dream-computer-file-disappears.html'},
@@ -1253,6 +1255,8 @@ function shuffleRandom(){
 
 /* ── 검색 ── */
 const searchIndex = [
+  {name:'택배를 열었는데 내가 주문한 물건이 아닌 꿈',emoji:'📦',url:'dream-package-wrong-item.html',keywords:['택배','잘못배송','주문한물건','다른물건','오배송','택배상자','주문','배송오류']},
+  {name:'알람을 여러 개 맞췄는데 모두 울리지 않는 꿈',emoji:'⏰',url:'dream-alarm-not-ringing.html',keywords:['알람','알람안울림','알람이안울려','늦잠','지각','타이밍','깨우기','알림']},
   {name:'카드를 분명 긁었는데 결제가 안 되는 꿈',emoji:'💳',url:'dream-card-payment-fail.html',keywords:['카드','결제','결제가안돼','결제실패','승인거절','카드결제','긁었는데']},
   {name:'주차한 차를 찾을 수 없는 꿈',emoji:'🚗',url:'dream-parked-car-lost.html',keywords:['주차','차를못찾','자동차','차','주차장','차찾기','차분실']},
   {name:'하늘나는꿈 해몽',emoji:'🕊️',url:'dream-fly.html',keywords:['하늘나는꿈','하늘','나는꿈','날아오르는','비행']},
@@ -1398,6 +1402,17 @@ function goSearch(keyword){
    해몽 데이터베이스 (33개)
 ═══════════════════════════════════════════ */
 const dreamDB = {
+  택배오배송: {
+    keyword: '택배를 열었는데 내가 주문한 물건이 아닌 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '택배를 열었는데 내가 주문한 물건이 아닌 꿈은 기대했던 결과와 실제로 받게 되는 결과 사이의 차이, 계약이나 약속 내용 확인이 필요함을 의미합니다.',
+    advice: '<strong>오늘의 조언:</strong> 주문 내역, 계약 조건, 요청 사항, 배송 정보처럼 결과와 연결된 기록을 다시 확인해보세요.'
+  },
+  알람미작동: {
+    keyword: '알람을 여러 개 맞췄는데 모두 울리지 않는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
+    text: '알람을 여러 개 맞췄는데 모두 울리지 않는 꿈은 중요한 기회나 타이밍을 놓칠까 봐 느끼는 책임감과 시간 압박을 의미합니다.',
+    advice: '<strong>오늘의 조언:</strong> 알람 설정, 일정표, 마감 시간, 준비물을 다시 확인하고 중요한 일정은 한 가지 방법에만 의존하지 마세요.'
+  },
+
   카드결제실패: {
     keyword: '카드를 분명 긁었는데 결제가 안 되는 꿈', luck: '⭐⭐ 주의몽', luckScore: 2,
     text: '카드를 분명 긁었는데 결제가 안 되는 꿈은 실행하려는 일이 마지막 승인 단계에서 막히거나 재물 흐름과 계약 조건을 다시 확인해야 함을 의미합니다.',
@@ -1661,6 +1676,9 @@ const defaultDream = {
 };
 
 const keywordMap = {
+  '택배오배송':'택배오배송','잘못배송':'택배오배송','주문한물건':'택배오배송','다른물건':'택배오배송','오배송':'택배오배송','택배상자':'택배오배송',
+  '알람안':'알람미작동','알람이안':'알람미작동','알람울리지':'알람미작동','알람':'알람미작동','늦잠':'알람미작동','깨우':'알람미작동',
+
   '카드결제':'카드결제실패','결제실패':'카드결제실패','결제가안':'카드결제실패','승인거절':'카드결제실패','긁었는데':'카드결제실패',
   '주차한차':'주차한차분실','차를못찾':'주차한차분실','주차장':'주차한차분실','자동차못찾':'주차한차분실','차분실':'주차한차분실',
 
@@ -1717,6 +1735,9 @@ function analyzeDream(text) {
 
 function generateLucky(dreamText) {
   const dreamNumberMap = {
+    '택배오배송':[4,12,18,26,33,41],
+    '알람미작동':[2,9,17,24,32,40],
+
     '카드결제실패':[3,11,20,28,36,44],
     '주차한차분실':[5,13,21,29,37,43],
 
