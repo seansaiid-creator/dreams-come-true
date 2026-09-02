@@ -28,6 +28,16 @@ const draft = queue.filter(e=>e.approved===false).length;
 if (ready===0 && draft===0) warns.push('발행 큐 완전 소진 — 초안 생산 필요');
 else if (ready<=2) warns.push(`검수 완료 큐 잔량 ${ready}건 (초안 ${draft}건 검수 대기)`);
 
+// 3-b. AdFit 재삽입 감시 (OPERATIONS.md §4 확정: 제거 상태 유지)
+let adfit = 0;
+for (const f of files) if (/<ins[^>]*kakao_ad_area/.test(readFileSync(f,'utf8'))) adfit++;
+if (adfit) problems.push(`AdFit 광고가 ${adfit}개 파일에 재삽입됨 — 제거 정책 위반`);
+
+// 3-c. 구 도메인 잔존 감시
+let olddom = 0;
+for (const f of files) if (readFileSync(f,'utf8').includes('dreams-come-true-ten.vercel.app')) olddom++;
+if (olddom) problems.push(`구 도메인 참조가 ${olddom}개 파일에 잔존`);
+
 // 4. 오늘의 꿈 신선도 (배포 후 유효)
 const idx = readFileSync('index.html','utf8');
 const dm = idx.match(/<!--TODAY_DATE-->([^<]*)</);

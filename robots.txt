@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dreams-come-true-ten.vercel.app/sitemap.xml
+Sitemap: https://suksuki.com/sitemap.xml

@@ -284,6 +284,17 @@
       "source": "/index_ad_optimized.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "dreams-come-true-ten.vercel.app"
+        }
+      ],
+      "destination": "https://suksuki.com/:path*",
+      "permanent": true
     }
   ]
 }
