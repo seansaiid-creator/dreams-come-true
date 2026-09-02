@@ -62,19 +62,29 @@ eq('1955 UTC+8:30+DST', c.normalizeToKST(1955,6,15,12,0).h + ':' + c.normalizeTo
 eq('1987 DST만', c.normalizeToKST(1987,7,15,12,0).h, 11);
 eq('2000 보정없음', c.normalizeToKST(2000,6,15,12,0).h, 12);
 
+console.log('\n═══ 7. KASI(한국천문연구원) 공식값 대조 ═══');
+/* 2026-09-02 astro.kasi.re.kr /life/solc 에서 직접 조회한 공식 데이터.
+   주의: KASI의 '월건(LUNC_WLGN)'은 음력 달의 간지이며, 사주 월주(절기 기준)와 다른 개념이라 대조 대상에서 제외.
+   대조 항목 = 율리우스적일 / 연주 / 일주(일간이 여기서 나오므로 가장 중요). */
+const KASI = [
+  { d: [1990, 3, 5],   jd: 2447956, year: '경오', day: '기사' },
+  { d: [2000, 1, 15],  jd: 2451559, year: '기묘', day: '임신' },
+  { d: [1955, 6, 15],  jd: 2435274, year: '을미', day: '정미' },
+  { d: [1987, 7, 15],  jd: 2446992, year: '정묘', day: '을축' },
+  { d: [1988, 8, 20],  jd: 2447394, year: '무진', day: '정미' },
+  { d: [2010, 12, 22], jd: 2455553, year: '경인', day: '병오' },
+  { d: [1975, 11, 11], jd: 2442728, year: '을묘', day: '신유' },
+  { d: [2001, 5, 5],   jd: 2452035, year: '신사', day: '무진' },
+];
+for (const k of KASI) {
+  const [y, m, d] = k.d;
+  eq(`${y}-${m}-${d} 율리우스적일`, c.toJDN(y, m, d), k.jd);
+  const r = c.calcSaju({ y, m, d, h: 12, mi: 0 });
+  eq(`${y}-${m}-${d} 연주`, r.pillars.year.name, k.year);
+  eq(`${y}-${m}-${d} 일주`, r.pillars.day.name, k.day);
+}
+console.log(`  → KASI 대조 ${KASI.length * 3}건 확인`);
+
 console.log(`\n═══ 결과: ${pass}건 통과 / ${fail}건 실패 ═══`);
 
-console.log(`
-═══ KASI 대조용 케이스 (운영자 확인 필요) ═══
-아래 결과를 한국천문연구원 음양력 변환(astro.kasi.re.kr) 또는 공인 만세력과 대조하세요.`);
-const cases = [
-  [1990, 3, 5, 14, 30], [1975, 11, 11, 6, 0], [1988, 8, 20, 23, 30],
-  [2001, 5, 5, 3, 15], [1966, 1, 20, 18, 40], [1955, 6, 15, 12, 0],
-  [2010, 12, 22, 0, 30], [1999, 2, 4, 4, 0],
-];
-for (const [y,m,d,h,mi] of cases) {
-  const r = c.calcSaju({ y, m, d, h, mi });
-  const p = r.pillars;
-  console.log(`  ${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')} ${String(h).padStart(2,'0')}:${String(mi).padStart(2,'0')}  →  ${p.year.hanja} ${p.month.hanja} ${p.day.hanja} ${p.hour?p.hour.hanja:'??'}`);
-}
 process.exit(fail ? 1 : 0);
