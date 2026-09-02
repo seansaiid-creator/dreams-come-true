@@ -1,0 +1,26 @@
+name: daily-today-rotation
+on:
+  schedule:
+    - cron: '30 19 * * *'   # KST 04:30 (지연 허용)
+  workflow_dispatch: {}      # 수동 실행 버튼
+permissions:
+  contents: write
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Rotate today's dreams
+        run: node scripts/rotate-today.mjs
+      - name: Commit & push if changed
+        run: |
+          if git diff --quiet; then
+            echo "no change"; exit 0
+          fi
+          git config user.name "dream-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html sitemap.xml
+          git commit -m "chore: 오늘의 꿈 회전 $(TZ=Asia/Seoul date +%F)"
+          git push

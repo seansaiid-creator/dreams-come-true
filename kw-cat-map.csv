@@ -1,0 +1,140 @@
+slug,kw,cat
+airplane,비행기 꿈,change
+airport-gate-lost,비행기 탑승구를 찾지 못하는 꿈,loss
+alarm-not-ringing,알람을 여러 개 맞췄는데 모두 울리지 않는 꿈,blocked
+ancestor,조상꿈,people
+atm-money-not-coming-out-final,ATM에서 돈이 안 나오는 꿈,money
+baby,아기꿈,people
+bag-empty,가방 안 물건이 전부 사라지는 꿈,loss
+bag-lost,가방을 잃어버리는 꿈,loss
+bank-balance-zero,계좌 잔액을 확인했는데 0원이 된 꿈,money
+bear,곰꿈,animal
+blackpig,검은 돼지 꿈,animal
+breaking-things,물건을 깨뜨리는 꿈,blocked
+breakup,이별 꿈,people
+broken-bridge,다리를 건너는데 중간이 끊어진 꿈,blocked
+building,집 짓는 꿈,change
+bus-missed,버스를 놓치는 꿈,blocked
+cant-wake-up-after-alarm,알람이 울렸는데 계속 못 일어나는 꿈,blocked
+card-payment-fail,카드를 분명 긁었는데 결제가 안 되는 꿈,money
+card-payment-failed,카드를 꽂았는데 결제가 계속 실패하는 꿈,money
+chased,쫓기는 꿈,blocked
+clock-stopped-full,시계가 멈추는 꿈,blocked
+computer-file-disappears,컴퓨터 파일을 저장했는데 모두 사라지는 꿈,loss
+concert-seat-missing,공연 티켓을 샀는데 좌석이 없는 꿈,loss
+count-money,돈 세는 꿈,money
+death,죽는 꿈,people
+delivery-not-coming,택배를 기다리는데 오지 않는 꿈,blocked
+door-blocked-full,문이 막혀 못 나가는 꿈,blocked
+door-closed-cant-leave,문이 닫혀서 못 나가는 꿈,blocked
+door-not-open-final,문이 안 열리는 꿈,blocked
+dragon,용꿈,animal
+drowning,물에 빠지는 꿈,body
+eating,음식 먹는 꿈,body
+elevator-door-wont-close,엘리베이터 문이 계속 닫히지 않는 꿈,blocked
+elevator-falling,엘리베이터가 추락하는 꿈,blocked
+elevator-ride,엘리베이터를 타는 꿈,blocked
+elevator-stuck,엘리베이터 멈추는 꿈,blocked
+email-not-sent,중요한 메일을 보냈는데 전송이 안 되는 꿈,blocked
+email-send-failed,중요한 이메일을 보냈는데 전송 실패가 뜨는 꿈,blocked
+endless-stairs,계단을 계속 올라가는데 끝이 없는 꿈,blocked
+escaping,도망치는 꿈,blocked
+exam,시험꿈,blocked
+examfail,시험 떨어지는 꿈,change
+exboyfriend,전남친 꿈,people
+falling,떨어지는 꿈,body
+familydeath,가족 죽는 꿈,people
+fighting,누군가와 싸우는 꿈,people
+fire-dream,불이 나는 꿈,nature
+fire,불꿈,nature
+fish,물고기꿈,animal
+flashlight-not-working,손전등이 켜지지 않는 꿈,blocked
+flying,날아다니는 꿈,change
+fog-cant-see,안개 때문에 앞이 안 보이는 꿈,nature
+fridge-food-spoiled,냉장고 안 음식이 전부 상하는 꿈,blocked
+friend-dying,친구가 죽는 꿈,people
+friend,친구 나오는 꿈,people
+ghost-chased,귀신에게 쫓기는 꿈,people
+ghost,귀신꿈,people
+glove-lost-one,장갑 한 짝을 잃어버리는 꿈,loss
+gold,금꿈 황금꿈,money
+golden,황금 꿈,money
+goldpickup,금 줍는 꿈,money
+helped,누군가 도와주는 꿈,people
+hitting-someone,타인을 때리는 꿈,people
+house-remodeling,집 리모델링 꿈,change
+house,집꿈,change
+interview,면접 보는 꿈,blocked
+jewel,보석 꿈,money
+key-lost,열쇠를 잃어버리는 꿈,loss
+late,지각하는 꿈,blocked
+losing-money-final,돈을 잃어버리는 꿈,money
+lost-path,길을 잃는 꿈,loss
+lottery,복권꿈,money
+lotterywin,복권 당첨 꿈,money
+love,연애 꿈,people
+mirror-face-blur,거울 속 얼굴이 흐려지는 꿈,blocked
+mirror,거울을 보는 꿈,blocked
+missed-call,부재중 전화 꿈,people
+money-disappears-account,통장에 돈이 들어왔는데 바로 사라지는 꿈,money
+money-friend,친구와 함께 돈 줍는 꿈,money
+money-lost,돈 줍다가 잃어버리는 꿈,money
+money,돈꿈,money
+moneypickup,돈 줍는 꿈,money
+moving,이사 가는 꿈,change
+nightmare,악몽을 꾸는 꿈,body
+package-wrong-item,택배를 열었는데 내가 주문한 물건이 아닌 꿈,blocked
+parked-car-lost,주차한 차를 찾을 수 없는 꿈,loss
+password-correct-but-wrong,휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈,blocked
+password-wrong,비밀번호를 계속 틀리는 꿈,blocked
+payment-cancelled,결제했는데 결제가 취소되는 꿈,money
+phone-battery-dead,휴대폰 배터리가 계속 꺼지는 꿈,blocked
+phone-battery-drain,휴대폰 배터리가 100%였는데 갑자기 1%가 되는 꿈,blocked
+phone-broken,휴대폰 깨지는 꿈,blocked
+phone-busy-signal,전화를 걸었는데 계속 통화중인 꿈,people
+phone-lost,휴대폰을 잃어버리는 꿈,loss
+phone-no-voice,전화를 했는데 상대방 목소리가 들리지 않는 꿈,people
+pig-lotto,돼지꿈,animal
+pig-seo,돼지꿈,animal
+pig,돼지꿈,animal
+piglet,새끼돼지꿈,animal
+poop,똥꿈,body
+pregnant,임신꿈,people
+presentation-blank-screen,발표 직전 자료가 전부 빈 화면으로 나오는 꿈,blocked
+rain,비 오는 꿈,nature
+rainbow,무지개꿈,nature
+receipt-lost,영수증을 잃어버리는 꿈,money
+receiving-money,돈을 받는 꿈,money
+red-light-never-changes,신호등이 계속 빨간불인 꿈,blocked
+repeating-path,계속 같은 길을 반복해서 걷는 꿈,blocked
+reservation-name-missing,예약했는데 내 이름이 없는 꿈,loss
+shoes-lost,신발 잃어버리는 꿈,loss
+shoes-slipping,신발 구두가 벗겨지는 꿈,change
+shoes-wet,신발이 젖는 꿈,change
+shopping-cart-empty,장바구니에 담아둔 물건이 모두 사라지는 꿈,loss
+sky,별꿈 달꿈,nature
+snake,뱀꿈,animal
+snakebite,뱀에 물리는 꿈,change
+snow,눈 오는 꿈,nature
+stair,계단 꿈,blocked
+stairs-slipping,계단에서 미끄러지는 꿈,change
+subway-door-closing,지하철 문이 닫히기 직전에 뛰어 타는 꿈,blocked
+subway-wrong,지하철을 잘못 타는 꿈,blocked
+sun,태양꿈,nature
+taxi-not-arriving,택시를 불렀는데 계속 안 오는 꿈,blocked
+taxi-wrong-way,택시가 다른 길로 가는 꿈,blocked
+taxi,택시 타는 꿈,blocked
+ticket-lost,표를 잃어버리는 꿈,loss
+tiger,호랑이꿈,animal
+toilet-cant-find,화장실을 찾지 못하는 꿈,blocked
+tooth,이빨 빠지는 꿈,body
+train-door-not-open,내릴 역인데 문이 안 열리는 꿈,blocked
+turtle,거북이꿈,animal
+umbrella-rain,우산을 쓰고 있는데 비를 다 맞는 꿈,nature
+wallet-lost,지갑 잃어버리는 꿈,money
+wallet-missing-checkout-today-grid-fixed,계산하려는데 지갑이 없는 꿈,money
+water-immersion,물속에 들어가는 꿈,nature
+water,물꿈,nature
+wedding,결혼꿈,people
+whitesnake,흰뱀꿈,animal
+window-broken,창문이 깨지는 꿈,blocked

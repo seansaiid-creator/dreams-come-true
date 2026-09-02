@@ -1,0 +1,842 @@
+[
+ {
+  "slug": "airplane",
+  "kw": "비행기 꿈",
+  "cat": "change",
+  "emoji": "✈️"
+ },
+ {
+  "slug": "airport-gate-lost",
+  "kw": "비행기 탑승구를 찾지 못하는 꿈",
+  "cat": "loss",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "alarm-not-ringing",
+  "kw": "알람을 여러 개 맞췄는데 모두 울리지 않는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "ancestor",
+  "kw": "조상꿈",
+  "cat": "people",
+  "emoji": "👴"
+ },
+ {
+  "slug": "atm-money-not-coming-out-final",
+  "kw": "ATM에서 돈이 안 나오는 꿈",
+  "cat": "money",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "baby",
+  "kw": "아기꿈",
+  "cat": "people",
+  "emoji": "👶"
+ },
+ {
+  "slug": "bag-empty",
+  "kw": "가방 안 물건이 전부 사라지는 꿈",
+  "cat": "loss",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "bag-lost",
+  "kw": "가방을 잃어버리는 꿈",
+  "cat": "loss",
+  "emoji": "👜"
+ },
+ {
+  "slug": "bank-balance-zero",
+  "kw": "계좌 잔액을 확인했는데 0원이 된 꿈",
+  "cat": "money",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "bear",
+  "kw": "곰꿈",
+  "cat": "animal",
+  "emoji": "🐻"
+ },
+ {
+  "slug": "blackpig",
+  "kw": "검은 돼지 꿈",
+  "cat": "animal",
+  "emoji": "🖤"
+ },
+ {
+  "slug": "breaking-things",
+  "kw": "물건을 깨뜨리는 꿈",
+  "cat": "blocked",
+  "emoji": "💥"
+ },
+ {
+  "slug": "breakup",
+  "kw": "이별 꿈",
+  "cat": "people",
+  "emoji": "💔"
+ },
+ {
+  "slug": "broken-bridge",
+  "kw": "다리를 건너는데 중간이 끊어진 꿈",
+  "cat": "blocked",
+  "emoji": "🌉"
+ },
+ {
+  "slug": "building",
+  "kw": "집 짓는 꿈",
+  "cat": "change",
+  "emoji": "🏗️"
+ },
+ {
+  "slug": "bus-missed",
+  "kw": "버스를 놓치는 꿈",
+  "cat": "blocked",
+  "emoji": "🚌"
+ },
+ {
+  "slug": "cant-wake-up-after-alarm",
+  "kw": "알람이 울렸는데 계속 못 일어나는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "card-payment-fail",
+  "kw": "카드를 분명 긁었는데 결제가 안 되는 꿈",
+  "cat": "money",
+  "emoji": "💳"
+ },
+ {
+  "slug": "card-payment-failed",
+  "kw": "카드를 꽂았는데 결제가 계속 실패하는 꿈",
+  "cat": "money",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "chased",
+  "kw": "쫓기는 꿈",
+  "cat": "blocked",
+  "emoji": "🏃"
+ },
+ {
+  "slug": "clock-stopped-full",
+  "kw": "시계가 멈추는 꿈",
+  "cat": "blocked",
+  "emoji": "⏱️"
+ },
+ {
+  "slug": "computer-file-disappears",
+  "kw": "컴퓨터 파일을 저장했는데 모두 사라지는 꿈",
+  "cat": "loss",
+  "emoji": "💻"
+ },
+ {
+  "slug": "concert-seat-missing",
+  "kw": "공연 티켓을 샀는데 좌석이 없는 꿈",
+  "cat": "loss",
+  "emoji": "🎫"
+ },
+ {
+  "slug": "count-money",
+  "kw": "돈 세는 꿈",
+  "cat": "money",
+  "emoji": "💵"
+ },
+ {
+  "slug": "death",
+  "kw": "죽는 꿈",
+  "cat": "people",
+  "emoji": "💀"
+ },
+ {
+  "slug": "delivery-not-coming",
+  "kw": "택배를 기다리는데 오지 않는 꿈",
+  "cat": "blocked",
+  "emoji": "📦"
+ },
+ {
+  "slug": "door-blocked-full",
+  "kw": "문이 막혀 못 나가는 꿈",
+  "cat": "blocked",
+  "emoji": "🚪"
+ },
+ {
+  "slug": "door-closed-cant-leave",
+  "kw": "문이 닫혀서 못 나가는 꿈",
+  "cat": "blocked",
+  "emoji": "🚪"
+ },
+ {
+  "slug": "door-not-open-final",
+  "kw": "문이 안 열리는 꿈",
+  "cat": "blocked",
+  "emoji": "🚪"
+ },
+ {
+  "slug": "dragon",
+  "kw": "용꿈",
+  "cat": "animal",
+  "emoji": "🐉"
+ },
+ {
+  "slug": "drowning",
+  "kw": "물에 빠지는 꿈",
+  "cat": "body",
+  "emoji": "🌊"
+ },
+ {
+  "slug": "eating",
+  "kw": "음식 먹는 꿈",
+  "cat": "body",
+  "emoji": "🍽️"
+ },
+ {
+  "slug": "elevator-door-wont-close",
+  "kw": "엘리베이터 문이 계속 닫히지 않는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "elevator-falling",
+  "kw": "엘리베이터가 추락하는 꿈",
+  "cat": "blocked",
+  "emoji": "🛗"
+ },
+ {
+  "slug": "elevator-ride",
+  "kw": "엘리베이터를 타는 꿈",
+  "cat": "blocked",
+  "emoji": "🛗"
+ },
+ {
+  "slug": "elevator-stuck",
+  "kw": "엘리베이터 멈추는 꿈",
+  "cat": "blocked",
+  "emoji": "🛗"
+ },
+ {
+  "slug": "email-not-sent",
+  "kw": "중요한 메일을 보냈는데 전송이 안 되는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "email-send-failed",
+  "kw": "중요한 이메일을 보냈는데 전송 실패가 뜨는 꿈",
+  "cat": "blocked",
+  "emoji": "📧"
+ },
+ {
+  "slug": "endless-stairs",
+  "kw": "계단을 계속 올라가는데 끝이 없는 꿈",
+  "cat": "blocked",
+  "emoji": "🪜"
+ },
+ {
+  "slug": "escaping",
+  "kw": "도망치는 꿈",
+  "cat": "blocked",
+  "emoji": "🏃"
+ },
+ {
+  "slug": "exam",
+  "kw": "시험꿈",
+  "cat": "blocked",
+  "emoji": "📝"
+ },
+ {
+  "slug": "examfail",
+  "kw": "시험 떨어지는 꿈",
+  "cat": "change",
+  "emoji": "📉"
+ },
+ {
+  "slug": "exboyfriend",
+  "kw": "전남친 꿈",
+  "cat": "people",
+  "emoji": "💔"
+ },
+ {
+  "slug": "falling",
+  "kw": "떨어지는 꿈",
+  "cat": "body",
+  "emoji": "🏔️"
+ },
+ {
+  "slug": "familydeath",
+  "kw": "가족 죽는 꿈",
+  "cat": "people",
+  "emoji": "👨‍👩‍👧"
+ },
+ {
+  "slug": "fighting",
+  "kw": "누군가와 싸우는 꿈",
+  "cat": "people",
+  "emoji": "👊"
+ },
+ {
+  "slug": "fire-dream",
+  "kw": "불이 나는 꿈",
+  "cat": "nature",
+  "emoji": "🔥"
+ },
+ {
+  "slug": "fire",
+  "kw": "불꿈",
+  "cat": "nature",
+  "emoji": "🔥"
+ },
+ {
+  "slug": "fish",
+  "kw": "물고기꿈",
+  "cat": "animal",
+  "emoji": "🐟"
+ },
+ {
+  "slug": "flashlight-not-working",
+  "kw": "손전등이 켜지지 않는 꿈",
+  "cat": "blocked",
+  "emoji": "🔦"
+ },
+ {
+  "slug": "flying",
+  "kw": "날아다니는 꿈",
+  "cat": "change",
+  "emoji": "🕊️"
+ },
+ {
+  "slug": "fog-cant-see",
+  "kw": "안개 때문에 앞이 안 보이는 꿈",
+  "cat": "nature",
+  "emoji": "🌫️"
+ },
+ {
+  "slug": "fridge-food-spoiled",
+  "kw": "냉장고 안 음식이 전부 상하는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "friend-dying",
+  "kw": "친구가 죽는 꿈",
+  "cat": "people",
+  "emoji": "👫"
+ },
+ {
+  "slug": "friend",
+  "kw": "친구 나오는 꿈",
+  "cat": "people",
+  "emoji": "🤝"
+ },
+ {
+  "slug": "ghost-chased",
+  "kw": "귀신에게 쫓기는 꿈",
+  "cat": "people",
+  "emoji": "👻"
+ },
+ {
+  "slug": "ghost",
+  "kw": "귀신꿈",
+  "cat": "people",
+  "emoji": "👻"
+ },
+ {
+  "slug": "glove-lost-one",
+  "kw": "장갑 한 짝을 잃어버리는 꿈",
+  "cat": "loss",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "gold",
+  "kw": "금꿈 황금꿈",
+  "cat": "money",
+  "emoji": "🥇"
+ },
+ {
+  "slug": "golden",
+  "kw": "황금 꿈",
+  "cat": "money",
+  "emoji": "✨"
+ },
+ {
+  "slug": "goldpickup",
+  "kw": "금 줍는 꿈",
+  "cat": "money",
+  "emoji": "💰"
+ },
+ {
+  "slug": "helped",
+  "kw": "누군가 도와주는 꿈",
+  "cat": "people",
+  "emoji": "🤝"
+ },
+ {
+  "slug": "hitting-someone",
+  "kw": "타인을 때리는 꿈",
+  "cat": "people",
+  "emoji": "👊"
+ },
+ {
+  "slug": "house-remodeling",
+  "kw": "집 리모델링 꿈",
+  "cat": "change",
+  "emoji": "🏠"
+ },
+ {
+  "slug": "house",
+  "kw": "집꿈",
+  "cat": "change",
+  "emoji": "🏠"
+ },
+ {
+  "slug": "interview",
+  "kw": "면접 보는 꿈",
+  "cat": "blocked",
+  "emoji": "📋"
+ },
+ {
+  "slug": "jewel",
+  "kw": "보석 꿈",
+  "cat": "money",
+  "emoji": "💎"
+ },
+ {
+  "slug": "key-lost",
+  "kw": "열쇠를 잃어버리는 꿈",
+  "cat": "loss",
+  "emoji": "🔑"
+ },
+ {
+  "slug": "late",
+  "kw": "지각하는 꿈",
+  "cat": "blocked",
+  "emoji": "⏰"
+ },
+ {
+  "slug": "losing-money-final",
+  "kw": "돈을 잃어버리는 꿈",
+  "cat": "money",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "lost-path",
+  "kw": "길을 잃는 꿈",
+  "cat": "loss",
+  "emoji": "🗺️"
+ },
+ {
+  "slug": "lottery",
+  "kw": "복권꿈",
+  "cat": "money",
+  "emoji": "🎟️"
+ },
+ {
+  "slug": "lotterywin",
+  "kw": "복권 당첨 꿈",
+  "cat": "money",
+  "emoji": "🎉"
+ },
+ {
+  "slug": "love",
+  "kw": "연애 꿈",
+  "cat": "people",
+  "emoji": "💕"
+ },
+ {
+  "slug": "mirror-face-blur",
+  "kw": "거울 속 얼굴이 흐려지는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "mirror",
+  "kw": "거울을 보는 꿈",
+  "cat": "blocked",
+  "emoji": "🪞"
+ },
+ {
+  "slug": "missed-call",
+  "kw": "부재중 전화 꿈",
+  "cat": "people",
+  "emoji": "📞"
+ },
+ {
+  "slug": "money-disappears-account",
+  "kw": "통장에 돈이 들어왔는데 바로 사라지는 꿈",
+  "cat": "money",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "money-friend",
+  "kw": "친구와 함께 돈 줍는 꿈",
+  "cat": "money",
+  "emoji": "💵"
+ },
+ {
+  "slug": "money-lost",
+  "kw": "돈 줍다가 잃어버리는 꿈",
+  "cat": "money",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "money",
+  "kw": "돈꿈",
+  "cat": "money",
+  "emoji": "💰"
+ },
+ {
+  "slug": "moneypickup",
+  "kw": "돈 줍는 꿈",
+  "cat": "money",
+  "emoji": "💸"
+ },
+ {
+  "slug": "moving",
+  "kw": "이사 가는 꿈",
+  "cat": "change",
+  "emoji": "🏠"
+ },
+ {
+  "slug": "nightmare",
+  "kw": "악몽을 꾸는 꿈",
+  "cat": "body",
+  "emoji": "😱"
+ },
+ {
+  "slug": "package-wrong-item",
+  "kw": "택배를 열었는데 내가 주문한 물건이 아닌 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "parked-car-lost",
+  "kw": "주차한 차를 찾을 수 없는 꿈",
+  "cat": "loss",
+  "emoji": "🚗"
+ },
+ {
+  "slug": "password-correct-but-wrong",
+  "kw": "휴대폰 비밀번호를 맞게 입력했는데 계속 틀렸다고 나오는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "password-wrong",
+  "kw": "비밀번호를 계속 틀리는 꿈",
+  "cat": "blocked",
+  "emoji": "🔐"
+ },
+ {
+  "slug": "payment-cancelled",
+  "kw": "결제했는데 결제가 취소되는 꿈",
+  "cat": "money",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "phone-battery-dead",
+  "kw": "휴대폰 배터리가 계속 꺼지는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "phone-battery-drain",
+  "kw": "휴대폰 배터리가 100%였는데 갑자기 1%가 되는 꿈",
+  "cat": "blocked",
+  "emoji": "🔋"
+ },
+ {
+  "slug": "phone-broken",
+  "kw": "휴대폰 깨지는 꿈",
+  "cat": "blocked",
+  "emoji": "📱"
+ },
+ {
+  "slug": "phone-busy-signal",
+  "kw": "전화를 걸었는데 계속 통화중인 꿈",
+  "cat": "people",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "phone-lost",
+  "kw": "휴대폰을 잃어버리는 꿈",
+  "cat": "loss",
+  "emoji": "📱"
+ },
+ {
+  "slug": "phone-no-voice",
+  "kw": "전화를 했는데 상대방 목소리가 들리지 않는 꿈",
+  "cat": "people",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "pig-lotto",
+  "kw": "돼지꿈",
+  "cat": "animal",
+  "emoji": "🐷"
+ },
+ {
+  "slug": "pig-seo",
+  "kw": "돼지꿈",
+  "cat": "animal",
+  "emoji": "🐷"
+ },
+ {
+  "slug": "pig",
+  "kw": "돼지꿈",
+  "cat": "animal",
+  "emoji": "🐷"
+ },
+ {
+  "slug": "piglet",
+  "kw": "새끼돼지꿈",
+  "cat": "animal",
+  "emoji": "🐖"
+ },
+ {
+  "slug": "poop",
+  "kw": "똥꿈",
+  "cat": "body",
+  "emoji": "💩"
+ },
+ {
+  "slug": "pregnant",
+  "kw": "임신꿈",
+  "cat": "people",
+  "emoji": "🤰"
+ },
+ {
+  "slug": "presentation-blank-screen",
+  "kw": "발표 직전 자료가 전부 빈 화면으로 나오는 꿈",
+  "cat": "blocked",
+  "emoji": "📊"
+ },
+ {
+  "slug": "rain",
+  "kw": "비 오는 꿈",
+  "cat": "nature",
+  "emoji": "🌧️"
+ },
+ {
+  "slug": "rainbow",
+  "kw": "무지개꿈",
+  "cat": "nature",
+  "emoji": "🌈"
+ },
+ {
+  "slug": "receipt-lost",
+  "kw": "영수증을 잃어버리는 꿈",
+  "cat": "money",
+  "emoji": "🧾"
+ },
+ {
+  "slug": "receiving-money",
+  "kw": "돈을 받는 꿈",
+  "cat": "money",
+  "emoji": "💰"
+ },
+ {
+  "slug": "red-light-never-changes",
+  "kw": "신호등이 계속 빨간불인 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "repeating-path",
+  "kw": "계속 같은 길을 반복해서 걷는 꿈",
+  "cat": "blocked",
+  "emoji": "🔄"
+ },
+ {
+  "slug": "reservation-name-missing",
+  "kw": "예약했는데 내 이름이 없는 꿈",
+  "cat": "loss",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "shoes-lost",
+  "kw": "신발 잃어버리는 꿈",
+  "cat": "loss",
+  "emoji": "👟"
+ },
+ {
+  "slug": "shoes-slipping",
+  "kw": "신발 구두가 벗겨지는 꿈",
+  "cat": "change",
+  "emoji": "👟"
+ },
+ {
+  "slug": "shoes-wet",
+  "kw": "신발이 젖는 꿈",
+  "cat": "change",
+  "emoji": "👟"
+ },
+ {
+  "slug": "shopping-cart-empty",
+  "kw": "장바구니에 담아둔 물건이 모두 사라지는 꿈",
+  "cat": "loss",
+  "emoji": "🛒"
+ },
+ {
+  "slug": "sky",
+  "kw": "별꿈 달꿈",
+  "cat": "nature",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "snake",
+  "kw": "뱀꿈",
+  "cat": "animal",
+  "emoji": "🐍"
+ },
+ {
+  "slug": "snakebite",
+  "kw": "뱀에 물리는 꿈",
+  "cat": "change",
+  "emoji": "🐍"
+ },
+ {
+  "slug": "snow",
+  "kw": "눈 오는 꿈",
+  "cat": "nature",
+  "emoji": "❄️"
+ },
+ {
+  "slug": "stair",
+  "kw": "계단 꿈",
+  "cat": "blocked",
+  "emoji": "🪜"
+ },
+ {
+  "slug": "stairs-slipping",
+  "kw": "계단에서 미끄러지는 꿈",
+  "cat": "change",
+  "emoji": "🪜"
+ },
+ {
+  "slug": "subway-door-closing",
+  "kw": "지하철 문이 닫히기 직전에 뛰어 타는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "subway-wrong",
+  "kw": "지하철을 잘못 타는 꿈",
+  "cat": "blocked",
+  "emoji": "🚇"
+ },
+ {
+  "slug": "sun",
+  "kw": "태양꿈",
+  "cat": "nature",
+  "emoji": "☀️"
+ },
+ {
+  "slug": "taxi-not-arriving",
+  "kw": "택시를 불렀는데 계속 안 오는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "taxi-wrong-way",
+  "kw": "택시가 다른 길로 가는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "taxi",
+  "kw": "택시 타는 꿈",
+  "cat": "blocked",
+  "emoji": "🚖"
+ },
+ {
+  "slug": "ticket-lost",
+  "kw": "표를 잃어버리는 꿈",
+  "cat": "loss",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "tiger",
+  "kw": "호랑이꿈",
+  "cat": "animal",
+  "emoji": "🐯"
+ },
+ {
+  "slug": "toilet-cant-find",
+  "kw": "화장실을 찾지 못하는 꿈",
+  "cat": "blocked",
+  "emoji": "🚻"
+ },
+ {
+  "slug": "tooth",
+  "kw": "이빨 빠지는 꿈",
+  "cat": "body",
+  "emoji": "🦷"
+ },
+ {
+  "slug": "train-door-not-open",
+  "kw": "내릴 역인데 문이 안 열리는 꿈",
+  "cat": "blocked",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "turtle",
+  "kw": "거북이꿈",
+  "cat": "animal",
+  "emoji": "🐢"
+ },
+ {
+  "slug": "umbrella-rain",
+  "kw": "우산을 쓰고 있는데 비를 다 맞는 꿈",
+  "cat": "nature",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "wallet-lost",
+  "kw": "지갑 잃어버리는 꿈",
+  "cat": "money",
+  "emoji": "👛"
+ },
+ {
+  "slug": "wallet-missing-checkout-today-grid-fixed",
+  "kw": "계산하려는데 지갑이 없는 꿈",
+  "cat": "money",
+  "emoji": "🌙"
+ },
+ {
+  "slug": "water-immersion",
+  "kw": "물속에 들어가는 꿈",
+  "cat": "nature",
+  "emoji": "💧"
+ },
+ {
+  "slug": "water",
+  "kw": "물꿈",
+  "cat": "nature",
+  "emoji": "🌊"
+ },
+ {
+  "slug": "wedding",
+  "kw": "결혼꿈",
+  "cat": "people",
+  "emoji": "💍"
+ },
+ {
+  "slug": "whitesnake",
+  "kw": "흰뱀꿈",
+  "cat": "animal",
+  "emoji": "🤍"
+ },
+ {
+  "slug": "window-broken",
+  "kw": "창문이 깨지는 꿈",
+  "cat": "blocked",
+  "emoji": "🪟"
+ },
+ {
+  "slug": "washing-machine-overflow",
+  "kw": "세탁기 물이 넘치는 꿈",
+  "cat": "nature",
+  "emoji": "🫧"
+ }
+]
