@@ -44,29 +44,37 @@ function buildReading(birth, opt = {}) {
     };
   }
 
+  const W = C.OHAENG_WORD;
   return {
     saju: s,
+    /* ── 화면에 보이는 것: 전문용어 없음 ── */
     me: {
       title: `${ilgan.image} 같은 사람`,
       body: ilgan.text,
       strength: ilgan.strength,
       care: ilgan.care,
-      hanja: `${s.ilgan.hanja}(${ilganName}) · ${s.ilgan.ohaeng}/${s.ilgan.eumyang}`, // 접어두기용
     },
     today: {
       label: rel.label,
       body: rel.text,
       tip: rel.tip,
-      pillar: core.gzName(tIdx),
-      relation: relKey,
     },
     ohaeng: {
-      counts: s.ohaeng,
-      strongest: { name: max[0], text: C.OHAENG_TRAIT[max[0]].many },
-      missing: zeros.map(z => ({ name: z, text: C.OHAENG_TRAIT[z].none })),
+      counts: Object.fromEntries(entries.map(([k, v]) => [W[k], v])),   // 나무/불/흙/쇠/물
+      strongest: { name: W[max[0]], text: C.OHAENG_TRAIT[max[0]].many },
+      missing: zeros.map(z => ({ name: W[z], text: C.OHAENG_TRAIT[z].none })),
     },
     bridge,
     warnings: s.warnings,
+    /* ── 접어두기 안에만 표시(궁금한 사람용) ── */
+    details: {
+      note: '아래는 사주 용어입니다. 몰라도 결과를 보는 데 지장은 없습니다.',
+      palja: [s.pillars.year, s.pillars.month, s.pillars.day, s.pillars.hour]
+        .filter(Boolean).map(p => `${p.hanja}(${p.name})`).join(' '),
+      ilganTerm: `일간 ${s.ilgan.hanja}${s.ilgan.name} · ${W[s.ilgan.ohaeng]}(${s.ilgan.ohaeng})의 ${s.ilgan.eumyang}`,
+      todayPillar: `오늘의 일진 ${core.gzName(tIdx)}`,
+      ttiAnimal: `${s.ttiAnimal}띠`,
+    },
   };
 }
 

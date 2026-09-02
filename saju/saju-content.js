@@ -167,3 +167,8 @@ const OHAENG_TRAIT = {
 module.exports.DREAM_MOOD = DREAM_MOOD;
 module.exports.DREAM_BRIDGE = DREAM_BRIDGE;
 module.exports.OHAENG_TRAIT = OHAENG_TRAIT;
+
+/* 오행을 화면에 쓸 일상어로 — "목/화/토/금/수" 같은 용어를 노출하지 않는다 */
+const OHAENG_WORD = { 목: '나무', 화: '불', 토: '흙', 금: '쇠', 수: '물' };
+
+module.exports.OHAENG_WORD = OHAENG_WORD;
