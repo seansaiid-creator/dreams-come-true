@@ -16,6 +16,8 @@ jobs:
         run: node scripts/publish-queue.mjs
       - name: Rebuild dreams-db.js (CTA 착지용 해몽 DB)
         run: python3 scripts/build-dreams-db.py
+      - name: Rebuild saju-dreams.js (꿈사주 선택기 인덱스)
+        run: python3 scripts/build-dream-index.py
       - name: Verify — 신규 페이지가 DB·CTA에 반영됐는지
         run: node scripts/verify-publish.mjs
       - name: Commit & push if changed

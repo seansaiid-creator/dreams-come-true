@@ -14,15 +14,67 @@
 
   var picked = null;   // 선택된 시각(정시). null이면 모름
   var calMode = 'solar';   // 'solar' | 'lunar'
+  var pickedDream = null;  // 사용자가 화면에서 고른 꿈 {c,k,s}
 
   /* ── 유입한 꿈 맥락 (차별점 ①) ── */
+  var CATS = ['animal', 'nature', 'money', 'people', 'loss', 'blocked', 'body', 'change'];
   function dreamContext() {
+    if (pickedDream) return { dreamCat: pickedDream.c, dreamKw: pickedDream.k, dreamSlug: pickedDream.s };
     var p = new URLSearchParams(location.search);
     var cat = (p.get('cat') || '').trim();
     var kw = (p.get('kw') || '').trim().slice(0, 40);
-    var CATS = ['animal', 'nature', 'money', 'people', 'loss', 'blocked', 'body', 'change'];
     if (CATS.indexOf(cat) < 0) return null;
     return { dreamCat: cat, dreamKw: kw || null };
+  }
+
+  /* ── 꿈 선택기 — 꿈 없이 들어온 사용자도 차별점을 경험하게 한다 ── */
+  function initDreamPicker() {
+    var box = $('dreamPick'); if (!box) return;
+    if (dreamContext()) return;              // 이미 꿈 맥락이 있으면 불필요
+    box.style.display = '';
+    var input = $('dreamSearch'), out = $('dreamResults');
+    var IDX = window.DREAM_INDEX || [];
+
+    function suggest() {                      // 기본 제안 4개 (날짜 시드로 매일 바뀜)
+      var d = new Date(), seed = d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate();
+      var picks = [], used = {};
+      for (var i = 0; i < 4 && IDX.length; i++) {
+        var j = (seed * (i + 7) * 31) % IDX.length;
+        while (used[j]) j = (j + 1) % IDX.length;
+        used[j] = 1; picks.push(IDX[j]);
+      }
+      return picks;
+    }
+    function row(x) {
+      return '<button type="button" class="chip" data-s="' + x.s + '" style="width:100%;text-align:left;padding:12px 14px;border-radius:11px;font-size:13.5px;">' +
+        x.e + ' ' + esc(x.k) + '</button>';
+    }
+    function draw(list, isSuggest) {
+      out.innerHTML = (isSuggest ? '<div style="font-size:11.5px;color:var(--text-muted);margin-bottom:2px;">이런 꿈은 어떠세요</div>' : '') +
+        (list.length ? list.map(row).join('') : '<div style="font-size:13px;color:var(--text-muted);padding:8px 2px;">그 꿈은 아직 준비 중이에요. 다른 말로 찾아보시겠어요?</div>');
+    }
+    draw(suggest(), true);
+    input.addEventListener('input', function () {
+      var q = this.value.trim();
+      if (!q) { draw(suggest(), true); return; }
+      draw(IDX.filter(function (x) { return x.k.indexOf(q) >= 0; }).slice(0, 6), false);
+    });
+    out.addEventListener('click', function (e) {
+      var b = e.target.closest('.chip'); if (!b) return;
+      var f = IDX.filter(function (x) { return x.s === b.dataset.s; })[0];
+      if (!f) return;
+      pickedDream = f;
+      ev('saju_dream_picked', { slug: f.s, cat: f.c });
+      box.innerHTML = '<div class="who" style="font-size:13.5px;color:var(--text);">🌙 <b style="color:var(--gold-light)">' +
+        esc(f.k) + '</b>을 고르셨어요. 이 꿈과 오늘의 흐름을 함께 읽어드릴게요.</div>';
+      $('formCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    var skip = $('skipDream');
+    if (skip) skip.addEventListener('click', function () {
+      ev('saju_dream_skipped', {});
+      box.style.display = 'none';
+      $('formCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
   }
 
   /* ── 폼 초기화 ── */
@@ -121,7 +173,7 @@
 
     // 차별점 ① — 꿈 × 오늘
     if (r.bridge) {
-      H += '<div class="bridge"><div class="dream">' +
+      H += '<div class="bridge"><div style="font-size:11.5px;letter-spacing:.08em;color:var(--gold);font-weight:700;margin-bottom:9px;">당신이 본 꿈 × 오늘의 흐름</div><div class="dream">' +
         (r.bridge.dreamKw ? '어젯밤 <b style="color:var(--gold-light)">' + esc(r.bridge.dreamKw) + '</b>을 꾸셨네요. ' : '') +
         esc(r.bridge.mood) + ' 꿈입니다.</div>' +
         '<div class="arrow">→ ' + esc(r.bridge.advice) + '</div></div>';
@@ -179,7 +231,9 @@
 
   function bindResult(r, b) {
     var url = location.origin + '/saju.html';
-    var text = '오늘 나의 흐름: ' + r.today.label;
+    var text = r.bridge && r.bridge.dreamKw
+      ? '어젯밤 ' + r.bridge.dreamKw + ' × 오늘의 내 흐름: ' + r.today.label
+      : '오늘 나의 흐름: ' + r.today.label;
     var copy = function () {
       var done = function () { alert('링크가 복사됐어요!'); ev('share_click', { method: 'copy', page: '/saju.html' }); };
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -226,6 +280,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     try { if (window.Kakao && !Kakao.isInitialized()) Kakao.init('46d3fff922c9ecbd41f4131001e7647f'); } catch (e) {}
     initForm();
+    initDreamPicker();
     var saved = load();
     if (saved && saved.y) {
       // 재방문 — 원탭으로 바로 결과
@@ -239,6 +294,7 @@
       }
       ev('saju_revisit', {});
       render(saved, false);
+      if (!dreamContext() && $('dreamPick')) $('dreamPick').style.display = '';
     } else {
       ev('saju_open', { hasDream: dreamContext() ? 1 : 0 });
     }
