@@ -9,7 +9,7 @@
 <meta name="keywords" content="시계꿈, 시계가멈추는꿈, 멈춘시계꿈, 손목시계꿈, 알람시계꿈, 시간꿈, 꿈해몽, 시계꿈해몽, 시계꿈번호">
 <meta name="robots" content="index, follow">
 <meta name="author" content="꿈해몽 행운">
-<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-clock-stopped.html">
+<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-clock-stopped-full.html">
 <meta property="og:title" content="시계가 멈추는 꿈 해몽 | 시간 압박, 정체, 변화 지연의 의미">
 <meta property="og:description" content="시계가 멈추는 꿈 해몽을 상황별로 정리했습니다. 벽시계, 손목시계, 알람시계, 시간이 멈춘 느낌 등 다양한 의미를 확인해보세요.">
 <meta property="og:type" content="article">
@@ -423,5 +423,18 @@
     <a href="about.html">서비스 소개</a>
   </footer>
 </div>
+<script>
+/* GA4 click instrumentation (D0) */
+(function(){
+  function ev(n,p){ if(window.gtag) gtag('event', n, p||{}); }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('a,button') : null;
+    if(!el) return;
+    if(el.matches('.service-btn,.eng-cta-btn')){ ev('cta_lucky_click',{page:location.pathname}); }
+    else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
+    else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
+  }, true);
+})();
+</script>
 </body>
 </html>

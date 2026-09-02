@@ -17,7 +17,7 @@
 <meta name="keywords" content="돼지꿈, 돼지꿈해몽, 돼지꿈로또, 돼지꿈길몽, 돼지꿈재물, 꿈해몽, 돼지꿈번호, 황금돼지꿈">
 <meta name="robots" content="index, follow">
 <meta name="author" content="꿈해몽 행운">
-<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-rain-lotto.html">
+<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-rain.html">
 <meta property="og:title" content="비 오는 꿈 로또번호 | 의미와 참고용 행운 번호">
 <meta property="og:description" content="비 오는 꿈의 의미와 함께 참고용 로또 행운 번호를 확인해보세요.">
 <meta property="og:type" content="article">
@@ -501,5 +501,18 @@
     <a href="about.html">서비스 소개</a>
   </footer>
 </div>
+<script>
+/* GA4 click instrumentation (D0) */
+(function(){
+  function ev(n,p){ if(window.gtag) gtag('event', n, p||{}); }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('a,button') : null;
+    if(!el) return;
+    if(el.matches('.service-btn,.eng-cta-btn')){ ev('cta_lucky_click',{page:location.pathname}); }
+    else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
+    else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
+  }, true);
+})();
+</script>
 </body>
 </html>

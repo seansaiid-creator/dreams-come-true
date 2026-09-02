@@ -1,627 +1,867 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dreams-come-true-ten.vercel.app</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://dreams-come-true-ten.vercel.app/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/guide.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/about.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/privacy.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/terms.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-airplane.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-airport-gate-lost.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-alarm-not-ringing.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-ancestor.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-atm-money-not-coming-out-final.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-baby.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-bag-empty.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-bag-lost.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-bank-balance-zero.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-bear.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-blackpig.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-breaking-things.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-breakup.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-broken-bridge.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-building.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-bus-missed.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-cant-wake-up-after-alarm.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-card-payment-fail.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-card-payment-failed.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-chased.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-clock-stopped-full.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-computer-file-disappears.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-concert-seat-missing.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-count-money.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-death.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-delivery-not-coming.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-door-blocked-full.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-door-closed-cant-leave.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-door-not-open-final.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-dragon.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-drowning.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-eating.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-elevator-door-wont-close.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-elevator-falling.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-elevator-ride.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-elevator-stuck.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-email-not-sent.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-email-send-failed.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-endless-stairs.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-escaping.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-exam.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-examfail.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-exboyfriend.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-falling.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-familydeath.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-fighting.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-fire-dream.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-fire.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-fish.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-flashlight-not-working.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-flying.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-fog-cant-see.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-fridge-food-spoiled.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-friend-dying.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-friend.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-ghost-chased.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-ghost.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-glove-lost-one.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-gold.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-golden.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-goldpickup.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-helped.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-hitting-someone.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-house-remodeling.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-house.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-interview.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-jewel.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-key-lost.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-late.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-losing-money-final.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-lost-path.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-lottery.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-lotterywin.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-love.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-mirror-face-blur.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-mirror.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-missed-call.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-money-disappears-account.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-money-friend.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-money-lost.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-money.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-moneypickup.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-moving.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-nightmare.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-package-wrong-item.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-parked-car-lost.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-password-correct-but-wrong.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-password-wrong.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-payment-cancelled.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-phone-battery-dead.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-phone-battery-drain.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-phone-broken.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-phone-busy-signal.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-phone-lost.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-phone-no-voice.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-pig-lotto.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-pig-seo.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-pig.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-piglet.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-poop.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-pregnant.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-presentation-blank-screen.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-rain.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-rainbow.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-receipt-lost.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-receiving-money.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-red-light-never-changes.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-repeating-path.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-reservation-name-missing.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-shoes-lost.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-shoes-slipping.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-shoes-wet.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-shopping-cart-empty.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-sky.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-snake.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-snakebite.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-snow.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-stair.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-stairs-slipping.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-subway-door-closing.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-subway-wrong.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-sun.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-taxi-not-arriving.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-taxi-wrong-way.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-taxi.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-ticket-lost.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-tiger.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-toilet-cant-find.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-tooth.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-train-door-not-open.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-turtle.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-umbrella-rain.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-wallet-lost.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreams-come-true-ten.vercel.app/dream-wallet-missing-checkout-today-grid-fixed.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-water-immersion.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-water.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-wedding.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-whitesnake.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreams-come-true-ten.vercel.app/dream-window-broken.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>

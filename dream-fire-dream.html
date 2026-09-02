@@ -9,7 +9,7 @@
 <meta name="keywords" content="불꿈, 불이나는꿈, 불꿈해몽, 불꿈의미, 꿈해몽, 불꿈로또, 불꿈번호, 불꿈길몽">
 <meta name="robots" content="index, follow">
 <meta name="author" content="꿈해몽 행운">
-<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-fire-dream.html">
+<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-fire.html">
 <meta property="og:title" content="불이 나는 꿈 해몽 | 열정, 에너지, 변화의 의미">
 <meta property="og:description" content="불이 나는 꿈 해몽을 상황별로 정리했습니다. 따뜻한 불, 맹렬한 불, 불을 끄기 등 다양한 상황의 의미를 확인해보세요.">
 <meta property="og:type" content="article">
@@ -410,5 +410,18 @@
     <a href="about.html">서비스 소개</a>
   </footer>
 </div>
+<script>
+/* GA4 click instrumentation (D0) */
+(function(){
+  function ev(n,p){ if(window.gtag) gtag('event', n, p||{}); }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('a,button') : null;
+    if(!el) return;
+    if(el.matches('.service-btn,.eng-cta-btn')){ ev('cta_lucky_click',{page:location.pathname}); }
+    else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
+    else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
+  }, true);
+})();
+</script>
 </body>
 </html>

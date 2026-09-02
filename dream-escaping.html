@@ -439,5 +439,18 @@
     <a href="about.html">서비스 소개</a>
   </footer>
 </div>
+<script>
+/* GA4 click instrumentation (D0) */
+(function(){
+  function ev(n,p){ if(window.gtag) gtag('event', n, p||{}); }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('a,button') : null;
+    if(!el) return;
+    if(el.matches('.service-btn,.eng-cta-btn')){ ev('cta_lucky_click',{page:location.pathname}); }
+    else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
+    else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
+  }, true);
+})();
+</script>
 </body>
 </html>

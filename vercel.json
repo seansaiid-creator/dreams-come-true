@@ -1,0 +1,289 @@
+{
+  "redirects": [
+    {
+      "source": "/dream-anger.html",
+      "destination": "/dream-fighting.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-angry.html",
+      "destination": "/dream-fighting.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-atm-money-not-coming-out.html",
+      "destination": "/dream-atm-money-not-coming-out-final.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-atm-no-money.html",
+      "destination": "/dream-atm-money-not-coming-out-final.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-bus.html",
+      "destination": "/dream-bus-missed.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-car.html",
+      "destination": "/dream-parked-car-lost.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-car-engine.html",
+      "destination": "/dream-parked-car-lost.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-cliff.html",
+      "destination": "/dream-falling.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-clock-stopped.html",
+      "destination": "/dream-clock-stopped-full.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-cold.html",
+      "destination": "/dream-snow.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-conflict.html",
+      "destination": "/dream-fighting.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-door-locked.html",
+      "destination": "/dream-door-not-open-final.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-door-not-open.html",
+      "destination": "/dream-door-not-open-final.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-drowning-lotto.html",
+      "destination": "/dream-drowning.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-examfail-lotto.html",
+      "destination": "/dream-examfail.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-explosion.html",
+      "destination": "/dream-fire.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-falling-lotto.html",
+      "destination": "/dream-falling.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-family.html",
+      "destination": "/dream-familydeath.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-familydeath-lotto.html",
+      "destination": "/dream-familydeath.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-farewell.html",
+      "destination": "/dream-breakup.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-flood.html",
+      "destination": "/dream-water.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-fly.html",
+      "destination": "/dream-flying.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-friend-lotto.html",
+      "destination": "/dream-friend.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-getting-lost.html",
+      "destination": "/dream-lost-path.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-golden-lotto.html",
+      "destination": "/dream-gold.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-heat.html",
+      "destination": "/dream-fire.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-hiding.html",
+      "destination": "/dream-escaping.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-hospital.html",
+      "destination": "/dream-helped.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-jewel-lotto.html",
+      "destination": "/dream-jewel.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-light.html",
+      "destination": "/dream-sun.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-losing-money.html",
+      "destination": "/dream-losing-money-final.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-lost-friend.html",
+      "destination": "/dream-friend.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-lost-item.html",
+      "destination": "/dream-bag-lost.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-lost-road.html",
+      "destination": "/dream-lost-path.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-lotterywin-lotto.html",
+      "destination": "/dream-lotterywin.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-missed-train-stop.html",
+      "destination": "/dream-subway-wrong.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-money-lotto.html",
+      "destination": "/dream-money.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-moneypickup-lotto.html",
+      "destination": "/dream-moneypickup.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-peace.html",
+      "destination": "/dream-rainbow.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-poop-lotto.html",
+      "destination": "/dream-poop.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-rain-lotto.html",
+      "destination": "/dream-rain.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-road.html",
+      "destination": "/dream-lost-path.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-smoke.html",
+      "destination": "/dream-fire.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-snake-lotto.html",
+      "destination": "/dream-snake.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-snow-lotto.html",
+      "destination": "/dream-snow.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-station-passed.html",
+      "destination": "/dream-subway-wrong.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-subway-wrong-clean.html",
+      "destination": "/dream-subway-wrong.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-swimming.html",
+      "destination": "/dream-water-immersion.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-taxi-not-coming.html",
+      "destination": "/dream-taxi-not-arriving.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-tiger-lotto.html",
+      "destination": "/dream-tiger.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-train.html",
+      "destination": "/dream-subway-wrong.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-travel.html",
+      "destination": "/dream-airplane.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-treasure.html",
+      "destination": "/dream-gold.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-wallet.html",
+      "destination": "/dream-wallet-lost.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-wallet-missing-checkout.html",
+      "destination": "/dream-wallet-missing-checkout-today-grid-fixed.html",
+      "permanent": true
+    },
+    {
+      "source": "/dream-water-lotto.html",
+      "destination": "/dream-water.html",
+      "permanent": true
+    },
+    {
+      "source": "/index_ad_optimized.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

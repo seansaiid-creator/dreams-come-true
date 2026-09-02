@@ -1391,6 +1391,8 @@ function handleSearch(val){
     `).join('');
   }
   box.style.display='block';
+  clearTimeout(window.__dsT);
+  window.__dsT=setTimeout(function(){ if(window.gtag) gtag('event','dream_search',{query:q.slice(0,50),result_count:results.length}); },800);
 }
 
 function goSearch(keyword){
@@ -1821,6 +1823,7 @@ function startAll() {
   if (!dreamText) { alert('꿈 내용을 입력해주세요 🌙'); return; }
   window._dreamText = dreamText;
   window._reading   = analyzeDream(dreamText);
+  if (window.gtag) { gtag('event','haemong_start',{query:dreamText.slice(0,50)}); gtag('event','lucky_view',{query:dreamText.slice(0,50)}); }
 
   // UI 정리 (null-safe: 새 홈화면에 없는 요소는 무시)
   const hide = (id) => { const el = document.getElementById(id); if(el) el.style.display = 'none'; };
@@ -2157,3 +2160,15 @@ window.addEventListener('load', function() {
   shuffleRandom();
 });
 </script>
+<script>
+/* GA4 click instrumentation (D0) */
+(function(){
+  document.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('a') : null;
+    if(!el) return;
+    if(el.matches('.random-card')){ if(window.gtag) gtag('event','related_click',{page:'/',to:el.getAttribute('href')||''}); }
+  }, true);
+})();
+</script>
+</body>
+</html>

@@ -17,7 +17,7 @@
 <meta name="keywords" content="호랑이꿈, 호랑이꿈해몽, 호랑이꿈로또, 백호꿈, 범꿈, 꿈해몽, 호랑이꿈번호, 호랑이꿈길몽">
 <meta name="robots" content="index, follow">
 <meta name="author" content="꿈해몽 행운">
-<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-tiger-lotto.html">
+<link rel="canonical" href="https://dreams-come-true-ten.vercel.app/dream-tiger.html">
 <meta property="og:title" content="호랑이꿈 로또번호 | 호랑이꿈 해몽과 참고용 행운 번호">
 <meta property="og:description" content="호랑이꿈 해몽과 함께 참고용 로또 행운 번호를 확인해보세요. 권력, 성공, 귀인운 흐름을 정리했습니다.">
 <meta property="og:type" content="article">
@@ -465,5 +465,18 @@
     <a href="about.html">서비스 소개</a>
   </footer>
 </div>
+<script>
+/* GA4 click instrumentation (D0) */
+(function(){
+  function ev(n,p){ if(window.gtag) gtag('event', n, p||{}); }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('a,button') : null;
+    if(!el) return;
+    if(el.matches('.service-btn,.eng-cta-btn')){ ev('cta_lucky_click',{page:location.pathname}); }
+    else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
+    else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
+  }, true);
+})();
+</script>
 </body>
 </html>
