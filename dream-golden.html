@@ -199,6 +199,12 @@
       box-sizing: border-box;
     }
     .eng-ad-label { font-size: 10px; opacity: 0.7; }
+
+    .saju-cta{background:linear-gradient(135deg,rgba(107,63,160,.22),rgba(201,168,76,.14));border:1px solid rgba(201,168,76,.35);border-radius:16px;padding:20px;text-align:center;margin:24px 0;}
+    .saju-cta-t{font-size:16px;font-weight:700;color:#F0D080;margin-bottom:6px;}
+    .saju-cta-d{font-size:13px;color:#C9BCD8;line-height:1.75;margin-bottom:14px;}
+    .saju-cta-b{display:inline-block;background:linear-gradient(135deg,#6B3FA0,#9B6FD0);color:#fff;font-size:15px;font-weight:700;padding:13px 30px;border-radius:12px;text-decoration:none;}
+    .saju-cta-n{font-size:11px;color:#9C8FAC;margin-top:11px;}
     .eng-cta-box {
       background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(107,63,160,0.18));
       border: 1px solid rgba(201,168,76,0.4);
@@ -291,11 +297,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">🌙 꿈해몽 행운</a>
-    <div class="nav-links">
-      <a href="index.html" class="nav-link">해몽하기</a>
-      <a href="guide.html" class="nav-link active">해몽 가이드</a>
-      <a href="about.html" class="nav-link">소개</a>
-    </div>
+    <div class="nav-links"><a href="index.html" class="nav-link">홈</a><a href="guide.html" class="nav-link active">꿈 사전</a><a href="saju.html" class="nav-link">오늘의 사주</a><a href="about.html" class="nav-link">소개</a></div>
   </div>
 </nav>
 <div class="container">
@@ -369,6 +371,7 @@
     <a href="index.html?kw=%ED%99%A9%EA%B8%88%20%EA%BF%88&cat=money&s=golden" class="eng-cta-btn">✨ 무료로 행운번호 받기</a>
   </div>
 
+<div class="saju-cta"><div class="saju-cta-t">🔮 이 꿈, 오늘의 나와 어떻게 이어질까요</div><div class="saju-cta-d">생년월일만 알려주시면 어려운 말 없이<br>오늘 어떤 날인지 함께 풀어드려요</div><a href="saju.html?kw=%ED%99%A9%EA%B8%88%20%EA%BF%88&cat=money" class="saju-cta-b" onclick="if(window.gtag)gtag('event','saju_entry_click',{from:'golden'})">오늘의 흐름 보기</a><div class="saju-cta-n">무료 · 회원가입 없음 · 입력 정보는 서버에 저장되지 않아요</div></div>
   <!-- 비슷한 꿈 -->
   <div class="eng-section">
     <div class="eng-header">
@@ -471,7 +474,7 @@
   <footer>
     운영사: 에스이(SE)컴퍼니<br>
     꿈해몽 행운은 재미와 흥미를 위한 서비스입니다<br>
-    © 2025 꿈해몽 행운<br>
+    © 2026 꿈해몽 행운<br>
     <a href="privacy.html">개인정보처리방침</a>
     <a href="terms.html">이용약관</a>
     <a href="about.html">서비스 소개</a>
