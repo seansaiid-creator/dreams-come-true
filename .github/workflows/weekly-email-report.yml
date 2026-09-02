@@ -11,8 +11,18 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
       - name: Restore GA4 service-account key from secret
+        env:
+          GA4_KEY_RAW: ${{ secrets.GA4_SA_KEY_B64 }}
         run: |
-          printf %s "${{ secrets.GA4_SA_KEY_B64 }}" | tr -d "\n " | base64 -d > /tmp/sa-key.json
+          if [ -z "$GA4_KEY_RAW" ]; then
+            echo "::error::시크릿 GA4_SA_KEY_B64 가 비어 있습니다."; exit 1
+          fi
+          # base64로 저장됐으면 디코드, 원본 JSON이면 그대로 사용
+          printf '%s' "$GA4_KEY_RAW" | tr -d '\n\r ' | base64 -d > /tmp/sa-key.json 2>/dev/null || true
+          if ! python3 -c "import json;json.load(open('/tmp/sa-key.json'))" 2>/dev/null; then
+            printf '%s' "$GA4_KEY_RAW" > /tmp/sa-key.json
+          fi
+          python3 -c "import json;d=json.load(open('/tmp/sa-key.json'));print('키 정상:',d['client_email'])"
       - name: Build weekly comparison report
         env: { GA4_KEY: /tmp/sa-key.json }
         run: node scripts/weekly-report.mjs
