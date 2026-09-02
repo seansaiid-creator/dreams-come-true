@@ -1,0 +1,29 @@
+name: weekly-email-report
+on:
+  schedule:
+    - cron: '30 0 * * 1'    # KST 월요일 09:30
+  workflow_dispatch: {}
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Restore GA4 service-account key from secret
+        run: |
+          echo "${{ secrets.GA4_SA_KEY_B64 }}" | base64 -d > /tmp/sa-key.json
+      - name: Build weekly comparison report
+        env: { GA4_KEY: /tmp/sa-key.json }
+        run: node scripts/weekly-report.mjs
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: seansaiid@gmail.com
+          password: ${{ secrets.MAIL_APP_PASSWORD }}
+          subject: "🌙 꿈해몽 행운 주간 리포트 — ${{ github.run_started_at }}"
+          to: seansaiid@gmail.com
+          from: 꿈해몽 행운 리포트 <seansaiid@gmail.com>
+          html_body: file://report.html
