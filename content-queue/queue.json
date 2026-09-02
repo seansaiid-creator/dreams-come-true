@@ -160,7 +160,9 @@
    "repeating-path",
    "flashlight-not-working"
   ],
-  "approved": true
+  "approved": true,
+  "published": true,
+  "publishedAt": "2026-09-02"
  },
  {
   "slug": "subway-gate-not-opening",

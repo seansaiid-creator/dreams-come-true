@@ -844,5 +844,11 @@
   "kw": "보낸 메시지가 계속 안 읽히는 꿈",
   "cat": "people",
   "emoji": "📨"
+ },
+ {
+  "slug": "wifi-keeps-disconnecting",
+  "kw": "와이파이가 계속 끊기는 꿈",
+  "cat": "blocked",
+  "emoji": "📶"
  }
 ]
