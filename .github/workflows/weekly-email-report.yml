@@ -12,7 +12,7 @@ jobs:
         with: { node-version: '20' }
       - name: Restore GA4 service-account key from secret
         run: |
-          echo "${{ secrets.GA4_SA_KEY_B64 }}" | base64 -d > /tmp/sa-key.json
+          printf %s "${{ secrets.GA4_SA_KEY_B64 }}" | tr -d "\n " | base64 -d > /tmp/sa-key.json
       - name: Build weekly comparison report
         env: { GA4_KEY: /tmp/sa-key.json }
         run: node scripts/weekly-report.mjs
