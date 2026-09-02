@@ -175,6 +175,11 @@
   }
   footer a { color:rgba(255,255,255,0.25); text-decoration:none; margin:0 8px; padding:8px 4px; display:inline-block; }
 
+
+    .mid-related{background:rgba(107,63,160,0.10);border:1px solid rgba(107,63,160,0.22);border-radius:14px;padding:16px 16px 12px;margin:20px 0;}
+    .mid-related-t{font-size:13px;font-weight:700;color:var(--gold-light);margin-bottom:10px;}
+    .mid-related a{display:block;color:var(--purple-light);text-decoration:none;font-size:13.5px;line-height:1.5;padding:9px 10px;border-radius:9px;background:rgba(255,255,255,0.03);margin-bottom:6px;}
+    .mid-related a:last-child{margin-bottom:0;}
     .eng-ad {
       width: 100%;
       background: rgba(201,168,76,0.05);
@@ -316,7 +321,8 @@
     <p>기회가 연달아 들어오거나 재물운이 커지는 신호로 볼 수 있습니다.</p>
   </div>
 
-  <div class="section">
+  <div class="mid-related"><div class="mid-related-t">💡 이 꿈과 함께 보면 좋은 해몽</div><a href="dream-money.html">돈꿈 →</a><a href="dream-receiving-money.html">돈을 받는 꿈 →</a><a href="dream-goldpickup.html">금 줍는 꿈 →</a></div>
+<div class="section">
     <h2>돈 줍는 꿈 로또번호 추천</h2>
     <h3>기본 추천 번호</h3>
     <p>8, 13, 20, 27, 35, 42</p>
@@ -444,8 +450,8 @@
   <div class="eng-share">
     <div class="eng-share-title">📤 친구에게 공유하기</div>
     <div class="eng-share-buttons">
-      <button class="eng-share-btn kakao" onclick="if(window.shareKakao){window.shareKakao()}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))}">💬 카카오톡</button>
-      <button class="eng-share-btn copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))">🔗 링크 복사</button>
+      <button class="eng-share-btn kakao" onclick="window.shareKakao?window.shareKakao():(window.copyPageLink&&window.copyPageLink())">💬 카카오톡</button>
+      <button class="eng-share-btn copy" onclick="window.copyPageLink?window.copyPageLink():navigator.clipboard.writeText(location.href)">🔗 링크 복사</button>
     </div>
   </div>
 
@@ -482,6 +488,49 @@
     else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
     else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
   }, true);
+})();
+</script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+<script>
+/* 공유 수리: 카카오 SDK 초기화 + 실패 시 링크복사 폴백 */
+(function(){
+  function copyLink(){
+    var url=location.href;
+    var ok=function(){ alert('링크가 복사됐어요!'); if(window.gtag) gtag('event','share_click',{method:'copy'}); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(ok).catch(function(){ fallbackCopy(url,ok); });
+    } else { fallbackCopy(url,ok); }
+  }
+  function fallbackCopy(text,ok){
+    try{
+      var t=document.createElement('textarea');
+      t.value=text; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); t.setSelectionRange(0,99999);
+      var done=document.execCommand('copy'); document.body.removeChild(t);
+      done? ok() : prompt('아래 주소를 복사해주세요', text);
+    }catch(e){ prompt('아래 주소를 복사해주세요', text); }
+  }
+  window.copyPageLink = copyLink;
+  try{
+    if(window.Kakao && !Kakao.isInitialized()){ Kakao.init('7b87b3bb674e9bec0fd123f31a4e6e24'); }
+    if(window.Kakao && Kakao.isInitialized() && Kakao.Share){
+      window.shareKakao = function(){
+        try{
+          Kakao.Share.sendDefault({
+            objectType:'feed',
+            content:{
+              title: document.title.split('|')[0].trim(),
+              description: (document.querySelector('meta[name=description]')||{}).content || '',
+              imageUrl: (document.querySelector('meta[property="og:image"]')||{}).content || '',
+              link:{ mobileWebUrl: location.href, webUrl: location.href }
+            },
+            buttons:[{ title:'해몽 보기', link:{ mobileWebUrl: location.href, webUrl: location.href } }]
+          });
+          if(window.gtag) gtag('event','share_click',{method:'kakao'});
+        }catch(e){ copyLink(); }
+      };
+    }
+  }catch(e){}
 })();
 </script>
 </body>

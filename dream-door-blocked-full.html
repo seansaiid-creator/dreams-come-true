@@ -81,6 +81,11 @@
   footer { text-align:center; padding:28px 0 16px; font-size:11px; color:rgba(255,255,255,0.15); line-height:2; }
   footer a { color:rgba(255,255,255,0.25); text-decoration:none; margin:0 8px; padding:8px 4px; display:inline-block; }
 
+
+    .mid-related{background:rgba(107,63,160,0.10);border:1px solid rgba(107,63,160,0.22);border-radius:14px;padding:16px 16px 12px;margin:20px 0;}
+    .mid-related-t{font-size:13px;font-weight:700;color:var(--gold-light);margin-bottom:10px;}
+    .mid-related a{display:block;color:var(--purple-light);text-decoration:none;font-size:13.5px;line-height:1.5;padding:9px 10px;border-radius:9px;background:rgba(255,255,255,0.03);margin-bottom:6px;}
+    .mid-related a:last-child{margin-bottom:0;}
     .eng-ad {
       width: 100%;
       background: rgba(201,168,76,0.05);
@@ -230,7 +235,8 @@
     <p>처음에는 문이 막혀 있었지만 결국 열리는 꿈은 현재 답답한 상황이 시간이 지나며 해결될 가능성을 의미합니다. 다만 그냥 기다리기만 해서 풀린다기보다는, 문제의 원인을 확인하고 차분히 정리했을 때 출구가 보인다는 뜻에 가깝습니다. 꿈속에서 문이 열렸을 때 안도감을 느꼈다면 현실에서도 좋은 전환점이 찾아올 수 있습니다.</p>
   </div>
 
-  <div class="section">
+  <div class="mid-related"><div class="mid-related-t">💡 이 꿈과 함께 보면 좋은 해몽</div><a href="dream-door-closed-cant-leave.html">문이 닫혀서 못 나가는 꿈 →</a><a href="dream-door-not-open-final.html">문이 안 열리는 꿈 →</a><a href="dream-elevator-stuck.html">엘리베이터 멈추는 꿈 →</a></div>
+<div class="section">
     <h2>심리 상태 해석</h2>
     <p>문이 막혀서 못 나가는 꿈의 핵심 심리는 답답함, 압박감, 선택 제한입니다. 특히 해야 할 일은 많고 마음은 급한데 실제로는 움직일 수 없는 상태일 때 이런 꿈이 강하게 나타납니다. 꿈속의 막힌 문은 단순한 장애물이 아니라 내 마음속에서 아직 정리되지 않은 두려움, 현실의 책임, 관계의 압박, 그리고 준비 부족을 상징합니다. 이 꿈을 반복해서 꾼다면 현재 내가 무언가를 피하고 있는지, 혹은 너무 많은 책임을 떠안고 있는지 확인할 필요가 있습니다. 중요한 것은 이 꿈이 실패를 예고하는 것이 아니라 현재의 막힘을 인식하게 만드는 경고등이라는 점입니다. 막혀 있다는 사실을 알아차리는 순간부터 해결의 실마리가 생길 수 있습니다.</p>
   </div>
@@ -353,8 +359,8 @@
   <div class="eng-share">
     <div class="eng-share-title">📤 친구에게 공유하기</div>
     <div class="eng-share-buttons">
-      <button class="eng-share-btn kakao" onclick="if(window.shareKakao){window.shareKakao()}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))}">💬 카카오톡</button>
-      <button class="eng-share-btn copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))">🔗 링크 복사</button>
+      <button class="eng-share-btn kakao" onclick="window.shareKakao?window.shareKakao():(window.copyPageLink&&window.copyPageLink())">💬 카카오톡</button>
+      <button class="eng-share-btn copy" onclick="window.copyPageLink?window.copyPageLink():navigator.clipboard.writeText(location.href)">🔗 링크 복사</button>
     </div>
   </div>
 
@@ -389,6 +395,49 @@
     else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
     else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
   }, true);
+})();
+</script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+<script>
+/* 공유 수리: 카카오 SDK 초기화 + 실패 시 링크복사 폴백 */
+(function(){
+  function copyLink(){
+    var url=location.href;
+    var ok=function(){ alert('링크가 복사됐어요!'); if(window.gtag) gtag('event','share_click',{method:'copy'}); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(ok).catch(function(){ fallbackCopy(url,ok); });
+    } else { fallbackCopy(url,ok); }
+  }
+  function fallbackCopy(text,ok){
+    try{
+      var t=document.createElement('textarea');
+      t.value=text; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); t.setSelectionRange(0,99999);
+      var done=document.execCommand('copy'); document.body.removeChild(t);
+      done? ok() : prompt('아래 주소를 복사해주세요', text);
+    }catch(e){ prompt('아래 주소를 복사해주세요', text); }
+  }
+  window.copyPageLink = copyLink;
+  try{
+    if(window.Kakao && !Kakao.isInitialized()){ Kakao.init('7b87b3bb674e9bec0fd123f31a4e6e24'); }
+    if(window.Kakao && Kakao.isInitialized() && Kakao.Share){
+      window.shareKakao = function(){
+        try{
+          Kakao.Share.sendDefault({
+            objectType:'feed',
+            content:{
+              title: document.title.split('|')[0].trim(),
+              description: (document.querySelector('meta[name=description]')||{}).content || '',
+              imageUrl: (document.querySelector('meta[property="og:image"]')||{}).content || '',
+              link:{ mobileWebUrl: location.href, webUrl: location.href }
+            },
+            buttons:[{ title:'해몽 보기', link:{ mobileWebUrl: location.href, webUrl: location.href } }]
+          });
+          if(window.gtag) gtag('event','share_click',{method:'kakao'});
+        }catch(e){ copyLink(); }
+      };
+    }
+  }catch(e){}
 })();
 </script>
 </body>

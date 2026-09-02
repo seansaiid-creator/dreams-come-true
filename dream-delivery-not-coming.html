@@ -44,6 +44,11 @@
   .cta-btn:active { transform:scale(0.98); opacity:0.9; } .related { margin-top:24px; } .related-title { font-size:13px; color:var(--text-muted); margin-bottom:10px; text-align:center; } .related-links { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
   .related-link { background:rgba(107,63,160,0.2); border:1px solid rgba(107,63,160,0.3); border-radius:20px; padding:6px 14px; font-size:13px; color:var(--purple-light); text-decoration:none; } footer { text-align:center; padding:28px 0 16px; font-size:11px; color:rgba(255,255,255,0.15); line-height:2; } footer a { color:rgba(255,255,255,0.25); text-decoration:none; margin:0 8px; padding:8px 4px; display:inline-block; }
 
+
+    .mid-related{background:rgba(107,63,160,0.10);border:1px solid rgba(107,63,160,0.22);border-radius:14px;padding:16px 16px 12px;margin:20px 0;}
+    .mid-related-t{font-size:13px;font-weight:700;color:var(--gold-light);margin-bottom:10px;}
+    .mid-related a{display:block;color:var(--purple-light);text-decoration:none;font-size:13.5px;line-height:1.5;padding:9px 10px;border-radius:9px;background:rgba(255,255,255,0.03);margin-bottom:6px;}
+    .mid-related a:last-child{margin-bottom:0;}
     .eng-ad {
       width: 100%;
       background: rgba(201,168,76,0.05);
@@ -178,6 +183,7 @@
 <h3>7️⃣ 택배 내용물이 기대와 다른 꿈</h3>
 <p>택배가 왔지만 내용물이 다르다면 결과가 예상과 다르게 나타날 수 있음을 의미합니다. 실망보다는 새로운 가능성을 어떻게 활용할지 생각하는 태도가 필요합니다.</p>
 </div>
+<div class="mid-related"><div class="mid-related-t">💡 이 꿈과 함께 보면 좋은 해몽</div><a href="dream-clock-stopped-full.html">시계가 멈추는 꿈 →</a><a href="dream-late.html">지각하는 꿈 →</a><a href="dream-bus-missed.html">버스를 놓치는 꿈 →</a></div>
 <div class="section">
 <h2>택배가 오지 않는 꿈과 심리 상태</h2>
 <p>이 꿈의 핵심 심리는 기다림에서 오는 불안입니다. 내가 원하는 결과가 있지만 그 결과를 직접 통제할 수 없기 때문에 마음이 지치고 있는 상태입니다. 특히 상대의 연락, 합격 여부, 계약 결과, 돈의 입금처럼 외부 답변을 기다릴 때 자주 나타날 수 있습니다.</p>
@@ -323,8 +329,8 @@
   <div class="eng-share">
     <div class="eng-share-title">📤 친구에게 공유하기</div>
     <div class="eng-share-buttons">
-      <button class="eng-share-btn kakao" onclick="if(window.shareKakao){window.shareKakao()}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))}">💬 카카오톡</button>
-      <button class="eng-share-btn copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))">🔗 링크 복사</button>
+      <button class="eng-share-btn kakao" onclick="window.shareKakao?window.shareKakao():(window.copyPageLink&&window.copyPageLink())">💬 카카오톡</button>
+      <button class="eng-share-btn copy" onclick="window.copyPageLink?window.copyPageLink():navigator.clipboard.writeText(location.href)">🔗 링크 복사</button>
     </div>
   </div>
 
@@ -347,6 +353,49 @@
     else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
     else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
   }, true);
+})();
+</script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+<script>
+/* 공유 수리: 카카오 SDK 초기화 + 실패 시 링크복사 폴백 */
+(function(){
+  function copyLink(){
+    var url=location.href;
+    var ok=function(){ alert('링크가 복사됐어요!'); if(window.gtag) gtag('event','share_click',{method:'copy'}); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(ok).catch(function(){ fallbackCopy(url,ok); });
+    } else { fallbackCopy(url,ok); }
+  }
+  function fallbackCopy(text,ok){
+    try{
+      var t=document.createElement('textarea');
+      t.value=text; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); t.setSelectionRange(0,99999);
+      var done=document.execCommand('copy'); document.body.removeChild(t);
+      done? ok() : prompt('아래 주소를 복사해주세요', text);
+    }catch(e){ prompt('아래 주소를 복사해주세요', text); }
+  }
+  window.copyPageLink = copyLink;
+  try{
+    if(window.Kakao && !Kakao.isInitialized()){ Kakao.init('7b87b3bb674e9bec0fd123f31a4e6e24'); }
+    if(window.Kakao && Kakao.isInitialized() && Kakao.Share){
+      window.shareKakao = function(){
+        try{
+          Kakao.Share.sendDefault({
+            objectType:'feed',
+            content:{
+              title: document.title.split('|')[0].trim(),
+              description: (document.querySelector('meta[name=description]')||{}).content || '',
+              imageUrl: (document.querySelector('meta[property="og:image"]')||{}).content || '',
+              link:{ mobileWebUrl: location.href, webUrl: location.href }
+            },
+            buttons:[{ title:'해몽 보기', link:{ mobileWebUrl: location.href, webUrl: location.href } }]
+          });
+          if(window.gtag) gtag('event','share_click',{method:'kakao'});
+        }catch(e){ copyLink(); }
+      };
+    }
+  }catch(e){}
 })();
 </script>
 </body>

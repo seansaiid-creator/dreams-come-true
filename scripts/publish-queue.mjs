@@ -25,7 +25,11 @@ for (const r of entry.related||[]) if (!meta[r]) err('related에 미존재 슬�
 
 // ── 렌더 ──
 let t = readFileSync('scripts/page-template.html','utf8');
-const sectionsHtml = entry.sections.map(s=>`<div class="section"><h2>${s.h2}</h2>${s.html}</div>`).join('\n');
+const relForMid = (entry.related||[]).slice(0,3);
+const midBlock = relForMid.length ? `<div class="mid-related"><div class="mid-related-t">💡 이 꿈과 함께 보면 좋은 해몽</div>${
+  relForMid.map(r=>`<a href="dream-${r}.html">${meta[r].kw} →</a>`).join('')}</div>` : '';
+const sectionsHtml = entry.sections.map((s,i)=>
+  (i===2 && midBlock ? midBlock : '') + `<div class="section"><h2>${s.h2}</h2>${s.html}</div>`).join('\n');
 const relatedHtml = (entry.related||[]).slice(0,5).map(r=>{
   const m=meta[r];
   return `<a href="dream-${r}.html" class="eng-related-item"><div class="eng-related-row"><span class="eng-related-name">${m.emoji} ${m.kw}</span><span class="eng-related-arrow">→</span></div></a>`;

@@ -82,6 +82,11 @@
   footer { text-align:center; padding:28px 0 16px; font-size:11px; color:rgba(255,255,255,0.15); line-height:2; }
   footer a { color:rgba(255,255,255,0.25); text-decoration:none; margin:0 8px; padding:8px 4px; display:inline-block; }
 
+
+    .mid-related{background:rgba(107,63,160,0.10);border:1px solid rgba(107,63,160,0.22);border-radius:14px;padding:16px 16px 12px;margin:20px 0;}
+    .mid-related-t{font-size:13px;font-weight:700;color:var(--gold-light);margin-bottom:10px;}
+    .mid-related a{display:block;color:var(--purple-light);text-decoration:none;font-size:13.5px;line-height:1.5;padding:9px 10px;border-radius:9px;background:rgba(255,255,255,0.03);margin-bottom:6px;}
+    .mid-related a:last-child{margin-bottom:0;}
     .eng-ad {
       width: 100%;
       background: rgba(201,168,76,0.05);
@@ -238,7 +243,8 @@
     <p>도움을 받으면서도 이를 거절하거나 그 의도를 의심하는 꿈은 현실에서 누군가를 완전히 신뢰하기 어려워하거나, 도움에 어떤 댓가가 따를까 걱정하고 있다는 신호입니다. 이 경우 현실에서 자신의 신뢰 문제를 점검해보는 것이 좋습니다.</p>
   </div>
 
-  <div class="section">
+  <div class="mid-related"><div class="mid-related-t">💡 이 꿈과 함께 보면 좋은 해몽</div><a href="dream-friend.html">친구 나오는 꿈 →</a><a href="dream-ancestor.html">조상꿈 →</a><a href="dream-money-friend.html">친구와 함께 돈 줍는 꿈 →</a></div>
+<div class="section">
     <h2>누군가 도와주는 꿈과 심리 상태</h2>
     <p>누군가 도와주는 꿈의 근본적인 의미는 '신뢰의 회복'입니다. 현실에서 힘들거나 혼자라고 느끼는 사람들이 이 꿈을 꾸는 경우가 많으며, 이는 '혼자가 아니다', '누군가 당신을 응원하고 있다'는 내면의 메시지입니다. 이 꿈을 통해 당신은 다시 한 번 인간관계의 소중함을 깨닫게 되며, 타인을 신뢰할 용기를 얻게 됩니다.</p>
   </div>
@@ -355,8 +361,8 @@
   <div class="eng-share">
     <div class="eng-share-title">📤 친구에게 공유하기</div>
     <div class="eng-share-buttons">
-      <button class="eng-share-btn kakao" onclick="if(window.shareKakao){window.shareKakao()}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))}">💬 카카오톡</button>
-      <button class="eng-share-btn copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))">🔗 링크 복사</button>
+      <button class="eng-share-btn kakao" onclick="window.shareKakao?window.shareKakao():(window.copyPageLink&&window.copyPageLink())">💬 카카오톡</button>
+      <button class="eng-share-btn copy" onclick="window.copyPageLink?window.copyPageLink():navigator.clipboard.writeText(location.href)">🔗 링크 복사</button>
     </div>
   </div>
 
@@ -391,6 +397,49 @@
     else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
     else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
   }, true);
+})();
+</script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+<script>
+/* 공유 수리: 카카오 SDK 초기화 + 실패 시 링크복사 폴백 */
+(function(){
+  function copyLink(){
+    var url=location.href;
+    var ok=function(){ alert('링크가 복사됐어요!'); if(window.gtag) gtag('event','share_click',{method:'copy'}); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(ok).catch(function(){ fallbackCopy(url,ok); });
+    } else { fallbackCopy(url,ok); }
+  }
+  function fallbackCopy(text,ok){
+    try{
+      var t=document.createElement('textarea');
+      t.value=text; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); t.setSelectionRange(0,99999);
+      var done=document.execCommand('copy'); document.body.removeChild(t);
+      done? ok() : prompt('아래 주소를 복사해주세요', text);
+    }catch(e){ prompt('아래 주소를 복사해주세요', text); }
+  }
+  window.copyPageLink = copyLink;
+  try{
+    if(window.Kakao && !Kakao.isInitialized()){ Kakao.init('7b87b3bb674e9bec0fd123f31a4e6e24'); }
+    if(window.Kakao && Kakao.isInitialized() && Kakao.Share){
+      window.shareKakao = function(){
+        try{
+          Kakao.Share.sendDefault({
+            objectType:'feed',
+            content:{
+              title: document.title.split('|')[0].trim(),
+              description: (document.querySelector('meta[name=description]')||{}).content || '',
+              imageUrl: (document.querySelector('meta[property="og:image"]')||{}).content || '',
+              link:{ mobileWebUrl: location.href, webUrl: location.href }
+            },
+            buttons:[{ title:'해몽 보기', link:{ mobileWebUrl: location.href, webUrl: location.href } }]
+          });
+          if(window.gtag) gtag('event','share_click',{method:'kakao'});
+        }catch(e){ copyLink(); }
+      };
+    }
+  }catch(e){}
 })();
 </script>
 </body>

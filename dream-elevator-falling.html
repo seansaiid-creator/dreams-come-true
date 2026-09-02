@@ -82,6 +82,11 @@
   footer { text-align:center; padding:28px 0 16px; font-size:11px; color:rgba(255,255,255,0.15); line-height:2; }
   footer a { color:rgba(255,255,255,0.25); text-decoration:none; margin:0 8px; padding:8px 4px; display:inline-block; }
 
+
+    .mid-related{background:rgba(107,63,160,0.10);border:1px solid rgba(107,63,160,0.22);border-radius:14px;padding:16px 16px 12px;margin:20px 0;}
+    .mid-related-t{font-size:13px;font-weight:700;color:var(--gold-light);margin-bottom:10px;}
+    .mid-related a{display:block;color:var(--purple-light);text-decoration:none;font-size:13.5px;line-height:1.5;padding:9px 10px;border-radius:9px;background:rgba(255,255,255,0.03);margin-bottom:6px;}
+    .mid-related a:last-child{margin-bottom:0;}
     .eng-ad {
       width: 100%;
       background: rgba(201,168,76,0.05);
@@ -242,7 +247,8 @@
     <p>비슷한 추락 꿈을 반복해서 꾸는 경우는 단순 공포가 아니라, 현실에서 해결되지 않은 압박이 지속되고 있다는 의미일 가능성이 큽니다. 특히 잠들기 전 생각이 많고, 하루 종일 긴장을 놓지 못하는 사람에게 반복되는 경우가 많습니다. 이는 ‘잠시 괜찮아졌다가도 다시 불안해지는 패턴’을 반영할 수 있으므로, 일회성 위로보다 생활 구조 자체를 조정하는 것이 필요합니다.</p>
   </div>
 
-  <div class="section">
+  <div class="mid-related"><div class="mid-related-t">💡 이 꿈과 함께 보면 좋은 해몽</div><a href="dream-falling.html">떨어지는 꿈 →</a><a href="dream-elevator-stuck.html">엘리베이터 멈추는 꿈 →</a><a href="dream-stairs-slipping.html">계단에서 미끄러지는 꿈 →</a></div>
+<div class="section">
     <h2>엘리베이터가 추락하는 꿈과 심리 상태</h2>
     <p>이 꿈의 중심에는 통제 상실에 대한 두려움이 있습니다. 스스로 결정한다고 생각했지만 실제로는 환경, 속도, 타인의 판단에 끌려가고 있다고 느낄 때, 무의식은 엘리베이터 추락이라는 강한 장면을 통해 경고를 보냅니다. 특히 책임이 많고 결과에 민감한 사람, 그리고 겉으로는 침착해 보여도 내면 긴장이 높은 사람에게 자주 나타납니다.</p>
     <p>또한 엘리베이터는 ‘빠른 변화’를 상징하기 때문에, 이 꿈은 변화 자체가 나쁘다는 뜻이 아니라 준비되지 않은 급변이 당신을 지치게 하고 있다는 의미로도 볼 수 있습니다. 지금 필요한 것은 무조건 버티는 힘이 아니라, 속도를 낮추고 내 기준을 다시 세우는 일입니다. 삶의 리듬을 재조정하면 불안의 강도도 함께 줄어드는 경우가 많습니다.</p>
@@ -360,8 +366,8 @@
   <div class="eng-share">
     <div class="eng-share-title">📤 친구에게 공유하기</div>
     <div class="eng-share-buttons">
-      <button class="eng-share-btn kakao" onclick="if(window.shareKakao){window.shareKakao()}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))}">💬 카카오톡</button>
-      <button class="eng-share-btn copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사됐어요!'))">🔗 링크 복사</button>
+      <button class="eng-share-btn kakao" onclick="window.shareKakao?window.shareKakao():(window.copyPageLink&&window.copyPageLink())">💬 카카오톡</button>
+      <button class="eng-share-btn copy" onclick="window.copyPageLink?window.copyPageLink():navigator.clipboard.writeText(location.href)">🔗 링크 복사</button>
     </div>
   </div>
 
@@ -396,6 +402,49 @@
     else if(el.matches('.related-links a,.eng-related-item')){ ev('related_click',{page:location.pathname,to:el.getAttribute('href')||''}); }
     else if(el.matches('.eng-share-btn')){ ev('share_click',{page:location.pathname,method:el.classList.contains('kakao')?'kakao':'copy'}); }
   }, true);
+})();
+</script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+<script>
+/* 공유 수리: 카카오 SDK 초기화 + 실패 시 링크복사 폴백 */
+(function(){
+  function copyLink(){
+    var url=location.href;
+    var ok=function(){ alert('링크가 복사됐어요!'); if(window.gtag) gtag('event','share_click',{method:'copy'}); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(ok).catch(function(){ fallbackCopy(url,ok); });
+    } else { fallbackCopy(url,ok); }
+  }
+  function fallbackCopy(text,ok){
+    try{
+      var t=document.createElement('textarea');
+      t.value=text; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); t.setSelectionRange(0,99999);
+      var done=document.execCommand('copy'); document.body.removeChild(t);
+      done? ok() : prompt('아래 주소를 복사해주세요', text);
+    }catch(e){ prompt('아래 주소를 복사해주세요', text); }
+  }
+  window.copyPageLink = copyLink;
+  try{
+    if(window.Kakao && !Kakao.isInitialized()){ Kakao.init('7b87b3bb674e9bec0fd123f31a4e6e24'); }
+    if(window.Kakao && Kakao.isInitialized() && Kakao.Share){
+      window.shareKakao = function(){
+        try{
+          Kakao.Share.sendDefault({
+            objectType:'feed',
+            content:{
+              title: document.title.split('|')[0].trim(),
+              description: (document.querySelector('meta[name=description]')||{}).content || '',
+              imageUrl: (document.querySelector('meta[property="og:image"]')||{}).content || '',
+              link:{ mobileWebUrl: location.href, webUrl: location.href }
+            },
+            buttons:[{ title:'해몽 보기', link:{ mobileWebUrl: location.href, webUrl: location.href } }]
+          });
+          if(window.gtag) gtag('event','share_click',{method:'kakao'});
+        }catch(e){ copyLink(); }
+      };
+    }
+  }catch(e){}
 })();
 </script>
 </body>
