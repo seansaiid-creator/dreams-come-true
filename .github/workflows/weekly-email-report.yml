@@ -3,6 +3,8 @@ on:
   schedule:
     - cron: '30 0 * * 1'    # KST 월요일 09:30
   workflow_dispatch: {}
+permissions: {}   # 이 워크플로는 레포 쓰기가 필요 없다
+
 jobs:
   report:
     runs-on: ubuntu-latest
@@ -27,7 +29,7 @@ jobs:
         env: { GA4_KEY: /tmp/sa-key.json }
         run: node scripts/weekly-report.mjs
       - name: Send email
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7  # v3 고정 — 가변 태그 사용 시 액션 침해로 앱 비밀번호 유출 가능
         with:
           server_address: smtp.gmail.com
           server_port: 465

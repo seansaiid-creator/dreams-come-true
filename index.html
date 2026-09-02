@@ -945,7 +945,8 @@
   if(/KAKAOTALK/i.test(ua)) document.getElementById('inapp-banner').style.display='block';
 })();
 function openExternalBrowser(){
-  var url=location.href, ua=navigator.userAgent||'';
+  /* 프래그먼트를 제거한다: '#Intent;...' 를 심어 인텐트 파라미터를 주입하는 것을 막기 위함 */
+  var url=location.origin+location.pathname+location.search, ua=navigator.userAgent||'';
   if(/Android/i.test(ua)){
     var intentUrl='intent://'+url.replace(/https?:\/\//,'')+'#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;end';
     location.href=intentUrl;
@@ -2238,7 +2239,8 @@ const SLUG_MAP = {"airplane":{"k":"비행기 꿈","c":"change"},"airport-gate-lo
     var kw=(p.get('kw')||'').trim(), cat=(p.get('cat')||'').trim(), slug=(p.get('dream')||'').trim();
     if(!kw && slug && SLUG_MAP[slug]){ kw=SLUG_MAP[slug].k; cat=SLUG_MAP[slug].c; }
     if(!kw) return;
-    kw=kw.slice(0,40);                                   // 길이 제한
+    kw=kw.slice(0,40).replace(/[^가-힣a-zA-Z0-9 ·]/g,'').trim();  // 길이 제한 + 꿈 이름에 쓰이는 문자만(콘텐츠 스푸핑 완화)
+    if(!kw) return;
     if(!CAT_FALLBACK.hasOwnProperty(cat)) cat='change';  // 화이트리스트 (불일치=change)
     window._cat=cat;
     var sp=(p.get('s')||slug||'').trim();
