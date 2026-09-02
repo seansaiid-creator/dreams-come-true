@@ -24,7 +24,7 @@ async function run(body){
   const r = await (await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${PROPERTY}:runReport`,{
     method:'POST', headers:{Authorization:`Bearer ${tok.access_token}`,'Content-Type':'application/json'},
     body:JSON.stringify(body)})).json();
-  if(r.error){ console.error('API 오류:',r.error.message); process.exit(1); }
+  if(r.error){ throw new Error(r.error.message); }
   return r;
 }
 const CUR={startDate:'7daysAgo',endDate:'yesterday'}, PREV={startDate:'14daysAgo',endDate:'8daysAgo'};
@@ -35,9 +35,11 @@ async function totals(range){
   return {users:v[0],sessions:v[1],views:v[2],engage:v[3],dur:v[4],ppages:v[1]?v[2]/v[1]:0};
 }
 async function dimTop(range,dim,metric,limit=10,filter){
+  try{
   const r = await run({dateRanges:[range],dimensions:[{name:dim}],metrics:[{name:metric}],
     orderBys:[{metric:{metricName:metric},desc:true}],limit,...(filter?{dimensionFilter:filter}:{})});
   return (r.rows||[]).map(row=>[row.dimensionValues[0].value,Number(row.metricValues[0].value)]);
+  }catch(e){ console.warn(`${dim} 수집 건너뜀: ${e.message.slice(0,60)}`); return []; }
 }
 const [cur,prev] = await Promise.all([totals(CUR),totals(PREV)]);
 const [srcCur,srcPrev] = await Promise.all([dimTop(CUR,'sessionSourceMedium','sessions',6),dimTop(PREV,'sessionSourceMedium','sessions',50)]);
