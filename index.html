@@ -12,8 +12,6 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2084458267795230"
-     crossorigin="anonymous"></script>
 <!-- ★ SEO 핵심 메타태그 -->
 <title>꿈해몽 행운 - 꿈풀이로 행운번호 추천 | 무료 꿈해몽</title>
 <meta name="description" content="어젯밤 꿈을 입력하면 전통 꿈해몽으로 꿈풀이를 해드리고 행운번호 5세트를 무료로 추천해드립니다. 돼지꿈, 뱀꿈, 똥꿈 등 길몽 해몽 서비스.">
@@ -1399,7 +1397,17 @@ function handleSearch(val){
   }
   box.style.display='block';
   clearTimeout(window.__dsT);
-  window.__dsT=setTimeout(function(){ if(window.gtag) gtag('event','dream_search',{query:q.slice(0,50),result_count:results.length}); },800);
+  window.__dsT=setTimeout(function(){
+    if(!window.gtag) return;
+    /* 검색어는 콘텐츠 기획에 쓰므로 수집하되, 개인정보로 보이는 입력은 제외한다 */
+    var safe = q.length <= 20
+      && !/\d{4,}/.test(q)                     // 생년월일·전화번호 등 숫자 나열
+      && !/[@]/.test(q)                         // 이메일
+      && !/(씨|님|이름|전화|번호|주소)$/.test(q); // 사람 지칭·연락처
+    gtag('event','dream_search', safe
+      ? {query:q, result_count:results.length}
+      : {result_count:results.length});
+  },800);
 }
 
 function goSearch(keyword){
@@ -1845,7 +1853,10 @@ function startAll() {
   if (!dreamText) { alert('꿈 내용을 입력해주세요 🌙'); return; }
   window._dreamText = dreamText;
   window._reading   = analyzeDream(dreamText);
-  if (window.gtag) { gtag('event','haemong_start',{query:dreamText.slice(0,50)}); gtag('event','lucky_view',{query:dreamText.slice(0,50)}); }
+  if (window.gtag) { /* 개인정보 보호: 자유 입력 원문은 전송하지 않는다(이름·가족·건강 등이 섞일 수 있음) */
+    var _len = dreamText.length, _bucket = _len < 10 ? 'short' : _len < 30 ? 'mid' : 'long';
+    gtag('event','haemong_start',{len_bucket:_bucket, matched: window._cat ? 0 : 1});
+    gtag('event','lucky_view',{len_bucket:_bucket}); }
 
   // UI 정리 (null-safe: 새 홈화면에 없는 요소는 무시)
   const hide = (id) => { const el = document.getElementById(id); if(el) el.style.display = 'none'; };

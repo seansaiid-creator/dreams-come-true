@@ -273,7 +273,17 @@
           b.lunarSrc.d + '일생 (양력 ' + b.y + '.' + b.m + '.' + b.d + ')';
     }
     $('savedBox').innerHTML = '<div class="saved-box"><div class="who">🔒 <b>' + esc(t) +
-      '</b>으로 보고 있어요. 이 정보는 이 기기에만 저장됩니다.</div></div>';
+      '</b>으로 보고 있어요. 이 정보는 이 기기에만 저장되고 서버로 가지 않아요.</div>' +
+      '<button type="button" id="wipeBtn" style="width:100%;margin-top:10px;background:rgba(255,255,255,.05);' +
+      'border:1px solid var(--border);border-radius:10px;padding:10px;color:var(--text-muted);' +
+      'font-size:12.5px;cursor:pointer;font-family:inherit;">저장된 정보 지우기</button></div>';
+    var wipe = $('wipeBtn');
+    if (wipe) wipe.addEventListener('click', function () {
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      ev('saju_wipe', {});
+      alert('저장된 생년월일을 지웠어요.');
+      location.href = 'saju.html';
+    });
   }
 
   /* ── 시작 ── */
