@@ -1,3 +1,13 @@
 .DS_Store
 ga4/
 report.html
+
+# 비밀값 — 실수로도 커밋되지 않도록 (실제 키는 ~/.config/dreams-ga4/ 에 보관)
+*.pem
+*.key
+*.p12
+.env
+.env.*
+sa-key.json
+*-credentials.json
+service-account*.json
