@@ -14,6 +14,10 @@ jobs:
         with: { node-version: '20' }
       - name: Publish one approved entry
         run: node scripts/publish-queue.mjs
+      - name: Rebuild dreams-db.js (CTA 착지용 해몽 DB)
+        run: python3 scripts/build-dreams-db.py
+      - name: Verify — 신규 페이지가 DB·CTA에 반영됐는지
+        run: node scripts/verify-publish.mjs
       - name: Commit & push if changed
         run: |
           if git diff --quiet; then echo "no change"; exit 0; fi

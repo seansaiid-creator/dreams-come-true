@@ -838,5 +838,11 @@
   "kw": "세탁기 물이 넘치는 꿈",
   "cat": "nature",
   "emoji": "🫧"
+ },
+ {
+  "slug": "kakao-message-unread",
+  "kw": "보낸 메시지가 계속 안 읽히는 꿈",
+  "cat": "people",
+  "emoji": "📨"
  }
 ]
