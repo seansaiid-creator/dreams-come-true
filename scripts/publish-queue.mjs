@@ -42,6 +42,10 @@ let sm = readFileSync('sitemap.xml','utf8');
 sm = sm.replace('</urlset>', `  <url>\n    <loc>${SITE}/dream-${entry.slug}.html</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n</urlset>`);
 writeFileSync('sitemap.xml', sm);
 
+// ── kw-cat 지정표 등재 (dreams-db 생성기가 참조) ──
+const csvLine = `${entry.slug},${entry.kw.includes(',')?'"'+entry.kw+'"':entry.kw},${entry.cat}\n`;
+writeFileSync('kw-cat-map.csv', readFileSync('kw-cat-map.csv','utf8').replace(/\n?$/, '\n') + csvLine);
+
 // ── 오늘의 꿈 풀 등재 ──
 pool.push({slug:entry.slug, kw:entry.kw, cat:entry.cat, emoji:entry.emoji});
 writeFileSync('scripts/today-pool.json', JSON.stringify(pool,null,1));

@@ -1741,6 +1741,13 @@ const keywordMap = {
 };
 
 function analyzeDream(text) {
+  // CTA로 넘어온 슬러그가 있으면 그 페이지의 실제 해몽을 우선 사용
+  if (window._slug && window.DREAM_DETAILS && window.DREAM_DETAILS[window._slug]) {
+    var d = window.DREAM_DETAILS[window._slug];
+    if (window.gtag) gtag('event','detail_used',{slug:window._slug});
+    return {keyword:d.k, luck:d.l, luckScore:d.s, text:d.t,
+            advice:'<strong>오늘의 조언:</strong> '+d.a};
+  }
   // "뱀꿈"·"뱀 꿈" 같은 기본형은 dreamDB 키 직접 매칭 (keywordMap 어근 공백 보완)
   var base = String(text).replace(/\s/g,'').replace(/꿈$/,'');
   if (dreamDB[base]) return dreamDB[base];
@@ -2227,11 +2234,21 @@ const SLUG_MAP = {"airplane":{"k":"비행기 꿈","c":"change"},"airport-gate-lo
     kw=kw.slice(0,40);                                   // 길이 제한
     if(!CAT_FALLBACK.hasOwnProperty(cat)) cat='change';  // 화이트리스트 (불일치=change)
     window._cat=cat;
+    var sp=(p.get('s')||slug||'').trim();
+    if(/^[a-z0-9-]{1,60}$/.test(sp)) window._slug=sp;    // 슬러그 화이트리스트
     var input=document.getElementById('dreamInput');
     if(!input || typeof startAll!=='function') return;
     input.value=kw;                                      // .value 대입만 사용 (XSS 안전)
     if(window.gtag) gtag('event','cta_landing',{kw:kw,cat:cat,legacy:slug?1:0});
-    startAll();
+    var run=function(){ try{ startAll(); }catch(e){} };
+    if(window._slug){                                    // 상세 DB를 받아온 뒤 실행
+      var sc=document.createElement('script');
+      sc.src='dreams-db.js'; sc.onload=run; sc.onerror=run;
+      document.head.appendChild(sc);
+      setTimeout(function(){ if(!window.__ran){ window.__ran=1; run(); } }, 2500);
+      var origRun=run; run=function(){ if(window.__ran) return; window.__ran=1; origRun(); };
+      sc.onload=run; sc.onerror=run;
+    } else { run(); }
   }catch(e){}
 })();
 </script>
