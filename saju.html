@@ -186,13 +186,23 @@
     <h2>생년월일을 알려주세요</h2>
 
     <div class="fld">
-      <span class="fld-label">태어난 날 <span style="color:var(--text-muted);font-weight:400;">(양력)</span></span>
+      <span class="fld-label">태어난 날</span>
+      <div class="chips" style="margin-bottom:10px;" id="calChips">
+        <button type="button" class="chip on" data-cal="solar" style="flex:1;text-align:center;">양력</button>
+        <button type="button" class="chip" data-cal="lunar" style="flex:1;text-align:center;">음력</button>
+      </div>
       <div class="sel-row">
         <select id="by" aria-label="태어난 해"></select>
         <select id="bm" aria-label="태어난 달"></select>
         <select id="bd" aria-label="태어난 날"></select>
       </div>
-      <div class="fld-help">주민등록에 적힌 날짜(양력)를 넣어주세요. 음력 생일만 아신다면 <a href="https://astro.kasi.re.kr/life/pageView/8" target="_blank" rel="noopener" style="color:var(--purple-light);">한국천문연구원 변환</a>에서 양력을 확인할 수 있어요.</div>
+      <div id="leapWrap" style="display:none;margin-top:9px;">
+        <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);cursor:pointer;">
+          <input type="checkbox" id="isLeap" style="width:17px;height:17px;accent-color:var(--gold);">
+          윤달에 태어났어요
+        </label>
+      </div>
+      <div class="fld-help" id="calHelp">주민등록에 적힌 날짜를 넣어주세요.</div>
     </div>
 
     <div class="fld">

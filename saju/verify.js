@@ -85,6 +85,31 @@ for (const k of KASI) {
 }
 console.log(`  → KASI 대조 ${KASI.length * 3}건 확인`);
 
+console.log('\n═══ 8. 음력 변환 (KASI 공식값 대조) ═══');
+const LUN = require('./lunar-core.js');
+const LCASES = [
+  [1940,2,18,1940,1,11,0],[1940,6,8,1940,5,3,0],[1940,11,28,1940,10,29,0],
+  [1950,2,18,1950,1,2,0],[1960,6,8,1960,5,15,0],[1970,11,28,1970,10,30,0],
+  [1980,2,18,1980,1,3,0],[1990,6,8,1990,5,16,0],[2000,11,28,2000,11,3,0],
+  [2010,2,18,2010,1,5,0],[2020,6,8,2020,4,17,1],[2030,11,28,2030,11,4,0],
+  [2040,2,18,2040,1,7,0],
+  [1990,3,5,1990,2,9,0],[2000,1,15,1999,12,9,0],[1955,6,15,1955,4,25,0],
+  [2010,12,22,2010,11,17,0],[2001,5,5,2001,4,12,0],
+];
+for (const [sy,sm,sd,ly,lm,ld,leap] of LCASES) {
+  const r = LUN.solarToLunar(sy,sm,sd);
+  eq(`${sy}-${sm}-${sd} 음력`, r ? `${r.y}.${r.m}.${r.d}${r.leap?'윤':''}` : 'null', `${ly}.${lm}.${ld}${leap?'윤':''}`);
+}
+// 왕복
+let rtOk = 0;
+for (let y = 1935; y <= 2045; y += 3) for (const [m,d] of [[1,15],[6,8],[11,28]]) {
+  const l = LUN.solarToLunar(y,m,d); if (!l) continue;
+  const b = LUN.lunarToSolar(l.y,l.m,l.d,l.leap);
+  if (b && b.y===y && b.m===m && b.d===d) rtOk++; else { fail++; console.log(`  ❌ 왕복 ${y}-${m}-${d}`); }
+}
+pass += rtOk;
+console.log(`  → 음력 대조 ${LCASES.length}건 + 왕복 ${rtOk}건`);
+
 console.log(`\n═══ 결과: ${pass}건 통과 / ${fail}건 실패 ═══`);
 
 process.exit(fail ? 1 : 0);

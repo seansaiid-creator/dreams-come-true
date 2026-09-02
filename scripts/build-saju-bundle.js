@@ -2,7 +2,7 @@
    node scripts/build-saju-bundle.js */
 const fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..');
-const files = ['saju-core.js', 'saju-content.js', 'saju-reading.js'];
+const files = ['saju-core.js', 'lunar-core.js', 'saju-content.js', 'saju-reading.js'];
 let out = `/* saju-bundle.js — 자동 생성물. 수정하지 마세요.
    원본: saju/{${files.join(',')}} / 생성: node scripts/build-saju-bundle.js
    계산은 전부 이 브라우저 안에서 이뤄지며 생년월일은 서버로 전송되지 않습니다. */
@@ -26,6 +26,8 @@ global.Saju = {
   buildReading: __M['saju-reading'].buildReading,
   todayPillarIndex: __M['saju-reading'].todayPillarIndex,
   calcSaju: __M['saju-core'].calcSaju,
+  lunarToSolar: __M['lunar-core'].lunarToSolar,
+  solarToLunar: __M['lunar-core'].solarToLunar,
 };
 })(window);
 `;

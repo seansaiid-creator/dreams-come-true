@@ -13,6 +13,7 @@
   var ev = function (n, p) { if (window.gtag) gtag('event', n, p || {}); };
 
   var picked = null;   // 선택된 시각(정시). null이면 모름
+  var calMode = 'solar';   // 'solar' | 'lunar'
 
   /* ── 유입한 꿈 맥락 (차별점 ①) ── */
   function dreamContext() {
@@ -47,12 +48,33 @@
       b.classList.add('on');
       picked = b.dataset.h === '' ? null : parseInt(b.dataset.h, 10);
     });
+    var cc = $('calChips');
+    if (cc) cc.addEventListener('click', function (e) {
+      var b = e.target.closest('.chip'); if (!b) return;
+      [].forEach.call(this.querySelectorAll('.chip'), function (c) { c.classList.remove('on'); });
+      b.classList.add('on');
+      calMode = b.dataset.cal;
+      $('leapWrap').style.display = calMode === 'lunar' ? '' : 'none';
+      $('calHelp').textContent = calMode === 'lunar'
+        ? '음력(생일을 음력으로 쇠는 경우) 날짜를 넣어주세요. 윤달이면 아래를 체크해주세요.'
+        : '주민등록에 적힌 날짜를 넣어주세요.';
+      fillDays();
+    });
+    var lp = $('isLeap'); if (lp) lp.addEventListener('change', fillDays);
     $('goBtn').addEventListener('click', submit);
   }
 
   function fillDays() {
     var y = +$('by').value, m = +$('bm').value, cur = +$('bd').value || 1;
-    var last = new Date(y, m, 0).getDate();
+    var last;
+    if (calMode === 'lunar') {
+      // 음력 달은 29일 또는 30일 — 실제 길이를 구한다
+      var leap = $('isLeap') && $('isLeap').checked;
+      last = 29;
+      try { if (window.Saju.lunarToSolar(y, m, 30, leap)) last = 30; } catch (e) {}
+    } else {
+      last = new Date(y, m, 0).getDate();
+    }
     var h = ''; for (var i = 1; i <= last; i++) h += '<option value="' + i + '">' + i + '일</option>';
     $('bd').innerHTML = h;
     $('bd').value = Math.min(cur, last);
@@ -63,12 +85,25 @@
   function load() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } }
 
   function submit() {
+    var sy = +$('by').value, sm = +$('bm').value, sd = +$('bd').value;
+    var lunarSrc = null;
+    if (calMode === 'lunar') {
+      var leap = $('isLeap') && $('isLeap').checked;
+      var conv = window.Saju.lunarToSolar(sy, sm, sd, leap);
+      if (!conv) {
+        alert('그 날짜의 음력이 없어요. 날짜나 윤달 여부를 다시 확인해주세요.');
+        return;
+      }
+      lunarSrc = { y: sy, m: sm, d: sd, leap: !!leap };
+      sy = conv.y; sm = conv.m; sd = conv.d;
+    }
     var b = {
-      y: +$('by').value, m: +$('bm').value, d: +$('bd').value,
+      y: sy, m: sm, d: sd,
       h: picked === null ? 12 : picked, mi: 0, unknownHour: picked === null,
+      lunarSrc: lunarSrc,
     };
     save(b);
-    ev('saju_submit', { unknownHour: b.unknownHour ? 1 : 0 });
+    ev('saju_submit', { unknownHour: b.unknownHour ? 1 : 0, cal: calMode });
     render(b, true);
   }
 
@@ -178,8 +213,13 @@
   }
 
   function renderSaved(b) {
-    $('savedBox').innerHTML = '<div class="saved-box"><div class="who">🔒 <b>' +
-      b.y + '년 ' + b.m + '월 ' + b.d + '일생</b>으로 보고 있어요. 이 정보는 이 기기에만 저장됩니다.</div></div>';
+    var t = b.y + '년 ' + b.m + '월 ' + b.d + '일생';
+    if (b.lunarSrc) {
+      t = '음력 ' + b.lunarSrc.y + '년 ' + (b.lunarSrc.leap ? '윤' : '') + b.lunarSrc.m + '월 ' +
+          b.lunarSrc.d + '일생 (양력 ' + b.y + '.' + b.m + '.' + b.d + ')';
+    }
+    $('savedBox').innerHTML = '<div class="saved-box"><div class="who">🔒 <b>' + esc(t) +
+      '</b>으로 보고 있어요. 이 정보는 이 기기에만 저장됩니다.</div></div>';
   }
 
   /* ── 시작 ── */
@@ -189,7 +229,14 @@
     var saved = load();
     if (saved && saved.y) {
       // 재방문 — 원탭으로 바로 결과
-      $('by').value = saved.y; fillDays(); $('bm').value = saved.m; $('bd').value = saved.d;
+      var src = saved.lunarSrc || saved;
+      $('by').value = src.y; fillDays(); $('bm').value = src.m; $('bd').value = src.d;
+      if (saved.lunarSrc) {
+        calMode = 'lunar';
+        var lb = document.querySelector('.chip[data-cal="lunar"]');
+        if (lb) { [].forEach.call($('calChips').querySelectorAll('.chip'), function(c){c.classList.remove('on');}); lb.classList.add('on'); }
+        $('leapWrap').style.display = ''; if ($('isLeap')) $('isLeap').checked = !!saved.lunarSrc.leap;
+      }
       ev('saju_revisit', {});
       render(saved, false);
     } else {
