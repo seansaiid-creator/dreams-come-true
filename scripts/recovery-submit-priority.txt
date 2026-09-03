@@ -1,0 +1,53 @@
+# 네이버 웹 페이지 수집 요청 — 우선 제출 목록 (2026-09-03 실측 기준)
+#
+# 서치어드바이저 → suksuki.com 속성 → 요청 → 웹 페이지 수집  (하루 50개 한도)
+# 전환 전 상위 50페이지 중 "신 도메인 노출 0건"인 31개만 추렸다.
+# 이미 노출되는 19개는 제출할 필요가 없다.
+#
+# 미노출 31개의 전환 전 세션 합계 = 771 / 상위 50 전체 1161 (66%)
+# ─────────────────────────────────────────────────────────────
+
+# [A] 양쪽 도메인 모두 미노출 — 색인에서 빠진 상태 (25개, 세션합 626)
+https://suksuki.com/dream-bag-lost.html
+https://suksuki.com/dream-phone-lost.html
+https://suksuki.com/dream-shoes-lost.html
+https://suksuki.com/dream-receiving-money.html
+https://suksuki.com/dream-water-immersion.html
+https://suksuki.com/dream-friend-dying.html
+https://suksuki.com/dream-shoes-wet.html
+https://suksuki.com/dream-window-broken.html
+https://suksuki.com/dream-eating.html
+https://suksuki.com/dream-goldpickup.html
+https://suksuki.com/dream-snake.html
+https://suksuki.com/dream-bus-missed.html
+https://suksuki.com/dream-money.html
+https://suksuki.com/dream-airplane.html
+https://suksuki.com/dream-elevator-ride.html
+https://suksuki.com/dream-taxi.html
+https://suksuki.com/dream-phone-broken.html
+https://suksuki.com/dream-whitesnake.html
+https://suksuki.com/dream-fighting.html
+https://suksuki.com/dream-rainbow.html
+https://suksuki.com/dream-baby.html
+https://suksuki.com/dream-count-money.html
+https://suksuki.com/dream-exboyfriend.html
+https://suksuki.com/dream-fish.html
+https://suksuki.com/dream-stair.html
+
+# [B] 구 도메인만 노출 — 신 도메인으로 이전 필요 (6개, 세션합 145)
+https://suksuki.com/dream-house-remodeling.html
+https://suksuki.com/dream-helped.html
+https://suksuki.com/dream-ticket-lost.html
+https://suksuki.com/dream-breaking-things.html
+https://suksuki.com/dream-interview.html
+https://suksuki.com/dream-key-lost.html
+
+# ─────────────────────────────────────────────────────────────
+# 제출 불필요 — 이미 신 도메인으로 노출 확인됨 (19개, 세션합 390)
+#   dream-parked-car-lost / dream-losing-money-final / dream-missed-call /
+#   dream-bag-empty / dream-bank-balance-zero / dream-card-payment-fail /
+#   dream-hitting-someone / dream-atm-money-not-coming-out-final /
+#   dream-taxi-wrong-way / dream-fridge-food-spoiled /
+#   dream-money-disappears-account / dream-package-wrong-item / dream-snow /
+#   dream-friend / dream-phone-no-voice / dream-card-payment-failed /
+#   dream-payment-cancelled / dream-shoes-slipping / dream-subway-wrong

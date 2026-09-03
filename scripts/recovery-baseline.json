@@ -1,0 +1,10 @@
+{
+ "period": "2026-08-03 ~ 2026-09-01",
+ "days": 30,
+ "avgUsers": 48.7,
+ "avgNewUsers": 47.3,
+ "avgSessions": 51.5,
+ "minUsers": 32,
+ "maxUsers": 67,
+ "note": "도메인 전환(2026-09-02) 직전 30일 실측. 7일 평균이 avgUsers를 회복하면 추적 종료."
+}
