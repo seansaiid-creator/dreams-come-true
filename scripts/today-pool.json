@@ -850,5 +850,11 @@
   "kw": "와이파이가 계속 끊기는 꿈",
   "cat": "blocked",
   "emoji": "📶"
+ },
+ {
+  "slug": "subway-gate-not-opening",
+  "kw": "지하철 개찰구가 안 열리는 꿈",
+  "cat": "blocked",
+  "emoji": "🚇"
  }
 ]

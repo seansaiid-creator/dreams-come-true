@@ -215,7 +215,9 @@
    "bus-missed",
    "door-not-open-final"
   ],
-  "approved": true
+  "approved": true,
+  "published": true,
+  "publishedAt": "2026-09-04"
  },
  {
   "slug": "navigation-wrong-way",
