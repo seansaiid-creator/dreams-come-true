@@ -7,5 +7,14 @@
   "naverGone": 25,
   "naverOnlyOld": 6,
   "lostSessions": 771
+ },
+ {
+  "ts": "2026-09-03T23:38:28.838Z",
+  "avgUsers7": 47.9,
+  "avgNew7": 46.3,
+  "naverShown": 22,
+  "naverGone": 26,
+  "naverOnlyOld": 2,
+  "lostSessions": 656
  }
 ]
