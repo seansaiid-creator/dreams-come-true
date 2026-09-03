@@ -285,7 +285,7 @@
    "mirror",
    "nightmare"
   ],
-  "approved": false,
+  "approved": true,
   "sections": [
    {
     "h2": "머리카락이 빠지는 꿈의 기본 의미",
@@ -336,7 +336,7 @@
    "presentation-blank-screen",
    "mirror-face-blur"
   ],
-  "approved": false,
+  "approved": true,
   "sections": [
    {
     "h2": "사람들 앞에서 알몸인 꿈의 기본 의미",
@@ -387,7 +387,7 @@
    "cant-wake-up-after-alarm",
    "nightmare"
   ],
-  "approved": false,
+  "approved": true,
   "sections": [
    {
     "h2": "소리를 지르려는데 목소리가 안 나오는 꿈의 기본 의미",
@@ -472,7 +472,7 @@
    "endless-stairs",
    "chased"
   ],
-  "approved": false
+  "approved": true
  },
  {
   "slug": "brake-not-working",
@@ -523,7 +523,7 @@
    "red-light-never-changes",
    "elevator-falling"
   ],
-  "approved": false
+  "approved": true
  },
  {
   "slug": "stuck-on-height",
@@ -574,7 +574,7 @@
    "stairs-slipping",
    "falling"
   ],
-  "approved": false
+  "approved": true
  },
  {
   "slug": "pet-lost",
@@ -625,7 +625,7 @@
    "key-lost",
    "friend-dying"
   ],
-  "approved": false
+  "approved": true
  },
  {
   "slug": "child-lost",
@@ -676,6 +676,6 @@
    "lost-path",
    "friend-dying"
   ],
-  "approved": false
+  "approved": true
  }
 ]
