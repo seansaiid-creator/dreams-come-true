@@ -38,6 +38,28 @@ let olddom = 0;
 for (const f of files) if (readFileSync(f,'utf8').includes('dreams-come-true-ten.vercel.app')) olddom++;
 if (olddom) problems.push(`구 도메인 참조가 ${olddom}개 파일에 잔존`);
 
+// 3-d. 자기 자신을 가리키는 링크 감시 (UIUX 8-3, docs/UIUX_REVIEW.md)
+//      클릭해도 같은 페이지가 열려 고장으로 인식되고 회유 슬롯이 낭비된다
+let selfl = 0;
+// 대상은 꿈 상세 페이지의 회유 링크. 전 사이트 공통 네비/푸터의 현재 페이지 참조는 정상이므로 제외
+for (const f of [...files].filter(x => x.startsWith('dream-'))) {
+  const body = readFileSync(f,'utf8');
+  const esc = f.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const all = body.match(new RegExp(`<a[^>]*href="${esc}"[^>]*>`,'g')) || [];
+  const n = all.filter(a => !/class="[^"]*\bnav-(link|logo)\b/.test(a)).length;
+  if (n) { selfl += n; warns.push(`자기 자신을 가리키는 링크: ${f} (${n}건)`); }
+}
+if (selfl) problems.push(`자기링크 ${selfl}건 — 발행기 또는 템플릿에서 자기 slug를 제외해야 함`);
+
+// 3-e. 푸터 대비 회귀 감시 (UIUX 8-1) — 개인정보처리방침 링크는 AdSense 심사 확인 항목
+let lowc = 0;
+for (const f of files) {
+  const body = readFileSync(f,'utf8');
+  for (const m of body.matchAll(/footer\s*(a\s*)?\{[^}]*\}/g))
+    if (/color\s*:\s*rgba\(255,\s*255,\s*255,\s*0?\.(0\d|1\d|2\d|3[0-4])\)/.test(m[0])) { lowc++; break; }
+}
+if (lowc) problems.push(`푸터 대비가 WCAG AA(4.5:1) 미만인 파일 ${lowc}개 — 정책 링크 판독 불가`);
+
 // 4. 오늘의 꿈 신선도 (배포 후 유효)
 const idx = readFileSync('index.html','utf8');
 const dm = idx.match(/<!--TODAY_DATE-->([^<]*)</);
