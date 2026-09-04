@@ -414,7 +414,7 @@
     var pct = Math.round((window.scrollY || window.pageYOffset || 0) / h * 100);
     for (var k in sd) if(!sd[k] && pct >= +k){ sd[k] = true; ev('scroll_'+k, {page:location.pathname}); }
   }
-  function sdQueue(){ if(sdT === null) sdT = window.requestAnimationFrame ? requestAnimationFrame(sdCheck) : setTimeout(sdCheck, 100); }
+  function sdQueue(){ if(sdT === null) sdT = setTimeout(sdCheck, 100); } /* rAF는 hidden 탭에서 멈춰 가드가 고정됨 — setTimeout만 사용 */
   window.addEventListener('scroll', sdQueue, {passive:true});
   window.addEventListener('load', sdCheck);
 })();
