@@ -5,12 +5,16 @@
 
 ## 0. 먼저 읽을 것 (순서대로)
 1. `OPERATIONS.md` **§0 대원칙** — 검색·실측으로 확인한 뒤 말한다 · 추측 금지 · 객관적 판단만, 희망적 표현 금지
+1-A. `OPERATIONS.md` **§0-A 기록 규칙**(09-04 신설) — 결론이 날 때마다 파일에 적는다. 대화는 창을 닫으면 사라진다
 2. `docs/DECISIONS.md` — 이미 버린 안(다시 제안 금지) · 확정 규칙
 3. `docs/WORKLOG.md` — 터진 문제의 증상→원인→처리→교훈
 4. 이 파일
 
 ## 1. 현재 상태 한 줄
 정적 HTML 150개(꿈 상세 143), Vercel, 도메인 `suksuki.com`(9/2 전환, 구 `dreams-come-true-ten.vercel.app`은 308). **9/2 전환 후 네이버 재색인 공백으로 사용자 -59%(9/3 확정치)** — 회복은 데이터창이 추적. AdSense 신청은 9/6 GSC 색인 점검 후.
+
+**발행 큐(09-04 실측, `content-queue/queue.json` 파싱)**: 13건 **전부 `approved:true`** — 발행 완료 4 · **미발행 9**. 월수금 04:10 워크플로가 순차 발행하므로 운영자 조치 불요. (WORKLOG에 "8편 검수 대기"로 남아 있던 기술은 실물과 달라 09-04 정정함.)
+발행 무결성 `node scripts/verify-publish.mjs` **통과 — 페이지 143 / DB 143**.
 
 ## 2. 절대 규칙 (개발창)
 - **배포 전 운영자 컨펌** (`OPERATIONS.md` §5). 문서만 바꾸는 커밋은 예외
@@ -44,8 +48,12 @@ python3 scripts/measure-draft.py docs/drafts/saju-content-v2-draft.md --write   
 ```
 
 ## 5. 대기 작업 (우선순위 순)
-1. **꿈사주 문안 반영** — 컨텐츠창 검수 완료 신호 오면: `saju/saju-content.js`의 RELATION 5×(text,tip) + DREAM_BRIDGE 8×5 교체 → 번들 빌드 → `verify.js` → 컨펌 → 배포. 계산 로직(`relationOf`, `saju-core`) 절대 수정 금지
-2. **인라인 꿈사주 모듈** — AdSense 승인 후. 설계(9/4 합의):
+
+> **착수 가능 여부 (2026-09-04 실측 판정)** — 1·2·3은 전부 차단 상태다. **차단 없이 손댈 수 있는 것은 4번 하나뿐.**
+> 새 창은 지시 없이 1~3을 건드리지 말 것.
+
+1. **꿈사주 문안 반영** — 🔒 **차단: 컨텐츠창 검수 완료 신호 없음**(`docs/drafts/saju-content-v2-draft.md` 미반영, 09-04 확인). 신호 오면: `saju/saju-content.js`의 RELATION 5×(text,tip) + DREAM_BRIDGE 8×5 교체 → 번들 빌드 → `verify.js` → 컨펌 → 배포. 계산 로직(`relationOf`, `saju-core`) 절대 수정 금지
+2. **인라인 꿈사주 모듈** — 🔒 **차단 2중: ① AdSense 미승인 ② 배치 확정용 `scroll_50÷page_view` 7일 완성 데이터 미확보**(계측 배포 09-04 → 판정 가능 시점 빨라야 09-11). 설계(9/4 합의):
    - 위치: "이 꿈을 꿨다면" 섹션 직후(본문 약 51%). 확정은 데이터창의 `scroll_50÷page_view` 7일 데이터 후
    - 입력 전: 오늘의 일진은 전원 공통 → `todayPillarIndex`로 생년월일 없이 "오늘은 ○○한 날" + 카테고리 문장 표시
    - 입력: 생년월일 3탭(시간 선택), 결과는 **그 자리에서** 펼침(페이지 이동 없음)
@@ -53,8 +61,8 @@ python3 scripts/measure-draft.py docs/drafts/saju-content-v2-draft.md --write   
    - hero 배지 아래 앵커 한 줄 "이 꿈을 꾼 오늘, 당신의 흐름까지 →"
    - 이벤트: `saju_inline_view` / `saju_inline_input` / `saju_inline_result`
    - 번들 지연 로드 검토(142페이지 무게)
-3. **UIUX 미이행 묶음**(승인 후, `docs/UIUX_REVIEW.md`): 4a hero 결론+목차 · 4b 관련꿈 중복 해소 · 4c memimo 강등(81%, 92일 2클릭) · 5 오늘의 꿈 위젯 · 8-2 터치타깃 44px
-4. `index.html`에도 `scroll_*` 적용(선택, 블록이 dream과 다름)
+3. **UIUX 미이행 묶음** — 🔒 **차단: AdSense 승인 후 한 묶음 재설계, 개별 수정 금지**(운영자 지시 09-03). 대상(`docs/UIUX_REVIEW.md`): 4a hero 결론+목차 · 4b 관련꿈 중복 해소 · 4c memimo 강등(81%, 92일 2클릭) · 5 오늘의 꿈 위젯 · 8-2 터치타깃 44px
+4. `index.html`에도 `scroll_*` 적용 — ✅ **착수 가능(유일)**. 블록이 dream과 달라 그대로 복사 불가. 단 홈 조회는 전체의 4.7%(286/6,069, GA4 실측)라 얻을 데이터 가치는 낮다
 5. **하지 말 것**: 타로·이름궁합 이식(우선순위 아님), 유료화·카카오톡 백엔드(일 500명 전 보류), CSP(11ty 이관 시)
 
 ## 6. 최근 교훈 (반복 금지)
