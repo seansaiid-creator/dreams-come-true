@@ -63,12 +63,17 @@ GA4 키: `~/.config/dreams-ga4/sa-key.json`(레포 밖). 속성 `528679246`. 측
 - 연령·성별: Google 신호 꺼짐. 켜도 일 50명 규모는 기준점(thresholding)에 걸릴 공산 큼 — 권하지 않음
 - 이벤트 계측 자체는 정상(9/4 실브라우저에서 5개 이벤트 + scroll 3개 발화 확인). **클릭이 0인 건 계측 버그가 아니라 위치 문제**
 
-## 7. GA4 설정 확인 필요 (운영자 UI, 9/4 미확인)
-Admin API가 GCP 프로젝트 `dreams-ga4`에서 비활성 → API로 못 봄. 운영자가 **GA4 관리**에서:
-1. **데이터 스트림 → 웹 스트림 → 스트림 URL**이 `https://suksuki.com`인지 (구 vercel.app이면 갱신 — 수집엔 영향 없음, Search Console 연결에 영향)
-2. **Search Console 링크**가 suksuki.com 속성과 연결돼 있는지
-3. 속성 **시간대** = 대한민국(9/4 시간대별 피크 6~8시로 KST 정황 확인, API 미확인)
-필요하면 GCP에서 `analyticsadmin.googleapis.com` 활성화 → 이 창이 API로 검증 가능.
+## 7. GA4 설정 — 9/4 Admin API 감사 결과 (운영자 UI 작업 3건 대기)
+API 활성화 완료. `scripts/ga/ga-admin.mjs`·`ga-admin2.mjs`로 조회. 서비스 계정은 Viewer라 **변경은 운영자 UI**.
+| 항목 | 실측 | 할 일 |
+|---|---|---|
+| 시간대 | Asia/Seoul ✅ | 없음 — 시간대별 분석 유효 |
+| 측정ID | G-MCNS7P3XVT ✅ | 없음 |
+| 스트림 기본 URL | 구 `dreams-come-true-ten.vercel.app` | **관리 → 데이터 스트림 → 웹 → 스트림 세부정보 수정 → `https://suksuki.com`** |
+| 사이트검색 파라미터 | `q,s,search,query,keyword` | **`s` 제거** (CTA 착지 `?s=<slug>`가 `view_search_results`로 오인, 30일 4건) — 관리 → 데이터 스트림 → 향상된 측정 톱니 → 사이트 검색 |
+| 데이터 보관 | 2개월 | **14개월로** (관리 → 데이터 설정 → 데이터 보관). 소급 안 됨, 전환 전 기준선 보존 위해 즉시 |
+| Search Console 링크 | API 엔드포인트 없음 | **관리 → 제품 링크 → Search Console**에서 suksuki.com 속성 연결 여부 확인 |
+`view_search_results`의 `../../etc/passwd` 1건은 봇 프로빙. 정적 사이트 + W1-5 화이트리스트라 무해. 계속 나오면 보고.
 
 ## 8. 대기·판단 사항
 - 네이버 **콘텐츠 노출/클릭** 화면(실제 검색어) 캡처 요청 중 — 받으면 `recovery-targets.json` 검색어를 실제 질의로 교체
