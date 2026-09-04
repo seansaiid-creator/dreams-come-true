@@ -18,7 +18,7 @@
 4. 이 파일
 
 ## 1. 현재 상태 한 줄
-정적 HTML 150개(꿈 상세 143), Vercel, 도메인 `suksuki.com`(9/2 전환, 구 `dreams-come-true-ten.vercel.app`은 308). **9/2 전환 후 네이버 재색인 공백으로 사용자 -59%(9/3 확정치)** — 회복은 데이터창이 추적. AdSense 신청은 9/6 GSC 색인 점검 후.
+정적 HTML 150개(꿈 상세 143), Vercel, 도메인 `suksuki.com`(9/2 전환, 구 `dreams-come-true-ten.vercel.app`은 308). **9/2 전환 후 네이버 재색인 공백으로 사용자 -55%(9/3 확정치 22명)** — 회복은 데이터창이 추적. AdSense 신청은 9/6 GSC 색인 점검 후.
 
 **발행 큐(09-04 실측, `content-queue/queue.json` 파싱)**: 13건 **전부 `approved:true`** — 발행 완료 4 · **미발행 9**. 월수금 04:10 워크플로가 순차 발행하므로 운영자 조치 불요. (WORKLOG에 "8편 검수 대기"로 남아 있던 기술은 실물과 달라 09-04 정정함.)
 발행 무결성 `node scripts/verify-publish.mjs` **통과 — 페이지 143 / DB 143**.
