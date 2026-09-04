@@ -16,5 +16,41 @@
   "naverGone": 26,
   "naverOnlyOld": 2,
   "lostSessions": 656
+ },
+ {
+  "ts": "2026-09-04T02:13:52.856Z",
+  "avgUsers7": 47.9,
+  "avgNew7": 46.3,
+  "naverShown": 22,
+  "naverGone": 26,
+  "naverOnlyOld": 2,
+  "lostSessions": 656
+ },
+ {
+  "ts": "2026-09-04T02:15:16.517Z",
+  "avgUsers7": 47.9,
+  "avgNew7": 46.3,
+  "naverShown": 22,
+  "naverGone": 26,
+  "naverOnlyOld": 2,
+  "lostSessions": 656
+ },
+ {
+  "ts": "2026-09-04T02:17:31.679Z",
+  "avgUsers7": 43.6,
+  "avgNew7": 43.3,
+  "naverShown": 22,
+  "naverGone": 26,
+  "naverOnlyOld": 2,
+  "lostSessions": 656
+ },
+ {
+  "ts": "2026-09-04T02:19:06.846Z",
+  "avgUsers7": 43.6,
+  "avgNew7": 43.3,
+  "naverShown": 22,
+  "naverGone": 26,
+  "naverOnlyOld": 2,
+  "lostSessions": 656
  }
 ]

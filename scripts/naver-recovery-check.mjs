@@ -52,8 +52,9 @@ const rows = (daily.rows || []).map(r => ({
 const fmt = d => `${d.slice(4, 6)}-${d.slice(6)}`;
 const kstToday = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10).replace(/-/g, '');
 
-// 판정 대상 = 오늘·어제를 뺀 완성 데이터
-const settled = rows.filter(r => r.d < kstToday).slice(0, -1);
+// 판정 대상 = 오늘을 뺀 완성 데이터. GA4 처리 지연은 통상 당일 몇 시간 내이므로
+// 다음날 오전 시점에는 어제까지는 완성됐다고 본다(시간대별 대조로 확인됨).
+const settled = rows.filter(r => r.d < kstToday);
 const last7 = settled.slice(-7);
 const avg = a => a.length ? +(a.reduce((x, y) => x + y.u, 0) / a.length).toFixed(1) : null;
 const avgN = a => a.length ? +(a.reduce((x, y) => x + y.n, 0) / a.length).toFixed(1) : null;
@@ -86,7 +87,7 @@ const totSessions = vis.reduce((a, b) => a + (b.sessions || 0), 0);
 const L = [];
 L.push(`# 네이버 회복 추적 — ${new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 16).replace('T', ' ')} KST`);
 L.push('');
-L.push('## 1. 유입 (완성 데이터 기준 — 오늘·어제는 GA4 처리 지연으로 판정 제외)');
+L.push('## 1. 유입 (완성 데이터 기준 — 오늘만 GA4 처리 지연으로 판정 제외)');
 if (baseline) {
   L.push(`- 기준선(전환 전 30일 평균): 사용자 **${baseline.avgUsers}** · 신규 **${baseline.avgNewUsers}** · 세션 **${baseline.avgSessions}**`);
 }
