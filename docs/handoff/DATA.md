@@ -73,9 +73,11 @@ Admin API 활성화됨. `scripts/ga/ga-admin.mjs`로 조회. 서비스 계정은
 | 스트림 기본 URL | 구 `dreams-come-true-ten.vercel.app` | ✅ **`https://suksuki.com`으로 갱신됨** |
 | 사이트검색 파라미터 | `q,s,search,query,keyword` | ✅ **`s` 제거됨** → `q,search,query,keyword` |
 | 데이터 보관 | 2개월 | ✅ **14개월(FOURTEEN_MONTHS)** — 8월 기준선 보존 |
-| Search Console 링크 | 미확인 | ✅ **연결됨** (suksuki.com URL프리픽스 ↔ 웹 스트림, 화면 "링크가 생성됨") |
+| Search Console 링크 | 미확인 | ✅ **연결됨** (suksuki.com URL프리픽스 ↔ 웹 스트림) |
+| 보고서 컬렉션 게시 | 수명주기·SC 미게시 | ✅ **둘 다 게시됨** — 획득/참여도/유지/SC 화면에서 조회 가능 |
 
-**남은 것**: 보고서 게시 — 구글 공식 "Search Console 보고서 모음은 기본적으로 게시되지 않습니다. 왼쪽 탐색 메뉴의 라이브러리 아래에서 보고서 모음을 찾아 게시할 수 있습니다." **데이터는 수집 후 48시간 뒤부터.**
+**보고서 게시도 완료**(9/4): 라이브러리에서 `Search Console` + `수명 주기` 컬렉션 모두 "모든 사용자에게 게시됨". 이제 왼쪽 메뉴에 **획득 / 참여도 / 유지 / Search Console**이 보인다. **SC 데이터는 수집 후 48시간 뒤부터**, 구글 유입 자체가 거의 0이라 숫자는 작을 것.
+→ **GA4 설정 작업은 전부 종료.** 더 손댈 것 없음.
 Admin API에 `searchConsoleLinks` 엔드포인트는 v1alpha/v1beta 모두 404 — **연결 여부는 API로 검증 불가, UI로만 확인**.
 `view_search_results`의 `../../etc/passwd`는 봇 프로빙(정적 사이트 + W1-5 화이트리스트라 무해). `s` 제거 후 신규 오인 유입 없는지 다음 주 재확인.
 
