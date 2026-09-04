@@ -63,17 +63,26 @@ GA4 키: `~/.config/dreams-ga4/sa-key.json`(레포 밖). 속성 `528679246`. 측
 - 연령·성별: Google 신호 꺼짐. 켜도 일 50명 규모는 기준점(thresholding)에 걸릴 공산 큼 — 권하지 않음
 - 이벤트 계측 자체는 정상(9/4 실브라우저에서 5개 이벤트 + scroll 3개 발화 확인). **클릭이 0인 건 계측 버그가 아니라 위치 문제**
 
-## 7. GA4 설정 — 9/4 Admin API 감사 결과 (운영자 UI 작업 3건 대기)
-API 활성화 완료. `scripts/ga/ga-admin.mjs`·`ga-admin2.mjs`로 조회. 서비스 계정은 Viewer라 **변경은 운영자 UI**.
-| 항목 | 실측 | 할 일 |
+## 7. GA4 설정 — 9/4 감사 및 **조치 완료** (API 재확인)
+Admin API 활성화됨. `scripts/ga/ga-admin.mjs`로 조회. 서비스 계정은 Viewer(읽기 전용)라 변경은 운영자 UI.
+
+| 항목 | 9/4 감사 시 | **현재(운영자 조치 후, API 확인)** |
 |---|---|---|
-| 시간대 | Asia/Seoul ✅ | 없음 — 시간대별 분석 유효 |
-| 측정ID | G-MCNS7P3XVT ✅ | 없음 |
-| 스트림 기본 URL | 구 `dreams-come-true-ten.vercel.app` | **관리 → 데이터 수집 및 수정 → 데이터 스트림 → 스트림 클릭 → 우상단 수정(연필) → 웹사이트 URL `https://suksuki.com` → 업데이트 스트림** (경로 확인됨) |
-| 사이트검색 파라미터 | `q,s,search,query,keyword` | **`s` 제거** (CTA 착지 `?s=<slug>`가 `view_search_results`로 오인, 30일 4건) — 관리 → 데이터 스트림 → 향상된 측정 톱니 → 사이트 검색 |
-| 데이터 보관 | 2개월 | **14개월로** (관리 → **데이터 수집 및 수정 → 데이터 보관** → 이벤트 데이터 보관 → 저장) ※2026-09-04 운영자 화면 캡처로 경로 확인. "데이터 설정" 메뉴는 없음. 구글 공식: 늘리면 **아직 삭제되지 않은 기존 데이터에도 적용** — 8월 기준선이 지워지기 전에 즉시 |
-| Search Console 링크 | API 엔드포인트 없음 | **관리 → 제품 링크(사이드바 하단) → Search Console 링크 → 연결**. GA 편집자 역할 + Search Console 인증된 소유자 필요. suksuki.com 속성 ↔ 웹 데이터 스트림 |
-`view_search_results`의 `../../etc/passwd` 1건은 봇 프로빙. 정적 사이트 + W1-5 화이트리스트라 무해. 계속 나오면 보고.
+| 시간대 | Asia/Seoul | ✅ 그대로 |
+| 측정ID | G-MCNS7P3XVT | ✅ 사이트 300곳과 일치 |
+| 스트림 기본 URL | 구 `dreams-come-true-ten.vercel.app` | ✅ **`https://suksuki.com`으로 갱신됨** |
+| 사이트검색 파라미터 | `q,s,search,query,keyword` | ✅ **`s` 제거됨** → `q,search,query,keyword` |
+| 데이터 보관 | 2개월 | ✅ **14개월(FOURTEEN_MONTHS)** — 8월 기준선 보존 |
+| Search Console 링크 | 미확인 | ✅ **연결됨** (suksuki.com URL프리픽스 ↔ 웹 스트림, 화면 "링크가 생성됨") |
+
+**남은 것**: 보고서 게시 — 구글 공식 "Search Console 보고서 모음은 기본적으로 게시되지 않습니다. 왼쪽 탐색 메뉴의 라이브러리 아래에서 보고서 모음을 찾아 게시할 수 있습니다." **데이터는 수집 후 48시간 뒤부터.**
+Admin API에 `searchConsoleLinks` 엔드포인트는 v1alpha/v1beta 모두 404 — **연결 여부는 API로 검증 불가, UI로만 확인**.
+`view_search_results`의 `../../etc/passwd`는 봇 프로빙(정적 사이트 + W1-5 화이트리스트라 무해). `s` 제거 후 신규 오인 유입 없는지 다음 주 재확인.
+
+### GA4 UI 경로 (2026-09-04 운영자 화면으로 확정 — 공식 문서와 다름)
+- 스트림 URL·향상된 측정: 관리 → **데이터 수집 및 수정 → 데이터 스트림** → 스트림 클릭
+- 데이터 보관: 관리 → **데이터 수집 및 수정 → 데이터 보관** (※"데이터 설정" 메뉴는 없음)
+- 제품 링크: 관리 사이드바 **하단** → Search Console 링크 / Google 애드센스 링크(승인 후 연결용)
 
 ## 8. 대기·판단 사항
 - 네이버 **콘텐츠 노출/클릭** 화면(실제 검색어) 캡처 요청 중 — 받으면 `recovery-targets.json` 검색어를 실제 질의로 교체
