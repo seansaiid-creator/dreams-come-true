@@ -1,0 +1,746 @@
+{
+ "runs": [
+  {
+   "ts": "2026-09-04T14:17:31.994Z",
+   "daily": {
+    "20260706": {
+     "users": 53,
+     "newUsers": 53,
+     "sessions": 58,
+     "pv": 63
+    },
+    "20260707": {
+     "users": 51,
+     "newUsers": 49,
+     "sessions": 56,
+     "pv": 75
+    },
+    "20260708": {
+     "users": 50,
+     "newUsers": 47,
+     "sessions": 52,
+     "pv": 52
+    },
+    "20260709": {
+     "users": 59,
+     "newUsers": 59,
+     "sessions": 62,
+     "pv": 72
+    },
+    "20260710": {
+     "users": 54,
+     "newUsers": 55,
+     "sessions": 59,
+     "pv": 65
+    },
+    "20260711": {
+     "users": 57,
+     "newUsers": 54,
+     "sessions": 62,
+     "pv": 67
+    },
+    "20260712": {
+     "users": 69,
+     "newUsers": 68,
+     "sessions": 71,
+     "pv": 79
+    },
+    "20260713": {
+     "users": 47,
+     "newUsers": 44,
+     "sessions": 53,
+     "pv": 62
+    },
+    "20260714": {
+     "users": 35,
+     "newUsers": 34,
+     "sessions": 41,
+     "pv": 43
+    },
+    "20260715": {
+     "users": 50,
+     "newUsers": 50,
+     "sessions": 51,
+     "pv": 60
+    },
+    "20260716": {
+     "users": 45,
+     "newUsers": 44,
+     "sessions": 46,
+     "pv": 61
+    },
+    "20260717": {
+     "users": 59,
+     "newUsers": 57,
+     "sessions": 63,
+     "pv": 72
+    },
+    "20260718": {
+     "users": 63,
+     "newUsers": 59,
+     "sessions": 68,
+     "pv": 88
+    },
+    "20260719": {
+     "users": 48,
+     "newUsers": 48,
+     "sessions": 49,
+     "pv": 52
+    },
+    "20260720": {
+     "users": 42,
+     "newUsers": 42,
+     "sessions": 47,
+     "pv": 45
+    },
+    "20260721": {
+     "users": 36,
+     "newUsers": 35,
+     "sessions": 37,
+     "pv": 38
+    },
+    "20260722": {
+     "users": 53,
+     "newUsers": 52,
+     "sessions": 59,
+     "pv": 58
+    },
+    "20260723": {
+     "users": 49,
+     "newUsers": 49,
+     "sessions": 51,
+     "pv": 56
+    },
+    "20260724": {
+     "users": 55,
+     "newUsers": 55,
+     "sessions": 56,
+     "pv": 61
+    },
+    "20260725": {
+     "users": 51,
+     "newUsers": 51,
+     "sessions": 51,
+     "pv": 68
+    },
+    "20260726": {
+     "users": 38,
+     "newUsers": 37,
+     "sessions": 40,
+     "pv": 38
+    },
+    "20260727": {
+     "users": 49,
+     "newUsers": 49,
+     "sessions": 58,
+     "pv": 70
+    },
+    "20260728": {
+     "users": 38,
+     "newUsers": 37,
+     "sessions": 41,
+     "pv": 44
+    },
+    "20260729": {
+     "users": 41,
+     "newUsers": 41,
+     "sessions": 47,
+     "pv": 49
+    },
+    "20260730": {
+     "users": 37,
+     "newUsers": 36,
+     "sessions": 39,
+     "pv": 64
+    },
+    "20260731": {
+     "users": 43,
+     "newUsers": 43,
+     "sessions": 43,
+     "pv": 48
+    },
+    "20260801": {
+     "users": 43,
+     "newUsers": 40,
+     "sessions": 47,
+     "pv": 55
+    },
+    "20260802": {
+     "users": 55,
+     "newUsers": 54,
+     "sessions": 58,
+     "pv": 60
+    },
+    "20260803": {
+     "users": 47,
+     "newUsers": 46,
+     "sessions": 49,
+     "pv": 53
+    },
+    "20260804": {
+     "users": 42,
+     "newUsers": 42,
+     "sessions": 46,
+     "pv": 47
+    },
+    "20260805": {
+     "users": 42,
+     "newUsers": 42,
+     "sessions": 44,
+     "pv": 47
+    },
+    "20260806": {
+     "users": 44,
+     "newUsers": 42,
+     "sessions": 49,
+     "pv": 54
+    },
+    "20260807": {
+     "users": 52,
+     "newUsers": 51,
+     "sessions": 56,
+     "pv": 60
+    },
+    "20260808": {
+     "users": 67,
+     "newUsers": 66,
+     "sessions": 71,
+     "pv": 82
+    },
+    "20260809": {
+     "users": 64,
+     "newUsers": 63,
+     "sessions": 65,
+     "pv": 75
+    },
+    "20260810": {
+     "users": 57,
+     "newUsers": 56,
+     "sessions": 60,
+     "pv": 61
+    },
+    "20260811": {
+     "users": 40,
+     "newUsers": 39,
+     "sessions": 43,
+     "pv": 63
+    },
+    "20260812": {
+     "users": 41,
+     "newUsers": 41,
+     "sessions": 42,
+     "pv": 52
+    },
+    "20260813": {
+     "users": 32,
+     "newUsers": 29,
+     "sessions": 33,
+     "pv": 42
+    },
+    "20260814": {
+     "users": 41,
+     "newUsers": 41,
+     "sessions": 41,
+     "pv": 56
+    },
+    "20260815": {
+     "users": 60,
+     "newUsers": 59,
+     "sessions": 63,
+     "pv": 71
+    },
+    "20260816": {
+     "users": 65,
+     "newUsers": 65,
+     "sessions": 72,
+     "pv": 87
+    },
+    "20260817": {
+     "users": 35,
+     "newUsers": 35,
+     "sessions": 38,
+     "pv": 39
+    },
+    "20260818": {
+     "users": 51,
+     "newUsers": 50,
+     "sessions": 53,
+     "pv": 60
+    },
+    "20260819": {
+     "users": 44,
+     "newUsers": 43,
+     "sessions": 47,
+     "pv": 50
+    },
+    "20260820": {
+     "users": 36,
+     "newUsers": 34,
+     "sessions": 36,
+     "pv": 51
+    },
+    "20260821": {
+     "users": 52,
+     "newUsers": 50,
+     "sessions": 54,
+     "pv": 65
+    },
+    "20260822": {
+     "users": 49,
+     "newUsers": 47,
+     "sessions": 51,
+     "pv": 57
+    },
+    "20260823": {
+     "users": 53,
+     "newUsers": 50,
+     "sessions": 57,
+     "pv": 59
+    },
+    "20260824": {
+     "users": 57,
+     "newUsers": 54,
+     "sessions": 61,
+     "pv": 59
+    },
+    "20260825": {
+     "users": 48,
+     "newUsers": 46,
+     "sessions": 49,
+     "pv": 52
+    },
+    "20260826": {
+     "users": 47,
+     "newUsers": 44,
+     "sessions": 47,
+     "pv": 55
+    },
+    "20260827": {
+     "users": 50,
+     "newUsers": 46,
+     "sessions": 54,
+     "pv": 101
+    },
+    "20260828": {
+     "users": 39,
+     "newUsers": 39,
+     "sessions": 40,
+     "pv": 47
+    },
+    "20260829": {
+     "users": 62,
+     "newUsers": 61,
+     "sessions": 67,
+     "pv": 88
+    },
+    "20260830": {
+     "users": 49,
+     "newUsers": 47,
+     "sessions": 55,
+     "pv": 62
+    },
+    "20260831": {
+     "users": 46,
+     "newUsers": 45,
+     "sessions": 52,
+     "pv": 54
+    },
+    "20260901": {
+     "users": 48,
+     "newUsers": 46,
+     "sessions": 49,
+     "pv": 55
+    },
+    "20260902": {
+     "users": 41,
+     "newUsers": 40,
+     "sessions": 48,
+     "pv": 88
+    },
+    "20260903": {
+     "users": 22,
+     "newUsers": 21,
+     "sessions": 26,
+     "pv": 37
+    },
+    "20260904": {
+     "users": 15,
+     "newUsers": 7,
+     "sessions": 18,
+     "pv": 22
+    }
+   }
+  },
+  {
+   "ts": "2026-09-04T14:18:18.303Z",
+   "daily": {
+    "20260706": {
+     "users": 53,
+     "newUsers": 53,
+     "sessions": 58,
+     "pv": 63
+    },
+    "20260707": {
+     "users": 51,
+     "newUsers": 49,
+     "sessions": 56,
+     "pv": 75
+    },
+    "20260708": {
+     "users": 50,
+     "newUsers": 47,
+     "sessions": 52,
+     "pv": 52
+    },
+    "20260709": {
+     "users": 59,
+     "newUsers": 59,
+     "sessions": 62,
+     "pv": 72
+    },
+    "20260710": {
+     "users": 54,
+     "newUsers": 55,
+     "sessions": 59,
+     "pv": 65
+    },
+    "20260711": {
+     "users": 57,
+     "newUsers": 54,
+     "sessions": 62,
+     "pv": 67
+    },
+    "20260712": {
+     "users": 69,
+     "newUsers": 68,
+     "sessions": 71,
+     "pv": 79
+    },
+    "20260713": {
+     "users": 47,
+     "newUsers": 44,
+     "sessions": 53,
+     "pv": 62
+    },
+    "20260714": {
+     "users": 35,
+     "newUsers": 34,
+     "sessions": 41,
+     "pv": 43
+    },
+    "20260715": {
+     "users": 50,
+     "newUsers": 50,
+     "sessions": 51,
+     "pv": 60
+    },
+    "20260716": {
+     "users": 45,
+     "newUsers": 44,
+     "sessions": 46,
+     "pv": 61
+    },
+    "20260717": {
+     "users": 59,
+     "newUsers": 57,
+     "sessions": 63,
+     "pv": 72
+    },
+    "20260718": {
+     "users": 63,
+     "newUsers": 59,
+     "sessions": 68,
+     "pv": 88
+    },
+    "20260719": {
+     "users": 48,
+     "newUsers": 48,
+     "sessions": 49,
+     "pv": 52
+    },
+    "20260720": {
+     "users": 42,
+     "newUsers": 42,
+     "sessions": 47,
+     "pv": 45
+    },
+    "20260721": {
+     "users": 36,
+     "newUsers": 35,
+     "sessions": 37,
+     "pv": 38
+    },
+    "20260722": {
+     "users": 53,
+     "newUsers": 52,
+     "sessions": 59,
+     "pv": 58
+    },
+    "20260723": {
+     "users": 49,
+     "newUsers": 49,
+     "sessions": 51,
+     "pv": 56
+    },
+    "20260724": {
+     "users": 55,
+     "newUsers": 55,
+     "sessions": 56,
+     "pv": 61
+    },
+    "20260725": {
+     "users": 51,
+     "newUsers": 51,
+     "sessions": 51,
+     "pv": 68
+    },
+    "20260726": {
+     "users": 38,
+     "newUsers": 37,
+     "sessions": 40,
+     "pv": 38
+    },
+    "20260727": {
+     "users": 49,
+     "newUsers": 49,
+     "sessions": 58,
+     "pv": 70
+    },
+    "20260728": {
+     "users": 38,
+     "newUsers": 37,
+     "sessions": 41,
+     "pv": 44
+    },
+    "20260729": {
+     "users": 41,
+     "newUsers": 41,
+     "sessions": 47,
+     "pv": 49
+    },
+    "20260730": {
+     "users": 37,
+     "newUsers": 36,
+     "sessions": 39,
+     "pv": 64
+    },
+    "20260731": {
+     "users": 43,
+     "newUsers": 43,
+     "sessions": 43,
+     "pv": 48
+    },
+    "20260801": {
+     "users": 43,
+     "newUsers": 40,
+     "sessions": 47,
+     "pv": 55
+    },
+    "20260802": {
+     "users": 55,
+     "newUsers": 54,
+     "sessions": 58,
+     "pv": 60
+    },
+    "20260803": {
+     "users": 47,
+     "newUsers": 46,
+     "sessions": 49,
+     "pv": 53
+    },
+    "20260804": {
+     "users": 42,
+     "newUsers": 42,
+     "sessions": 46,
+     "pv": 47
+    },
+    "20260805": {
+     "users": 42,
+     "newUsers": 42,
+     "sessions": 44,
+     "pv": 47
+    },
+    "20260806": {
+     "users": 44,
+     "newUsers": 42,
+     "sessions": 49,
+     "pv": 54
+    },
+    "20260807": {
+     "users": 52,
+     "newUsers": 51,
+     "sessions": 56,
+     "pv": 60
+    },
+    "20260808": {
+     "users": 67,
+     "newUsers": 66,
+     "sessions": 71,
+     "pv": 82
+    },
+    "20260809": {
+     "users": 64,
+     "newUsers": 63,
+     "sessions": 65,
+     "pv": 75
+    },
+    "20260810": {
+     "users": 57,
+     "newUsers": 56,
+     "sessions": 60,
+     "pv": 61
+    },
+    "20260811": {
+     "users": 40,
+     "newUsers": 39,
+     "sessions": 43,
+     "pv": 63
+    },
+    "20260812": {
+     "users": 41,
+     "newUsers": 41,
+     "sessions": 42,
+     "pv": 52
+    },
+    "20260813": {
+     "users": 32,
+     "newUsers": 29,
+     "sessions": 33,
+     "pv": 42
+    },
+    "20260814": {
+     "users": 41,
+     "newUsers": 41,
+     "sessions": 41,
+     "pv": 56
+    },
+    "20260815": {
+     "users": 60,
+     "newUsers": 59,
+     "sessions": 63,
+     "pv": 71
+    },
+    "20260816": {
+     "users": 65,
+     "newUsers": 65,
+     "sessions": 72,
+     "pv": 87
+    },
+    "20260817": {
+     "users": 35,
+     "newUsers": 35,
+     "sessions": 38,
+     "pv": 39
+    },
+    "20260818": {
+     "users": 51,
+     "newUsers": 50,
+     "sessions": 53,
+     "pv": 60
+    },
+    "20260819": {
+     "users": 44,
+     "newUsers": 43,
+     "sessions": 47,
+     "pv": 50
+    },
+    "20260820": {
+     "users": 36,
+     "newUsers": 34,
+     "sessions": 36,
+     "pv": 51
+    },
+    "20260821": {
+     "users": 52,
+     "newUsers": 50,
+     "sessions": 54,
+     "pv": 65
+    },
+    "20260822": {
+     "users": 49,
+     "newUsers": 47,
+     "sessions": 51,
+     "pv": 57
+    },
+    "20260823": {
+     "users": 53,
+     "newUsers": 50,
+     "sessions": 57,
+     "pv": 59
+    },
+    "20260824": {
+     "users": 57,
+     "newUsers": 54,
+     "sessions": 61,
+     "pv": 59
+    },
+    "20260825": {
+     "users": 48,
+     "newUsers": 46,
+     "sessions": 49,
+     "pv": 52
+    },
+    "20260826": {
+     "users": 47,
+     "newUsers": 44,
+     "sessions": 47,
+     "pv": 55
+    },
+    "20260827": {
+     "users": 50,
+     "newUsers": 46,
+     "sessions": 54,
+     "pv": 101
+    },
+    "20260828": {
+     "users": 39,
+     "newUsers": 39,
+     "sessions": 40,
+     "pv": 47
+    },
+    "20260829": {
+     "users": 62,
+     "newUsers": 61,
+     "sessions": 67,
+     "pv": 88
+    },
+    "20260830": {
+     "users": 49,
+     "newUsers": 47,
+     "sessions": 55,
+     "pv": 62
+    },
+    "20260831": {
+     "users": 46,
+     "newUsers": 45,
+     "sessions": 52,
+     "pv": 54
+    },
+    "20260901": {
+     "users": 48,
+     "newUsers": 46,
+     "sessions": 49,
+     "pv": 55
+    },
+    "20260902": {
+     "users": 41,
+     "newUsers": 40,
+     "sessions": 48,
+     "pv": 88
+    },
+    "20260903": {
+     "users": 22,
+     "newUsers": 21,
+     "sessions": 26,
+     "pv": 37
+    },
+    "20260904": {
+     "users": 15,
+     "newUsers": 7,
+     "sessions": 18,
+     "pv": 22
+    }
+   }
+  }
+ ]
+}
