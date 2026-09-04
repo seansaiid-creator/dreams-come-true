@@ -69,10 +69,10 @@ API 활성화 완료. `scripts/ga/ga-admin.mjs`·`ga-admin2.mjs`로 조회. 서�
 |---|---|---|
 | 시간대 | Asia/Seoul ✅ | 없음 — 시간대별 분석 유효 |
 | 측정ID | G-MCNS7P3XVT ✅ | 없음 |
-| 스트림 기본 URL | 구 `dreams-come-true-ten.vercel.app` | **관리 → 데이터 스트림 → 웹 → 스트림 세부정보 수정 → `https://suksuki.com`** |
+| 스트림 기본 URL | 구 `dreams-come-true-ten.vercel.app` | **관리 → 데이터 수집 및 수정 → 데이터 스트림 → 스트림 클릭 → 우상단 수정(연필) → 웹사이트 URL `https://suksuki.com` → 업데이트 스트림** |
 | 사이트검색 파라미터 | `q,s,search,query,keyword` | **`s` 제거** (CTA 착지 `?s=<slug>`가 `view_search_results`로 오인, 30일 4건) — 관리 → 데이터 스트림 → 향상된 측정 톱니 → 사이트 검색 |
-| 데이터 보관 | 2개월 | **14개월로** (관리 → 데이터 설정 → 데이터 보관). 소급 안 됨, 전환 전 기준선 보존 위해 즉시 |
-| Search Console 링크 | API 엔드포인트 없음 | **관리 → 제품 링크 → Search Console**에서 suksuki.com 속성 연결 여부 확인 |
+| 데이터 보관 | 2개월 | **14개월로** (관리 → 데이터 설정 → 데이터 보관 → 이벤트 데이터 보관 → 저장). 구글 공식: 늘리면 **아직 삭제되지 않은 기존 데이터에도 적용** — 8월 기준선이 지워지기 전에 즉시 |
+| Search Console 링크 | API 엔드포인트 없음 | **관리 → 제품 링크 → Search Console 링크 → 연결**. GA 편집자 역할 + Search Console 인증된 소유자 필요. suksuki.com 속성 ↔ 웹 데이터 스트림 |
 `view_search_results`의 `../../etc/passwd` 1건은 봇 프로빙. 정적 사이트 + W1-5 화이트리스트라 무해. 계속 나오면 보고.
 
 ## 8. 대기·판단 사항
