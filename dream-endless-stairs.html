@@ -27,28 +27,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --gold: #C9A84C; --gold-light: #F0D080; --gold-dark: #8B6914; --deep: #0D0A1A; --purple: #6B3FA0; --purple-light: #9B6FD0; --text: #F0EAD6; --text-muted: #A09080; }
+  :root { --gold: #C9A84C; --gold-light: #F0D080; --gold-dark: #8B6914; --deep: #0D0A1A; --purple: #6B3FA0; --purple-light: #9B6FD0; --text:#EDE9F7; --text-muted:#8F87A8; }
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   html, body { width:100%; overflow-x:hidden; }
   body { background:var(--deep); color:var(--text); font-family:'Pretendard',sans-serif; min-height:100vh; }
-  body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:0; background: radial-gradient(ellipse at 20% 20%, rgba(107,63,160,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 50%); }
-  .nav { position:sticky; top:0; z-index:100; background:rgba(13,10,26,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.15); padding:0 16px; }
+  body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:0; background:none; }
+  .nav { position:sticky; top:0; z-index:100; background:rgba(13,10,26,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.10); padding:0 16px; }
   .nav-inner { max-width:480px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:52px; }
   .nav-logo { font-family:'Nanum Myeongjo',serif; font-size:16px; font-weight:800; color:var(--gold); text-decoration:none; }
   .nav-links { display:flex; gap:4px; }
   .nav-link { padding:6px 10px; font-size:12px; color:var(--text-muted); text-decoration:none; border-radius:8px; white-space:nowrap; }
-  .nav-link.active { color:var(--gold); background:rgba(201,168,76,0.1); }
+  .nav-link.active { color:var(--text); background:rgba(255,255,255,0.04); }
   .container { position:relative; z-index:1; max-width:480px; margin:0 auto; padding:0 16px 80px; }
   .hero { text-align:center; padding:32px 0 24px; }
   .hero-emoji { font-size:56px; display:block; margin-bottom:14px; animation:float 4s ease-in-out infinite; }
   @keyframes float { 0%,100% {transform:translateY(0);} 50% {transform:translateY(-8px);} }
-  .hero h1 { font-family:'Nanum Myeongjo',serif; font-size:22px; font-weight:800; color:var(--gold); line-height:1.4; margin-bottom:10px; text-shadow:0 0 30px rgba(201,168,76,0.4); }
-  .section { background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.15); border-radius:16px; padding:20px; margin-bottom:14px; }
-  .section h2 { font-family:'Nanum Myeongjo',serif; font-size:17px; color:var(--gold-light); margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid rgba(201,168,76,0.15); }
+  .hero h1 { font-family:'Nanum Myeongjo',serif; font-size:22px; font-weight:800; color:var(--text); line-height:1.4; margin-bottom:10px; }
+  .section { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10); border-radius:16px; padding:20px; margin-bottom:14px; }
+  .section h2 { font-family:'Nanum Myeongjo',serif; font-size:17px; color:var(--text); margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.10); }
   .section p { font-size:14px; line-height:1.9; color:var(--text); opacity:0.9; margin-bottom:10px; }
-  .section h3 { font-size:15px; color:var(--gold); margin:16px 0 8px; font-weight:600; }
-  .faq-item + .faq-item { margin-top:16px; padding-top:16px; border-top:1px solid rgba(201,168,76,0.12); }
-  .faq-q { font-size:14px; color:var(--gold-light); margin-bottom:8px; font-weight:600; }
+  .section h3 { font-size:15px; color:var(--text); margin:16px 0 8px; font-weight:600; }
+  .faq-item + .faq-item { margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.10); }
+  .faq-q { font-size:14px; color:var(--text); margin-bottom:8px; font-weight:600; }
   .cta-section { text-align:center; margin:24px 0 0; }
   .cta-btn { display:block; width:100%; background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light)); border:none; border-radius:16px; padding:18px; font-family:'Nanum Myeongjo',serif; font-size:18px; font-weight:700; color:var(--deep); text-decoration:none; text-align:center; cursor:pointer; transition:all 0.2s; letter-spacing:0.5px; }
   .cta-btn:active { transform:scale(0.98); opacity:0.9; }
@@ -66,8 +66,8 @@
     .mid-related a:last-child{margin-bottom:0;}
     .eng-ad {
       width: 100%;
-      background: rgba(201,168,76,0.05);
-      border: 1px dashed rgba(201,168,76,0.25);
+      background:rgba(255,255,255,0.02);
+      border:1px dashed rgba(255,255,255,0.10);
       border-radius: 10px;
       padding: 14px;
       text-align: center;
@@ -110,7 +110,7 @@
       font-size: 14px;
     }
     .eng-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-    .eng-h3 { font-size: 17px; font-weight: 700; color: #C9A84C; margin: 0; }
+    .eng-h3 { font-size: 17px; font-weight: 700; color:var(--text); margin: 0; }
     .eng-sub { font-size: 12px; color: #A09080; margin: 0 0 14px 0; }
     .eng-section { margin: 28px 0 0; }
     .eng-related-list { display: flex; flex-direction: column; gap: 8px; }
