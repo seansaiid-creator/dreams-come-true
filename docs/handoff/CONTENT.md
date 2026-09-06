@@ -30,7 +30,14 @@
   python3 -c "import json;q=json.load(open('content-queue/queue.json'));print(len([e for e in q if e.get('approved') and not e.get('published')]))"
   ```
 - 대기 9건 카테고리: blocked 5(navigation-wrong-way, cant-scream, running-in-place, brake-not-working, stuck-on-height) · body 2(hair-falling-out, naked-in-public) · loss 2(pet-lost, child-lost)
-- ⚠️ **중복 검사 스크립트는 레포에 없다**(`scripts/` 전수 grep, 해당 없음). 아래 품질 게이트는 스크립트 없이 수행된 것으로 보인다 — **다음 초안 생산 전에 검사 수단부터 만든다.**
+- ✅ **중복 검사 스크립트 신설됨** (09-07, `scripts/check-duplicates.py`). 승인 전 반드시 통과시킨다.
+  ```bash
+  python3 scripts/check-duplicates.py              # 큐의 미발행 대기분 전체 (위반 시 exit 1)
+  python3 scripts/check-duplicates.py --slug X     # 특정 초안 (B는 대기분 전체와 비교)
+  python3 scripts/check-duplicates.py --baseline   # 발행분 143편끼리 (기준선)
+  ```
+  검사 A 발행분과 문장 완전일치(0건) · B 초안 간 중복(≤3%) · C 5-gram 근접률(참고) · D 문서 내 문장 반복(0건).
+  **중복 외 게이트(마침표 뒤 공백·related 실재·템플릿 토큰 `{{…}}`·태그 균형)는 여전히 미검사** — 필요하면 별도 스크립트.
 - 큐 항목 스키마: `slug, kw, cat(8종), emoji, title, description, h1, hero_sub, hero_badge, related[3~5 slug], approved, sections[8×{h2,html}]`
 - 발행기가 자동 처리: `kw-cat-map.csv` 추가, `dreams-db.js`·`dream-index` 재생성, sitemap, 검증
 - 기존 142편: 제목 형식 "○○ 꿈 해몽 총정리 (+A, B, C 의미)", 섹션 8개(기본 의미/상황별/재물운/연애운/직장운/심리학적/이 꿈을 꿨다면/자주 묻는 질문 등), 본문 3,800~4,700자
@@ -69,6 +76,14 @@ animal 기운·재물 신호 / nature 감정 크게 움직임 / money 돈·확�
 
 ## 5. 다음 일 (우선순위, 9/4 갱신)
 
+**🔴 컨펌 대기 — 09-07 중복 검사 첫 실행에서 나온 위반 3건 (전부 미조치)**
+근거·수치는 `docs/WORKLOG.md` 09-07 항목. 재현: `python3 scripts/check-duplicates.py --baseline`
+1. **`endless-stairs` ↔ `fog-cant-see` 는 사실상 같은 글** — 69문장 중 53문장 완전 동일, 5-gram 85.3%. 둘 다 발행·색인 중.
+   AdSense 심사 전이라 중복 콘텐츠 판정 리스크가 실질적이다. 선택지: ⓐ 한 편 전면 재작성 ⓑ 한 편 삭제+301 ⓒ 유지.
+2. **`password-wrong` · `repeating-path` — 같은 마무리 문단 2개가 각 16회 반복 삽입.** 반복분 제거 필요.
+3. **대기 초안 `pet-lost` ↔ `child-lost` 6문장 동일 = 7.0%** (기준 3% 초과). **둘 다 `approved:true`라 이대로면 자동 발행된다.**
+   조치 전까지 발행을 막으려면 둘 중 하나를 `approved:false`로 내리거나 문장을 고쳐야 한다.
+
 **🔴 미결정 — 운영자 답이 있어야 진행 가능**
 - **다음 초안 8편의 소재 축.** 9/4 세션에서 3안(① 카테고리 균형 ② 상위 유입 패턴 복제 ③ 꿈사주 연계)을 올렸으나 **운영자가 선택을 보류**했다.
   임의로 정하지 않는 이유: `OPERATIONS.md §2-A`의 **"일상 소재 롱테일이 옳은 방향이다" 가설이 아직 미검증**(판정 시점 +4주)이다.
@@ -76,8 +91,8 @@ animal 기운·재물 신호 / nature 감정 크게 움직임 / money 돈·확�
 - **꿈사주 50블록 내용 검수.** 기계 검사는 통과했다. 운영자 수정 의견 대기.
 
 **착수 가능**
-1. **중복 검사 스크립트 신설** — 레포에 없다. 없으면 §2 품질 게이트를 실측으로 통과시킬 수단이 없다. 소재 축 결정과 무관하게 먼저 만들 수 있다.
-2. 소재 축 결정 후 **꿈해몽 초안 생산** (큐 초안 0)
+1. ~~중복 검사 스크립트 신설~~ → **완료 (09-07)**. `scripts/check-duplicates.py`
+2. 소재 축 결정 후 **꿈해몽 초안 생산** (큐 초안 0). 초안을 쓰면 승인 전 `check-duplicates.py` 통과 필수
 3. 검수 후 `approved: true` (indent 1 유지, 경로 명시 커밋)
 
 **하지 말 것**: 타로·이름궁합 콘텐츠(우선순위 아님) · 젊은층 톤 변경(기각) · 하루 다량 발행 · 소재 축을 이 창이 단독 결정
