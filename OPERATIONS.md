@@ -140,6 +140,7 @@ Claude 예약 작업 `dreams-monthly-review`가 30일 데이터로 KPI 추세·�
 ## 4. 확정된 결정 규칙 (재논의 불필요)
 - **발행 속도**: 1단계 주3(현재, AdSense 승인까지) → 2단계 매일1(승인+색인 안정) → 3단계 하루2~3(신규 페이지 노출 실증 후). 하루 10편 금지(저가치 재판정 리스크). 큐 잔량 2주치 유지.
 - **무검수 게시 금지**: approved:true 없이는 어떤 콘텐츠도 발행 안 됨.
+- **콘텐츠 push 권한(2026-09-07 운영자 지시)**: 컨텐츠창은 콘텐츠 변경을 **확정하고 직접 push** 한다. push = 프로덕션 배포이므로 push 전 반드시 ① `scripts/check-duplicates.py` 와 `--baseline` 양쪽 exit 0 ② `scripts/health-check.mjs` 깨진 링크 0 ③ `origin/main` fetch 후 봇 발행분과 rebase. **코드·워크플로·배포 설정은 제외**(개발창 소관).
 - **행운번호 기능**: W1-12 배포 후 2~4주 cta_lucky_click/조회 ≥5%면 W2-5(번호 저장+토요일 리듬) 투자, ~0이면 인라인 위젯으로 강등.
 - **AdSense**: suksuki.com URL 전환+GSC 색인 확인 후 심사 신청. 신청 전 about.html 보강. 승인 후 인아티클 2개 절제 배치.
 - **사주**: v1 전면 무료. 유료화는 일 500명+saju_open 데이터 후 별도 안건.

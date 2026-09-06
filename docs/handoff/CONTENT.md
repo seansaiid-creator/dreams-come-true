@@ -21,6 +21,16 @@
 - 사주 문안은 **용어 0**(일간·오행·천간·육친·십신·간지 명칭 금지). 한자는 접어두기 안에만
 - 낙관 포장·"누구에게나 맞는 말" 금지. 블록마다 **오늘 할 행동 하나**
 - 이 창은 코드를 고치지 않는다. `saju-content.js` 반영·번들 빌드·배포는 **개발창에 넘긴다**
+- **콘텐츠 변경은 이 창이 확정하고 직접 push 한다** (2026-09-07 운영자 지시). push = 프로덕션 배포다. 순서를 지킬 것:
+  ```bash
+  git fetch origin && git log --oneline HEAD..origin/main   # 봇 발행분이 있는지 먼저 본다
+  git stash push STATUS.md                                   # 자동 생성물, 커밋 대상 아님
+  git rebase origin/main                                     # dreams-db.js 충돌 시 → build-dreams-db.py 재생성으로 해소
+  python3 scripts/check-duplicates.py && python3 scripts/check-duplicates.py --baseline
+  node scripts/health-check.mjs
+  git push origin main
+  ```
+  **코드·워크플로·배포 설정은 제외** — 개발창 소관이다.
 
 ## 2. 발행 큐 현황 (9/4 18시 실측)
 - `content-queue/queue.json`: 파일에는 **13건**이 있고 **전부 `approved:true`**다. 그중 4건은 이미 발행됨(`published:true`).

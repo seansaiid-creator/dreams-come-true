@@ -404,6 +404,14 @@ Admin API를 켜서 설정을 직접 조회 → 운영자가 당일 전부 조�
 - **처리**: 보고서 7건을 `docs/agent-reports/`에 보존. `docs/UIUX_REVIEW.md` 추적표 신설(14개 항목 코드 실측으로 이행 여부 확정). `DECISIONS.md`에 종결 규칙 5조 신설.
 - **교훈**: **에이전트를 잘 돌리는 것과 그 산출물을 끝까지 처리하는 것은 별개 문제다.** 분석량이 많을수록 종결 추적이 없으면 그대로 샌다.
 
+### [확인] 콘텐츠 push 절차 — 봇 발행분과 반드시 rebase, dreams-db.js 충돌은 재생성으로 해소 (09-07, 컨텐츠창)
+- 운영자가 **"콘텐츠 관련된 건 컨텐츠창에서 확정하고 push"** 로 규칙을 바꿨다(종전: 에이전트는 로컬 커밋까지만). `DECISIONS.md`·`OPERATIONS.md §4`에 반영.
+- **push 직전에 원격이 2커밋 앞서 있었다.** 오늘이 월요일이라 04:10 cron이 돌아 `b83bfd4 신규 꿈풀이 발행 2026-09-07`(navigation-wrong-way) + `28df171 오늘의 꿈 회전`이 올라와 있었다. 확인 없이 push했다면 거부됐고, 강제로 밀었다면 **봇 발행분을 지웠을 것**이다.
+- **dreams-db.js 는 rebase 때마다 충돌한다.** 한 줄짜리 생성물이라 3-way merge가 불가능하다. 해소는 병합이 아니라 **`python3 scripts/build-dreams-db.py` 재생성**이다(이번 rebase에서 2회 발생, 둘 다 재생성으로 처리).
+- **STATUS.md 는 자동 생성물이라 커밋하지 않는데, rebase는 unstaged 변경이 있으면 시작되지 않는다.** stash → rebase → stash pop 순서로 처리했다.
+- 절차 확정: **fetch → 원격 커밋 확인 → rebase(충돌 시 dreams-db 재생성) → check-duplicates 양쪽 exit 0 → health-check → push.**
+- push 결과: `28df171..2fe0af1`. 발행분 **144편**(navigation-wrong-way 포함) 중복 0 · 대기 초안 **8건** 중복 0 · 깨진 링크 0 · ld+json 93블록 파싱 OK.
+
 ### [해결] 중복 위반 3건 전량 조치 — 발행분 143편·대기 초안 9건 모두 통과 (09-07, 컨텐츠창)
 운영자 지시 "6문장 고쳐줘. 중복되는건 내용을 다 고쳐줘"에 따라 아래 항목 전부 조치. 검증은 매 건 `scripts/check-duplicates.py`.
 
