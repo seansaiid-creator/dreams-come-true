@@ -11,3 +11,5 @@ report.html
 sa-key.json
 *-credentials.json
 service-account*.json
+
+__pycache__/
