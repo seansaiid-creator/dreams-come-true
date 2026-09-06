@@ -856,5 +856,11 @@
   "kw": "지하철 개찰구가 안 열리는 꿈",
   "cat": "blocked",
   "emoji": "🚇"
+ },
+ {
+  "slug": "navigation-wrong-way",
+  "kw": "내비게이션이 길을 잘못 알려주는 꿈",
+  "cat": "blocked",
+  "emoji": "🧭"
  }
 ]
