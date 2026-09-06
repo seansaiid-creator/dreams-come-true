@@ -1,6 +1,15 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "static", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8199"], "port": 8199 }
+    {
+      "name": "static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "/Users/seanspc/Documents/projects/dreams-come-true/scripts/preview-server.py",
+        "8199",
+        "/Users/seanspc/Documents/projects/dreams-come-true"
+      ],
+      "port": 8199
+    }
   ]
 }
