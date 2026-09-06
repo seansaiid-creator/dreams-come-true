@@ -32,6 +32,13 @@ const OUT = `${DIR}/latest.md`;
 const MIN_DENOM = 300;   // 분모가 이보다 작으면 비율 신뢰 불가로 표시
 const MIN_EVENTS = 30;   // 분자가 이보다 작으면 같이 경고
 
+// 검증 오염일 — 배포 확인을 위해 내가(운영자·에이전트) 직접 페이지를 열어
+// 실제 사용자 데이터에 조회수·이벤트가 섞인 날. 비율의 분모·분자에서 통째로 뺀다.
+// 넣기 전에 반드시 근거를 적는다. 추측으로 날짜를 빼면 그것도 데이터 조작이다.
+const QA_DATES = new Map([
+  ['20260906', '리디자인 1단계 배포 검증 — 상세 페이지 약 13회 직접 열람, scroll_25/50/75 3건 강제 발화'],
+]);
+
 // ── GA4 토큰 ──
 const key = JSON.parse(readFileSync(process.env.GA4_KEY || `${homedir()}/.config/dreams-ga4/sa-key.json`, 'utf8'));
 const b64 = o => Buffer.from(JSON.stringify(o)).toString('base64url');
@@ -119,8 +126,9 @@ hist.runs.push({ ts: new Date().toISOString(), daily });
 hist.runs = hist.runs.slice(-30);
 writeFileSync(HIST, JSON.stringify(hist, null, 1));
 
-const settledDates = Object.keys(daily).filter(d => settled[d]).sort();
+const settledDates = Object.keys(daily).filter(d => settled[d] && !QA_DATES.has(d)).sort();
 const lastSettled = settledDates.at(-1) || null;
+const qaHit = [...QA_DATES.keys()].filter(d => daily[d]).sort();
 
 // ── 5. 이벤트별 유효 창에서만 비율 계산 ──
 const AUTO = new Set(['page_view','session_start','first_visit','user_engagement','scroll','view_search_results','click']);
@@ -150,6 +158,11 @@ L.push('');
 L.push(`**판정 근거**: 관측(스냅샷 비교) ${nObs}일 · 잠정(3일 경과, 스냅샷 미보유) ${nAge}일`);
 if (nObs === 0) L.push('> ⚠️ 첫 실행이라 관측 기반 판정이 없다. 내일 한 번 더 돌리면 관측으로 바뀐다.');
 L.push('');
+if (qaHit.length) {
+  L.push('**검증 오염으로 제외한 날**');
+  for (const d of qaHit) L.push(`- ${fmt(d)} — ${QA_DATES.get(d)}`);
+  L.push('');
+}
 if (unsettled.length) {
   L.push('**미확정(판정에 쓰지 말 것)**');
   for (const [d, why] of unsettled.sort().slice(-8)) L.push(`- ${fmt(d)} — ${why}`);
